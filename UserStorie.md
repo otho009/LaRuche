@@ -1,0 +1,12 @@
+# En tant que client :
+- parcourir les produits disponibles
+- pouvoir connaitre la localisation du producteur
+- avoir des photos de l'élevage/culture
+- connaitre la date de la récolte
+- Pouvoir acheté les produits avec une carte bleue (voire en espèce)
+- consulter son panier/le modifier
+- choisir le créneau de récupération des produits
+-  pouvoir modifier la quantité après la commande(*Sous conditions*)
+- Pouvoir rencontrer le gérant de ruche
+- Recuperer ses achats
+- Avoir une facture détaillant le tarif des produits et  services 
