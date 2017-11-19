@@ -9,4 +9,4 @@
 -  pouvoir modifier la quantité après la commande(*Sous conditions*)
 - Pouvoir rencontrer le gérant de ruche
 - Recuperer ses achats
-- Avoir une facture détaillant le tarif des produits et  services 
+- Avoir une facture détaillant le tarif des produits et  services
