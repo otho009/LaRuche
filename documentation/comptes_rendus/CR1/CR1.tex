@@ -13,16 +13,7 @@
 \usepackage{natbib} %bibligraphy
 \usepackage[nottoc,notlot,notlof]{tocbibind} %bind the table of contents to the bibligoraphy
 \usepackage{packages/tikz-uml} %UML elements
-\usepackage{packages/tikz-er2} %ER Model elements
 \usetikzlibrary{positioning}
-\usetikzlibrary{arrows}
-\usetikzlibrary{shadows}
-
-%Configuring shapes in the ER Model
-\tikzstyle{every entity} = [top color=white, bottom color=blue!30, draw=blue!50!black!100, drop shadow]
-\tikzstyle{every attribute} = [top color=white, bottom color=yellow!20, draw=yellow, node distance=7em, drop shadow]
-\tikzstyle{every relationship} = [top color=white, bottom color=red!20, draw=red!50!black!100, drop shadow]
-\tikzstyle{every edge} = [link]
 
 %Defining custom environments
 \theoremstyle{break}
@@ -65,11 +56,9 @@
 Dans ce compte rendu, nous nous consacrons à la description détaillée de la phase de conception du projet intitulé \texttt{LaRuche} à effectuer au sein du \textbf{LIRMM} (\textbf{L}aboratoire d'\textbf{I}nformatique, de \textbf{R}obotique et de \textbf{M}icroélectronique de \textbf{M}ontpellier) dans le cadre du module \textbf{HLSE602 -- Projet Annuel CMI} de la $3$\ieme{} année de licence en \textbf{CMI} (\textbf{C}ursus \textbf{M}aster \textbf{I}ngénierie).\\
 Le projet se déroule sous l'encadrement de Mme Anne-Elisabeth Baert en tant que responsable de la formation CMI informatique et M. Eric Bourreau, enseignant/chercheur au sein du LIRMM dans l'équipe \textbf{MAORE} (\textbf{M}éthodes \textbf{A}lgorithmes pour l'\textbf{O}rdonnancement et les \textbf{Ré}seaux) \citep{EricBourreauPres}, en tant que responsable pédagogique et encadrant du projet.
 
-Le sujet du projet couvre la création d'un site web dédiée comme interface de communication entre fournisseurs de produits locaux et leurs clients. Il est inspiré du site \href{https://laruchequiditoui.fr/fr}{La Ruche Qui Dit Oui} traitant le même thème et répondant aux mêmes besoins, mais cherche à faire les choses d'une façon différente, surtout au niveau de la logistique et l'architecture du site, afin de fournir une vision différente, voire plus optimisée de la gestion des interactions directes entre clients et fournisseurs.
+Le sujet du projet couvre la création d'un site web dédié comme interface de communication entre vendeurs de produits locaux et leurs clients. Il est inspiré du site \href{https://laruchequiditoui.fr/fr}{La Ruche Qui Dit Oui} traitant le même thème et répondant aux mêmes besoins, mais cherche à faire les choses d'une façon différente, surtout au niveau de la logistique et de l'architecture du site, afin de fournir une vision différente, voire plus optimisée de la gestion des interactions directes entre clients et vendeurs.
 
-Nous avons envisagé, lors du déroulement du projet, expérimenter en génie logiciel, afin de prendre ultérieurement une décision éclairée sur la branche de spécialité que je souhaite cibler à l'avenir. Par ailleurs, j’ai considéré que çà serait une bonne occasion pour acquérir de nouvelles savoir-faire et savoir-être pour rajouter plus de valeur à mon CV, mais aussi pour collaborer au développement d'un projet mené par un établissement de recherche et surtout pour créer un réseau significatif de connaissances au sein du LIRMM.
-
-Nous commencerons ce compte rendu en annonçant le contexte du projet, puis nous présenterons LIRMM, les problématiques adressées et traitées dans le cadre du projet, la méthodologie adoptée pour modéliser le problème et y proposer des solutions ainsi que les outils de modélisation et le planning prévisionnel pour répartir les tâches à effectuer dans un cadre spatio-temporel valable. Enfin, nous conclurons en discutant l'implémentation prévue de l'application modélisée et les perspectives, et en listant un bilan.
+Nous commencerons ce compte rendu en annonçant le contexte du projet, puis nous présenterons LIRMM, les problématiques adressées et traitées dans le cadre du projet, la méthodologie adoptée pour modéliser le problème et y proposer des solutions ainsi que les outils de modélisation et le planning prévisionnel pour répartir les tâches à effectuer dans un cadre spatio-temporel valable. Enfin, nous conclurons en discutant l'implémentation prévue de l'application modélisée et les perspectives.
 
 %----------------------------------------------------------------------------------------
 %   PRÉSENTATION DU LIRMM
@@ -84,7 +73,7 @@ Nous commencerons ce compte rendu en annonçant le contexte du projet, puis nous
   \label{fig:lirmmPhoto}
 \end{figure}
 
-Les travaux sont menés dans trois départements scientifiques de recherche, [(L’Informatique, La Robotique, et La Microélectronique)] eux-mêmes organisés en \og équipes-projet \fg{}.
+Les travaux sont menés dans trois départements scientifiques de recherche, [(L’Informatique, La Robotique, et La Microélectronique)] eux-mêmes organisés en \og équipes-projet \fg.
 
 Les recherches menées au LIRMM trouvent généralement une finalisation dans des domaines applicatifs aussi divers que la biologie, la chimie, les télécommunications, la santé, l'environnement... et dans les domaines propres du laboratoire : l'informatique, l'électronique et l'automatique.
 
@@ -98,16 +87,18 @@ Ses activités de recherche [le] positionnent [...] pleinement au coeur des scie
 %   PROBLÈME
 %----------------------------------------------------------------------------------------
 \section{Problème}
-
+  %WISSEM
 %----------------------------------------------------------------------------------------
 %   MÉTHODOLOGIE
 %----------------------------------------------------------------------------------------
 \section{Méthodologie}
+  %BACHAR
 
 %----------------------------------------------------------------------------------------
 %   OUTILS
 %----------------------------------------------------------------------------------------
 \section{Outils}
+  %BACHAR
 
 %----------------------------------------------------------------------------------------
 %   PLANNING PRÉVISIONNEL
@@ -310,7 +301,7 @@ Dans cette section nous illustrons les \textit{user stories} que nous avons réd
 %----------------------------------------------------------------------------------------
 \section{Diagrammes \textit{use-case}}
 \subsection{Page d'accueil du site}
-Le diagrammes \textit{use-case} correspondant aux \textit{user-stories} sur la page d'accueil du site est dans la figure \ref{fig:index_page_case_diagram}.
+Le diagramme \textit{use-case} correspondant aux \textit{user-stories} sur la page d'accueil du site est dans la figure \ref{fig:index_page_case_diagram}.
 \begin{figure}[!ht]
   \centering
   \begin{tikzpicture}
@@ -341,7 +332,7 @@ Le diagrammes \textit{use-case} correspondant aux \textit{user-stories} sur la p
 \end{figure}
 
 \subsection{Page d'accueil des utilisateurs}
-Le diagramme \textit{use-case} correspondant aux \textit{user-stories} sur la page d'accueil des utilisateurs (client/fournisseur) du site est dans la figure \ref{fig:home_page_use_case_diagram}
+Le diagramme \textit{use-case} correspondant aux \textit{user-stories} sur la page d'accueil des utilisateurs (client/vendeur) du site est dans la figure \ref{fig:home_page_use_case_diagram}
 \begin{figure}[!ht]
   \centering
   \begin{tikzpicture}
@@ -616,13 +607,13 @@ Les diagrammes \textit{use-case} correspondant aux \textit{user-stories} sur les
 %   IMPLÉMENTATION PRÉVUE
 %----------------------------------------------------------------------------------------
 \section{Implémentation prévue}
-  %BACHAR
+  %WISSEM
 
 %----------------------------------------------------------------------------------------
 %   PERSPECTIVES
 %----------------------------------------------------------------------------------------
 \section{Perspectives}
-  %BACHAR
+  %OTHMANE
 
 %----------------------------------------------------------------------------------------
 %   BIBLIOGRAPHIE
