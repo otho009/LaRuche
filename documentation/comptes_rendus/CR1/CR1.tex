@@ -10,7 +10,7 @@
 \usepackage{amssymb} %squares in itemize
 \usepackage{enumitem} %change numbers into letters in enumerate
 \usepackage{footmisc} %reference footnotes
-\usepackage{natbib} %bibligraphy
+\usepackage{natbib} %bibliography
 \usepackage[nottoc,notlot,notlof]{tocbibind} %bind the table of contents to the bibligoraphy
 \usepackage{packages/tikz-uml} %UML elements
 \usetikzlibrary{positioning}
@@ -18,6 +18,12 @@
 %Defining custom environments
 \theoremstyle{break}
 \newtheorem{userStory}{User Story}
+
+\theoremstyle{break}
+\newtheorem{definition}{Définition}
+
+\theoremstyle{break}
+\newtheorem{property}{Propriété}
 
 \theoremstyle{break}
 \newtheorem{constraint}{Règle}
@@ -87,18 +93,32 @@ Ses activités de recherche [le] positionnent [...] pleinement au coeur des scie
 %   PROBLÈME
 %----------------------------------------------------------------------------------------
 \section{Problème}
-  %WISSEM
+Les gens cherchent de \textit{plus en plus} d'acheter des produits frais minimisant les étapes de \textit{processing}, alors que les producteurs cherchent à se libérer des centres d’achat et des intermédiaires de distribution.
+
+Dans l’esprit du site francais \href{https://laruchequiditoui.fr/fr}{LaRucheQuiDitOui}, on souhaite implémenter une interface sous forme d'un \textbf{site web} permettant, au premier, aux producteurs de vendre leurs produits \textbf{directement} aux consommateurs en se regroupant en des endroits précis afin de proposer d'offres diversifiés de leurs produits.
+
+Le site web offrera ainsi \textbf{tout le nécessaire} aux consommateurs pour effectuer des commandes prépayées et précisera en suite les points de collecte de produits les plus proches.\\
+D'autre part, le site offrera aussi aux fournisseurs la possibilité d'organiser ces points, de gérer la mise à jour des
+stocks et la mise en vente/prise de commandes par les clients, en se basant sur des algorithmes d'optimisation aidant à l'organisation de la logistique, à la préparation/facturation des commandes et à la redistribution des produits entre les différents producteurs voisins.
 %----------------------------------------------------------------------------------------
 %   MÉTHODOLOGIE
 %----------------------------------------------------------------------------------------
 \section{Méthodologie}
-  %BACHAR
+Dans le but d'assurer la meilleure gestion de nos ressources en offrant le plus de fonctionnalités possibles aux utilisateurs tout en implémentant progressivement leurs requis et faisant sortir des versions fonctionnelles du site après avoir tester les parties implémentées après chaque itération de développement, nous avons opté pour une approche basée sur les \textbf{méthodes agiles} de développement et \textbf{XP}\footnote{\textit{eXtreme Programming}}.
 
+En effet, la méthodologie de développement proposée par les méthodes agiles étant de plus en plus prépondérante en génie logiciel, nous avons décidé d'en profiter pour la modélisation et l'implémentation ultérieure de notre site web pour assurer le plus de flexibilité et d'extensibilité possible lors du dialect développeurs/utilisateurs permettant de répondre efficacement aux besoins des utilisateurs.
 %----------------------------------------------------------------------------------------
 %   OUTILS
 %----------------------------------------------------------------------------------------
 \section{Outils}
-  %BACHAR
+Pour garantir une bonne modélisation du projet, en cohérence avec l'approche de la méthodologie discutée précédemment, on aura besoin d'expliciter les spécifications fonctionnelles et organisationnelles de notre projet. Ainsi, on aura recours aux outils suivants :
+\begin{description}
+  \item[\textit{user stories}]{des requis fournis par les utilisateurs décrivant en langage naturel les fonctionnalités qu'il souhaitent avoir dans le site.}
+  \item[diagrammes de cas d'usage]{des diagrammes dynamiques, souvent utilisés en \textbf{UML} pour décrire en haut niveau les fonctionnalités d'un système, en se servant de notions telles que \textbf{acteurs}, \textbf{cas d'usage}, \textbf{systèmes} et les \textbf{relations} entre chacune de ces entités.}
+  \item[modèle EA]{un modèle \textbf{conceptuel} utilisé pour décrire les entités du projet ainsi que les associations décrivant leurs relations et comportements.}
+  \item[schéma de base de données]{schéma en modèle \textbf{relationnel} composé des schémas des relations et des contraintes d'intégrité sur l'ensemble des relations, traduit généralement à partir du \textbf{modèle EA}.}
+  \item[\textit{mockup storyboard}]{document de haut niveau offrant un moyen pour schématiser l'utilisation d'un projet, en positionant les différents éléments le composant, sans rentrer dans les détails de leur fonctionnement.}
+\end{description}
 
 %----------------------------------------------------------------------------------------
 %   PLANNING PRÉVISIONNEL
@@ -579,25 +599,60 @@ Les diagrammes \textit{use-case} correspondant aux \textit{user-stories} sur les
 %   SD PROPOSÉE (CELLULE ET RUCHE)
 %----------------------------------------------------------------------------------------
 \section{Structure de données proposée (\texttt{Cellule} et \texttt{Ruche})}
-  %BACHAR
+Afin de pouvoir optimiser la logistique et la redistribution des produits entre les fournisseurs à proximité l'un de l'autre, il va falloir proposer une \textbf{structure de données} permettant d'abstraire la notion de \textbf{ruche} et étudier ses propriétés et opérations afin d'analyser ses avantages et inconvénients par rapport à nos besoins.
 
+\subsection{Définitions et notations}
+\begin{description}
+  \item[$V$]{ensemble des fournisseurs.}
+  \item[$Cl$]{ensemble des clients.}
+  \item[$C$]{\textbf{opérateur} appliqué à $v \in V$ désignant une \textbf{cellule}, ç-à-d un \textbf{cercle} dont le centre est le point représentant les coordonnées du fournisseur $v$ et dont le rayon est la distance maximale en \textbf{km} qu'il souhaite parcourir pour rendre ces produits à un point de collecte.}
+\end{description}
+
+\begin{definition}[Ruche]
+Soit $v_1, v_2, \dots, v_n \in V^n$. Une \textbf{ruche} $R$ est composée d'un ensemble de fournisseurs dont les cellules s'intersectent et d'un point de collecte obtenu à partir d'une opération sur le polygone dont les sommets correspondent aux cellules de chaque vendeur.\\
+Autrement dit, $R = \{p, v_1, v_2, \dots, v_n \in V\; |\; C(v_1) \cap C(v_2) \cap \dots \cap C(v_n) \neq \varnothing\}$
+\end{definition}
+
+\begin{property}[Fournisseurs Voisins]
+Soit $R$ une ruche. Deux fournisseurs $v_1$ et $v_2$ sont dits \textbf{voisins} $\iff v_1 \in R\; \text{et}\; v_2 \in R$. On note $\texttt{Voisins}(v)$ l'\textbf{ensemble des voisins} d'un fournisseur $v \in V$.
+\end{property}
+
+\begin{constraint}[Chevauchement des ruches]
+Un fournisseur peut appartenir à plusieurs ruches $R_1, R_2, \dots, R_k$ simultanément.
+\end{constraint}
+
+\begin{constraint}[Voisinage Imposé]
+Soient $v_1$ et $v_2$ deux fournisseurs tels que $v_2 \notin \texttt{Voisins}(v_1)$. S'il existe des fournisseurs $v_3$ et $v_4$ tels que $v_3, v_4 \in \texttt{Voisins}(v_1) \cap \texttt{Voisins}(v_2)$, alors il existe une ruche plus optimale contenant $v_1, v_2, v_3\; \text{et}\; v_4$ que les ruches séparées les contenant.
+\end{constraint}
 %----------------------------------------------------------------------------------------
 %   MODÈLE EA
 %----------------------------------------------------------------------------------------
 \section{Modèle EA}
-  %OTHMANE
 
 %----------------------------------------------------------------------------------------
 %   SCHÉMA DE BD
 %----------------------------------------------------------------------------------------
 \section{Schéma de base de données}
-  %WISSEM
+Le modèle relationnel obtenu par traduction du modèle EA des données est le suivant :
+\begin{enumerate}
+  \item{\texttt{CLIENT}(\underline{email}, nom, prenom, adresse, codePostale, Ville, Pays).}
+  \item{\texttt{WALLET}(\underline{ID\_wallet}, \textit{emailClient}).}
+  \item{\texttt{VENDOR}(\underline{emailV}, siret, nomProfessionel).}
+  \item{\texttt{STOCK}(\underline{ID\_stock}, \underline{emailV}).}
+  \item{\texttt{BASKET}(\underline{ID\_basket}).}
+  \item{\texttt{TYPE\_PRODUCT}(ID\_typeP).}
+  \item{\texttt{PRODUCT}(\underline{ID\_product}, name, \textit{ID\_stock}, \textit{ID\_typeP}, \textit{ID\_basket}).}
+  \item{\texttt{SUBORDER}(\underline{ID\_suborder}, isValidated, \textit{ID\_order}, \textit{emailV}).}
+  \item{\texttt{CONTAINS}(\underline{\textit{ID\_suborder}}, \underline{\textit{ID\_product}}, quantity).}
+  \item{\texttt{PAYMENTMETHOD}(\underline{ID\_paymentMethod}).}
+  \item{\texttt{STATUS}(\underline{ID\_status}).}
+  \item{\texttt{ORDER}(\underline{ID\_order}, dateOrder, \textit{emailClient}, \textit{ID\_wallet}, walletPoints, \textit{ID\_paymentMethod}, \textit{ID\_status}).}
+\end{enumerate}
 
 %----------------------------------------------------------------------------------------
 %   STORYBOARD
 %----------------------------------------------------------------------------------------
 \section{Storyboard}
-  %WISSEM
 
 %----------------------------------------------------------------------------------------
 %   CONCLUSION
@@ -607,22 +662,29 @@ Les diagrammes \textit{use-case} correspondant aux \textit{user-stories} sur les
 %   IMPLÉMENTATION PRÉVUE
 %----------------------------------------------------------------------------------------
 \section{Implémentation prévue}
-  %WISSEM
+Pour la mise en oeuvre du site web, on prévoit utiliser, à part \textbf{HTML} et \textbf{CSS}, les outils suivants :
+\begin{enumerate}
+  \item{\textbf{JavaScript} et des \textbf{\textit{frameworks} pertinents} tels que \textbf{JQuery} et \textbf{Angular}, utilisés pour le développement \textit{front-end} du site web.}
+  \item{le \textbf{\textit{framework} Bootstrap} pour faire des pages responsives adaptables aux dispositifs tels que smartphones, tablets, laptops et grand écrans.}
+  \item{\textbf{MySQL} pour gérer la base de données du site : on a opté pour une BD relationnel vu le grand nombre d'associations reliant les différentes entités du site.}
+  \item{\textbf{PHP} : suite au choix de \textbf{MySQL}, \textbf{PHP} (ainsi que les \textbf{\textit{frameworks}} basés dessus et \textbf{ORM}) est l'un des langages côté serveur les plus adaptés et les plus utilisés pour la manipulation d'un SGBD relationnel.}
+\end{enumerate}
 
+\begin{remark}
+L'utilisation des \textbf{API} est aussi contemplée, notamment pour l'implémentation d'une carte (\textbf{Leaflet}), d'un chat securisé (\textbf{Telegram}), des méthodes de paiement, \textit{etc...}
+\end{remark}
 %----------------------------------------------------------------------------------------
 %   PERSPECTIVES
 %----------------------------------------------------------------------------------------
 \section{Perspectives}
-  En plus des fonctionnalités que nous avons jugées être essentielles au projet et que nous prévoyons donc d'implémenter, nous avons pensé à des fonctionnalités supplémentaires que nous pourrions ajouter à notre projet une fois celles de base établies. 
-  En effet, plusieurs extensions sont possibles à fin de proposer aux utilisateurs du site un choix plus diversifié.
-   Parmi celles-ci nous avons pensé au fait de proposer aux clients réalisant des achats sur le site d'avoir la possibilité de régler, en plus qu'avec un paiement bancaire, de pouvoir recourir à des services de paiements en ligne telles que Paypal.
-  Voire même d'offrir la possibilité de payer en Crypto-monnaie dans une version plus développée du projet.
+En plus des fonctionnalités que nous avons jugées être essentielles au projet et que nous prévoyons donc d'implémenter, nous avons pensé à des fonctionnalités supplémentaires que nous pourrions ajouter à notre projet une fois celles de base établies.
 
-   Outre cela, nous pourrions également proposer plusieurs versions de notre site, où chaque version concerne un pays particulier et donc dans une langue précise.
-   Tout cela, dans le but de pouvoir déployer le site ainsi que son concept à l'international. 
+En effet, plusieurs extensions sont possibles afin de proposer aux utilisateurs du site un choix plus diversifié.
+Parmi celles-ci nous avons pensé au fait de proposer aux clients réalisant des achats sur le site d'avoir la possibilité de régler, en plus qu'avec un paiement bancaire, de pouvoir recourir à des services de paiements en ligne telles que Paypal,
+voire même d'offrir la possibilité de payer en Crypto-monnaie dans une version plus développée du projet.
 
-
-
+Outre cela, nous pourrions également proposer plusieurs versions de notre site, où chaque version concerne un pays particulier et donc dans une langue précise.\\
+Tout cela, dans le but de pouvoir déployer le site ainsi que son concept à l'international.
 %----------------------------------------------------------------------------------------
 %   BIBLIOGRAPHIE
 %----------------------------------------------------------------------------------------
