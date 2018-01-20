@@ -17,27 +17,27 @@
 
 %Defining custom environments
 \theoremstyle{break}
-\newtheorem{userStory}{User Story}
+\newtheorem*{userStory}{User Story}
 
 \theoremstyle{break}
-\newtheorem{definition}{Définition}
+\newtheorem*{definition}{Définition}
 
 \theoremstyle{break}
-\newtheorem{property}{Propriété}
+\newtheorem*{property}{Propriété}
 
 \theoremstyle{break}
-\newtheorem{constraint}{Règle}
+\newtheorem*{constraint}{Règle}
 
 \theoremstyle{definition}
-\newtheorem{example}{Exemple}
+\newtheorem*{example}{Exemple}
 
 \theoremstyle{remark}
-\newtheorem{remark}{\textbf{Remarque}}
+\newtheorem*{remark}{\textbf{Remarque}}
 
 %----------------------------------------------------------------------------------------
 %   TITLE PAGE
 %----------------------------------------------------------------------------------------
-\title{\textbf{HLSE602 -- Projet Annuel CMI} : \textbf{LaRuche} (Compte Rendu \# $1$)}
+\title{\textbf{HLSE602 -- Projet Annuel CMI} : \textbf{LaRuche} (Rapport \# $1$)}
 \author{Bachar Rima, Othmane Farajallah, Wissem Soussi}
 \date{\today}
 
@@ -59,12 +59,13 @@
 %   CONTEXTE DU STAGE
 %----------------------------------------------------------------------------------------
 \section{Contexte du projet}
-Dans ce compte rendu, nous nous consacrons à la description détaillée de la phase de conception du projet intitulé \texttt{LaRuche} à effectuer au sein du \textbf{LIRMM} (\textbf{L}aboratoire d'\textbf{I}nformatique, de \textbf{R}obotique et de \textbf{M}icroélectronique de \textbf{M}ontpellier) dans le cadre du module \textbf{HLSE602 -- Projet Annuel CMI} de la $3$\ieme{} année de licence en \textbf{CMI} (\textbf{C}ursus \textbf{M}aster \textbf{I}ngénierie).\\
-Le projet se déroule sous l'encadrement de Mme Anne-Elisabeth Baert en tant que responsable de la formation CMI informatique et M. Eric Bourreau, enseignant/chercheur au sein du LIRMM dans l'équipe \textbf{MAORE} (\textbf{M}éthodes \textbf{A}lgorithmes pour l'\textbf{O}rdonnancement et les \textbf{Ré}seaux) \citep{EricBourreauPres}, en tant que responsable pédagogique et encadrant du projet.
+Dans ce rapport, nous nous consacrons à la description détaillée de la phase de conception du projet intitulé \texttt{LaRuche} à effectuer au sein du \textbf{LIRMM} (\textbf{L}aboratoire d'\textbf{I}nformatique, de \textbf{R}obotique et de \textbf{M}icroélectronique de \textbf{M}ontpellier) dans le cadre du module \textbf{HLSE602 -- Projet Annuel CMI} de la $3$\ieme{} année de licence en \textbf{CMI} (\textbf{C}ursus \textbf{M}aster \textbf{I}ngénierie).
 
-Le sujet du projet couvre la création d'un site web dédié comme interface de communication entre vendeurs de produits locaux et leurs clients. Il est inspiré du site \href{https://laruchequiditoui.fr/fr}{La Ruche Qui Dit Oui} traitant le même thème et répondant aux mêmes besoins, mais cherche à faire les choses d'une façon différente, surtout au niveau de la logistique et de l'architecture du site, afin de fournir une vision différente, voire plus optimisée de la gestion des interactions directes entre clients et vendeurs.
+Le projet se déroule sous l'encadrement de Mme Anne-Elisabeth Baert, enseignante/chercheuse au sein du LIRMM dans l'équipe \textbf{MAORE} (\textbf{M}éthodes \textbf{A}lgorithmes pour l'\textbf{O}rdonnancement et les \textbf{Ré}seaux) \citep{AEBPres}, en tant que responsable de la formation CMI informatique et M. Eric Bourreau, enseignant/chercheur au sein du LIRMM dans la même équipe \textbf{MAORE} \citep{EricBourreauPres}, en tant que responsable pédagogique et encadrant du projet.
 
-Nous commencerons ce compte rendu en annonçant le contexte du projet, puis nous présenterons LIRMM, les problématiques adressées et traitées dans le cadre du projet, la méthodologie adoptée pour modéliser le problème et y proposer des solutions ainsi que les outils de modélisation et le planning prévisionnel pour répartir les tâches à effectuer dans un cadre spatio-temporel valable. Enfin, nous conclurons en discutant l'implémentation prévue de l'application modélisée et les perspectives.
+Le sujet du projet couvre la création d'un site web dédié comme interface de communication entre vendeurs de produits locaux et leurs clients. Il est inspiré du site \og \href{https://laruchequiditoui.fr/fr}{La Ruche Qui Dit Oui} \fg traitant le même thème et répondant aux mêmes besoins, mais cherche à faire les choses d'une façon différente, surtout au niveau de la logistique et de l'architecture du site, afin de fournir une vision différente, voire plus optimisée de la gestion des interactions directes entre clients et vendeurs.
+
+Nous commencerons ce rapport en annonçant le contexte du projet, puis nous présenterons LIRMM, les problématiques adressées et traitées dans le cadre du projet, la méthodologie adoptée pour modéliser le problème et y proposer des solutions ainsi que les outils de modélisation et le planning prévisionnel pour répartir les tâches à effectuer dans un cadre spatio-temporel valable. Après, nous présenterons l'aperçu d'un entretien déroulé avec un client potentiel afin d'inclure ses besoins dans le cahier des charges de notre projet et de modifier notre modélisation de manière à y répondre. Enfin, nous conclurons en discutant l'implémentation prévue de l'application modélisée et les perspectives.
 
 %----------------------------------------------------------------------------------------
 %   PRÉSENTATION DU LIRMM
@@ -97,8 +98,7 @@ Les gens cherchent de \textit{plus en plus} d'acheter des produits frais minimis
 
 Dans l’esprit du site francais \href{https://laruchequiditoui.fr/fr}{LaRucheQuiDitOui}, on souhaite implémenter une interface sous forme d'un \textbf{site web} permettant, au premier, aux producteurs de vendre leurs produits \textbf{directement} aux consommateurs en se regroupant en des endroits précis afin de proposer d'offres diversifiés de leurs produits.
 
-Le site web offrera ainsi \textbf{tout le nécessaire} aux consommateurs pour effectuer des commandes prépayées et précisera en suite les points de collecte de produits les plus proches.\\
-D'autre part, le site offrera aussi aux fournisseurs la possibilité d'organiser ces points, de gérer la mise à jour des
+Le site web offrera ainsi \textbf{tout le nécessaire} aux consommateurs pour effectuer des commandes prépayées et précisera en suite les points de collecte de produits les plus proches. D'autre part, le site offrera aussi aux fournisseurs la possibilité d'organiser ces points, de gérer la mise à jour des
 stocks et la mise en vente/prise de commandes par les clients, en se basant sur des algorithmes d'optimisation aidant à l'organisation de la logistique, à la préparation/facturation des commandes et à la redistribution des produits entre les différents producteurs voisins.
 %----------------------------------------------------------------------------------------
 %   MÉTHODOLOGIE
@@ -116,255 +116,103 @@ Pour garantir une bonne modélisation du projet, en cohérence avec l'approche d
   \item[\textit{user stories}]{des requis fournis par les utilisateurs décrivant en langage naturel les fonctionnalités qu'il souhaitent avoir dans le site.}
   \item[diagrammes de cas d'usage]{des diagrammes dynamiques, souvent utilisés en \textbf{UML} pour décrire en haut niveau les fonctionnalités d'un système, en se servant de notions telles que \textbf{acteurs}, \textbf{cas d'usage}, \textbf{systèmes} et les \textbf{relations} entre chacune de ces entités.}
   \item[modèle EA]{un modèle \textbf{conceptuel} utilisé pour décrire les entités du projet ainsi que les associations décrivant leurs relations et comportements.}
-  \item[schéma de base de données]{schéma en modèle \textbf{relationnel} composé des schémas des relations et des contraintes d'intégrité sur l'ensemble des relations, traduit généralement à partir du \textbf{modèle EA}.}
+  \item[schéma de base de données]{schéma en modèle \textbf{relationnel} composé des schémas des relations et des contraintes d'intégrité sur l'ensemble des relations, traduit généralement à partir du \textbf{modèle EA} et servant comme \textbf{modèle logique} lors de l'implémentation de la \textbf{base de données}.}
   \item[\textit{mockup storyboard}]{document de haut niveau offrant un moyen pour schématiser l'utilisation d'un projet, en positionant les différents éléments le composant, sans rentrer dans les détails de leur fonctionnement.}
 \end{description}
-
-%----------------------------------------------------------------------------------------
-%   PLANNING PRÉVISIONNEL
-%----------------------------------------------------------------------------------------
-\section{Planning prévisionnel}
-  %OTHMANE
 
 %----------------------------------------------------------------------------------------
 %   CONCEPTION
 %----------------------------------------------------------------------------------------
 \chapter{Conception}
 %----------------------------------------------------------------------------------------
-%   USER STORIES
+%   USER STORIES ET DIAGRAMMES DE CAS D'USAGE
 %----------------------------------------------------------------------------------------
-\section{\textit{User Stories}}
-Dans cette section nous illustrons les \textit{user stories} que nous avons rédigés pour identifier les fonctionnalités du système conçu :
-\subsection{Index Page}
-\begin{userStory}[Account Creation]
-\textbf{As a {\color{green} client}/{\color{red} vendor} user}, I want to have my own \textbf{personal account},\\
-\indent
-\textbf{so that} I can have my own \textbf{preferences} and my \textbf{history of purchases/sales}.
-\end{userStory}
+\section{\textit{User Stories} et Diagrammes de cas d'usage}
+Dans cette section nous illustrons les \textit{user stories} que nous avons rédigées pour identifier les fonctionnalités du système conçu, ainsi que les diagrammes de cas d'usage de quelques fonctionnalités parmi celles illustrées.
 
-\begin{userStory}[Account Creation via Other Platforms]
-\textbf{As a {\color{green} client}/{\color{red} vendor} user}, I want to be able to \textbf{sign-up} using my \texttt{Facebook}/\texttt{Google} \textbf{account},\\
-\indent
-\textbf{so that} I don't have to \textbf{fill up forms} and also \textbf{sync my data} between different online platforms.
-\end{userStory}
+Les \textit{user stories} de cette section seront implémentées dans la $1$\iere{} version du site, désignant les \textbf{fonctionnalités de base}, assimilant notre site en une \textbf{vitrine de réservation de produits} et non pas une \textbf{vitrine commerciale d'achats}. Cependant, nous avons inclus dans nos analyses des \textit{user stories} désignant des \textbf{fonctionnalités supplémentaires avancées}, mais pour rester en accord avec la philosophie de \textbf{XP}, elles seront traitées dans les versions du site à venir. Toutefois, leurs \textit{user stories} seront incluses dans la section des \textbf{Perspectives} (cf. Section \ref{sec:perspectives}).
 
-\begin{userStory}[Simultaneous Client/Vendor Account]
-\textbf{As a {\color{green} client}/{\color{red} vendor} user}, I want to be able to consult the website as \textbf{both} a \textbf{purchasing client} and a \textbf{vendor} (in case I am both) on the website,\\
-\indent
-\textbf{so that} I get to \textbf{enjoy the website} in both \textbf{consumption} and \textbf{production} modes without having to sign-off and sign-in every time I want to switch between the modes.
-\end{userStory}
-
-\begin{userStory}[Footer Menu]
-\textbf{As a {\color{green} client}/{\color{red} vendor} user}, I want to be able to consult a \textbf{menu in the footer of the index page} of the website,\\
-\indent
-\textbf{so that} I get to learn about the usage of the website through \textbf{FAQs}, understand what I can and cannot do through the \textbf{terms and conditions of usage}, get informed about the \textbf{creators of the website}, \textit{etc...}
-\end{userStory}
-
-\subsection{Home Page}
-\begin{userStory}[Home Personal Settings]
-\textbf{As a {\color{green} client}/{\color{red} vendor} user}, I want a \textbf{personalized user experience} with respect to my \textbf{preferences} and \textbf{history of purchases/sales} in the \textbf{settings},\\
-\indent
-\textbf{so that} I get to \textbf{visualize information} that are \textbf{relevant to my needs} while simultaneously preserving my \textbf{online privacy}.
-\end{userStory}
-
-\subsection{Searching}
-\begin{userStory}[Search Results]
-\textbf{As a {\color{green} client}/{\color{red} vendor} user}, I want to visualize information about products, vendors, and cells in my search results,\\
-\indent
-\textbf{so that} I get to have the \textbf{necessary amount of information} about them while surfing for \textbf{products} to \textbf{purchase} or \textbf{vendors/hives} to \textbf{consult}.
-\end{userStory}
-
-\begin{userStory}[Search Parameters]
-\textbf{As a {\color{green} client}/{\color{red} vendor} user}, I want to \textbf{sort} my \textbf{search results} according to \textbf{parameters} such as stock information, harvest date, expiry date, price, proximity, popularity, vendor, category, list of similar products, etc...,\\
-\indent
-\textbf{so that} I get to \textbf{personalize} my \textbf{search results} according to my \textbf{needs}.
-\end{userStory}
-
-\begin{userStory}[Search Features]
-\textbf{As a {\color{green} client}/{\color{red} vendor} user}, I want to use some \textbf{searching features} like \textbf{auto-completion}, \textbf{highlighting}, \textbf{visuals}, etc...,\\
-\indent
-\textbf{so that} I get to \textbf{search quickly, easily and intuitively} through for information.
-\end{userStory}
-
-\subsection{Communication}
-\subsubsection{Instant Messaging}
-\begin{userStory}[Client $\leftrightarrows$ Vendor and Vendor $\leftrightarrows$ Client/Vendor IM]
-\textbf{As a {\color{green} client}/{\color{red} vendor} user}, I want to be able to communicate with a specific client/vendor privately in an instant message environment,\\
-\indent
-\textbf{so that} I get to \textbf{inquire more about specific information} concerning \textbf{products} or \textbf{hive cells} or other topics.
-\end{userStory}
-
-\subsubsection{Email}
-\begin{userStory}[Client $\leftrightarrows$ Vendor and Vendor $\leftrightarrows$ Client/Vendor Email]
-\textbf{As a {\color{green} client}/{\color{red} vendor} user}, I want to be able to communicate with a specific client/vendor privately via email,\\
-\indent
-\textbf{so that} my inquiries get to \textbf{reach them as soon as possible} on their \textbf{emails} in case they didn't consult their website account \textbf{regularly}.
-\end{userStory}
-
-\subsection{Products \& Logistics}
-\subsubsection{Product Review}
-\begin{userStory}[Product Reviews]
-\textbf{As a {\color{green} client}/{\color{red} vendor} user}, I want to \textbf{consult reviews} (As a {\color{green} client}/{\color{red} vendor} user) about \textbf{products} and write them (As a {\color{green} client} user only),\\
-\indent
-\textbf{so that} I get to make \textbf{informed purchasing decisions} and \textbf{evaluate the experience} to benefit other future users.
-\end{userStory}
-
-\subsubsection{Product Management}
-\begin{userStory}[Product Definition and Online Storage]
-\textbf{As a {\color{red} vendor} user}, I want to \textbf{define} my \textbf{product selection} according to specific \textbf{descriptive properties} allowing me to divulge as much information about a product as possible,\\
-\indent
-\textbf{so that} I get to \textbf{maximize transparency} about my products and \textbf{gain customer loyalty} while \textbf{easily and intuitively managing}\footnote{creating, modifying, removing, adding} \textbf{my product selection} through the website.
-\end{userStory}
-
-\begin{userStory}[Basket Offers]
-\textbf{As a {\color{red} vendor} user}, I would like to \textbf{propose baskets of differents products},\\
-\indent
-\textbf{so that} I get to offer a \textbf{diversified selection of my products} and \textbf{increase revenue}.
-\end{userStory}
-
-\begin{userStory}[Periodical Product Reports]
-\textbf{As a {\color{red} vendor} user}, I want to have access to \textbf{statistical reports} about the \textbf{movements of products and stocks},\\
-\indent
-\textbf{so that} I get to \textbf{analyze the market} and \textbf{define} my \textbf{supply and demand methodology} accordingly.
-\end{userStory}
-
-\subsubsection{Logistics}
-\begin{userStory}[Depletion of Stock Policy]
-\textbf{As a {\color{red} vendor} user}, I want to \textbf{maximize my selling rate} to the point of stocks' \textbf{near-depletion},\\
-\indent
-\textbf{so that} I get to have the \textbf{least surplus of products in my stock as possible} and make more profit.
-\end{userStory}
-
-\begin{userStory}[Hive Product-Sharing Policy]
-\textbf{As a {\color{red} vendor} user}, I want to have the possibility of \textbf{exchanging my products with vendors from other cells in the hive}, to offer their products in my cells and have my products offered in theirs,\\
-\indent
-\textbf{so that} we all benefit from a \textbf{mutual market expansion} and extended revenue surface.
-\end{userStory}
-
-\begin{userStory}[Relay and Location-Independent Delivery System]
-\textbf{As a {\color{green} client} user}, I want to be capable of having my \textbf{purchases delivered} to a \textbf{desired location nearby a cell collection event} or to a \textbf{fixed relay center of distribution} if possible,\\
-\indent
-\textbf{so that} I get to collect my purchases \textbf{conveniently} wherever and whenever possible, without having to attend a hive cell collection event myself.
-\end{userStory}
-
-\begin{userStory}[Cell Collection Notifications]
-\textbf{As a {\color{green} client}/{\color{red} vendor} user}, I want to have the option of \textbf{receiving notifications} about \textbf{hive cell collection events near me}, regardless whether or not I'm supposed to participate in them (not necessarily having purchased anything that I have to collect),\\
-\indent
-\textbf{so that} I get to know when and where to pick up my purchased products or simply be in touch with \textbf{nearby activity}.
-\end{userStory}
-
-\subsection{Order \& Payment}
-\subsubsection{Order}
-\begin{userStory}[Shopping Cart]
-\textbf{As a {\color{green} client} user}, I would like to add the products I wish to purchase to a \textbf{virtual shopping cart},\\
-\indent
-\textbf{so that} I get to follow my \textbf{shopping progress} and visualize the \textbf{quantity of selected products}, their \textbf{individual prices}, and their \textbf{total price}.
-\end{userStory}
-
-\begin{userStory}[Time of Collection Selection]
-\textbf{As a {\color{green} client} user}, I would like to choose \textbf{when to collect my purchased products} from the available time slots,\\
-\indent
-\textbf{so that} I get to collect them \textbf{conveniently} without troubling my personal schedule.
-\end{userStory}
-
-\begin{userStory}[Purchase Deadline]
-\textbf{As a {\color{red} vendor} user}, I would like to impose specific \textbf{deadlines} on certain product orders,\\
-\indent
-\textbf{so that} I get to \textbf{customize} my \textbf{supply and demand parameters} while \textbf{processing pending orders} accordingly.
-\end{userStory}
-
-\begin{userStory}[Delayed Orders]
-\textbf{As a {\color{red} vendor} user}, I would like to offer my customers the chance to make \textbf{delayed orders} for certain \textbf{out-of-stock products},\\
-\indent
-\textbf{so that} I don't lose my share of the market when certain stocks of products are depleted.
-\end{userStory}
-
-\begin{userStory}[Order Validation]
-\textbf{As a {\color{red} vendor} user}, I would like to \textbf{manually} or \textbf{automatically validate purchase transactions},\\
-\indent
-\textbf{so that} I get to \textbf{customize} my \textbf{control} over the \textbf{transactions} according to my \textbf{products stocks}.
-\end{userStory}
-
-\subsubsection{Payment}
-\begin{userStory}[Payment Methods]
-\textbf{As a {\color{green} client} user}, I would like to have \textbf{secure online payment methods} through my \textbf{personal bank}/\texttt{PayPal} \textbf{account},\\
-\indent
-\textbf{so that} I \textbf{protect my financial credentials} and \textbf{complete my purchases reliably}.
-\end{userStory}
-
-\begin{userStory}[Digital Wallet]
-\textbf{As a {\color{green} client} user}, I would like to have a \textbf{digital wallet associated to my own personal account} that contains digital currency points I collect from my website activity,\\
-\indent
-\textbf{so that} I benefit from \textbf{reductions} while purchasing certain products, defined according to the \textbf{number of points} I have \textbf{collected} through my website activity.
-\end{userStory}
-
-\begin{userStory}[Vendor Automatic Money Transfer]
-\textbf{As a {\color{red} vendor} user}, I would like to have the \textbf{money} gained at the end of a transaction \textbf{transferred directly} into my bank/\texttt{Paypal} account,\\
-\indent
-\textbf{so that} I get to \textbf{update} my bank \textbf{balance automatically}.
-\end{userStory}
-
-\begin{userStory}[Receipt]
-\textbf{As a {\color{green} client}/{\color{red} vendor} user}, I would like to receive a \textbf{receipt} at the end of a \textbf{transaction} via \textbf{sms} and \textbf{email}, and have my \textbf{history of purchases/sales updated},\\
-\indent
-\textbf{so that} I get to keep \textbf{track} of my \textbf{purchases/sales} through \textbf{different media} for larger \textbf{accessibility} and \textbf{data integrity}.
-\end{userStory}
-
-\begin{userStory}[Purchase Cancellation \& Reimbursment Policy]
-\textbf{As a {\color{green} client} user}, I would like to have the possibility of \textbf{cancelling a purchase} within a \textbf{specific period} of its occurrence,\\
-\indent
-\textbf{so that} I would get a \textbf{full/partial reimbursement} following the faulty purchase.
-\end{userStory}
-
-%----------------------------------------------------------------------------------------
-%   DIAGRAMMES USE-CASE
-%----------------------------------------------------------------------------------------
-\section{Diagrammes \textit{use-case}}
 \subsection{Page d'accueil du site}
-Le diagramme \textit{use-case} correspondant aux \textit{user-stories} sur la page d'accueil du site est dans la figure \ref{fig:index_page_case_diagram}.
+\begin{userStory}[Création de compte]
+\textbf{En tant qu'utilisateur {\color{green}client}/{\color{red} fournisseur}}, je souhaite avoir mon \textbf{propre compte},\\
+\indent
+\textbf{dans le but de} visualiser le site selon mes \textbf{préférences} et avois accès à mon \textbf{historique d'achats}.
+\end{userStory}
+
+\begin{userStory}[Client/Fournisseur avec le même compte utilisateur]
+\textbf{En tant qu'utilisateur}, je souhaite avoir la possibilité de consulter le site en tant que \textbf{{\color{green}client acheteur}} et/ou \textbf{{\color{red} fournisseur}} (\textit{si besoin}),\\
+\indent
+\textbf{dans le but de} profiter du site en tant que consommateur et/ou producteur, sans besoin de me déconnecter de mon compte à chaque fois que je souhaite échanger entre les deux modes d'utilisation.
+\end{userStory}
+
+\begin{userStory}[Menu de navigation du pied de page]
+En tant qu'\textbf{utilisateur} \textbf{{\color{green} client}/{\color{red} fournisseur}}, je souhaite consulter les informations pertinentes au site depuis un \textbf{menu de navigation placé dans le pied de page},\\
+\indent
+\textbf{dans le but de} m'informer sur l'utilisation du site (\textbf{FAQ}), les \textbf{termes et conditions d'utilisation}, les \textbf{créateurs du site}, $\dots$.
+\end{userStory}
+
 \begin{figure}[!ht]
   \centering
   \begin{tikzpicture}
     \umlactor{User}
-    \umlactor[x=12, y=-3]{External Sign-up Platform}
     \umlactor[x=12, y=-1]{Database}
     \begin{umlsystem}[x=4, fill=red!10]{index page}
       \umlusecase{Sign-up}
-      \umlusecase[y=-2, width=2.5cm]{Sign-up via external plaftorm}
-      \umlusecase[y=-5]{Sign-in}
+      \umlusecase[y=-2]{Sign-in}
       \umlusecase[x=4, width=1.5cm]{Create database entry}
-      \umlusecase[x=4, y=-4, width=1.5cm]{Verify credentials}
-      \umlusecase[y=-7]{Footer menu}
+      \umlusecase[x=4, y=-3, width=1.5cm]{Verify credentials}
+      \umlusecase[y=-4]{Footer menu}
     \end{umlsystem}
     \umlassoc{User}{usecase-1}
     \umlassoc{User}{usecase-2}
-    \umlassoc{User}{usecase-3}
-    \umlassoc{User}{usecase-6}
-    \umlassoc{External Sign-up Platform}{usecase-2}
+    \umlassoc{User}{usecase-5}
+    \umlassoc{Database}{usecase-3}
     \umlassoc{Database}{usecase-4}
-    \umlassoc{Database}{usecase-5}
-    \umlinclude{usecase-1}{usecase-4}
+    \umlinclude{usecase-1}{usecase-3}
     \umlinclude{usecase-2}{usecase-4}
-    \umlinclude{usecase-3}{usecase-5}
+    \umlinclude{usecase-3}{usecase-4}
   \end{tikzpicture}
-  \caption{Use case diagram of index page functionalities.}
+  \caption{Diagramme de cas d'usage des fonctionnalités de la page d'accueil du site}
   \label{fig:index_page_case_diagram}
 \end{figure}
 
-\subsection{Page d'accueil des utilisateurs}
-Le diagramme \textit{use-case} correspondant aux \textit{user-stories} sur la page d'accueil des utilisateurs (client/vendeur) du site est dans la figure \ref{fig:home_page_use_case_diagram}
+\subsection{Page d'accueil de l'utilisateur}
+\begin{userStory}[Paramètres personnalisés]
+\textbf{En tant qu'utilisateur {\color{green}client}/{\color{red}fournisseur}}, je souhaite visualiser des informations sur ma \textbf{page d'accueil} concernant mes intérêts (produits, vendeurs, ruches) selon mes \textbf{préférences spécifiées} dans les \textbf{paramètres} de mon compte et l'\textbf{historique de mes achats/ventes}.\\
+\indent
+\textbf{dans le but d'}interagir avec des données pertinentes à \textbf{mes intérêts}, sans avoir besoin de toujours les rechercher moi-même, tout en prenant en compte mes \textbf{paramètres de confidentialité}.
+\end{userStory}
+
+\begin{userStory}[Résultats de recherche]
+\textbf{En tant qu'utilisateur {\color{green}client}/{\color{red}fournisseur}}, je souhaite visualiser des informations sur les produits/vendeurs/ruches dans les résultats de recherche,\\
+\indent
+\textbf{dans le but d'}avoir \textbf{suffisamment d'information} sur les \textbf{produits} avant de les acheter ou sur les \textbf{fournisseurs}/\textbf{ruches} pour les \textbf{consulter}.
+\end{userStory}
+
+\begin{userStory}[Paramètres de recherche]
+\textbf{En tant qu'utilisateur {\color{green}client}/{\color{red}fournisseur}}, je souhaite \textbf{trier} mes \textbf{résultats de recherche} selon des \textbf{paramètres}, tels que informations sur les stocks, date de récolte, date d'expiration, prix, proximité, popularité, fournisseur, catégorie, liste de produits similaires, $\dots$\\
+\indent
+\textbf{dans le but de personnaliser} mes \textbf{résultats de recherche} selon mes besoins.
+\end{userStory}
+
+\begin{userStory}[Ergonomie de recherche]
+\textbf{En tant qu'utilisateur {\color{green}client}/{\color{red}fournisseur}}, je souhaite avoir lors d'une recherche quelques \textbf{fonctionnalités} telles que la \textbf{complétion automatique}, la \textbf{mise en évidence}, les \textbf{animations}/\textbf{effets visuels}, $\dots$\\
+\indent
+\textbf{dans le but de} rendre ma recherche \textbf{plus rapide}, plus facile, et \textbf{plus ergonomique}.
+\end{userStory}
+
 \begin{figure}[!ht]
   \centering
   \begin{tikzpicture}
     \setcounter{tikzumlUseCaseNum}{0}
     \umlactor{User}
     \umlactor[y=-4]{Vendor}
-    \umlactor[x=9, y=-1]{Database}
+    \umlactor[x=10, y=-3]{Database}
     \begin{umlsystem}[x=4, fill=green!10]{home page}
-      \umlusecase[width=2cm]{Display Products, Hive Events}
-      \umlusecase[x=2, y=-3, width=2cm]{Display Stock/Hive Information}
-      \umlusecase[y=-6]{Search}
-      \umlusecase[y=-8]{Footer menu}
+      \umlusecase[x=1, width=3cm]{Display Products/Collection Events}
+      \umlusecase[x=1, y=-3, width=3cm]{Display Stock/Hive Information}
+      \umlusecase[x=1, y=-5]{Search}
+      \umlusecase[x=1, y=-7]{Footer menu}
     \end{umlsystem}
     \umlinherit{Vendor}{User}
     \umlextend{usecase-2}{usecase-1}
@@ -375,22 +223,20 @@ Le diagramme \textit{use-case} correspondant aux \textit{user-stories} sur la pa
     \umlassoc{Database}{usecase-1}
     \umlassoc{Database}{usecase-3}
   \end{tikzpicture}
-  \caption{Use case diagram of Home Page functionalities.}
+  \caption{Diagramme de cas d'usage des fonctionnalités de la page d'accueil de l'utilisateur}
   \label{fig:home_page_use_case_diagram}
 \end{figure}
 
-\subsection{Recherche}
-Le diagramme \textit{use-case} correspondant aux \textit{user-stories} sur la recherche au sein du site est dans la figure \ref{fig:search_use_case_diagram}
 \begin{figure}[!ht]
   \centering
   \begin{tikzpicture}
     \setcounter{tikzumlUseCaseNum}{0}
-    \umlactor[x=-1]{User}
-    \umlactor[x=10]{Database}
-    \begin{umlsystem}[x=4, fill=green!10]{home page}
-      \umlusecase{Search}
-      \umlusecase[x=-2, y=-3, width=2cm]{Choose Search Parameters}
-      \umlusecase[x=2, y=-3, width=2cm]{Activate Search Features}
+    \umlactor[x=-5]{User}
+    \umlactor[x=7]{Database}
+    \begin{umlsystem}[x=2, fill=green!10]{home page}
+      \umlusecase[x=-1]{Search}
+      \umlusecase[x=-3.5, y=-3, width=2cm]{Choose Search Parameters}
+      \umlusecase[x=1.5, y=-3, width=2cm]{Activate Search Features}
     \end{umlsystem}
     \umlextend[name=ext]{usecase-2}{usecase-1}
     \umlextend[name=ext2]{usecase-3}{usecase-1}
@@ -400,15 +246,22 @@ Le diagramme \textit{use-case} correspondant aux \textit{user-stories} sur la re
     \umlassoc{Database}{usecase-1}
     \umlassoc{Database}{usecase-2}
     \umlassoc{Database}{usecase-3}
-    \umlnote[x=-2, y=-6]{ext-1}{default parameters, else check what parameters to use}
-    \umlnote[x=10, y=-6]{ext2-1}{activated by default, else disable in settings}
+    \umlnote[x=-5.5, y=-2.8, width=2.5cm]{ext-1}{default parameters, else check what parameters to use}
+    \umlnote[x=7.5, y=-2.8, width=2.5cm]{ext2-1}{activated by default, else disable in settings}
   \end{tikzpicture}
-  \caption{Use case diagram of searching functionality.}
+  \caption{Diagramme de cas d'usage des fonctionnalités de recherche}
   \label{fig:search_use_case_diagram}
 \end{figure}
 
+\newpage
+
 \subsection{Communication}
-Les diagrammes \textit{use-case} correspondant aux \textit{user-stories} sur la communication au sein du site sont respectivement dans les figures \ref{fig:instant_messaging_use_case_diagram} et \ref{fig:email_use_case_diagram}.
+\begin{userStory}[Chat Client $\leftrightarrows$ Fournisseur ou Fournisseur $\leftrightarrows$ Client/Fournisseur]
+\textbf{En tant qu'utilisateur}, je souhaite communiquer avec d'autres \textbf{utilisateurs}\footnote{il n'y a pas de chat entre deux utilisateurs {\color{green}clients}} (\textbf{{\color{green}client}} $\leftrightarrows$ \textbf{{\color{red}fournisseur}} ou \textbf{{\color{red}fournisseur}} $\leftrightarrows$ \textbf{{\color{green}client}/{\color{red}fournisseur}} via un \textbf{environnement privé de chat},\\
+\indent
+\textbf{dans le but de} me renseigner davantage sur certains produits, ruches, $\dots$
+\end{userStory}
+
 \begin{figure}[!ht]
   \centering
   \begin{tikzpicture}
@@ -421,49 +274,47 @@ Les diagrammes \textit{use-case} correspondant aux \textit{user-stories} sur la 
     \umlassoc{User}{usecase-1}
     \umlassoc{Vendor}{usecase-1}
   \end{tikzpicture}
-  \caption{Use case diagram of private instant messaging between client/vendor and vendor.}
+  \caption{Diagramme de cas d'usage de la fonctionnalité de chat}
   \label{fig:instant_messaging_use_case_diagram}
 \end{figure}
 
-\begin{figure}[!ht]
-  \centering
-  \begin{tikzpicture}
-    \setcounter{tikzumlUseCaseNum}{0}
-    \umlactor{User}
-    \umlactor[x=7]{Vendor}
-    \umlactor[x=4, y=3]{Email Service Interface}
-    \umlactor[x=14]{Email Database}
-    \begin{umlsystem}[x=4, fill=green!10]{home page}
-      \umlusecase{Send email}
-    \end{umlsystem}
-    \begin{umlsystem}[x=10, fill=blue!10]{email system}
-      \umlusecase{Receive emails}
-      \umlusecase[y=-2]{Check inbox}
-    \end{umlsystem}
-    \umlassoc{User}{usecase-1}
-    \umlassoc{Email Service Interface}{usecase-1}
-    \umlassoc{Email Service Interface}{usecase-2}
-    \umlassoc{Vendor}{usecase-3}
-    \umlassoc{Email Database}{usecase-2}
-    \umlassoc{Email Database}{usecase-3}
-  \end{tikzpicture}
-  \caption{Use case diagram of an email functionality between client/vendor and vendor.}
-  \label{fig:email_use_case_diagram}
-\end{figure}
+\subsection{Produits \& Logistiques}
+\subsubsection{Gestion de Produits}
+\begin{userStory}[Avis sur les produits]
+\textbf{En tant qu'utilisateur}, je souhaite \textbf{consulter des avis} (\textbf{{\color{green}client}/{\color{red}fournisseur}}) sur les \textbf{produits} et d'en \textbf{rédiger} (\textbf{{\color{green}client} uniquement}),\\
+\indent
+\textbf{dans le but d'}avoir plus d'\textbf{informations sur ces produits avant de les acheter} et \textbf{évaluer mon expérience} pour la transmettre aux prochains acheteurs.
+\end{userStory}
 
-\subsection{Produits}
-Les diagrammes \textit{use-case} correspondant aux \textit{user-stories} sur les produits sont respectivement dans les figures \ref{fig:product_review_use_case_diagram} et \ref{fig:product_management_use_case_diagram}.
+\begin{userStory}[Définition et stockage de produits]
+\textbf{En tant qu'utilisateur {\color{red}fournisseur}}, je souhaite \textbf{définir} ma \textbf{séléction de produits} selon des \textbf{informations caractéristiques} à fournir dans des \textbf{formulaires},\\
+\indent
+\textbf{dans le but de} maximiser la transparence de mes produits pour gagner la fidelité de mes clients, tout en \textbf{gérant} (création, modification, ajout, suppression) ma sélection à travers le site.
+\end{userStory}
+
+\begin{userStory}[Offres de Paniers]
+\textbf{En tant qu'utilisateur {\color{red}fournisseur}}, je souhaite créer des \textbf{offres de paniers de produits différents},\\
+\indent
+\textbf{dans le but de} diversifier ma stratégie de marketing et augmenter mes profits.
+\end{userStory}
+
+\begin{userStory}[Rapports de suivi périodiques]
+\textbf{En tant qu'utilisateur {\color{red}fournisseur}}, je souhaite consulter \textbf{périodiquement} des \textbf{rapports de suivi} sur la progression de mes \textbf{transactions}, mes \textbf{produits}, et mes \textbf{stocks},\\
+\indent
+\textbf{dans le but d'}analyser le marché et définir par conséquent ma méthodologie d'offre et de demande.
+\end{userStory}
+
 \begin{figure}[!ht]
   \centering
   \begin{tikzpicture}
     \setcounter{tikzumlUseCaseNum}{0}
     \umlactor{User}
-    \umlactor[y=-4]{Client}
-    \umlactor[x=8, y=-1]{Database}
+    \umlactor[y=-3]{Client}
+    \umlactor[x=8]{Database}
     \begin{umlsystem}[x=4, fill=green!10]{home page}
       \umlusecase{Search}
-      \umlusecase[y=-3, width=2cm]{Search for Products}
-      \umlusecase[y=-6]{Review Products}
+      \umlusecase[y=-2, width=2cm]{Search for Products}
+      \umlusecase[y=-4]{Review Products}
     \end{umlsystem}
     \umlinherit{Client}{User}
     \umlextend{usecase-2}{usecase-1}
@@ -472,9 +323,9 @@ Les diagrammes \textit{use-case} correspondant aux \textit{user-stories} sur les
     \umlassoc{Client}{usecase-3}
     \umlassoc{Database}{usecase-1}
     \umlassoc{Database}{usecase-3}
-    \umlnote[x=9, y=-6]{ext-1}{Only if the user is a client having already purchased the product}
+    \umlnote[x=9, y=-3]{ext-1}{Only if the user is a client having already purchased the product}
   \end{tikzpicture}
-  \caption{Use case diagram of product reviewing functionality.}
+  \caption{Diagramme de cas d'usage de la fonctionnalité des avis sur les produits}
   \label{fig:product_review_use_case_diagram}
 \end{figure}
 
@@ -482,119 +333,81 @@ Les diagrammes \textit{use-case} correspondant aux \textit{user-stories} sur les
   \centering
   \begin{tikzpicture}
     \setcounter{tikzumlUseCaseNum}{0}
-    \umlactor{Vendor}
+    \umlactor[x=-1, y=-1]{Vendor}
     \umlactor[x=8, y=-1]{Database}
-    \begin{umlsystem}[x=4, fill=green!10]{home page}
+    \begin{umlsystem}[x=3, fill=green!10]{home page}
       \umlusecase[width=3cm]{Add/Delete/Modify Products}
-      \umlusecase[y=-3, width=3cm]{Add/Delete/Modify Baskets}
-      \umlusecase[y=-6]{Check Stocks}
-      \umlusecase[y=-9]{Check Reports}
+      \umlusecase[y=-2.5, width=3cm]{Add/Delete/Modify Baskets}
+      \umlusecase[y=-4.5]{Check Stocks}
+      \umlusecase[y=-6.5]{Check Reports}
     \end{umlsystem}
     \umlextend[name=ext]{usecase-2}{usecase-1}
     \umlextend{usecase-4}{usecase-3}
-    \umlassoc{User}{usecase-1}
-    \umlassoc{User}{usecase-2}
-    \umlassoc{User}{usecase-3}
-    \umlassoc{User}{usecase-4}
+    \umlassoc{Vendor}{usecase-1}
+    \umlassoc{Vendor}{usecase-2}
+    \umlassoc{Vendor}{usecase-3}
+    \umlassoc{Vendor}{usecase-4}
     \umlassoc{Database}{usecase-1}
     \umlassoc{Database}{usecase-2}
     \umlassoc{Database}{usecase-3}
     \umlassoc{Database}{usecase-4}
     \umlnote[x=-2, y=-4]{ext-1}{Products have to exist in the database prior to the introduction of baskets}
   \end{tikzpicture}
-  \caption{Use case diagram of product management functionality.}
+  \caption{Diagramme de cas d'usage sur les fonctionnalités de gestion de produits.}
   \label{fig:product_management_use_case_diagram}
 \end{figure}
 
-\subsection{Commandes \& Paiement}
-Les diagrammes \textit{use-case} correspondant aux \textit{user-stories} sur les commandes et paiements sont respectivement dans les figures \ref{fig:order_payment_client_use_case_diagram} et \ref{fig:order_payment_vendor_use_case_diagram}.
-\begin{figure}[!ht]
-  \centering
-  \begin{tikzpicture}
-    \setcounter{tikzumlUseCaseNum}{0}
-    \umlactor{Client}
-    \umlactor[y=-4]{Database}
-    \umlactor[x=14, y=-6.2]{Vendor User Database}
-    \umlactor[x=14, y=-11]{Money Payment Platform}
-    \umlactor[x=8, y=-14]{Bill Reception Platform}
-    \umlactor[x=4.5, y=-14]{Bank/PayPal}
-    \begin{umlsystem}[x=4, fill=green!10]{client home page}
-      \umlusecase[width=2cm] {Add Items to Shopping Cart} %1
-      \umlusecase[x=5, width=2cm]{Delete Items from Shopping Cart} %2
-      \umlusecase[x=3.5, y=-3, width=2cm]{Choose Time of Collection} %3
-      \umlusecase[x=5, y=-6, width=3cm]{Choose Payment Method} %4
-      \umlusecase[x=5, y=-9, width=3cm]{Get Reductions from Wallet Points} %5
-      \umlusecase[y=-12]{Check Wallet} %6
-      \umlusecase[y=-9, width=3cm]{Checkout from Payment} %7
-      \umlusecase[y=-6, width=3cm]{Update Purchases' History} %8
-      \umlusecase[x=5, y=-12, width=3cm]{Receive Bill} %9
-    \end{umlsystem}
-    \begin{umlsystem}[x=14.2, fill=red!10]{vendor home page}
-      \umlusecase[width=1.5cm]{Send a Bill} %10
-    \end{umlsystem}
-    \umlextend{usecase-2}{usecase-1}
-    \umlextend{usecase-5}{usecase-4}
-    \umlinclude{usecase-1}{usecase-3}
-    \umlinclude{usecase-3}{usecase-4}
-    \umlinclude{usecase-7}{usecase-8}
-    \umlinclude[pos stereo=0.2]{usecase-9}{usecase-8}
-    \umlassoc{Client}{usecase-1}
-    \umlassoc{Client}{usecase-6}
-    \umlassoc{Money Payment Platform}{usecase-4}
-    \umlHVassoc{Money Payment Platform}{usecase-7}
-    \umlassoc{Vendor User Database}{usecase-7}
-    \umlassoc{Vendor User Database}{usecase-9}
-    \umlassoc[name=send]{Vendor User Database}{usecase-10}
-    \umlassoc{Bill Reception Platform}{usecase-9}
-    \umlassoc{Bank/PayPal}{usecase-9}
-    \umlassoc{Database}{usecase-8}
-    \umlnote[x=12, y=-3]{send-1}{only if transaction validated by vendor}
-  \end{tikzpicture}
-  \caption{Use case diagram of Order and Payment functionalities viewed from the client user side.}
-  \label{fig:order_payment_client_use_case_diagram}
-\end{figure}
+\newpage
 
-\begin{figure}[!ht]
-  \centering
-  \begin{tikzpicture}
-    \setcounter{tikzumlUseCaseNum}{0}
-    \umlactor{Vendor}
-    \umlactor[x=13, y=-2]{Database}
-    \umlactor[y=-13]{Client User Database}
-    \umlactor[x=13, y=-11]{Bill Reception Platform}
-    \umlactor[x=4.5, y=-13]{Bank/PayPal}
-    \begin{umlsystem}[x=4, fill=red!10]{vendor home page}
-      \umlusecase[width=2cm]{Check Stocks}
-      \umlusecase[x=5, width=2cm]{Allow Delayed Orders}
-      \umlusecase[x=3.5, y=-3, width=3cm]{Set Purchase Deadline}
-      \umlusecase[x=4, y=-6, width=3cm]{Check Pending Orders}
-      \umlusecase[y=-8, width=2cm]{Process Pending Orders}
-      \umlusecase[x=5, y=-8, width=2cm]{Send Bill}
-      \umlusecase[x=4.5, y=-11, width=2cm]{Update Sales' History}
-    \end{umlsystem}
-    \umlextend{usecase-2}{usecase-1}
-    \umlextend[name=deadline]{usecase-3}{usecase-4}
-    \umlextend[name=checkPending1]{usecase-4}{usecase-5}
-    \umlinclude{usecase-5}{usecase-6}
-    \umlinclude{usecase-6}{usecase-7}
-    \umlassoc{Vendor}{usecase-1}
-    \umlassoc[name=checkPending2]{Vendor}{usecase-4}
-    \umlassoc[name=process]{Vendor}{usecase-5}
-    \umlassoc{Database}{usecase-2}
-    \umlassoc{Database}{usecase-3}
-    \umlassoc{Database}{usecase-4}
-    \umlassoc{Database}{usecase-7}
-    \umlassoc{Bill Reception Platform}{usecase-6}
-    \umlassoc{Bank/PayPal}{usecase-6}
-    \umlassoc{Client User Database}{usecase-6}
-    \umlnote[x=-1, y=-5]{checkPending1-1}{only if validating transactions is set to manual}
-    \umlnote[x=-1, y=-5]{checkPending2-1}{only if validating transactions is set to manual}
-    \umlnote[x=-1, y=-8]{process-1}{only if validating transactions is set to automatic}
-    \umlnote[x=-1, y=-11]{deadline-1}{according to the number of pending orders}
-  \end{tikzpicture}
-  \caption{Use case diagram of Order and Payment functionalities viewed from the vendor user side.}
-  \label{fig:order_payment_vendor_use_case_diagram}
-\end{figure}
+\subsubsection{Logistiques}
+\begin{userStory}[Politique de rupture des stocks]
+\textbf{En tant qu'utilisateur {\color{red}fournisseur}}, je souhaite \textbf{maximiser mon taux de vente} tout en ayant le moindre de produits disponibles dans mes stocks (\textbf{quasi-rupture}),\\
+\indent
+\textbf{dans le but d'}avoir plus de profits et \textbf{le moindre surplus de produits possible}.
+\end{userStory}
+
+\begin{userStory}[Politique de partage intracellulaire dans une ruche]
+\textbf{En tant qu'utilisateur {\color{red}fournisseur}}, je souhaite avoir la possibilité d'\textbf{échanger une portion de mes produits avec des vendeurs voisins}\footnote{fournisseurs d'une même ruche mais également faisant partie chacun d'autres ruches}, en offrant mes produits dans leurs ruches et inversement,\\
+\indent
+\textbf{dans le but d'}avoir des bénéfices mutuelles provenant d'une extension du marché et par conséquent d'une surface plus vaste de revenue potentiel.
+\end{userStory}
+
+\begin{userStory}[Système de collecte dynamique]
+\textbf{En tant qu'utilisateur {\color{green}client}}, je souhaite avoir la possibilité de \textbf{collecter mes produits achetés dynamiquement}\footnote{depuis un endroit dans une ruche à proximité d'une des marches effectuées par les fournisseurs lors d'un évenement de collete},\\
+\indent
+\textbf{dans le but de} collecter mes produits achetés \textbf{convenablement} sans besoin d'être présent pendant les évenements de collecte\footnote{indépendamment de l'endroit et du temps de déroulement de la collecte}.
+\end{userStory}
+
+\subsection{Commande}
+Dans cette section, on entend par \og \textit{commande} \fg , le fait qu'un client puisse réserver des produits qu'il ira collecter lors d'un évènement de collecte de la ruche correspondante. En premier temps, dans la version de base du site web, le règlement des commandes sera mis en oeuvre physiquement entre les clients et les fournisseurs, indépendamment du site.
+
+Toutefois, la notion de paiement en ligne et toutes ses répercussions fonctionnelles, déjà incluses dans notre modèle (cf. Section \ref{sec:perspectives} des \textbf{Perspectives}), ne seront mises en oeuvre que dans les prochaines versions du site, une fois la version de base établie.
+
+Ainsi, voici les \textit{user-stories} concernant la gestion des commandes dans la version de base du site.
+
+\begin{userStory}[Chariot]
+\textbf{En tant qu'utilisateur {\color{green}client}}, je souhaite ajouter les produits que je désire acheter dans un \textbf{chariot virtuelle},\\
+\indent
+\textbf{dans le but de} suivre la \textbf{progression de mes achats} et de visualiser la \textbf{quantité des produits achetés}, leurs \textbf{prix unitaires} et leur \textbf{prix total}.
+\end{userStory}
+
+\begin{userStory}[Choix du créneau de collecte]
+\textbf{En tant qu'utilisateur {\color{green}client}}, je souhaite avoir la possibilité de choisir le \textbf{créneau de collecte de mes produits achetés}\footnote{selon ce qui est disponible},\\
+\indent
+\textbf{dans le but de} collecter mes produits \textbf{convenablement} et flexiblement par rapport à mon planning personnel.
+\end{userStory}
+
+\begin{userStory}[Validation de commandes]
+\textbf{En tant qu'utilisateur {\color{red}fournisseur}}, je souhaite avoir la possibilité de \textbf{valider automatiquement ou manuellement les commandes} en cours,\\
+\indent
+\textbf{dans le but de personnaliser} mon \textbf{contrôle} sur le déroulement des \textbf{transactions} selon le status de mes \textbf{stocks}.
+\end{userStory}
+
+\begin{userStory}[Reçu (version de base)]
+\textbf{En tant qu'utilisateur {\color{red}fournisseur}}, je souhaite avoir un \textbf{reçu de réservation} une fois qu'une \textbf{réservation de mes produits} est effectuée \textbf{en ligne} et que je donnerai au \textbf{{\color{green}client} concerné} une fois les \textbf{produits collectés},\\
+\indent
+\textbf{dans le but de suivre l'historique des réservations} pour plus d'\textbf{intégrité}.
+\end{userStory}
 %----------------------------------------------------------------------------------------
 %   SD PROPOSÉE (CELLULE ET RUCHE)
 %----------------------------------------------------------------------------------------
@@ -666,7 +479,7 @@ Pour la mise en oeuvre du site web, on prévoit utiliser, à part \textbf{HTML} 
 \begin{enumerate}
   \item{\textbf{JavaScript} et des \textbf{\textit{frameworks} pertinents} tels que \textbf{JQuery} et \textbf{Angular}, utilisés pour le développement \textit{front-end} du site web.}
   \item{le \textbf{\textit{framework} Bootstrap} pour faire des pages responsives adaptables aux dispositifs tels que smartphones, tablets, laptops et grand écrans.}
-  \item{\textbf{MySQL} pour gérer la base de données du site : on a opté pour une BD relationnel vu le grand nombre d'associations reliant les différentes entités du site.}
+  \item{\textbf{MySQL} pour gérer la base de données du site : on a opté pour une base de données relationnelle vu le grand nombre d'associations reliant les différentes entités du site.}
   \item{\textbf{PHP} : suite au choix de \textbf{MySQL}, \textbf{PHP} (ainsi que les \textbf{\textit{frameworks}} basés dessus et \textbf{ORM}) est l'un des langages côté serveur les plus adaptés et les plus utilisés pour la manipulation d'un SGBD relationnel.}
 \end{enumerate}
 
@@ -677,14 +490,159 @@ L'utilisation des \textbf{API} est aussi contemplée, notamment pour l'implémen
 %   PERSPECTIVES
 %----------------------------------------------------------------------------------------
 \section{Perspectives}
-En plus des fonctionnalités que nous avons jugées être essentielles au projet et que nous prévoyons donc d'implémenter, nous avons pensé à des fonctionnalités supplémentaires que nous pourrions ajouter à notre projet une fois celles de base établies.
+\label{sec:perspectives}
+En plus des fonctionnalités que nous avons jugées être essentielles au projet et que nous prévoyons donc d'implémenter, nous avons pensé à des fonctionnalités supplémentaires que nous pourrions ajouter à notre projet une fois celles de base établies. En effet, plusieurs extensions sont possibles afin de proposer aux utilisateurs du site un choix plus diversifié.
 
-En effet, plusieurs extensions sont possibles afin de proposer aux utilisateurs du site un choix plus diversifié.
-Parmi celles-ci nous avons pensé au fait de proposer aux clients réalisant des achats sur le site d'avoir la possibilité de régler, en plus qu'avec un paiement bancaire, de pouvoir recourir à des services de paiements en ligne telles que Paypal,
-voire même d'offrir la possibilité de payer en Crypto-monnaie dans une version plus développée du projet.
+Parmi celles-ci nous avons pensé au fait de proposer aux clients réalisant des achats sur le site d'avoir la possibilité de régler, en plus qu'avec un paiement bancaire, de pouvoir recourir à des services de paiements en ligne telles que Paypal, voire même d'offrir la possibilité de payer en Crypto-monnaie dans une version plus développée du projet.
 
-Outre cela, nous pourrions également proposer plusieurs versions de notre site, où chaque version concerne un pays particulier et donc dans une langue précise.\\
-Tout cela, dans le but de pouvoir déployer le site ainsi que son concept à l'international.
+En plus, nous pourrions également proposer plusieurs versions de notre site, où chaque version concerne un pays particulier et donc dans une langue précise. Tout cela, dans le but de pouvoir déployer le site ainsi que son concept à l'international.
+
+D'autre part, nous avons formulé quelques \textit{user-stories} décrivant des fonctionnalités supplémentaires que nous souhaiterons ajouter aux prochaines versions du site, une fois la version de base établie et finalisée. Nous les expliciterons ainsi par la suite.
+%----------------------------------------------------------------------------------------
+%   USER-STORIES DE FONCTIONNALITÉ SUPPLÉMENTAIRES
+%----------------------------------------------------------------------------------------
+\subsection{\textit{User-Stories} des fonctionnalités supplémentaires}
+\begin{userStory}[Création de Compte via des Plateformes Externes]
+\textbf{En tant qu'utilisateur {\color{green}client}/{\color{red}fournisseur}}, je souhaite être capable de \textbf{créer un compte personnel via mon compte} \texttt{Facebook}/\texttt{Google},\\
+\indent
+\textbf{dans le but de} ne pas \textbf{remplir des formulaires} et \textbf{synchroniser mes données} entre les différentes plateformes hébergeant mes comptes personnels en ligne.
+\end{userStory}
+
+\begin{userStory}[Email Client $\leftrightarrows$ Fournisseur ou Fournisseur $\leftrightarrows$ Client/Fournisseur]
+\textbf{En tant qu'utilisateur}, je souhaite communiquer avec d'autres \textbf{utilisateurs}\footnote{il n'y a pas d'emails entre deux utilisateurs {\color{green}clients}} (\textbf{{\color{green}client}} $\leftrightarrows$ \textbf{{\color{red}fournisseur}} ou \textbf{{\color{red}fournisseur}} $\leftrightarrows$ \textbf{{\color{green}client}/{\color{red}fournisseur}} via \textbf{email},\\
+\indent
+\textbf{dans le but d'}avoir une autre manière de les contacter \textbf{au plus tôt possible} au cas où il ne consulte pas régulièrement son compte utilisateur.
+\end{userStory}
+
+\begin{userStory}[Notifications sur les évenements de collecte]
+\textbf{En tant qu'utilisateur {\color{green}client}/{\color{red}fournisseur}}, je souhaite \textbf{recevoir des notifications} sur les \textbf{événements de collecte à proximité}, que je soit participant aux événements ou pas,\\
+\indent
+\textbf{dans le but de} rester à jour par rapport aux \textbf{mouvements} des ruches à proximité.
+\end{userStory}
+
+\begin{userStory}[Date limite d'achat de produits]
+\textbf{En tant qu'utilisateur {\color{red}fournisseur}}, je souhaite imposer des \textbf{dates limites d'achat} sur certains produits selon des conditions sur leurs quantités en stock,\\
+\indent
+\textbf{dans le but de personnaliser} mes \textbf{paramètres d'offre et demande} de produits tout en \textbf{traitant les commandes en cours}.
+\end{userStory}
+
+\begin{userStory}[Commandes retardées]
+\textbf{En tant qu'utilisateur {\color{red}fournisseur}}, je souhaite offrir aux clients la chance d'effectuer des \textbf{commandes retardées} sur certains \textbf{produits en rupture de stock},\\
+\indent
+\textbf{dans le but de} garder mes portions du marché quand certains produits sont en rupture de stock.
+\end{userStory}
+
+\begin{userStory}[Méthodes de paiement]
+\textbf{En tant qu'utilisateur {\color{green}client}}, je souhaite avoir des \textbf{méthodes de paiement sécurisées} à travers mon \textbf{compte bancaire}/\texttt{PayPal},\\
+\indent
+\textbf{dans le but de protéger mes identifiants financiers} et \textbf{compléter fiablement mes transactions}.
+\end{userStory}
+
+\begin{userStory}[Portefeuille virtuel]
+\textbf{En tant qu'utilisateur {\color{green}client}}, je souhaite avoir un \textbf{portefeuille virtuel associé à mon compte utilisateur} et contenant des points de fidélité que je collecte à travers mon \textbf{activité sur le site},\\
+\indent
+\textbf{dans le but d'}avoir des \textbf{réductions} sur certains produits, définies par rapport aux \textbf{points de fidélité collectés}.
+\end{userStory}
+
+\begin{userStory}[Reçu]
+\textbf{En tant qu'utilisateur {\color{green}client}/{\color{red}fournisseur}}, je souhaite recevoir un \textbf{reçu} à la fin de chaque \textbf{transaction} via \textbf{sms} et/ou \textbf{email}, tout en \textbf{mettant à jour l'historique de mes achats/ventes},\\
+\indent
+\textbf{dans le but de suivre l'historique de mes achats/ventes} à travers \textbf{différents médias} pour plus d'\textbf{accesibilité} et d'\textbf{intégrité}.
+\end{userStory}
+
+\begin{userStory}[Purchase Cancellation \& Reimbursment Policy]
+\textbf{En tant qu'utilisateur {\color{green}client}}, je souhaite avoir la possibilité d'\textbf{annuler un achat} dans un \textbf{délai spécifique} suivant la transaction,\\
+\indent
+\textbf{dans le but d'}être \textbf{remboursé partiellement/complétement} suite à la transaction défectueuse.
+\end{userStory}
+
+\begin{figure}[!ht]
+  \centering
+  \begin{tikzpicture}
+    \setcounter{tikzumlUseCaseNum}{0}
+    \umlactor[x=-2]{Client}
+    \umlactor[x=-2, y=-4]{Database}
+    \umlactor[x=11, y=-6.2]{Vendor User Database}
+    \umlactor[x=11, y=-11]{Money Payment Platform}
+    \umlactor[x=6, y=-14]{Bill Reception Platform}
+    \umlactor[x=1, y=-14]{Bank/PayPal}
+    \begin{umlsystem}[x=1, fill=green!10]{client home page}
+      \umlusecase[width=2cm] {Add Items to Shopping Cart} %1
+      \umlusecase[x=5, width=2cm]{Delete Items from Shopping Cart} %2
+      \umlusecase[x=2, y=-3, width=3cm]{Choose Time of Collection} %3
+      \umlusecase[x=5, y=-5, width=3cm]{Choose Payment Method} %4
+      \umlusecase[x=5, y=-9, width=3cm]{Get Reductions from Wallet Points} %5
+      \umlusecase[y=-12]{Check Wallet} %6
+      \umlusecase[y=-9, width=3cm]{Checkout from Payment} %7
+      \umlusecase[y=-5, width=3cm]{Update Purchases' History} %8
+      \umlusecase[x=5, y=-12, width=3cm]{Receive Bill} %9
+    \end{umlsystem}
+    \begin{umlsystem}[x=11.2, fill=red!10]{vendor home page}
+      \umlusecase[width=1.5cm]{Send a Bill} %10
+    \end{umlsystem}
+    \umlextend{usecase-2}{usecase-1}
+    \umlextend{usecase-5}{usecase-4}
+    \umlinclude{usecase-1}{usecase-3}
+    \umlinclude{usecase-3}{usecase-4}
+    \umlinclude{usecase-7}{usecase-8}
+    \umlinclude[pos stereo=0.2]{usecase-9}{usecase-8}
+    \umlassoc{Client}{usecase-1}
+    \umlassoc{Client}{usecase-6}
+    \umlassoc{Money Payment Platform}{usecase-4}
+    \umlHVassoc{Money Payment Platform}{usecase-7}
+    \umlassoc{Vendor User Database}{usecase-7}
+    \umlassoc{Vendor User Database}{usecase-9}
+    \umlassoc[name=send]{Vendor User Database}{usecase-10}
+    \umlassoc{Bill Reception Platform}{usecase-9}
+    \umlassoc{Bank/PayPal}{usecase-9}
+    \umlassoc{Database}{usecase-8}
+    \umlnote[x=9, y=-3]{usecase-10}{only if transaction validated by vendor}
+  \end{tikzpicture}
+  \caption{Diagramme de cas d'usage des fonctionnalités de la gestion des commandes et du paiement du point de vue du client}
+  \label{fig:order_payment_client_use_case_diagram}
+\end{figure}
+
+\begin{figure}[!ht]
+  \centering
+  \begin{tikzpicture}
+    \setcounter{tikzumlUseCaseNum}{0}
+    \umlactor{Vendor}
+    \umlactor[x=12, y=-2]{Database}
+    \umlactor[y=-13]{Client User Database}
+    \umlactor[x=12, y=-11]{Bill Reception Platform}
+    \umlactor[x=4.5, y=-13]{Bank/PayPal}
+    \begin{umlsystem}[x=4, fill=red!10]{vendor home page}
+      \umlusecase[width=2cm]{Check Stocks}
+      \umlusecase[x=5, width=2cm]{Allow Delayed Orders}
+      \umlusecase[x=2.6, y=-3, width=3cm]{Set Purchase Deadline}
+      \umlusecase[x=4, y=-6, width=3cm]{Check Pending Orders}
+      \umlusecase[y=-8, width=2cm]{Process Pending Orders}
+      \umlusecase[x=5, y=-8, width=2cm]{Send Bill}
+      \umlusecase[x=4.5, y=-11, width=2cm]{Update Sales' History}
+    \end{umlsystem}
+    \umlextend{usecase-2}{usecase-1}
+    \umlextend[name=deadline]{usecase-3}{usecase-4}
+    \umlextend[name=checkPending1]{usecase-4}{usecase-5}
+    \umlinclude{usecase-5}{usecase-6}
+    \umlinclude{usecase-6}{usecase-7}
+    \umlassoc{Vendor}{usecase-1}
+    \umlassoc[name=checkPending2]{Vendor}{usecase-4}
+    \umlassoc[name=process]{Vendor}{usecase-5}
+    \umlassoc{Database}{usecase-2}
+    \umlassoc{Database}{usecase-3}
+    \umlassoc{Database}{usecase-4}
+    \umlassoc{Database}{usecase-7}
+    \umlassoc{Bill Reception Platform}{usecase-6}
+    \umlassoc{Bank/PayPal}{usecase-6}
+    \umlassoc{Client User Database}{usecase-6}
+    \umlnote[x=-0.5, y=-5]{checkPending1-1}{only if validating transactions is set to manual}
+    \umlnote[x=-0.5, y=-5]{checkPending2-1}{only if validating transactions is set to manual}
+    \umlnote[x=-0.5, y=-8]{process-1}{only if validating transactions is set to automatic}
+    \umlnote[x=-0.5, y=-11]{deadline-1}{according to the number of pending orders}
+  \end{tikzpicture}
+  \caption{Diagramme de cas d'usage des fonctionnalités de la gestion des commandes et du paiement du point de vue du fournisseur}
+  \label{fig:order_payment_vendor_use_case_diagram}
+\end{figure}
 %----------------------------------------------------------------------------------------
 %   BIBLIOGRAPHIE
 %----------------------------------------------------------------------------------------
