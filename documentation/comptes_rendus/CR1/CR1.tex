@@ -416,27 +416,80 @@ Afin de pouvoir optimiser la logistique et la redistribution des produits entre 
 
 \subsection{Définitions et notations}
 \begin{description}
-  \item[$V$]{ensemble des fournisseurs.}
-  \item[$Cl$]{ensemble des clients.}
-  \item[$C$]{\textbf{opérateur} appliqué à $v \in V$ désignant une \textbf{cellule}, ç-à-d un \textbf{cercle} dont le centre est le point représentant les coordonnées du fournisseur $v$ et dont le rayon est la distance maximale en \textbf{km} qu'il souhaite parcourir pour rendre ces produits à un point de collecte.}
+  \item[$\textbf{V}$]{ensemble des fournisseurs.}
+  \item[$\textbf{C}$]{ensemble des clients.}
+  \item[$\pi_v$]{\textbf{opérateur} appliqué à $v \in V$ désignant une \textbf{cellule}, ç-à-d un \textbf{cercle} dont le centre est le point représentant les coordonnées du fournisseur $v$ et dont le rayon est la distance maximale en \textbf{km} qu'il souhaite parcourir pour rendre ces produits à un point de collecte.}
 \end{description}
 
 \begin{definition}[Ruche]
-Soit $v_1, v_2, \dots, v_n \in V^n$. Une \textbf{ruche} $R$ est composée d'un ensemble de fournisseurs dont les cellules s'intersectent et d'un point de collecte obtenu à partir d'une opération sur le polygone dont les sommets correspondent aux cellules de chaque vendeur.\\
-Autrement dit, $R = \{p, v_1, v_2, \dots, v_n \in V\; |\; C(v_1) \cap C(v_2) \cap \dots \cap C(v_n) \neq \varnothing\}$
+Soit $v_1, v_2, \dots, v_n \in V^n$. Une \textbf{ruche} $R = (p, V)$ est composée de :
+\begin{description}
+  \item[$\mathbf{V_R}$]{ensemble de fournisseurs dont les cellules s'intersectent;}
+  \item[$\mathbf{p}$]{un point de collecte obtenu à partir d'une opération\footnote{le choix du point est relatif aux fournisseurs de la ruche, étant indéterministe en soi} sur la zone d'intersection des cellules correspondantes aux vendeurs de $V$.}
+\end{description}
+Autrement dit, $R = \{p, \{v_1, v_2, \dots, v_n \in V\; |\; \pi_{v_1} \cap \pi_{v_2} \cap \dots \cap \pi_{v_2} \neq \varnothing\}\}$
 \end{definition}
 
-\begin{property}[Fournisseurs Voisins]
-Soit $R$ une ruche. Deux fournisseurs $v_1$ et $v_2$ sont dits \textbf{voisins} $\iff v_1 \in R\; \text{et}\; v_2 \in R$. On note $\texttt{Voisins}(v)$ l'\textbf{ensemble des voisins} d'un fournisseur $v \in V$.
+\begin{property}[Appartenance Simultanée]
+Soit $R_1 = \{p_1, V_1\},\; R_2 = \{p_2, V_2\},\; \dots R_k = \{p_k, V_k\}$ des ruches, et $v \in V$. $v$ peut appartenir à \textbf{plusieurs ruches}. Autrement dit, $v \in V_1\; || v \in V_2\; ||\; \dots\; || v \in V_k$.
 \end{property}
 
-\begin{constraint}[Chevauchement des ruches]
-Un fournisseur peut appartenir à plusieurs ruches $R_1, R_2, \dots, R_k$ simultanément.
-\end{constraint}
+\begin{definition}[Fournisseurs Voisins]
+Soit $R = \{p, V_R\}$ une ruche. Deux fournisseurs $v_1$ et $v_2$ sont dits \textbf{voisins} $\iff v_1 \in V_R\; \text{et}\; v_2 \in V_R$. On note $\texttt{Voisins}(v)$ l'\textbf{ensemble des voisins} d'un fournisseur $v$, contenant \textbf{tous les voisins} de \textbf{toutes les ruches} auxquelles il appartient.
+\end{definition}
 
 \begin{constraint}[Voisinage Imposé]
-Soient $v_1$ et $v_2$ deux fournisseurs tels que $v_2 \notin \texttt{Voisins}(v_1)$. S'il existe des fournisseurs $v_3$ et $v_4$ tels que $v_3, v_4 \in \texttt{Voisins}(v_1) \cap \texttt{Voisins}(v_2)$, alors il existe une ruche plus optimale contenant $v_1, v_2, v_3\; \text{et}\; v_4$ que les ruches séparées les contenant.
+Soient $v_1$ et $v_2$ deux fournisseurs tels que $v_2 \notin \texttt{Voisins}(v_1)$. S'il existe des fournisseurs $v_3$ et $v_4$ tels que $v_3, v_4 \in \texttt{Voisins}(v_1) \cap \texttt{Voisins}(v_2)$ et $v_3 \notin \texttt{Voisins}(v_4)$, alors il existe une ruche plus optimale contenant $v_1, v_2, v_3\; \text{et}\; v_4$ que les ruches séparées les contenant.
 \end{constraint}
+
+\subsubsection{exemples illustratifs}
+\begin{example}
+Soit $V = \{v_1, v_2, v_3, v_4\}$ un ensemble de fournisseurs (cf. Figure \ref{fig:exemple_introductif_1}.\\
+En appliquant l'opérateur cellule $\pi_{v \in V}$ sur les fournisseurs de $V$, ayant chacun un rayon maximal quelconque, on aura les ruches :
+\begin{itemize}
+  \item{$R_1 = \{p_1, \{v_1, v_2, v_3\}\}$}
+  \item{$R_2 = \{p_2, \{v_2, v_4\}\}$}
+\end{itemize}
+On constante ainsi que le fournisseur $v_2$ appartient simultanément aux ruches $R_1$ et $R_2$.\\
+Par ailleurs, chaque fournisseur possède des voisins tels que :
+\begin{itemize}
+  \item{$\texttt{Voisins}(v_1) = \{v_2, v_3\}$}
+  \item{$\texttt{Voisins}(v_2) = \{v_1, v_3, v_4\}$}
+  \item{$\texttt{Voisins}(v_3) = \{v_1, v_2\}$}
+  \item{$\texttt{Voisins}(v_4) = \{v_2, v_4\}$}
+\end{itemize}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.3]{images/exemple_introductif1.png}
+  \caption{Exemple de ruches de fournisseurs}
+  \label{fig:exemple_introductif_1}
+\end{figure}
+\end{example}
+
+\begin{example}
+Soit $V = \{v_1, v_2, v_3, v_4\}$ un ensemble de fournisseurs (cf. Figure \ref{fig:exemple_introductif_2}.\\
+En appliquant l'opérateur cellule $\pi_{v \in V}$ sur les fournisseurs de $V$, ayant chacun un rayon maximal quelconque, on aura les ruches :
+\begin{itemize}
+  \item{$R_1 = \{p_1, \{v_1, v_3\}\}$}
+  \item{$R_2 = \{p_2, \{v_1, v_4\}\}$}
+  \item{$R_3 = \{p_3, \{v_2, v_3\}\}$}
+  \item{$R_4 = \{p_4, \{v_2, v_4\}\}$}
+\end{itemize}
+En appliquant la règle du \textit{voisinage imposé} sur les fournisseurs de $V$, on constate qu'il existe une ruche $R=\{p, \{v_1, v_2, v_3, v_4\}\}$ plus optimale les regroupant.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.15]{images/exemple_introductif2.png}
+  \caption{Exemple d'application du voisinage imposé sur des fournisseurs de ruches différentes}
+  \label{fig:exemple_introductif_2}
+\end{figure}
+\end{example}
+
+\subsubsection{remarques}
+Les définitions dessus forment la base de notre approche d'optimisation. Il faut noter que d'autres propriétés et règles\footnote{amenant à la rédaction d'algorithmes d'optimisation} seront établies selon plusieurs cas d'usages qu'on étudiera lors de l'établissement de la version initiale\footnote{permettant de générer plus de cas à analyser avec plus de facilité, étant donné un support visuel} du site mais aussi lors des prochaines versions du site.
+
+D'autre part, cette modélisation basée sur des \textbf{critères physiques} (\textit{rayon de déplacement maximal et coordonnées géographiques}) n'est pas suffisante pour couvrir l'ensemble des cas de formation de ruches. Ainsi en accord avec la philosophie de \textbf{XP}, lors de l'implémentation des prochaines versions, une \textbf{couche basée sur des critères logiques} (\textit{types de produits}) sera implémentée dessus pour étendre les possibilités du site face aux besoins croissants du marché.
 %----------------------------------------------------------------------------------------
 %   MODÈLE EA
 %----------------------------------------------------------------------------------------
