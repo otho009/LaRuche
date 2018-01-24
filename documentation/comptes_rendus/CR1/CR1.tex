@@ -1,4 +1,4 @@
-\documentclass[a4paper,12pt]{book}
+\documentclass[a4paper,12pt]{report}
 \usepackage[utf8]{inputenc}
 \usepackage[francais]{babel}
 \usepackage[T1]{fontenc}
@@ -156,7 +156,7 @@ Ses activités de recherche [le] positionnent [...] pleinement au coeur des scie
 Les gens cherchent de \textit{plus en plus} d'acheter des produits frais minimisant les étapes de \textit{processing}, alors que les producteurs cherchent à se libérer des centres d’achat et des intermédiaires de distribution.
 
 Dans l’esprit du site francais \href{https://laruchequiditoui.fr/fr}{LaRucheQuiDitOui}, on souhaite implémenter une interface sous forme d'un \textbf{site web} permettant, au premier, aux producteurs de vendre leurs produits \textbf{directement} aux consommateurs en se regroupant en des endroits précis afin de proposer d'offres diversifiés de leurs produits.
-
+ 
 Le site web offrera ainsi \textbf{tout le nécessaire} aux consommateurs pour effectuer des commandes prépayées et précisera en suite les points de collecte de produits les plus proches. D'autre part, le site offrera aussi aux fournisseurs la possibilité d'organiser ces points, de gérer la mise à jour des
 stocks et la mise en vente/prise de commandes par les clients, en se basant sur des algorithmes d'optimisation aidant à l'organisation de la logistique, à la préparation/facturation des commandes et à la redistribution des produits entre les différents producteurs voisins.
 %----------------------------------------------------------------------------------------
@@ -499,7 +499,7 @@ Soit $R = \{p, V_R\}$ une ruche. Deux fournisseurs $v_1$ et $v_2$ sont dits \tex
 \begin{constraint}[Voisinage Imposé]
 Soient $v_1$ et $v_2$ deux fournisseurs tels que $v_2 \notin \texttt{Voisins}(v_1)$. S'il existe des fournisseurs $v_3$ et $v_4$ tels que $v_3, v_4 \in \texttt{Voisins}(v_1) \cap \texttt{Voisins}(v_2)$ et $v_3 \notin \texttt{Voisins}(v_4)$, alors il existe une ruche plus optimale contenant $v_1, v_2, v_3\; \text{et}\; v_4$ que les ruches séparées les contenant.
 \end{constraint}
-
+ 
 \subsubsection{exemples illustratifs}
 \begin{example}
 \begin{figure}
@@ -602,6 +602,36 @@ Pour la mise en oeuvre du site web, on prévoit utiliser, à part \textbf{HTML} 
 \begin{remark}
 L'utilisation des \textbf{API} est aussi contemplée, notamment pour l'implémentation d'une carte (\textbf{Leaflet}), d'un chat securisé (\textbf{Telegram}), des méthodes de paiement, \textit{etc...}
 \end{remark}
+
+
+
+
+\newpage
+
+%----------------------------------------------------------------------------------------
+%   Entretien 
+%----------------------------------------------------------------------------------------
+\section{Entretien}
+
+Après avoir désigné les fonctionnalités que nous prévoyions d'implémenter à notre produit, nous avons jugé nécessaire de pouvoir recevoir un retour sur cette concéption initiale. \\ 
+Ainsi, une expression détaillée des besoins d'un utilisateur potentiel nous semblait très utile dans cette phase de planification. Car, effectivement, une expression validée des besoins donnée en entrée de réalisation nous permettrait de vérifier que notre  concéption  répond bel et bien au besoin des utilisateurs.\\
+De plus, cela nous servirait à éliminer certaines fonctionnalités, prévues initialement et qui peuvent se révéler finalement inutiles à l'usage, ainsi que d'inclure d'autres qui peuvent donner plus de valeur au produit. 
+
+
+
+
+Dans ce cadre, notre encadrant nous a donné l'opportunité de rencontrer un ami maraîcher avec qui nous avons organisé un entretien.\\
+Lors de cet entretien, nous avons commencé tout d'abord par présenter l'ensemble des fonctionnalités prévues, pour ensuite don	ner la parole à notre invité qui dans le cadre de notre modélisation, représente un potentiel utilisateur de type « Fournisseur ». \\
+À l'issue de cet entretien, nous avons eu un aperçu de ce que peut exiger un fournisseur de ce projet. 
+En prenant en compte ces exigences, nous avons pu modifier notre  concéption  initiale, notamment en redéfinissant les notions de « ruches » et de « cellules ». Évitant ainsi, un futur déphasage entre le besoin initial et l'application réalisée.
+
+
+
+
+ Étant donnée, l'apport considérable qu'a pu avoir cette expérience, nous prévoyons de reproduire des expériences similaires. Afin d'impliquer les utilisateurs du début à la fin du projet. Maintenant ainsi le paradigme Agile que nous avons adopté pour gérer ce projet.
+
+
+
 %----------------------------------------------------------------------------------------
 %   PERSPECTIVES
 %----------------------------------------------------------------------------------------
