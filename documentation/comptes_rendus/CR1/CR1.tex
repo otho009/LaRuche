@@ -3,6 +3,7 @@
 \usepackage[francais]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
+\usepackage{subcaption}
 \usepackage[colorlinks,urlcolor=blue]{hyperref} %hyperlinks
 \usepackage{xcolor} %color text
 \usepackage[amsthm]{ntheorem} %theorems and co.
@@ -23,6 +24,9 @@
 \renewcommand{\appendixtocname}{Annexes}
 \appendixtitletocoff
 
+%Defining a new command for the horizontal lines
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
 %Defining custom environments
 \theoremstyle{break}
 \newtheorem*{userStory}{User Story}
@@ -42,23 +46,72 @@
 \theoremstyle{remark}
 \newtheorem*{remark}{\textbf{Remarque}}
 
+\begin{document}
+\pagestyle{plain}
 %----------------------------------------------------------------------------------------
 %   TITLE PAGE
 %----------------------------------------------------------------------------------------
-\title{\textbf{HLSE602 -- Projet Annuel CMI} : \textbf{LaRuche} (Rapport \# $1$)}
-\author{Bachar Rima, Othmane Farajallah, Wissem Soussi}
-\date{\today}
-
-\begin{document}
-\pagestyle{plain}
-
-\maketitle
-
+\begin{titlepage}
+\centering
+%----------------------------------------------------------------------------------------
+%   LOGOS SECTION
+%----------------------------------------------------------------------------------------
+\includegraphics[scale=0.5]{images/umLogo.png} %Université de Montpellier Logo
+\hspace{\fill}
+\includegraphics[scale=0.25]{images/fdsLogo.jpg} %Faculté de Sciences Logo
+\hspace{\fill}
+\includegraphics[scale=0.25]{images/lirmmLogo.png}~\\[2cm] %LIRMM Logo
+%----------------------------------------------------------------------------------------
+%   HEADING SECTIONS
+%----------------------------------------------------------------------------------------
+\textsc{\LARGE L3 CMI Informatique}\\[0.5cm]
+\textsc{\Large \textbf{HLSE602} -- Projet Annuel CMI}\\[0.25cm]
+\textsc{\Large \texttt{LaRuche}}\\[2cm]
+%----------------------------------------------------------------------------------------
+%   TITLE SECTION
+%----------------------------------------------------------------------------------------
+\HRule \\[0.4cm]
+{\huge \bfseries RAPPORT \#$1$}\\[0.1cm]
+\HRule \\[2cm]
+%----------------------------------------------------------------------------------------
+%   STUDENTS SECTION
+%----------------------------------------------------------------------------------------
+\begin{minipage}{0.5\textwidth}
+\centering \large
+\textbf{Bachar \textsc{Rima}}\\
+\textbf{Othmane \textsc{Farajallah}}\\
+\textbf{Wissem \textsc{Soussi}}
+\end{minipage} \\[2cm]
+%----------------------------------------------------------------------------------------
+%   SUPERVISORS SECTION
+%----------------------------------------------------------------------------------------
+\begin{minipage}[b]{0.5\textwidth}
+\begin{flushleft} \large
+\emph{Responsable CMI Informatique :} \\
+Anne-Elisabeth \textsc{Baert} \\
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}[b]{0.4\textwidth}
+\begin{flushright} \large
+\emph{Encadrant :}\\
+Eric \textsc{Bourreau}
+\end{flushright}
+\end{minipage}\\[1.5cm]
+%----------------------------------------------------------------------------------------
+%   DATE SECTION
+%----------------------------------------------------------------------------------------
+{\large \today}\\[1cm]
+\hspace{\fill}
+\vfill % Fill the rest of the page with whitespace
+\end{titlepage}
+%----------------------------------------------------------------------------------------
+%   TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
 {
   \hypersetup{linkcolor=black}
   \tableofcontents
 }
-
 %----------------------------------------------------------------------------------------
 %   INTRODUCTION
 %----------------------------------------------------------------------------------------
@@ -74,7 +127,6 @@ Le projet se déroule sous l'encadrement de Mme Anne-Elisabeth Baert, enseignant
 Le sujet du projet couvre la création d'un site web dédié comme interface de communication entre vendeurs de produits locaux et leurs clients. Il est inspiré du site \og \href{https://laruchequiditoui.fr/fr}{La Ruche Qui Dit Oui} \fg traitant le même thème et répondant aux mêmes besoins, mais cherche à faire les choses d'une façon différente, surtout au niveau de la logistique et de l'architecture du site, afin de fournir une vision différente, voire plus optimisée de la gestion des interactions directes entre clients et vendeurs.
 
 Nous commencerons ce rapport en annonçant le contexte du projet, puis nous présenterons LIRMM, les problématiques adressées et traitées dans le cadre du projet, la méthodologie adoptée pour modéliser le problème et y proposer des solutions ainsi que les outils de modélisation et le planning prévisionnel pour répartir les tâches à effectuer dans un cadre spatio-temporel valable. Après, nous présenterons l'aperçu d'un entretien déroulé avec un client potentiel afin d'inclure ses besoins dans le cahier des charges de notre projet et de modifier notre modélisation de manière à y répondre. Enfin, nous conclurons en discutant l'implémentation prévue de l'application modélisée et les perspectives.
-
 %----------------------------------------------------------------------------------------
 %   PRÉSENTATION DU LIRMM
 %----------------------------------------------------------------------------------------
@@ -93,7 +145,6 @@ Les travaux sont menés dans trois départements scientifiques de recherche, [(L
 Les recherches menées au LIRMM trouvent généralement une finalisation dans des domaines applicatifs aussi divers que la biologie, la chimie, les télécommunications, la santé, l'environnement... et dans les domaines propres du laboratoire : l'informatique, l'électronique et l'automatique.
 
 Ses activités de recherche [le] positionnent [...] pleinement au coeur des sciences et technologies de l’information, de la communication et des systèmes. [En particulier,] les thématiques du département Informatique s’étendent des frontières des mathématiques à la recherche appliquée : algorithmique des graphes, bioinformatique, cryptographie, réseaux, bases de données et systèmes d'information [...], génie logiciel [...], intelligence artificielle [...], interaction homme-machine [...]. \fg{} \citep{lirmmPres}
-
 %----------------------------------------------------------------------------------------
 %   PROBLÈME, MÉTHODOLOGIE, OUTILS ET PLANNING
 %----------------------------------------------------------------------------------------
@@ -127,7 +178,6 @@ Pour garantir une bonne modélisation du projet, en cohérence avec l'approche d
   \item[schéma de base de données]{schéma en modèle \textbf{relationnel} composé des schémas des relations et des contraintes d'intégrité sur l'ensemble des relations, traduit généralement à partir du \textbf{modèle EA} et servant comme \textbf{modèle logique} lors de l'implémentation de la \textbf{base de données}.}
   \item[\textit{mockup storyboard}]{document de haut niveau offrant un moyen pour schématiser l'utilisation d'un projet, en positionant les différents éléments le composant, sans rentrer dans les détails de leur fonctionnement (cf. Annexe \ref{app:storyoard}).}
 \end{description}
-
 %----------------------------------------------------------------------------------------
 %   CONCEPTION
 %----------------------------------------------------------------------------------------
@@ -531,7 +581,7 @@ Le modèle relationnel obtenu par traduction du \textbf{modèle EA} des données
   \item { \texttt{INCLUT } (\texit{\underline{ID\_commande}}, \texit{\underline{ID\_produit}}, \attr{quantite}) }
   \item { \texttt{COMMANDE\_GLOBALE } (\underline{ID\_commande\_globale}, \texit{ID\_wallet}) }
   \item { \texttt{FACTURE } (\underline{ID\_facture}, \attr{montant}, \attr{date}, \texit{ID\_commande\_globale}) }
-  \item{ \texttt{ TYPE\_PRODUIT } (\underline{ID\_product\_type})}
+  \item { \texttt{TYPE\_PRODUIT } (\underline{ID\_product\_type})}
 \end{enumerate}
 %----------------------------------------------------------------------------------------
 %   CONCLUSION
@@ -718,7 +768,91 @@ D'autre part, nous avons formulé quelques \textit{user-stories} décrivant des 
 %----------------------------------------------------------------------------------------
 \chapter{Storyboard}
 \label{app:storyoard}
-Dans ce chapitre, on illustre ci-dessous un mockup graphique permettant de décrire une structure de mise en forme approximative, ainsi qu'un enchaînement d'évènements et de fonctionnalités résultant d'une navigation partielle de notre site web.
+Dans ce chapitre, on illustre ci-dessous un \textit{mockup} graphique permettant de décrire une \textbf{structure de mise en forme approximative}, ainsi qu'un \textbf{enchaînement d'évènements et de fonctionnalités} résultant d'une \textbf{navigation partielle} de notre site web.
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[scale=0.25]{images/storyboard/00.jpg}
+  \caption{Page d'accueil et zone de login}
+\end{figure}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[scale=0.25]{images/storyboard/01.jpg}
+  \caption{Page de login}
+\end{figure}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[scale=0.25]{images/storyboard/02.jpg}
+  \caption{Page d'accueil de l'utilisateur}
+\end{figure}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[scale=0.25]{images/storyboard/03.jpg}
+  \caption{Recherche de produits}
+\end{figure}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[scale=0.25]{images/storyboard/04.jpg}
+  \caption{Informations sur un produit}
+\end{figure}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[scale=0.25]{images/storyboard/04_1.jpg}
+  \caption{Commander un produit}
+\end{figure}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[scale=0.25]{images/storyboard/04_2.jpg}
+  \caption{Chariot}
+\end{figure}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[scale=0.25]{images/storyboard/04_3.jpg}
+  \caption{Règlement d'achat}
+\end{figure}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[scale=0.25]{images/storyboard/04_4.jpg}
+  \caption{Méthodes de paiement}
+\end{figure}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[scale=0.25]{images/storyboard/05.jpg}
+  \caption{Informations sur un vendeur}
+\end{figure}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[scale=0.25]{images/storyboard/05_1.jpg}
+  \caption{Chat}
+\end{figure}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[scale=0.25]{images/storyboard/06.jpg}
+  \caption{Informations sur une ruche}
+\end{figure}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[scale=0.25]{images/storyboard/07.jpg}
+  \caption{Barre de paramètres d'un vendeur}
+\end{figure}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[scale=0.25]{images/storyboard/08.jpg}
+  \caption{Barre de paramètres du compte d'un vendeur}
+\end{figure}
 \end{appendices}
 %----------------------------------------------------------------------------------------
 %   BIBLIOGRAPHIE
