@@ -24,6 +24,9 @@
 \renewcommand{\appendixtocname}{Annexes}
 \appendixtitletocoff
 
+%Redefining the appendices name to "Annexes" in the report
+\renewcommand{\appendixpagename}{Annexes}
+
 %Defining a new command for the horizontal lines
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
@@ -47,7 +50,7 @@
 \newtheorem*{remark}{\textbf{Remarque}}
 
 \begin{document}
-\pagestyle{plain}
+\pagenumbering{roman}
 %----------------------------------------------------------------------------------------
 %   TITLE PAGE
 %----------------------------------------------------------------------------------------
@@ -111,22 +114,25 @@ Eric \textsc{Bourreau}
 {
   \hypersetup{linkcolor=black}
   \tableofcontents
+  \setcounter{page}{3}
 }
 %----------------------------------------------------------------------------------------
 %   INTRODUCTION
 %----------------------------------------------------------------------------------------
 \chapter{Introduction}
+\pagenumbering{arabic}
+\setcounter{page}{1}
 %----------------------------------------------------------------------------------------
 %   CONTEXTE DU STAGE
 %----------------------------------------------------------------------------------------
 \section{Contexte du projet}
-Dans ce rapport, nous nous consacrons à la description détaillée de la phase de conception du projet intitulé \texttt{LaRuche} à effectuer au sein du \textbf{LIRMM} (\textbf{L}aboratoire d'\textbf{I}nformatique, de \textbf{R}obotique et de \textbf{M}icroélectronique de \textbf{M}ontpellier) dans le cadre du module \textbf{HLSE602 -- Projet Annuel CMI} de la $3$\ieme{} année de licence en \textbf{CMI} (\textbf{C}ursus \textbf{M}aster \textbf{I}ngénierie).
+Dans ce rapport, nous nous consacrons à la description détaillée de la phase de conception du projet intitulé \texttt{LaRuche} à effectuer au sein du \textbf{LIRMM} (\textbf{L}aboratoire d'\textbf{I}nformatique, de \textbf{R}obotique et de \textbf{M}icroélectronique de \textbf{M}ontpellier) dans le cadre du module \textbf{HLSE602 -- Projet Annuel CMI} de la $3$\ieme{} année de licence en informatique \textbf{CMI} (\textbf{C}ursus \textbf{M}aster \textbf{I}ngénierie).
 
 Le projet se déroule sous l'encadrement de Mme Anne-Elisabeth Baert, enseignante/chercheuse au sein du LIRMM dans l'équipe \textbf{MAORE} (\textbf{M}éthodes \textbf{A}lgorithmes pour l'\textbf{O}rdonnancement et les \textbf{Ré}seaux) \citep{AEBPres}, en tant que responsable de la formation CMI informatique et M. Eric Bourreau, enseignant/chercheur au sein du LIRMM dans la même équipe \textbf{MAORE} \citep{EricBourreauPres}, en tant que responsable pédagogique et encadrant du projet.
 
-Le sujet du projet couvre la création d'un site web dédié comme interface de communication entre vendeurs de produits locaux et leurs clients. Il est inspiré du site \og \href{https://laruchequiditoui.fr/fr}{La Ruche Qui Dit Oui} \fg traitant le même thème et répondant aux mêmes besoins, mais cherche à faire les choses d'une façon différente, surtout au niveau de la logistique et de l'architecture du site, afin de fournir une vision différente, voire plus optimisée de la gestion des interactions directes entre clients et vendeurs.
+Le sujet du projet consiste en la création d'un site web représentant une interface de communication entre fournisseurs de produits locaux et leurs clients. Il est inspiré du site \og \href{https://laruchequiditoui.fr/fr}{La Ruche Qui Dit Oui} \fg traitant le même thème et répondant aux mêmes besoins, cependant adoptant une approche différente, surtout au niveau de la logistique et de l'architecture du site, afin de fournir une vision différente, voire plus optimisée de la gestion des interactions directes entre clients et fournisseurs.
 
-Nous commencerons ce rapport en annonçant le contexte du projet, puis nous présenterons LIRMM, les problématiques adressées et traitées dans le cadre du projet, la méthodologie adoptée pour modéliser le problème et y proposer des solutions ainsi que les outils de modélisation et le planning prévisionnel pour répartir les tâches à effectuer dans un cadre spatio-temporel valable. Après, nous présenterons l'aperçu d'un entretien déroulé avec un client potentiel afin d'inclure ses besoins dans le cahier des charges de notre projet et de modifier notre modélisation de manière à y répondre. Enfin, nous conclurons en discutant l'implémentation prévue de l'application modélisée et les perspectives.
+Nous commencerons ce rapport en annonçant le contexte du projet, puis nous présenterons le LIRMM, les problématiques adressées et traitées dans le cadre du projet, la méthodologie adoptée pour modéliser le problème en proposant des solutions à ce dernier, ainsi que les outils de modélisation. Enfin, nous conclurons en discutant l'implémentation prévue de l'application modélisée, nous présenterons l'aperçu d'un entretien déroulé avec un client potentiel et nous détaillerons les perspectives.
 %----------------------------------------------------------------------------------------
 %   PRÉSENTATION DU LIRMM
 %----------------------------------------------------------------------------------------
@@ -148,31 +154,31 @@ Ses activités de recherche [le] positionnent [...] pleinement au coeur des scie
 %----------------------------------------------------------------------------------------
 %   PROBLÈME, MÉTHODOLOGIE, OUTILS ET PLANNING
 %----------------------------------------------------------------------------------------
-\chapter{Problème, Méthodologie, Outils et Planning}
+\chapter{Problème, Méthodologie, et Outils}
 %----------------------------------------------------------------------------------------
 %   PROBLÈME
 %----------------------------------------------------------------------------------------
 \section{Problème}
 Les gens cherchent de \textit{plus en plus} d'acheter des produits frais minimisant les étapes de \textit{processing}, alors que les producteurs cherchent à se libérer des centres d’achat et des intermédiaires de distribution.
 
-Dans l’esprit du site francais \href{https://laruchequiditoui.fr/fr}{LaRucheQuiDitOui}, on souhaite implémenter une interface sous forme d'un \textbf{site web} permettant, au premier, aux producteurs de vendre leurs produits \textbf{directement} aux consommateurs en se regroupant en des endroits précis afin de proposer d'offres diversifiés de leurs produits.
- 
-Le site web offrera ainsi \textbf{tout le nécessaire} aux consommateurs pour effectuer des commandes prépayées et précisera en suite les points de collecte de produits les plus proches. D'autre part, le site offrera aussi aux fournisseurs la possibilité d'organiser ces points, de gérer la mise à jour des
-stocks et la mise en vente/prise de commandes par les clients, en se basant sur des algorithmes d'optimisation aidant à l'organisation de la logistique, à la préparation/facturation des commandes et à la redistribution des produits entre les différents producteurs voisins.
+Dans l’esprit du site francais \href{https://laruchequiditoui.fr/fr}{LaRucheQuiDitOui}, on souhaite implémenter une interface sous forme d'un \textbf{site web} permettant, au premier, aux producteurs de vendre des sélections diversifiées de leurs produits \textbf{directement} aux consommateurs en se regroupant dans des endroits précis de collecte.
+
+Le site web offrira ainsi \textbf{tout le nécessaire} aux consommateurs pour effectuer des commandes prépayées et précisera ensuite les points de collecte de produits les plus proches. D'autre part, le site mettra en disposition des fournisseurs la possibilité d'organiser ces points, de gérer la mise à jour des
+stocks et la mise en vente/prise de commandes par les clients, en se basant sur des algorithmes d'optimisation de la gestion de la logistique, de la préparation/facturation des commandes et de la redistribution/partage des produits entre les différents fournisseurs voisins.
 %----------------------------------------------------------------------------------------
 %   MÉTHODOLOGIE
 %----------------------------------------------------------------------------------------
 \section{Méthodologie}
-Dans le but d'assurer la meilleure gestion de nos ressources en offrant le plus de fonctionnalités possibles aux utilisateurs tout en implémentant progressivement leurs requis et faisant sortir des versions fonctionnelles du site après avoir tester les parties implémentées après chaque itération de développement, nous avons opté pour une approche basée sur les \textbf{méthodes agiles} de développement et \textbf{XP}\footnote{\textit{eXtreme Programming}}.
+Dans le but d'assurer la meilleure gestion de nos ressources et d'offrir le plus de fonctionnalités possibles aux utilisateurs, en les implémentant itérativement dans des versions fonctionnelles et testées du site, nous avons opté pour une approche basée sur les \textbf{méthodes agiles} de développement, en particulier sur \textbf{XP}\footnote{\textit{eXtreme Programming}}.
 
-En effet, la méthodologie de développement proposée par les méthodes agiles étant de plus en plus prépondérante en génie logiciel, nous avons décidé d'en profiter pour la modélisation et l'implémentation ultérieure de notre site web pour assurer le plus de flexibilité et d'extensibilité possible lors du dialect développeurs/utilisateurs permettant de répondre efficacement aux besoins des utilisateurs.
+En effet, la méthodologie de développement proposée par les méthodes agiles étant de plus en plus prépondérante en génie logiciel, nous avons décidé d'en profiter pour la modélisation et l'implémentation ultérieure de notre site web. Ceci afin d'assurer le plus de flexibilité et d'extensibilité possible pour répondre efficacement aux besoins des utilisateurs.
 %----------------------------------------------------------------------------------------
 %   OUTILS
 %----------------------------------------------------------------------------------------
 \section{Outils}
-Pour garantir une bonne modélisation du projet, en cohérence avec l'approche de la méthodologie discutée précédemment, on aura besoin d'expliciter les spécifications fonctionnelles et organisationnelles de notre projet. Ainsi, on aura recours aux outils suivants :
+Pour garantir une bonne modélisation du projet, en cohérence avec l'approche de la méthodologie discutée précédemment, nous aurons besoin d'expliciter les spécifications fonctionnelles et organisationnelles de notre projet. Ainsi, nous aurons recours aux outils suivants :
 \begin{description}
-  \item[\textit{user stories}]{des requis fournis par les utilisateurs décrivant en langage naturel les fonctionnalités qu'il souhaitent avoir dans le site.}
+  \item[\textit{user stories}]{des requis fournis par les utilisateurs décrivant en langage naturel les fonctionnalités qu'ils souhaitent avoir dans le site.}
   \item[diagrammes de cas d'usage]{des diagrammes dynamiques, souvent utilisés en \textbf{UML} pour décrire en haut niveau les fonctionnalités d'un système, en se servant de notions telles que \textbf{acteurs}, \textbf{cas d'usage}, \textbf{systèmes} et les \textbf{relations} entre chacune de ces entités.}
   \item[modèle EA]{un modèle \textbf{conceptuel} utilisé pour décrire les entités du projet ainsi que les associations décrivant leurs relations et comportements.}
   \item[schéma de base de données]{schéma en modèle \textbf{relationnel} composé des schémas des relations et des contraintes d'intégrité sur l'ensemble des relations, traduit généralement à partir du \textbf{modèle EA} et servant comme \textbf{modèle logique} lors de l'implémentation de la \textbf{base de données}.}
@@ -188,7 +194,7 @@ Pour garantir une bonne modélisation du projet, en cohérence avec l'approche d
 \section{\textit{User Stories} et Diagrammes de cas d'usage}
 Dans cette section nous illustrons les \textit{user stories} que nous avons rédigées pour identifier les fonctionnalités du système conçu, ainsi que les diagrammes de cas d'usage de quelques fonctionnalités parmi celles illustrées.
 
-Les \textit{user stories} de cette section seront implémentées dans la $1$\iere{} version du site, désignant les \textbf{fonctionnalités de base}, assimilant notre site en une \textbf{vitrine de réservation de produits} et non pas une \textbf{vitrine commerciale d'achats}. Cependant, nous avons inclus dans nos analyses des \textit{user stories} désignant des \textbf{fonctionnalités supplémentaires avancées}, mais pour rester en accord avec la philosophie de \textbf{XP}, elles seront traitées dans les versions du site à venir. Toutefois, leurs \textit{user stories} seront incluses dans la section des \textbf{Perspectives} (cf. Section \ref{sec:perspectives}).
+Les \textit{user stories} de cette section seront implémentées dans la $1$\iere{} version du site, désignant les \textbf{fonctionnalités de base}, assimilant notre site en une \textbf{vitrine de réservation de produits} et non pas une \textbf{vitrine commerciale d'achats}. Toutefois, nous avons rédigé des \textit{user stories} désignant des \textbf{fonctionnalités supplémentaires avancées} qui seront traitées dans les prochaines versions (cf. Section \ref{sec:perspectives}), en cohérence avec la philosophie de \textbf{XP}.
 
 \subsection{Page d'accueil du site}
 \begin{userStory}[Création de compte]
@@ -236,13 +242,13 @@ En tant qu'\textbf{utilisateur} \textbf{{\color{green} client}/{\color{red} four
 
 \subsection{Page d'accueil de l'utilisateur}
 \begin{userStory}[Paramètres personnalisés]
-\textbf{En tant qu'utilisateur {\color{green}client}/{\color{red}fournisseur}}, je souhaite visualiser des informations sur ma \textbf{page d'accueil} concernant mes intérêts (produits, vendeurs, ruches) selon mes \textbf{préférences spécifiées} dans les \textbf{paramètres} de mon compte et l'\textbf{historique de mes achats/ventes}.\\
+\textbf{En tant qu'utilisateur {\color{green}client}/{\color{red}fournisseur}}, je souhaite visualiser des informations sur ma \textbf{page d'accueil} concernant mes intérêts (produits, fournisseurs, ruches) selon mes \textbf{préférences spécifiées} dans les \textbf{paramètres} de mon compte et l'\textbf{historique de mes achats/ventes}.\\
 \indent
 \textbf{dans le but d'}interagir avec des données pertinentes à \textbf{mes intérêts}, sans avoir besoin de toujours les rechercher moi-même, tout en prenant en compte mes \textbf{paramètres de confidentialité}.
 \end{userStory}
 
 \begin{userStory}[Résultats de recherche]
-\textbf{En tant qu'utilisateur {\color{green}client}/{\color{red}fournisseur}}, je souhaite visualiser des informations sur les produits/vendeurs/ruches dans les résultats de recherche,\\
+\textbf{En tant qu'utilisateur {\color{green}client}/{\color{red}fournisseur}}, je souhaite visualiser des informations sur les produits/fournisseurs/ruches dans les résultats de recherche,\\
 \indent
 \textbf{dans le but d'}avoir \textbf{suffisamment d'information} sur les \textbf{produits} avant de les acheter ou sur les \textbf{fournisseurs}/\textbf{ruches} pour les \textbf{consulter}.
 \end{userStory}
@@ -425,13 +431,13 @@ En tant qu'\textbf{utilisateur} \textbf{{\color{green} client}/{\color{red} four
 \end{userStory}
 
 \begin{userStory}[Politique de partage intracellulaire dans une ruche]
-\textbf{En tant qu'utilisateur {\color{red}fournisseur}}, je souhaite avoir la possibilité d'\textbf{échanger une portion de mes produits avec des vendeurs voisins}\footnote{fournisseurs d'une même ruche mais également faisant partie chacun d'autres ruches}, en offrant mes produits dans leurs ruches et inversement,\\
+\textbf{En tant qu'utilisateur {\color{red}fournisseur}}, je souhaite avoir la possibilité d'\textbf{échanger une portion de mes produits avec des fournisseurs voisins}\footnote{fournisseurs d'une même ruche mais également faisant partie chacun d'autres ruches (cf. Section \ref{sec:sd})}, en offrant mes produits dans leurs ruches et inversement,\\
 \indent
 \textbf{dans le but d'}avoir des bénéfices mutuelles provenant d'une extension du marché et par conséquent d'une surface plus vaste de revenue potentiel.
 \end{userStory}
 
 \begin{userStory}[Système de collecte dynamique]
-\textbf{En tant qu'utilisateur {\color{green}client}}, je souhaite avoir la possibilité de \textbf{collecter mes produits achetés dynamiquement}\footnote{depuis un endroit dans une ruche à proximité d'une des marches effectuées par les fournisseurs lors d'un évenement de collete},\\
+\textbf{En tant qu'utilisateur {\color{green}client}}, je souhaite avoir la possibilité de \textbf{collecter mes produits achetés dynamiquement}\footnote{depuis un endroit dans une ruche à proximité d'une des marches effectuées par les fournisseurs lors d'un évenement de collecte},\\
 \indent
 \textbf{dans le but de} collecter mes produits achetés \textbf{convenablement} sans besoin d'être présent pendant les évenements de collecte\footnote{indépendamment de l'endroit et du temps de déroulement de la collecte}.
 \end{userStory}
@@ -462,7 +468,7 @@ Ainsi, voici les \textit{user-stories} concernant la gestion des commandes dans 
 \end{userStory}
 
 \begin{userStory}[Reçu (version de base)]
-\textbf{En tant qu'utilisateur {\color{red}fournisseur}}, je souhaite avoir un \textbf{reçu de réservation} une fois qu'une \textbf{réservation de mes produits} est effectuée \textbf{en ligne} et que je donnerai au \textbf{{\color{green}client} concerné} une fois les \textbf{produits collectés},\\
+\textbf{En tant qu'utilisateur {\color{red}fournisseur}}, je souhaite avoir un \textbf{reçu de réservation} une fois qu'une \textbf{réservation de mes produits} est effectuée \textbf{en ligne} et que je donnerai au \textbf{{\color{green}client} concerné} lors de la collecte de ses produits,\\
 \indent
 \textbf{dans le but de suivre l'historique des réservations} pour plus d'\textbf{intégrité}.
 \end{userStory}
@@ -470,7 +476,8 @@ Ainsi, voici les \textit{user-stories} concernant la gestion des commandes dans 
 %   SD PROPOSÉE (CELLULE ET RUCHE)
 %----------------------------------------------------------------------------------------
 \section{Structure de données proposée (\texttt{Cellule} et \texttt{Ruche})}
-Afin de pouvoir optimiser la logistique et la redistribution des produits entre les fournisseurs à proximité l'un de l'autre, il va falloir proposer une \textbf{structure de données} permettant d'abstraire la notion de \textbf{ruche} et étudier ses propriétés et opérations afin d'analyser ses avantages et inconvénients par rapport à nos besoins.
+\label{sec:sd}
+Afin de pouvoir optimiser la logistique et la redistribution des produits entre les fournisseurs à proximité l'un de l'autre, il va falloir proposer une \textbf{structure de données} permettant d'abstraire la notion de \textbf{ruche} et d'étudier ses propriétés et opérations afin d'analyser ses avantages et inconvénients par rapport à nos besoins.
 
 \subsection{Définitions et notations}
 \begin{description}
@@ -480,7 +487,7 @@ Afin de pouvoir optimiser la logistique et la redistribution des produits entre 
 \end{description}
 
 \begin{definition}[Ruche]
-Soit $v_1, v_2, \dots, v_n \in V^n$. Une \textbf{ruche} $R = (p, V)$ est composée de :
+Soit $v_1, v_2, \dots, v_n \in V^n$. Une \textbf{ruche} $R = (p, V_R)$ est composée de :
 \begin{description}
   \item[$\mathbf{V_R}$]{ensemble de fournisseurs dont les cellules s'intersectent;}
   \item[$\mathbf{p}$]{un point de collecte obtenu à partir d'une opération\footnote{le choix du point est relatif aux fournisseurs de la ruche, étant indéterministe en soi} sur la zone d'intersection des cellules correspondantes aux vendeurs de $V$.}
@@ -489,7 +496,7 @@ Autrement dit, $R = \{p, \{v_1, v_2, \dots, v_n \in V\; |\; \pi_{v_1} \cap \pi_{
 \end{definition}
 
 \begin{property}[Appartenance Simultanée]
-Soit $R_1 = \{p_1, V_1\},\; R_2 = \{p_2, V_2\},\; \dots R_k = \{p_k, V_k\}$ des ruches, et $v \in V$. $v$ peut appartenir à \textbf{plusieurs ruches}. Autrement dit, $v \in V_1\; || v \in V_2\; ||\; \dots\; || v \in V_k$.
+Soit $R_1 = \{p_1, V_{R_1}\},\; R_2 = \{p_2, V_{R_2}\},\; \dots R_k = \{p_k, V_{R_k}\}$ des ruches, et $v \in V$. $v$ peut appartenir à \textbf{plusieurs ruches}. Autrement dit, $v \in V_{R_1}\; ||\; v \in V_{R_2}\; ||\; \dots\; ||\; v \in V_{R_k}$.
 \end{property}
 
 \begin{definition}[Fournisseurs Voisins]
@@ -499,7 +506,7 @@ Soit $R = \{p, V_R\}$ une ruche. Deux fournisseurs $v_1$ et $v_2$ sont dits \tex
 \begin{constraint}[Voisinage Imposé]
 Soient $v_1$ et $v_2$ deux fournisseurs tels que $v_2 \notin \texttt{Voisins}(v_1)$. S'il existe des fournisseurs $v_3$ et $v_4$ tels que $v_3, v_4 \in \texttt{Voisins}(v_1) \cap \texttt{Voisins}(v_2)$ et $v_3 \notin \texttt{Voisins}(v_4)$, alors il existe une ruche plus optimale contenant $v_1, v_2, v_3\; \text{et}\; v_4$ que les ruches séparées les contenant.
 \end{constraint}
- 
+
 \subsubsection{exemples illustratifs}
 \begin{example}
 \begin{figure}
@@ -509,19 +516,19 @@ Soient $v_1$ et $v_2$ deux fournisseurs tels que $v_2 \notin \texttt{Voisins}(v_
   \label{fig:exemple_introductif_1}
 \end{figure}
 
-Soit $V = \{v_1, v_2, v_3, v_4\}$ un ensemble de fournisseurs (cf. Figure \ref{fig:exemple_introductif_1}.\\
+Soit $V = \{v_1, v_2, v_3, v_4\}$ un ensemble de fournisseurs (cf. Figure \ref{fig:exemple_introductif_1}).\\
 En appliquant l'opérateur cellule $\pi_{v \in V}$ sur les fournisseurs de $V$, ayant chacun un rayon maximal quelconque, on aura les ruches :
 \begin{itemize}
   \item{$R_1 = \{p_1, \{v_1, v_2, v_3\}\}$}
   \item{$R_2 = \{p_2, \{v_2, v_4\}\}$}
 \end{itemize}
-On constante ainsi que le fournisseur $v_2$ appartient simultanément aux ruches $R_1$ et $R_2$.\\
+On constate ainsi que le fournisseur $v_2$ appartient simultanément aux ruches $R_1$ et $R_2$.\\
 Par ailleurs, chaque fournisseur possède des voisins tels que :
 \begin{itemize}
   \item{$\texttt{Voisins}(v_1) = \{v_2, v_3\}$}
   \item{$\texttt{Voisins}(v_2) = \{v_1, v_3, v_4\}$}
   \item{$\texttt{Voisins}(v_3) = \{v_1, v_2\}$}
-  \item{$\texttt{Voisins}(v_4) = \{v_2, v_4\}$}
+  \item{$\texttt{Voisins}(v_4) = \{v_2\}$}
 \end{itemize}
 \end{example}
 
@@ -533,7 +540,7 @@ Par ailleurs, chaque fournisseur possède des voisins tels que :
   \label{fig:exemple_introductif_2}
 \end{figure}
 
-Soit $V = \{v_1, v_2, v_3, v_4\}$ un ensemble de fournisseurs (cf. Figure \ref{fig:exemple_introductif_2}.\\
+Soit $V = \{v_1, v_2, v_3, v_4\}$ un ensemble de fournisseurs (cf. Figure \ref{fig:exemple_introductif_2}).\\
 En appliquant l'opérateur cellule $\pi_{v \in V}$ sur les fournisseurs de $V$, ayant chacun un rayon maximal quelconque, on aura les ruches :
 \begin{itemize}
   \item{$R_1 = \{p_1, \{v_1, v_3\}\}$}
@@ -547,7 +554,7 @@ En appliquant la règle du \textit{voisinage imposé} sur les fournisseurs de $V
 \subsubsection{remarques}
 Les définitions dessus forment la base de notre approche d'optimisation. Il faut noter que d'autres propriétés et règles\footnote{amenant à la rédaction d'algorithmes d'optimisation} seront établies selon plusieurs cas d'usages qu'on étudiera lors de l'établissement de la version initiale\footnote{permettant de générer plus de cas à analyser avec plus de facilité, étant donné un support visuel} du site mais aussi lors des prochaines versions du site.
 
-D'autre part, cette modélisation basée sur des \textbf{critères physiques} (\textit{rayon de déplacement maximal et coordonnées géographiques}) n'est pas suffisante pour couvrir l'ensemble des cas de formation de ruches. Ainsi en accord avec la philosophie de \textbf{XP}, lors de l'implémentation des prochaines versions, une \textbf{couche basée sur des critères logiques} (\textit{types de produits}) sera implémentée dessus pour étendre les possibilités du site face aux besoins croissants du marché.
+D'autre part, cette modélisation basée sur des \textbf{critères physiques} (\textit{rayon de déplacement maximal et coordonnées géographiques}) n'est pas suffisante pour couvrir l'ensemble des cas de formation de ruches. Ainsi en accord avec la philosophie de \textbf{XP}, lors de l'implémentation des prochaines versions, une \textbf{couche basée sur des critères logiques} (\textit{types de produits}) sera implémentée dessus pour étendre les possibilités du site face aux besoins croissants des utilisateurs.
 %----------------------------------------------------------------------------------------
 %   MODÈLE EA
 %----------------------------------------------------------------------------------------
@@ -595,53 +602,39 @@ Pour la mise en oeuvre du site web, on prévoit utiliser, à part \textbf{HTML} 
 \begin{enumerate}
   \item{\textbf{JavaScript} et des \textbf{\textit{frameworks} pertinents} tels que \textbf{JQuery} et \textbf{Angular}, utilisés pour le développement \textit{front-end} du site web.}
   \item{le \textbf{\textit{framework} Bootstrap} pour faire des pages responsives adaptables aux dispositifs tels que smartphones, tablets, laptops et grand écrans.}
-  \item{\textbf{MySQL} pour gérer la base de données du site : on a opté pour une base de données relationnelle vu le grand nombre d'associations reliant les différentes entités du site.}
-  \item{\textbf{PHP} : suite au choix de \textbf{MySQL}, \textbf{PHP} (ainsi que les \textbf{\textit{frameworks}} basés dessus et \textbf{ORM}) est l'un des langages côté serveur les plus adaptés et les plus utilisés pour la manipulation d'un SGBD relationnel.}
+  \item{\textbf{MySQL} pour gérer la base de données du site : nous avons opté pour une base de données relationnelle vu le grand nombre d'associations reliant les différentes entités du site.}
+  \item{\textbf{PHP} : suite au choix de \textbf{MySQL}, \textbf{PHP} (ainsi que les \textbf{\textit{frameworks}} basés dessus et \textbf{ORM}) est l'un des langages côté serveur les plus adaptés et les plus utilisés pour la manipulation d'un \textbf{SGBDR}.}
 \end{enumerate}
 
 \begin{remark}
 L'utilisation des \textbf{API} est aussi contemplée, notamment pour l'implémentation d'une carte (\textbf{Leaflet}), d'un chat securisé (\textbf{Telegram}), des méthodes de paiement, \textit{etc...}
 \end{remark}
 
-
-
-
 \newpage
-
 %----------------------------------------------------------------------------------------
-%   Entretien 
+%   Entretien
 %----------------------------------------------------------------------------------------
 \section{Entretien}
-
-Après avoir désigné les fonctionnalités que nous prévoyions d'implémenter à notre produit, nous avons jugé nécessaire de pouvoir recevoir un retour sur cette concéption initiale. \\ 
-Ainsi, une expression détaillée des besoins d'un utilisateur potentiel nous semblait très utile dans cette phase de planification. Car, effectivement, une expression validée des besoins donnée en entrée de réalisation nous permettrait de vérifier que notre  concéption  répond bel et bien au besoin des utilisateurs.\\
-De plus, cela nous servirait à éliminer certaines fonctionnalités, prévues initialement et qui peuvent se révéler finalement inutiles à l'usage, ainsi que d'inclure d'autres qui peuvent donner plus de valeur au produit. 
-
-
-
+Après avoir désigné les fonctionnalités que nous prévoyions intégrer à notre produit, nous avons jugé nécessaire de pouvoir recevoir un retour sur cette conception initiale.\\
+Ainsi, une expression détaillée des besoins d'un utilisateur potentiel nous semblait très utile dans cette phase de planification. En effet, une telle expression nous permettrait de vérifier que notre conception répond bel et bien aux besoins des utilisateurs.\\
+De plus, cela nous servirait à éliminer certaines fonctionnalités prévues initialement et qui peuvent se révéler finalement inutiles à l'usage, ainsi que d'inclure d'autres qui peuvent donner plus de valeur à notre produit.
 
 Dans ce cadre, notre encadrant nous a donné l'opportunité de rencontrer un ami maraîcher avec qui nous avons organisé un entretien.\\
-Lors de cet entretien, nous avons commencé tout d'abord par présenter l'ensemble des fonctionnalités prévues, pour ensuite don	ner la parole à notre invité qui dans le cadre de notre modélisation, représente un potentiel utilisateur de type « Fournisseur ». \\
-À l'issue de cet entretien, nous avons eu un aperçu de ce que peut exiger un fournisseur de ce projet. 
-En prenant en compte ces exigences, nous avons pu modifier notre  concéption  initiale, notamment en redéfinissant les notions de « ruches » et de « cellules ». Évitant ainsi, un futur déphasage entre le besoin initial et l'application réalisée.
+Lors de cet entretien, nous avons commencé tout d'abord par présenter l'ensemble des fonctionnalités prévues, donnant ensuite la parole à notre invité qui, dans le cadre de notre modélisation, représenta un potentiel utilisateur de type \og Fournisseur \fg.\\
+À l'issue de cet entretien, nous avons eu un aperçu de ce que peut exiger un fournisseur de ce projet.
+En prenant en compte ces exigences, nous avons pu modifier notre conception initiale, notamment en redéfinissant les notions de \og ruches \fg et de \og cellules \fg, évitant par la suite un futur déphasage entre le besoin initial et l'application réalisée.
 
-
-
-
- Étant donnée, l'apport considérable qu'a pu avoir cette expérience, nous prévoyons de reproduire des expériences similaires. Afin d'impliquer les utilisateurs du début à la fin du projet. Maintenant ainsi le paradigme Agile que nous avons adopté pour gérer ce projet.
-
-
-
+Étant donné l'apport considérable qu'a eu cette expérience, nous prévoyons de reproduire des expériences similaires afin d'impliquer les utilisateurs tout au long du projet.
 %----------------------------------------------------------------------------------------
 %   PERSPECTIVES
 %----------------------------------------------------------------------------------------
 \section{Perspectives}
 \label{sec:perspectives}
-En plus des fonctionnalités que nous avons jugées être essentielles au projet et que nous prévoyons donc d'implémenter, nous avons pensé à des fonctionnalités supplémentaires que nous pourrions ajouter à notre projet une fois celles de base établies. En effet, plusieurs extensions sont possibles afin de proposer aux utilisateurs du site un choix plus diversifié.
+Outre les fonctionnalités que nous avons jugées essentielles au projet et que nous prévoyons donc d'implémenter, nous avons pensé à des fonctionnalités supplémentaires que nous pourrions ajouter à notre projet une fois celles de base établies. En effet, plusieurs extensions sont possibles afin de proposer aux utilisateurs un choix plus diversifié et plus complet.
 
-Parmi celles-ci nous avons pensé au fait de proposer aux clients réalisant des achats sur le site d'avoir la possibilité de régler, en plus qu'avec un paiement bancaire, de pouvoir recourir à des services de paiements en ligne telles que Paypal, voire même d'offrir la possibilité de payer en Crypto-monnaie dans une version plus développée du projet.
+Parmi celles-ci est de proposer aux clients réalisant des achats sur le site avec un paiement bancaire d'avoir la possibilité de recourir à des services de paiements en ligne tels que Paypal, voire même d'offrir la possibilité de payer en Crypto-monnaie dans une version plus développée du projet.
 
-En plus, nous pourrions également proposer plusieurs versions de notre site, où chaque version concerne un pays particulier et donc dans une langue précise. Tout cela, dans le but de pouvoir déployer le site ainsi que son concept à l'international.
+Par ailleurs, nous pourrions également internationaliser le site en l'offrant en plusieurs langues dans le but de pouvoir le déployer ainsi que son concept à l'international.
 
 D'autre part, nous avons formulé quelques \textit{user-stories} décrivant des fonctionnalités supplémentaires que nous souhaiterons ajouter aux prochaines versions du site, une fois la version de base établie et finalisée. Nous les expliciterons ainsi par la suite.
 %----------------------------------------------------------------------------------------
@@ -857,7 +850,7 @@ Dans ce chapitre, on illustre ci-dessous un \textit{mockup} graphique permettant
 \begin{figure}[!ht]
   \centering
   \includegraphics[scale=0.25]{images/storyboard/05.jpg}
-  \caption{Informations sur un vendeur}
+  \caption{Informations sur un fournisseur}
 \end{figure}
 
 \begin{figure}[!ht]
@@ -875,13 +868,13 @@ Dans ce chapitre, on illustre ci-dessous un \textit{mockup} graphique permettant
 \begin{figure}[!ht]
   \centering
   \includegraphics[scale=0.25]{images/storyboard/07.jpg}
-  \caption{Barre de paramètres d'un vendeur}
+  \caption{Barre de paramètres d'un fournisseur}
 \end{figure}
 
 \begin{figure}[!ht]
   \centering
   \includegraphics[scale=0.25]{images/storyboard/08.jpg}
-  \caption{Barre de paramètres du compte d'un vendeur}
+  \caption{Barre de paramètres du compte d'un fournisseur}
 \end{figure}
 \end{appendices}
 %----------------------------------------------------------------------------------------
