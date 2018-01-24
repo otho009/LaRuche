@@ -1,0 +1,83 @@
+commit 2eb2b1f34fa1befaa9ff768e00d4fd87f869fed5
+Author: SWissem <wiwi.sam96@outlook.it>
+Date:   Wed Jan 24 12:31:07 2018 +0100
+
+    Add files via upload
+
+commit d3fccd617bd18c656e1007f08f48d55eb2ba5a96
+Author: Farajallah Othmane <othmane.farjallah@etu.umontpellier.fr>
+Date:   Wed Jan 24 02:29:12 2018 +0100
+
+    ajout d'un nouveau modele EA et d'un nouveau modele relationnel
+
+commit 5d0d7aeffb45f54b3d017740a1b0999cd78212ee
+Author: anonbnr <bashar.nabil.rima@gmail.com>
+Date:   Mon Jan 22 16:58:07 2018 +0100
+
+    finalized the data structure part in the report
+
+commit eeb1dcc8747f0ebe006555c88be5cd7f0da2546d
+Author: ONIZUKAGTO <wiwi.sam96@outlook.it>
+Date:   Sun Jan 21 22:52:08 2018 +0100
+
+    ajout d'un exemple graphique explicatif de la structure de donnees
+
+commit 54f0f42c762856623f1a14629dac34a10b3c4e00
+Author: Rima Bachar <bachar.rima@etu.umontpellier.fr>
+Date:   Sat Jan 20 12:44:34 2018 +0100
+
+    restructured and finalized the user stories and use-case diagrams sections in the report, with an initial proof-reading of the report
+
+commit 07146baf2841492e32772d243de8fbe7adc3ca30
+Author: Rima Bachar <bachar.rima@etu.umontpellier.fr>
+Date:   Mon Dec 4 13:48:46 2017 +0100
+
+    added problem, methodologie, outils, structure de donnees, schema de base de donnees, et implementation prevue
+
+commit 53e63ce4b86670755d70eb032a6ed04874f42c85
+Author: Farajallah Othmane <othmane.farjallah@etu.umontpellier.fr>
+Date:   Mon Dec 4 12:55:56 2017 +0100
+
+    Added the 'Perspectives' part > CR1
+
+commit e07e752f918596d53bfe768e2c8521b8c7e3688d
+Author: Rima Bachar <bachar.rima@etu.umontpellier.fr>
+Date:   Sat Dec 2 19:59:09 2017 +0100
+
+    reviewed some mistakes in the introduction and header parts, and fixed the attribution of sections in the comments before every section
+
+commit 3ce7f1183547b74e3f0e6bd3adaa8d3507df197e
+Author: Rima Bachar <bachar.rima@etu.umontpellier.fr>
+Date:   Sat Dec 2 14:10:15 2017 +0100
+
+    added latex modeling report
+
+commit cd3fd0b316d0f8cef64a550b47c3369f0e74f4a6
+Author: Farajallah Othmane <othmane.farjallah@etu.umontpellier.fr>
+Date:   Sun Nov 19 20:36:02 2017 +0100
+
+    Added the initial E_A model
+
+commit 1e841c9e6718249f7266d2b4d0d9e47101e37ffa
+Author: Rima Bachar <bachar.rima@etu.umontpellier.fr>
+Date:   Tue Nov 14 18:03:26 2017 +0100
+
+    added tools and technologies to the README file
+
+commit a5c0b09a8617e1cf7ec188060e0abd3f10d9b9a2
+Author: Rima Bachar <bachar.rima@etu.umontpellier.fr>
+Date:   Tue Nov 14 18:01:34 2017 +0100
+
+    added index page squeleton
+
+commit 03fb7dc98e9c4eb1f4e1c15e744b704b63441aa3
+Author: Farajallah Othmane <othmane.farjallah@etu.umontpellier.fr>
+Date:   Mon Oct 16 15:33:16 2017 +0200
+
+    ajout de la ToDo list
+
+commit ebaf284888af6490f868b9f5e23fcced9f7cfdba
+Author: Farajallah Othmane <othmane.farjallah@etu.umontpellier.fr>
+Date:   Sun Oct 15 23:42:44 2017 +0200
+
+    Initialisation du dépot
