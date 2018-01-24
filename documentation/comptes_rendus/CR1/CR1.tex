@@ -3,6 +3,9 @@
 \usepackage[francais]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
+\usepackage{silence}
+\WarningFilter{latex}{Text page}
+
 \usepackage[colorlinks,urlcolor=blue]{hyperref} %hyperlinks
 \usepackage{xcolor} %color text
 \usepackage[amsthm]{ntheorem} %theorems and co.
@@ -13,8 +16,11 @@
 \usepackage{natbib} %bibliography
 \usepackage[nottoc,notlot,notlof]{tocbibind} %bind the table of contents to the bibligoraphy
 \usepackage{packages/tikz-uml} %UML elements
+\usepackage[normalem]{ulem}
 \usetikzlibrary{positioning}
-
+\newcommand{\relat}[1]{\textsc{#1}}
+\newcommand{\attr}[1]{\emph{#1}}
+\newcommand{\texit}[1]{\#\textsl{#1}}
 %Defining custom environments
 \theoremstyle{break}
 \newtheorem*{userStory}{User Story}
@@ -278,7 +284,7 @@ En tant qu'\textbf{utilisateur} \textbf{{\color{green} client}/{\color{red} four
   \label{fig:instant_messaging_use_case_diagram}
 \end{figure}
 
-\subsection{Produits \& Logistiques}
+\subsection{Produits \} Logistiques}
 \subsubsection{Gestion de Produits}
 \begin{userStory}[Avis sur les produits]
 \textbf{En tant qu'utilisateur}, je souhaite \textbf{consulter des avis} (\textbf{{\color{green}client}/{\color{red}fournisseur}}) sur les \textbf{produits} et d'en \textbf{rédiger} (\textbf{{\color{green}client} uniquement}),\\
@@ -494,26 +500,56 @@ D'autre part, cette modélisation basée sur des \textbf{critères physiques} (\
 %   MODÈLE EA
 %----------------------------------------------------------------------------------------
 \section{Modèle EA}
+  \begin{figure}[h!]
+    \includegraphics[scale=0.6]{images/Clients.jpg}
 
+    \caption{Modèle Entité-Association}
+    \label{fig:modele_EA}
+  \end{figure}
+
+\newpage
 %----------------------------------------------------------------------------------------
-%   SCHÉMA DE BD
+%   SCHÉMA DE BD 
 %----------------------------------------------------------------------------------------
 \section{Schéma de base de données}
 Le modèle relationnel obtenu par traduction du modèle EA des données est le suivant :
 \begin{enumerate}
-  \item{\texttt{CLIENT}(\underline{email}, nom, prenom, adresse, codePostale, Ville, Pays).}
-  \item{\texttt{WALLET}(\underline{ID\_wallet}, \textit{emailClient}).}
-  \item{\texttt{VENDOR}(\underline{emailV}, siret, nomProfessionel).}
-  \item{\texttt{STOCK}(\underline{ID\_stock}, \underline{emailV}).}
-  \item{\texttt{BASKET}(\underline{ID\_basket}).}
-  \item{\texttt{TYPE\_PRODUCT}(ID\_typeP).}
-  \item{\texttt{PRODUCT}(\underline{ID\_product}, name, \textit{ID\_stock}, \textit{ID\_typeP}, \textit{ID\_basket}).}
-  \item{\texttt{SUBORDER}(\underline{ID\_suborder}, isValidated, \textit{ID\_order}, \textit{emailV}).}
-  \item{\texttt{CONTAINS}(\underline{\textit{ID\_suborder}}, \underline{\textit{ID\_product}}, quantity).}
-  \item{\texttt{PAYMENTMETHOD}(\underline{ID\_paymentMethod}).}
-  \item{\texttt{STATUS}(\underline{ID\_status}).}
-  \item{\texttt{ORDER}(\underline{ID\_order}, dateOrder, \textit{emailClient}, \textit{ID\_wallet}, walletPoints, \textit{ID\_paymentMethod}, \textit{ID\_status}).}
+
+  \item { \texttt{REVIEW } (\underline{ID\_review}, \texit{ID\_client}, \texit{ID\_produit}) }
+  \item { \texttt{CLIENT } (\underline{ID\_client}, \attr{email}, \attr{age}, \attr{numero\_tel}, \attr{date\_inscription}, \attr{adresse}) }
+  \item { \texttt{FOURNISSEUR } (\underline{ID\_fournisseur}, \texit{ID\_commande}, \texit{ID\_client}) }
+  \item { \texttt{STOCK } (\underline{ID\_stock}, \texit{ID\_fournisseur}) }
+  \item { \texttt{PANIER } (\underline{ID\_panier}, \texit{ID\_fournisseur}) }
+  \item { \texttt{PRODUIT } (\underline{ID\_produit}, \attr{prix}, \attr{categorie}, \attr{date\_recolte}, \texit{ID\_stock}, \texit{ID\_panier}, \texit{ID\_product\_type}) }
+  \item { \texttt{CHOISIS } (\texit{\underline{ID\_client}}, \texit{\underline{Id\_method}}) }
+  \item { \texttt{INCLUT\_P } (\texit{\underline{ID\_commande}}, \texit{\underline{ID\_panier}}, \attr{quantite}) }
+  \item { \texttt{METHODE\_PAIEMENT } (\underline{Id\_method}) }
+  \item { \texttt{WALLET } (\underline{ID\_wallet}, \attr{solde}, \texit{ID\_client}) }
+  \item { \texttt{UTILISE } (\texit{\underline{ID\_commande\_globale}}, \texit{\underline{Id\_method}}) }
+  \item { \texttt{COMMANDE } (\underline{ID\_commande}, \texit{ID\_commande\_globale}, \texit{ID\_client}, \texit{ID\_fournisseur}) }
+  \item { \texttt{INCLUT } (\texit{\underline{ID\_commande}}, \texit{\underline{ID\_produit}}, \attr{quantite}) }
+  \item { \texttt{COMMANDE\_GLOBALE } (\underline{ID\_commande\_globale}, \texit{ID\_wallet}) }
+  \item { \texttt{FACTURE } (\underline{ID\_facture}, \attr{montant}, \attr{date}, \texit{ID\_commande\_globale}) }
+ \item{ \texttt{ TYPE\_PRODUIT } (\underline{ID\_product\_type})}
 \end{enumerate}
+
+% \begin{enumerate}
+%   \item{\texttt{Review}(\underline{ID\_review}, \textit{ID\_client, ID} \textit{
+    
+%   }\_produit, adresse, codePostale, Ville, Pays).}
+%   \item{\texttt{CLIENT}(\underline{email}, nom, prenom, adresse, codePostale, Ville, Pays).}
+%   \item{\texttt{WALLET}(\underline{ID\_wallet}, \textit{emailClient}).}
+%   \item{\texttt{VENDOR}(\underline{emailV}, siret, nomProfessionel).}
+%   \item{\texttt{STOCK}(\underline{ID\_stock}, \underline{emailV}).}
+%   \item{\texttt{BASKET}(\underline{ID\_basket}).}
+%   \item{\texttt{TYPE\_PRODUCT}(ID\_typeP).}
+%   \item{\texttt{PRODUCT}(\underline{ID\_product}, name, \textit{ID\_stock}, \textit{ID\_typeP}, \textit{ID\_basket}).}
+%   \item{\texttt{SUBORDER}(\underline{ID\_suborder}, isValidated, \textit{ID\_order}, \textit{emailV}).}
+%   \item{\texttt{CONTAINS}(\underline{\textit{ID\_suborder}}, \underline{\textit{ID\_product}}, quantity).}
+%   \item{\texttt{PAYMENTMETHOD}(\underline{ID\_paymentMethod}).}
+%   \item{\texttt{STATUS}(\underline{ID\_status}).}
+%   \item{\texttt{ORDER}(\underline{ID\_order}, dateOrder, \textit{emailClient}, \textit{ID\_wallet}, walletPoints, \textit{ID\_paymentMethod}, \textit{ID\_status}).}
+% \end{enumerate}
 
 %----------------------------------------------------------------------------------------
 %   STORYBOARD
@@ -540,7 +576,7 @@ Pour la mise en oeuvre du site web, on prévoit utiliser, à part \textbf{HTML} 
 L'utilisation des \textbf{API} est aussi contemplée, notamment pour l'implémentation d'une carte (\textbf{Leaflet}), d'un chat securisé (\textbf{Telegram}), des méthodes de paiement, \textit{etc...}
 \end{remark}
 %----------------------------------------------------------------------------------------
-%   PERSPECTIVES
+%   PERSPECTIVES 
 %----------------------------------------------------------------------------------------
 \section{Perspectives}
 \label{sec:perspectives}
@@ -603,7 +639,7 @@ D'autre part, nous avons formulé quelques \textit{user-stories} décrivant des 
 \textbf{dans le but de suivre l'historique de mes achats/ventes} à travers \textbf{différents médias} pour plus d'\textbf{accesibilité} et d'\textbf{intégrité}.
 \end{userStory}
 
-\begin{userStory}[Purchase Cancellation \& Reimbursment Policy]
+\begin{userStory}[Purchase Cancellation \} Reimbursment Policy]
 \textbf{En tant qu'utilisateur {\color{green}client}}, je souhaite avoir la possibilité d'\textbf{annuler un achat} dans un \textbf{délai spécifique} suivant la transaction,\\
 \indent
 \textbf{dans le but d'}être \textbf{remboursé partiellement/complétement} suite à la transaction défectueuse.
