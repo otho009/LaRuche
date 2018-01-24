@@ -3,24 +3,26 @@
 \usepackage[francais]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
-\usepackage{silence}
-\WarningFilter{latex}{Text page}
-
 \usepackage[colorlinks,urlcolor=blue]{hyperref} %hyperlinks
 \usepackage{xcolor} %color text
 \usepackage[amsthm]{ntheorem} %theorems and co.
 \usepackage{amsmath} %mathematical symbols
 \usepackage{amssymb} %squares in itemize
-\usepackage{enumitem} %change numbers into letters in enumerate
-\usepackage{footmisc} %reference footnotes
+\usepackage[page,toc,titletoc,title]{appendix} %appendices
 \usepackage{natbib} %bibliography
 \usepackage[nottoc,notlot,notlof]{tocbibind} %bind the table of contents to the bibligoraphy
 \usepackage{packages/tikz-uml} %UML elements
-\usepackage[normalem]{ulem}
-\usetikzlibrary{positioning}
-\newcommand{\relat}[1]{\textsc{#1}}
+\usepackage{silence} %silencing warnings
+\WarningFilter{latex}{Text page}
+
+%Defining custom commands for relational model
 \newcommand{\attr}[1]{\emph{#1}}
 \newcommand{\texit}[1]{\#\textsl{#1}}
+
+%Redefining the appendices name to "Annexes" in toc and removing "Annexe" from appendice title
+\renewcommand{\appendixtocname}{Annexes}
+\appendixtitletocoff
+
 %Defining custom environments
 \theoremstyle{break}
 \newtheorem*{userStory}{User Story}
@@ -123,7 +125,7 @@ Pour garantir une bonne modélisation du projet, en cohérence avec l'approche d
   \item[diagrammes de cas d'usage]{des diagrammes dynamiques, souvent utilisés en \textbf{UML} pour décrire en haut niveau les fonctionnalités d'un système, en se servant de notions telles que \textbf{acteurs}, \textbf{cas d'usage}, \textbf{systèmes} et les \textbf{relations} entre chacune de ces entités.}
   \item[modèle EA]{un modèle \textbf{conceptuel} utilisé pour décrire les entités du projet ainsi que les associations décrivant leurs relations et comportements.}
   \item[schéma de base de données]{schéma en modèle \textbf{relationnel} composé des schémas des relations et des contraintes d'intégrité sur l'ensemble des relations, traduit généralement à partir du \textbf{modèle EA} et servant comme \textbf{modèle logique} lors de l'implémentation de la \textbf{base de données}.}
-  \item[\textit{mockup storyboard}]{document de haut niveau offrant un moyen pour schématiser l'utilisation d'un projet, en positionant les différents éléments le composant, sans rentrer dans les détails de leur fonctionnement.}
+  \item[\textit{mockup storyboard}]{document de haut niveau offrant un moyen pour schématiser l'utilisation d'un projet, en positionant les différents éléments le composant, sans rentrer dans les détails de leur fonctionnement (cf. Annexe \ref{app:storyoard}).}
 \end{description}
 
 %----------------------------------------------------------------------------------------
@@ -450,6 +452,13 @@ Soient $v_1$ et $v_2$ deux fournisseurs tels que $v_2 \notin \texttt{Voisins}(v_
 
 \subsubsection{exemples illustratifs}
 \begin{example}
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.3]{images/exemple_introductif1.png}
+  \caption{Exemple de ruches de fournisseurs}
+  \label{fig:exemple_introductif_1}
+\end{figure}
+
 Soit $V = \{v_1, v_2, v_3, v_4\}$ un ensemble de fournisseurs (cf. Figure \ref{fig:exemple_introductif_1}.\\
 En appliquant l'opérateur cellule $\pi_{v \in V}$ sur les fournisseurs de $V$, ayant chacun un rayon maximal quelconque, on aura les ruches :
 \begin{itemize}
@@ -464,16 +473,16 @@ Par ailleurs, chaque fournisseur possède des voisins tels que :
   \item{$\texttt{Voisins}(v_3) = \{v_1, v_2\}$}
   \item{$\texttt{Voisins}(v_4) = \{v_2, v_4\}$}
 \end{itemize}
-
-\begin{figure}
-  \centering
-  \includegraphics[scale=0.3]{images/exemple_introductif1.png}
-  \caption{Exemple de ruches de fournisseurs}
-  \label{fig:exemple_introductif_1}
-\end{figure}
 \end{example}
 
 \begin{example}
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.15]{images/exemple_introductif2.png}
+  \caption{Exemple d'application du voisinage imposé sur des fournisseurs de ruches différentes}
+  \label{fig:exemple_introductif_2}
+\end{figure}
+
 Soit $V = \{v_1, v_2, v_3, v_4\}$ un ensemble de fournisseurs (cf. Figure \ref{fig:exemple_introductif_2}.\\
 En appliquant l'opérateur cellule $\pi_{v \in V}$ sur les fournisseurs de $V$, ayant chacun un rayon maximal quelconque, on aura les ruches :
 \begin{itemize}
@@ -483,13 +492,6 @@ En appliquant l'opérateur cellule $\pi_{v \in V}$ sur les fournisseurs de $V$, 
   \item{$R_4 = \{p_4, \{v_2, v_4\}\}$}
 \end{itemize}
 En appliquant la règle du \textit{voisinage imposé} sur les fournisseurs de $V$, on constate qu'il existe une ruche $R=\{p, \{v_1, v_2, v_3, v_4\}\}$ plus optimale les regroupant.
-
-\begin{figure}
-  \centering
-  \includegraphics[scale=0.15]{images/exemple_introductif2.png}
-  \caption{Exemple d'application du voisinage imposé sur des fournisseurs de ruches différentes}
-  \label{fig:exemple_introductif_2}
-\end{figure}
 \end{example}
 
 \subsubsection{remarques}
@@ -500,21 +502,20 @@ D'autre part, cette modélisation basée sur des \textbf{critères physiques} (\
 %   MODÈLE EA
 %----------------------------------------------------------------------------------------
 \section{Modèle EA}
-  \begin{figure}[h!]
-    \includegraphics[scale=0.6]{images/Clients.jpg}
-
-    \caption{Modèle Entité-Association}
-    \label{fig:modele_EA}
-  \end{figure}
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[scale=0.6]{images/Clients.jpg}
+  \caption{Modèle Entité-Association}
+  \label{fig:modele_EA}
+\end{figure}
 
 \newpage
 %----------------------------------------------------------------------------------------
-%   SCHÉMA DE BD 
+%   SCHÉMA DE BD
 %----------------------------------------------------------------------------------------
 \section{Schéma de base de données}
-Le modèle relationnel obtenu par traduction du modèle EA des données est le suivant :
+Le modèle relationnel obtenu par traduction du \textbf{modèle EA} des données est le suivant :
 \begin{enumerate}
-
   \item { \texttt{REVIEW } (\underline{ID\_review}, \texit{ID\_client}, \texit{ID\_produit}) }
   \item { \texttt{CLIENT } (\underline{ID\_client}, \attr{email}, \attr{age}, \attr{numero\_tel}, \attr{date\_inscription}, \attr{adresse}) }
   \item { \texttt{FOURNISSEUR } (\underline{ID\_fournisseur}, \texit{ID\_commande}, \texit{ID\_client}) }
@@ -530,32 +531,8 @@ Le modèle relationnel obtenu par traduction du modèle EA des données est le s
   \item { \texttt{INCLUT } (\texit{\underline{ID\_commande}}, \texit{\underline{ID\_produit}}, \attr{quantite}) }
   \item { \texttt{COMMANDE\_GLOBALE } (\underline{ID\_commande\_globale}, \texit{ID\_wallet}) }
   \item { \texttt{FACTURE } (\underline{ID\_facture}, \attr{montant}, \attr{date}, \texit{ID\_commande\_globale}) }
- \item{ \texttt{ TYPE\_PRODUIT } (\underline{ID\_product\_type})}
+  \item{ \texttt{ TYPE\_PRODUIT } (\underline{ID\_product\_type})}
 \end{enumerate}
-
-% \begin{enumerate}
-%   \item{\texttt{Review}(\underline{ID\_review}, \textit{ID\_client, ID} \textit{
-    
-%   }\_produit, adresse, codePostale, Ville, Pays).}
-%   \item{\texttt{CLIENT}(\underline{email}, nom, prenom, adresse, codePostale, Ville, Pays).}
-%   \item{\texttt{WALLET}(\underline{ID\_wallet}, \textit{emailClient}).}
-%   \item{\texttt{VENDOR}(\underline{emailV}, siret, nomProfessionel).}
-%   \item{\texttt{STOCK}(\underline{ID\_stock}, \underline{emailV}).}
-%   \item{\texttt{BASKET}(\underline{ID\_basket}).}
-%   \item{\texttt{TYPE\_PRODUCT}(ID\_typeP).}
-%   \item{\texttt{PRODUCT}(\underline{ID\_product}, name, \textit{ID\_stock}, \textit{ID\_typeP}, \textit{ID\_basket}).}
-%   \item{\texttt{SUBORDER}(\underline{ID\_suborder}, isValidated, \textit{ID\_order}, \textit{emailV}).}
-%   \item{\texttt{CONTAINS}(\underline{\textit{ID\_suborder}}, \underline{\textit{ID\_product}}, quantity).}
-%   \item{\texttt{PAYMENTMETHOD}(\underline{ID\_paymentMethod}).}
-%   \item{\texttt{STATUS}(\underline{ID\_status}).}
-%   \item{\texttt{ORDER}(\underline{ID\_order}, dateOrder, \textit{emailClient}, \textit{ID\_wallet}, walletPoints, \textit{ID\_paymentMethod}, \textit{ID\_status}).}
-% \end{enumerate}
-
-%----------------------------------------------------------------------------------------
-%   STORYBOARD
-%----------------------------------------------------------------------------------------
-\section{Storyboard}
-
 %----------------------------------------------------------------------------------------
 %   CONCLUSION
 %----------------------------------------------------------------------------------------
@@ -576,7 +553,7 @@ Pour la mise en oeuvre du site web, on prévoit utiliser, à part \textbf{HTML} 
 L'utilisation des \textbf{API} est aussi contemplée, notamment pour l'implémentation d'une carte (\textbf{Leaflet}), d'un chat securisé (\textbf{Telegram}), des méthodes de paiement, \textit{etc...}
 \end{remark}
 %----------------------------------------------------------------------------------------
-%   PERSPECTIVES 
+%   PERSPECTIVES
 %----------------------------------------------------------------------------------------
 \section{Perspectives}
 \label{sec:perspectives}
@@ -733,9 +710,19 @@ D'autre part, nous avons formulé quelques \textit{user-stories} décrivant des 
   \label{fig:order_payment_vendor_use_case_diagram}
 \end{figure}
 %----------------------------------------------------------------------------------------
+%   ANNEXES
+%----------------------------------------------------------------------------------------
+\begin{appendices}
+%----------------------------------------------------------------------------------------
+%   STORYBOARD
+%----------------------------------------------------------------------------------------
+\chapter{Storyboard}
+\label{app:storyoard}
+Dans ce chapitre, on illustre ci-dessous un mockup graphique permettant de décrire une structure de mise en forme approximative, ainsi qu'un enchaînement d'évènements et de fonctionnalités résultant d'une navigation partielle de notre site web.
+\end{appendices}
+%----------------------------------------------------------------------------------------
 %   BIBLIOGRAPHIE
 %----------------------------------------------------------------------------------------
 \bibliographystyle{agsm}
 \bibliography{mybib}
-
 \end{document}
