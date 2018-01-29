@@ -1,0 +1,3 @@
+bow_platform:
+    resource: "@BOWPlatformBundle/Resources/config/routing.yml"
+    prefix:   /

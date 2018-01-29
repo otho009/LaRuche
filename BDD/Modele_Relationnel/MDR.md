@@ -1,0 +1,12 @@
+#MODELE RELATIONNEL DE LA BASE DE DONNEE
+**INSCRIT**
+( )
+
+**PRODUIT**
+( )
+
+**CLIENT**
+( )
+
+**PRODUCTEUR**
+( )
