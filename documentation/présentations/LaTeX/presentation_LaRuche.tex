@@ -2,6 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[francais]{babel}
+%\usepackage{enumitem}
 \usetheme{Singapore} %Boadilla | Bergen | Madrid | Antibes | Hannover | Singapore | Warsaw
 
 %----------------------------------------------------------------------------------------
@@ -30,7 +31,6 @@
 %   INTRODUCTION
 %----------------------------------------------------------------------------------------
 \section{Introduction}
-\subsection{Contexte du projet}
 \begin{frame}{Contexte du projet}{Introduction}
 %Contenu
 \end{frame}
@@ -41,23 +41,91 @@
 \section{Problématique et Méthodologie de Résolution}
 \subsection{Problématique}
 \begin{frame}{Problématique}{Problématique et Méthodologie de Résolution}
-%Contenu
+  \begin{description}
+    \item[Consommateurs :] acheter des produits frais et minimiser les étapes de processing.
+    \item[Producteurs :] se libérer des centres d'achat et des intermédiaires de distribution.
+  \end{description}
 \end{frame}
 
-\subsection{Solution proposée : \texttt{LaRuche}}
+\subsection{Solutions}
+\begin{frame}{Solution possible : La Ruche Qui Dit Oui}{Problématique et Méthodologie de Résolution}
+\begin{block}{Site Web}
+Une interface directe entre \textbf{consommateurs} et \textbf{fournisseurs}.
+\end{block}
+
+\begin{definition}[Ruche]
+Un regroupement de plusieurs membres \textbf{consommateurs} et \textbf{fournisseurs} d'une région, guidé par un \textbf{responsable de ruche}.
+\end{definition}
+
+\begin{block}{Vision Centralisée}
+\begin{itemize}
+  \item l'ensemble des ruches obeit à une \textbf{Ruche-Mama}.
+  \item les besoins de chaque ruche sont transmis à la \textbf{Ruche-Mama} via le responsable de ruche correspondant.
+  \item la \textbf{Ruche-Mama} s'occupe de la gestion des ruches : création, réglementations internes, interactions, évolution et extensibilité des services, $\dots$.
+\end{itemize}
+\end{block}
+\end{frame}
+
 \begin{frame}{Solution proposée : \texttt{LaRuche}}{Problématique et Méthodologie de Résolution}
-%Contenu
+\begin{block}{Site Web}
+Une interface directe entre \textbf{consommateurs} et \textbf{fournisseurs}.
+\end{block}
+
+\begin{definition}[Ruche]
+Un regroupement de plusieurs \textbf{fournisseurs} d'une région, \textbf{sans guide explicite} préfixé par le site.
+\end{definition}
+
+\begin{block}{Vision Décentralisée et Autonome}
+\begin{itemize}
+  \item l'ensemble des ruches ne répond à \textbf{aucune entité centralisée fédéral}.
+  \item chaque ruche s'occupe de ses propres besoins et de leur gestion sans besoin d'un intermédiaire et d'une hiérarchie autoritaire à respecter.
+\end{itemize}
+\end{block}
 \end{frame}
 
 \subsection{Méthodes agiles}
-\begin{frame}{Méthodes agiles}{Problématique et Méthodologie de Résolution}
-%%User Stories
-%%Entretiens
+\begin{frame}{Méthodologie de résolution : méthodes agiles}{Problématique et Méthodologie de Résolution}
+\begin{block}{Méthodes Agiles}
+Une approche de développement logiciel de plus en plus prépondérante basée sur une conception/développement itérative, orientée-test et orientée-client.
+\end{block}
+
+\begin{block}{Pourquoi ?}
+\begin{itemize}
+  \item meilleure gestion des ressources
+  \item sortie plus fréquente de versions fonctionnelles et testées du produit
+  \item interaction plus fréquente avec les clients : adaptation et extensibilité du produit selon leurs besoins
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Méthodologie de résolution : méthodes agiles}{Problématique et Méthodologie de Résolution}
+\begin{block}{\textit{User Stories}}
+Des requis fournis par les clients, décrivant en langage naturel les fonctionnalités qu'ils souhaitent avoir dans le produit développé.
+\end{block}
 \end{frame}
 %----------------------------------------------------------------------------------------
 %   CONCEPTION
 %----------------------------------------------------------------------------------------
 \section{Conception}
+\subsection{Outils de conception utilisés}
+\begin{frame}{Outils de conception utilisés}{Conception}
+\begin{block}{Diagrammes de cas d'usage}
+Des diagrammes dynamiques, souvent utilisés en \textbf{UML} pour décrire en haut niveau des fonctionnalités d'un système.
+\end{block}
+
+\begin{block}{Modèle EA}
+Un modèle \textbf{conceptuel} utilisé pour décrire les entités du projet et les associations décrivant leurs relations et comportements.
+\end{block}
+
+\begin{block}{Schéma de base de données}
+Un schéma en modèle \textbf{relationnel} traduit à partir du \textbf{modèle EA} et servant comme \textbf{support} lors de l'implémentation de la \textbf{base de données}.
+\end{block}
+
+\begin{block}{\textit{mockup storyboard}}
+Un document de haut niveau (peu de détails sur les fonctionnalités) pour schématiser l'utilisation d'un projet.
+\end{block}
+\end{frame}
+
 \subsection{Côté fournisseur}
 \begin{frame}{Côté fournisseur}{Conception}
 %%SD : Ruche, Cellule, Voisins, Voisinage imposé, ...
