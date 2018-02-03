@@ -3,7 +3,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[francais]{babel}
 %\usepackage{enumitem}
-\usetheme{Singapore} %Boadilla | Bergen | Madrid | Antibes | Hannover | Singapore | Warsaw
+\usetheme{Singapore} %Boadilla | Bergen | Madrid | Antibes | Hannover | Singapore | Warsaw
 
 %----------------------------------------------------------------------------------------
 %   TITLE INFORMATION
@@ -32,7 +32,11 @@
 %----------------------------------------------------------------------------------------
 \section{Introduction}
 \begin{frame}{Contexte du projet}{Introduction}
-%Contenu
+  \begin{description}
+    \item[Projet CMI:] Projet annuel pour l'année 2017/2018 sous le parcours du CMI informatique.
+    \item[Tuteur:] Le tuteur du projet est l'enseignant chercheur Eric Bourreau.
+    \item[Lieux de travail :] La conception et le développement du projet ce fait entre la FDS et le LIRMM.
+  \end{description}
 \end{frame}
 
 %----------------------------------------------------------------------------------------
@@ -60,7 +64,7 @@ Un regroupement de plusieurs membres \textbf{consommateurs} et \textbf{fournisse
 \begin{block}{Vision Centralisée}
 \begin{itemize}
   \item l'ensemble des ruches obeit à une \textbf{Ruche-Mama}.
-  \item les besoins de chaque ruche sont transmis à la \textbf{Ruche-Mama} via le responsable de ruche correspondant.
+  \item les besoins de chaque ruche sont transmis à la \textbf{Ruche-Mama} via le responsable de ruche correspondant.
   \item la \textbf{Ruche-Mama} s'occupe de la gestion des ruches : création, réglementations internes, interactions, évolution et extensibilité des services, $\dots$.
 \end{itemize}
 \end{block}
@@ -155,6 +159,10 @@ Un document de haut niveau (peu de détails sur les fonctionnalités) pour sché
 \subsection{\protect\textit{Back-end}}
 \begin{frame}{\textit{Back-end}}{Outils d'implémentation}
 %%PHP, MySQL
+  \begin{description}
+    \item[Language de développement :] Serveur codé en PHP et le framework Symfony pour un système modulaire et basé sur le design pattern MVC.
+    \item[Base de données :] Base de données relationnel mis en place avec MySQL. Interaction avec l'ORM Doctrine.
+  \end{description}
 \end{frame}
 %----------------------------------------------------------------------------------------
 %   CONCLUSION
@@ -162,9 +170,14 @@ Un document de haut niveau (peu de détails sur les fonctionnalités) pour sché
 \section{Conclusion}
 \subsection{Écosystème décentralisé et autonome}
 \begin{frame}{Écosystème décentralisé et autonome}{Conclusion}
-%pas de hiérarchie
-%ruches et évènements de collecte déterminées par les fournisseurs
-%système versatile et extensible
+
+\begin{block}{Autonomie}
+Les fournisseurs sont \textbf{autonomes} et ils déterminent la formation des ruches et des évènements de collecte.
+\end{block} 
+\begin{block}{Extensibilité}
+Le système est versatile et extensible, adapte pour l'extension des ruches ou l'augmentation de nombre de ces derniers.
+\end{block} 
+
 \end{frame}
 
 \subsection{Perspectives}
