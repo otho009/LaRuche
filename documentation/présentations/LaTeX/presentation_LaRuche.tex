@@ -1,8 +1,10 @@
-\documentclass{beamer}
+\documentclass[usenames,dvipsnames]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[francais]{babel}
-%\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{packages/tikz-uml}
+% \usepackage[amsthm]{ntheorem} %theorems and co.
 \usetheme{Singapore} %Boadilla | Bergen | Madrid | Antibes | Hannover | Singapore | Warsaw
 
 %----------------------------------------------------------------------------------------
@@ -33,9 +35,10 @@
 \section{Introduction}
 \begin{frame}{Contexte du projet}{Introduction}
   \begin{description}
-    \item[Projet CMI:] Projet annuel pour l'année 2017/2018 sous le parcours du CMI informatique.
-    \item[Tuteur:] Le tuteur du projet est l'enseignant chercheur Eric Bourreau.
-    \item[Lieux de travail :] La conception et le développement du projet ce fait entre la FDS et le LIRMM.
+    \item [Projet CMI :] Module d'un projet annuel pour l'année 2017--2018 dans le cadre du \textbf{CMI Informatique}.
+    \item [Responsable CMI Informatique :] Mme Anne-Elisabeth Baert.
+    \item [Tuteur et Encadrant du projet :] M. Eric Bourreau.
+    \item [Lieux de travail :] La \textbf{FDS} et le \textbf{LIRMM}.
   \end{description}
 \end{frame}
 
@@ -45,10 +48,27 @@
 \section{Problématique et Méthodologie de Résolution}
 \subsection{Problématique}
 \begin{frame}{Problématique}{Problématique et Méthodologie de Résolution}
-  \begin{description}
-    \item[Consommateurs :] acheter des produits frais et minimiser les étapes de processing.
-    \item[Producteurs :] se libérer des centres d'achat et des intermédiaires de distribution.
-  \end{description}
+\begin{columns}[onlytextwidth, T]
+  \column{55mm}
+    \includegraphics[scale=0.2]{images/chain_production.png}
+
+  \column{\dimexpr\linewidth-40mm-2mm}
+    \begin{block}{Consommateurs :}
+    Acheter des produits frais et minimiser les étapes de processing.
+    \end{block}
+
+    \begin{block}{Producteurs :}
+    Se libérer des centres d'achat et des intermédiaires de distribution.
+    \end{block}
+\end{columns}
+  % \begin{figure}[!ht]
+  %   \centering
+  %   \includegraphics[scale=0.2]{images/chain_production.png}
+  % \end{figure}
+  % \begin{description}
+  %   \item[Consommateurs :] acheter des produits frais et minimiser les étapes de processing.
+  %   \item[Producteurs :] se libérer des centres d'achat et des intermédiaires de distribution.
+  % \end{description}
 \end{frame}
 
 \subsection{Solutions}
@@ -101,12 +121,6 @@ Une approche de développement logiciel de plus en plus prépondérante basée s
 \end{itemize}
 \end{block}
 \end{frame}
-
-\begin{frame}{Méthodologie de résolution : méthodes agiles}{Problématique et Méthodologie de Résolution}
-\begin{block}{\textit{User Stories}}
-Des requis fournis par les clients, décrivant en langage naturel les fonctionnalités qu'ils souhaitent avoir dans le produit développé.
-\end{block}
-\end{frame}
 %----------------------------------------------------------------------------------------
 %   CONCEPTION
 %----------------------------------------------------------------------------------------
@@ -130,14 +144,183 @@ Un document de haut niveau (peu de détails sur les fonctionnalités) pour sché
 \end{block}
 \end{frame}
 
+\subsection{\protect\textit{User Stories} : outil de conception agile}
+\begin{frame}{\textit{User Stories} : outil de conception agile}{Conception}
+\begin{block}{\textit{User Stories}}
+Des requis fournis par les clients, décrivant en langage naturel les fonctionnalités qu'ils souhaitent avoir dans le produit développé.
+\end{block}
+
+\begin{block}{\textcolor{Sepia}{\texttt{Intitulé}}}
+\begin{it}
+  En tant que \textcolor{DarkOrchid}{\texttt{<rôle>}}, je souhaite \textcolor{BrickRed}{\texttt{<fonctionnalité>}}, \\
+  ~~~~~~~~~dans le but de \textcolor{OliveGreen}{\texttt{<bénéfice>}}.
+\end{it}
+\end{block}
+\end{frame}
+
 \subsection{Côté fournisseur}
 \begin{frame}{Côté fournisseur}{Conception}
-%%SD : Ruche, Cellule, Voisins, Voisinage imposé, ...
-%%Use Cases
-%%Storyboard
-%%inscription, ruches, et points de collecte
-%%définition de produits, gestion des stocks
-%%paiement (espèce puis en ligne)
+\begin{block}{Besoins}
+\begin{enumerate}
+  \item Un profile d'utilisateur \textbf{fournisseur} : propriétés et fonctionnalités via des \textit{user-stories}.
+  \item Une \textbf{structure de données} pour décrire le \textbf{regroupement des fournisseurs} et leurs \textbf{interactions} : \texttt{ruche}, \texttt{opérateur cellule}, \texttt{voisins}, $\dots$
+\end{enumerate}
+\end{block}
+\end{frame}
+
+\subsubsection*{\protect\textit{User-stories} des fournisseurs}
+\begin{frame}{Intitulés des \textit{user-stories} fournisseurs}{Côté fournisseur}
+\begin{enumerate}
+  \item Définition et stockage de produits.
+  \item Offre de Paniers.
+  \item Rapports de suivi périodiques.
+  \item Politique de rupture des stocks.
+  \item Politique de partage intracellulaire dans une ruche.
+  \item Validation de commandes.
+  \item Attribution de factures.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Exemple d'une \textit{user-story} fournisseur}{Côté fournisseur}
+\begin{block}{\textcolor{Sepia}{\texttt{Définition et stockage de produits}}}
+En tant que \textcolor{DarkOrchid}{fournisseur}, je souhaite {\color{BrickRed} \textbf{définir} ma \textbf{sélection de produits} selon des \textbf{informations caractéristiques} à fournir dans des \textbf{formulaires}},\\
+~~~~~~~~~dans le but de {\color{OliveGreen}maximiser la transparence de mes produits pour gagner la fidelité de mes clients, tout en \textbf{gérant} (création, modification, ajout, suppression) ma sélection à travers le site}.
+\end{block}
+\end{frame}
+
+\subsubsection*{Profile fournisseur}
+\begin{frame}{Profile fournisseur}{Côté fournisseur}
+\begin{enumerate}
+  \item Un fournisseur offre des produits/paniers de produits divers.
+  \item Un fournisseur gére ses produits/paniers dans des stocks.
+  \item Un fournisseur suit l'évolution de ses ressources via des rapports de suivi périodiques.
+  \item Un fournisseur interagit avec d'autres fournisseurs pour créer des ruches et organiser des évènements de collecte et uniquement avec des clients qui l'ont déjà contacté.
+  \item Un fournisseur valide les commandes de réservation des produits.
+  \item Un fournisseur règle les commandes physiquement, en premier temps, et puis via le site dans les versions ultérieures.
+  \item Un fournisseur imprime les factures, créées par le site lors de la réservation des produits par des clients, et les émet aux clients correspondants lors de la collecte de leurs produits.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Exemple d'un diagramme de cas d'usage (version de base)}{Côté fournisseur}
+\begin{figure}[!ht]
+  \centering
+  \resizebox{0.75\textwidth}{!}{
+    \begin{tikzpicture}
+      \setcounter{tikzumlUseCaseNum}{0}
+      \umlactor[x=-1, y=-1]{Vendor}
+      \umlactor[x=8, y=-1]{Database}
+      \begin{umlsystem}[x=3, fill=green!10]{home page}
+        \umlusecase[width=3cm]{Add/Delete/Modify Products}
+        \umlusecase[y=-2.5, width=3cm]{Add/Delete/Modify Baskets}
+        \umlusecase[y=-4.5]{Check Stocks}
+        \umlusecase[y=-6.5]{Check Reports}
+      \end{umlsystem}
+      \umlextend[name=ext]{usecase-2}{usecase-1}
+      \umlextend{usecase-4}{usecase-3}
+      \umlassoc{Vendor}{usecase-1}
+      \umlassoc{Vendor}{usecase-2}
+      \umlassoc{Vendor}{usecase-3}
+      \umlassoc{Vendor}{usecase-4}
+      \umlassoc{Database}{usecase-1}
+      \umlassoc{Database}{usecase-2}
+      \umlassoc{Database}{usecase-3}
+      \umlassoc{Database}{usecase-4}
+      \umlnote[x=-2, y=-4]{ext-1}{Products have to exist in the database prior to the introduction of baskets}
+    \end{tikzpicture}
+  }
+\end{figure}
+\end{frame}
+
+\begin{frame}{Exemple d'un diagramme de cas d'usage (version ultérieure)}{Côté fournisseur}
+\begin{figure}[!ht]
+  \centering
+  \resizebox{0.65\textwidth}{!}{
+    \begin{tikzpicture}
+      \setcounter{tikzumlUseCaseNum}{0}
+      \umlactor{Vendor}
+      \umlactor[x=12, y=-2]{Database}
+      \umlactor[y=-13]{Client User Database}
+      \umlactor[x=12, y=-11]{Bill Reception Platform}
+      \umlactor[x=4.5, y=-13]{Bank/PayPal}
+      \begin{umlsystem}[x=4, fill=red!10]{vendor home page}
+        \umlusecase[width=2cm]{Check Stocks}
+        \umlusecase[x=5, width=2cm]{Allow Delayed Orders}
+        \umlusecase[x=2.6, y=-3, width=3cm]{Set Purchase Deadline}
+        \umlusecase[x=4, y=-6, width=3cm]{Check Pending Orders}
+        \umlusecase[y=-8, width=2cm]{Process Pending Orders}
+        \umlusecase[x=5, y=-8, width=2cm]{Send Bill}
+        \umlusecase[x=4.5, y=-11, width=2cm]{Update Sales' History}
+      \end{umlsystem}
+      \umlextend{usecase-2}{usecase-1}
+      \umlextend[name=deadline]{usecase-3}{usecase-4}
+      \umlextend[name=checkPending1]{usecase-4}{usecase-5}
+      \umlinclude{usecase-5}{usecase-6}
+      \umlinclude{usecase-6}{usecase-7}
+      \umlassoc{Vendor}{usecase-1}
+      \umlassoc[name=checkPending2]{Vendor}{usecase-4}
+      \umlassoc[name=process]{Vendor}{usecase-5}
+      \umlassoc{Database}{usecase-2}
+      \umlassoc{Database}{usecase-3}
+      \umlassoc{Database}{usecase-4}
+      \umlassoc{Database}{usecase-7}
+      \umlassoc{Bill Reception Platform}{usecase-6}
+      \umlassoc{Bank/PayPal}{usecase-6}
+      \umlassoc{Client User Database}{usecase-6}
+      \umlnote[x=-0.5, y=-5]{checkPending1-1}{only if validating transactions is set to manual}
+      \umlnote[x=-0.5, y=-5]{checkPending2-1}{only if validating transactions is set to manual}
+      \umlnote[x=-0.5, y=-8]{process-1}{only if validating transactions is set to automatic}
+      \umlnote[x=-0.5, y=-11]{deadline-1}{according to the number of pending orders}
+    \end{tikzpicture}
+  }
+\end{figure}
+\end{frame}
+
+\subsubsection*{Ruche : Structure de données proposée}
+\begin{frame}{Ruche : Structure de données proposée}{Côté fournisseur}
+\begin{block}{Définitions de base}
+\begin{description}
+  \item[$\textbf{V}$]{ensemble des fournisseurs.}
+  \item[$\textbf{C}$]{ensemble des clients.}
+  \item[$\pi_v$]{\textbf{opérateur} appliqué à $v \in V$ désignant une \textbf{cellule}, c.à.d. un \textbf{cercle} dont le centre est le point représentant les coordonnées du fournisseur $v$ et dont le rayon est la distance maximale en \textbf{km} qu'il souhaite parcourir afin de se rendre à un lieu de collecte.}
+\end{description}
+\end{block}
+\end{frame}
+
+\begin{frame}{Ruche : Structure de données proposée($2$)}{Côté fournisseur}
+\begin{block}{Ruche}
+Soit $v_1, v_2, \dots, v_n \in V^n$. Une \textbf{ruche} $R = (p, V_R)$ est composée de :
+\begin{description}
+  \item[$\mathbf{V_R}$]{ensemble de fournisseurs dont les cellules s'intersectent;}
+  \item[$\mathbf{p}$]{un point de collecte obtenu à partir d'une opération\footnote{le choix du point est relatif aux fournisseurs de la ruche, étant indéterministe en soi} sur la zone d'intersection des cellules correspondantes aux vendeurs de $V$.}
+\end{description}
+Autrement dit, $R = \{p, \{v_1, v_2, \dots, v_n \in V\; |\; \pi_{v_1} \cap \pi_{v_2} \cap \dots \cap \pi_{v_2} \neq \varnothing\}\}$
+\end{block}
+\end{frame}
+
+\begin{frame}{Ruche : Structure de données proposée($3$)}{Côté fournisseur}
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[scale=0.17]{images/exemple_introductif1.png}
+\end{figure}
+
+\begin{block}{Appartenance Simultanée}
+Un fournisseur peut appartenir à plusieurs ruches simultanément.
+\end{block}
+
+\begin{block}{Fournisseurs Voisins}
+Soit $R = \{p, V_R\}$ une ruche. Deux fournisseurs $v_1$ et $v_2$ sont dits \textbf{voisins} $\iff v_1 \in V_R\; \text{et}\; v_2 \in V_R$. On note $\texttt{Voisins}(v)$ l'\textbf{ensemble des voisins} d'un fournisseur $v$, contenant \textbf{tous les voisins} de \textbf{toutes les ruches} auxquelles il appartient.
+\end{block}
+\end{frame}
+
+\begin{frame}{Ruche : Structure de données proposée($4$)}{Côté fournisseur}
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[scale=0.08]{images/exemple_introductif2.png}
+\end{figure}
+
+\begin{block}{Voisinage Imposé}
+Soient $v_1$ et $v_2$ deux fournisseurs tels que $v_2 \notin \texttt{Voisins}(v_1)$. S'il existe des fournisseurs $v_3$ et $v_4$ tels que $v_3, v_4 \in \texttt{Voisins}(v_1) \cap \texttt{Voisins}(v_2)$ et $v_3 \notin \texttt{Voisins}(v_4)$, alors il existe une ruche plus optimale contenant $v_1, v_2, v_3\; \text{et}\; v_4$ que les ruches séparées les contenant.
+\end{block}
 \end{frame}
 
 \subsection{Côté client}
@@ -161,7 +344,7 @@ Un document de haut niveau (peu de détails sur les fonctionnalités) pour sché
 %%PHP, MySQL
   \begin{description}
     \item[Language de développement :] Serveur codé en PHP et le framework Symfony pour un système modulaire et basé sur le design pattern MVC.
-    \item[Base de données :] Base de données relationnel mis en place avec MySQL. Interaction avec l'ORM Doctrine.
+    \item[Base de données :] Base de données relationnelle mise en place via MySQL, interaction avec l'ORM Doctrine.
   \end{description}
 \end{frame}
 %----------------------------------------------------------------------------------------
@@ -172,11 +355,12 @@ Un document de haut niveau (peu de détails sur les fonctionnalités) pour sché
 \begin{frame}{Écosystème décentralisé et autonome}{Conclusion}
 
 \begin{block}{Autonomie}
-Les fournisseurs sont \textbf{autonomes} et ils déterminent la formation des ruches et des évènements de collecte.
-\end{block} 
+Les fournisseurs sont \textbf{autonomes} : la formation des ruches et l'organisation des évènements de collecte.
+\end{block}
+
 \begin{block}{Extensibilité}
-Le système est versatile et extensible, adapte pour l'extension des ruches ou l'augmentation de nombre de ces derniers.
-\end{block} 
+Le système est versatile et extensible : extension des ruches, augmentation de leur nombre, ajout de fonctionnalités supplémentaires, $\dots$.
+\end{block}
 
 \end{frame}
 
