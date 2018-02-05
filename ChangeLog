@@ -1,3 +1,106 @@
+commit 949ab2a52f297594ca17f4ae8f6faf05f13c7964
+Author: Farajallah Othmane <othmane.farjallah@etu.umontpellier.fr>
+Date:   Mon Feb 5 20:21:07 2018 +0100
+
+    added perspective part
+
+commit 7d13f67068be601c38230b07f1290f570043901d
+Author: Farajallah Othmane <othmane.farjallah@etu.umontpellier.fr>
+Date:   Mon Feb 5 01:43:24 2018 +0100
+
+    corrected mistakes, added part client, part React
+
+commit 35d2cf58452cc86c410679af749b0c6b65b4ba86
+Author: Rima Bachar <bachar.rima@etu.umontpellier.fr>
+Date:   Sun Feb 4 14:21:01 2018 +0100
+
+    reviewed back-end and conclusion, reviewed problématique, and added conception coté fournisseur
+
+commit 6467eb5a57c387066cc750596db7cbd610e7112f
+Author: SWissem <wiwi.sam96@outlook.it>
+Date:   Sat Feb 3 14:16:21 2018 +0000
+
+    ajout de l'introduction, back-end et systeme decentralisé
+
+commit 8aede0a8b4f042117b3c92a18ef7164621ef8eec
+Author: Rima Bachar <bachar.rima@etu.umontpellier.fr>
+Date:   Thu Feb 1 19:02:56 2018 +0100
+
+    finished the problématique section, and outils de conception subsection of the conception section in the presentation
+
+commit 10fbffd2b2729dc30a9cca7b0e70397d53704018
+Author: ONIZUKAGTO <wiwi.sam96@outlook.it>
+Date:   Mon Jan 29 21:12:31 2018 +0100
+
+    Initialisation prototype avec Symfony
+
+commit 2a1238cc9556639e96df80f8f80b104642d77052
+Author: Rima Bachar <bachar.rima@etu.umontpellier.fr>
+Date:   Thu Jan 25 19:23:04 2018 +0100
+
+    added the skeleton of the beamer presentation
+
+commit db636bda68334746b7be303e9ef8ce0bf190ef3b
+Author: Rima Bachar <bachar.rima@etu.umontpellier.fr>
+Date:   Thu Jan 25 11:36:56 2018 +0100
+
+    final version of report proofreading
+
+commit ac2a760406cf3078341407afb36c7d0c270d37c6
+Author: SWissem <wiwi.sam96@outlook.it>
+Date:   Thu Jan 25 01:49:09 2018 +0100
+
+    Add files via upload
+
+commit c221182eafcf05b4179b27388ed68a0ef56d82e0
+Author: SWissem <wiwi.sam96@outlook.it>
+Date:   Thu Jan 25 01:48:53 2018 +0100
+
+    Delete skeleton.md
+
+commit 3689de6559bd52f21dfabb839166e8ff9318b28f
+Author: SWissem <wiwi.sam96@outlook.it>
+Date:   Thu Jan 25 01:47:26 2018 +0100
+
+    Add files via upload
+
+commit 25adf85e8227c94ec4a4074fe246683e4af881d1
+Author: Rima Bachar <bachar.rima@etu.umontpellier.fr>
+Date:   Thu Jan 25 00:25:43 2018 +0100
+
+    proof-reading (part 2) and overall modifications of the report
+
+commit 5333745582706bf02068415020cb5e06c42a3e6f
+Author: Farajallah Othmane <othmane.farjallah@etu.umontpellier.fr>
+Date:   Wed Jan 24 19:28:06 2018 +0100
+
+    added Entretien part
+
+commit b8da5ddbd5d95d47f7fab1471346ec0aa660290d
+Author: Rima Bachar <bachar.rima@etu.umontpellier.fr>
+Date:   Wed Jan 24 18:32:20 2018 +0100
+
+    added the storyboard chapter to appendices and modified the cover page of the report
+
+commit 39fd6f4ad20e1cf0076bb30b3d00037d0a230bd9
+Merge: 7b803b6 5df41a2
+Author: Rima Bachar <bachar.rima@etu.umontpellier.fr>
+Date:   Wed Jan 24 17:46:18 2018 +0100
+
+    Merge branch 'master' of https://github.com/otho009/LaRuche
+
+commit 7b803b66b3d6b36e45c3b4bf194851a9776b7d2c
+Author: Rima Bachar <bachar.rima@etu.umontpellier.fr>
+Date:   Wed Jan 24 13:35:19 2018 +0100
+
+    storyboard phase 1, cleaning of unused packages, and minor improvements on the report latex file
+
+commit 5df41a28ec2d6c6e1828cee034acbf83a5b92f85
+Author: Farajallah Othmane <othmane.farjallah@etu.umontpellier.fr>
+Date:   Wed Jan 24 13:30:04 2018 +0100
+
+    updated the changelog file
+
 commit 2eb2b1f34fa1befaa9ff768e00d4fd87f869fed5
 Author: SWissem <wiwi.sam96@outlook.it>
 Date:   Wed Jan 24 12:31:07 2018 +0100
