@@ -162,7 +162,7 @@ Des requis fournis par les clients, décrivant en langage naturel les fonctionna
 \begin{frame}{Côté fournisseur}{Conception}
 \begin{block}{Besoins}
 \begin{enumerate}
-  \item Un profile d'utilisateur \textbf{fournisseur} : propriétés et fonctionnalités via des \textit{user-stories}.
+  \item Un profil d'utilisateur \textbf{fournisseur} : propriétés et fonctionnalités via des \textit{user-stories}.
   \item Une \textbf{structure de données} pour décrire le \textbf{regroupement des fournisseurs} et leurs \textbf{interactions} : \texttt{ruche}, \texttt{opérateur cellule}, \texttt{voisins}, $\dots$
 \end{enumerate}
 \end{block}
@@ -188,8 +188,8 @@ En tant que \textcolor{DarkOrchid}{fournisseur}, je souhaite {\color{BrickRed} \
 \end{block}
 \end{frame}
 
-\subsubsection*{Profile fournisseur}
-\begin{frame}{Profile fournisseur}{Côté fournisseur}
+\subsubsection*{Profil fournisseur}
+\begin{frame}{Profil fournisseur}{Côté fournisseur}
 \begin{enumerate}
   \item Un fournisseur offre des produits/paniers de produits divers.
   \item Un fournisseur gére ses produits/paniers dans des stocks.
@@ -324,19 +324,144 @@ Soient $v_1$ et $v_2$ deux fournisseurs tels que $v_2 \notin \texttt{Voisins}(v_
 \end{frame}
 
 \subsection{Côté client}
+
+
+% TODO:
+%  need to fix the umlassoc
+% 
+% 
 \begin{frame}{Côté client}{Conception}
-%%Complexité cachée des ruches du point de vue des clients
-%%Use Cases
-%%Storyboard
-%%inscription, recherche
-%%chat
-%%réservation de produits, choix de lieu et date de collecte
+  \begin{figure}[!ht]
+    \resizebox{0.65\textwidth}{!}{
+      \begin{tikzpicture}
+        \umlactor{User}
+        \umlactor[x=12, y=-1]{Database}
+        \begin{umlsystem}[x=4, fill=red!10]{index page}
+          \umlusecase{Sign-up}
+          \umlusecase[y=-2]{Sign-in}
+          \umlusecase[x=4, width=1.5cm]{Create database entry}
+          \umlusecase[x=4, y=-3, width=1.5cm]{Verify credentials}
+          \umlusecase[y=-4]{Footer menu}
+        \end{umlsystem}
+        \umlassoc{User}{usecase-1}
+        \umlassoc{User}{usecase-2}
+        % \umlassoc{User}{usecase-5}
+        \umlassoc{Database}{usecase-3}
+        \umlassoc{Database}{usecase-4}
+        \umlinclude{usecase-1}{usecase-3}
+        \umlinclude{usecase-2}{usecase-4}
+        \umlinclude{usecase-3}{usecase-4}
+      \end{tikzpicture}
+    }
+  \end{figure}
 \end{frame}
 
+
+
+
+\begin{frame}{Côté client}{Conception}
+  \begin{figure}[!ht]
+    \centering
+    \resizebox{0.65\textwidth}{!}{
+    \begin{tikzpicture}
+      \setcounter{tikzumlUseCaseNum}{0}
+      \umlactor{User}
+      \umlactor[y=-4]{Vendor}
+      \umlactor[x=10, y=-3]{Database}
+      \begin{umlsystem}[x=4, fill=green!10]{home page}
+        \umlusecase[x=1, width=3cm]{Display Products/Collection Events}
+        \umlusecase[x=1, y=-3, width=3cm]{Display Stock/Hive Information}
+        \umlusecase[x=1, y=-5]{Search}
+        \umlusecase[x=1, y=-7]{Footer menu}
+      \end{umlsystem}
+      \umlinherit{Vendor}{User}
+      \umlextend{usecase-2}{usecase-1}
+      \umlassoc{User}{usecase-1}
+      \umlassoc{Vendor}{usecase-2}
+      \umlassoc{User}{usecase-3}
+      \umlassoc{User}{usecase-4}
+      \umlassoc{Database}{usecase-1}
+      \umlassoc{Database}{usecase-3}
+    \end{tikzpicture}
+    }
+  \end{figure}
+  
+\end{frame}
+
+
+
+\begin{frame}{Côté client}{Conception}
+  \begin{figure}[!ht]
+   \centering
+   \resizebox{0.65\textwidth}{!}{
+     \begin{tikzpicture}
+       \setcounter{tikzumlUseCaseNum}{0}
+       \umlactor{Vendor}
+       \umlactor[x=12, y=-2]{Database}
+       \umlactor[y=-13]{Client User Database}
+       \umlactor[x=12, y=-11]{Bill Reception Platform}
+       \umlactor[x=4.5, y=-13]{Bank/PayPal}
+       \begin{umlsystem}[x=4, fill=red!10]{vendor home page}
+         \umlusecase[width=2cm]{Check Stocks}
+         \umlusecase[x=5, width=2cm]{Allow Delayed Orders}
+         \umlusecase[x=2.6, y=-3, width=3cm]{Set Purchase Deadline}
+         \umlusecase[x=4, y=-6, width=3cm]{Check Pending Orders}
+         \umlusecase[y=-8, width=2cm]{Process Pending Orders}
+         \umlusecase[x=5, y=-8, width=2cm]{Send Bill}
+         \umlusecase[x=4.5, y=-11, width=2cm]{Update Sales' History}
+       \end{umlsystem}
+       \umlextend{usecase-2}{usecase-1}
+       \umlextend[name=deadline]{usecase-3}{usecase-4}
+       \umlextend[name=checkPending1]{usecase-4}{usecase-5}
+       \umlinclude{usecase-5}{usecase-6}
+       \umlinclude{usecase-6}{usecase-7}
+       \umlassoc{Vendor}{usecase-1}
+       \umlassoc[name=checkPending2]{Vendor}{usecase-4}
+       \umlassoc[name=process]{Vendor}{usecase-5}
+       \umlassoc{Database}{usecase-2}
+       \umlassoc{Database}{usecase-3}
+       \umlassoc{Database}{usecase-4}
+       \umlassoc{Database}{usecase-7}
+       \umlassoc{Bill Reception Platform}{usecase-6}
+       \umlassoc{Bank/PayPal}{usecase-6}
+       \umlassoc{Client User Database}{usecase-6}
+       \umlnote[x=-0.5, y=-5]{checkPending1-1}{only if validating transactions is set to manual}
+       \umlnote[x=-0.5, y=-5]{checkPending2-1}{only if validating transactions is set to manual}
+       \umlnote[x=-0.5, y=-8]{process-1}{only if validating transactions is set to automatic}
+       \umlnote[x=-0.5, y=-11]{deadline-1}{according to the number of pending orders}
+     \end{tikzpicture}
+   }
+ \end{figure}
+ %%Complexité cachée des ruches du point de vue des clients
+ %%Use Cases
+ %%Storyboard
+ %%inscription, recherche
+ %%chat
+ %%réservation de produits, choix de lieu et date de collecte
+ \end{frame}
 \section{Outils d'implémentation}
 \subsection{\protect\textit{Front-end}}
 \begin{frame}{\textit{Front-end}}{Outils d'implémentation}
 %%Bootstrap, JS, JQuery, React
+\begin{block}{React.js}
+React est une librairie JavaScript, créée par Facebook, utilisée uniquement pour le côté “vue” dans le paradigme MVC.
+\end{block}
+\end{frame}
+\begin{frame}{\textit{Front-end}}{Outils d'implémentation}
+%%Bootstrap, JS, JQuery, React
+\begin{figure}
+  \includegraphics[scale=0.25]{images/schema-react.png}
+  \caption{Schéma explicatif du principe de réconciliation de la librairie React}
+
+\end{figure}
+\end{frame}
+\begin{frame}{\textit{Front-end}}{Outils d'implémentation}
+  \begin{block}{JSX}
+ JSX est une extension JavaScript dont l'usage est très recommandé lors du développement d'une application React.  
+  \end{block}
+  \includegraphics[scale=0.25]{images/JSX.png}
+
+  %%Bootstrap, JS, JQuery, React
 \end{frame}
 
 \subsection{\protect\textit{Back-end}}
