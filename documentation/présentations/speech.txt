@@ -1,0 +1,31 @@
+Bachar:
+=======
+Solutions + Côté fournisseur + prespectives
+
+Othmane:
+=======
+Introduction + Sommaire + Contexte + Problématique + Outils de conception + User stories + Côté client + Front-end
+
+Wissem:
+=======
+Structure de données + back-end + écosystème.
+
+- les besoins de chaque ruche sont transmis à la \textbf{Ruche-Mama} via le responsable de ruche correspondant.
+
+
+
+\begin{block}{Diagrammes de cas d'usage}
+% Des diagrammes dynamiques, souvent utilisés en \textbf{UML} pour décrire en haut niveau des fonctionnalités d'un système.
+% \end{block}
+%
+% \begin{block}{Modèle EA}
+% Un modèle \textbf{conceptuel} utilisé pour décrire les entités du projet et les associations décrivant leurs relations et comportements.
+% \end{block}
+%
+% \begin{block}{Schéma de base de données}
+% Un schéma en modèle \textbf{relationnel} traduit à partir du \textbf{modèle EA} et servant comme \textbf{support} lors de l'implémentation de la \textbf{base de données}.
+% \end{block}
+%
+% \begin{block}{\textit{mockup storyboard}}
+% Un document de haut niveau (peu de détails sur les fonctionnalités) pour schématiser l'utilisation d'un projet.
+% \end{block}

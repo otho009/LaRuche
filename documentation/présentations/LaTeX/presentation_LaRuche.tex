@@ -4,9 +4,7 @@
 \usepackage[francais]{babel}
 \usepackage{xcolor}
 \usepackage{packages/tikz-uml}
-% \usepackage[amsthm]{ntheorem} %theorems and co.
 \usetheme{Singapore} %Boadilla | Bergen | Madrid | Antibes | Hannover | Singapore | Warsaw
- 
 %----------------------------------------------------------------------------------------
 %   TITLE INFORMATION
 %----------------------------------------------------------------------------------------
@@ -61,14 +59,6 @@
     Se libérer des centres d'achat et des intermédiaires de distribution.
     \end{block}
 \end{columns}
-  % \begin{figure}[!ht]
-  %   \centering
-  %   \includegraphics[scale=0.2]{images/chain_production.png}
-  % \end{figure}
-  % \begin{description}
-  %   \item[Consommateurs :] acheter des produits frais et minimiser les étapes de processing.
-  %   \item[Producteurs :] se libérer des centres d'achat et des intermédiaires de distribution.
-  % \end{description}
 \end{frame}
 
 \subsection{Solutions}
@@ -84,7 +74,6 @@ Un regroupement de plusieurs membres \textbf{consommateurs} et \textbf{fournisse
 \begin{block}{Vision Centralisée}
 \begin{itemize}
   \item l'ensemble des ruches obeit à une \textbf{Ruche-Mama}.
-  \item les besoins de chaque ruche sont transmis à la \textbf{Ruche-Mama} via le responsable de ruche correspondant.
   \item la \textbf{Ruche-Mama} s'occupe de la gestion des ruches : création, réglementations internes, interactions, évolution et extensibilité des services, $\dots$.
 \end{itemize}
 \end{block}
@@ -101,8 +90,8 @@ Un regroupement de plusieurs \textbf{fournisseurs} d'une région, \textbf{sans g
 
 \begin{block}{Vision Décentralisée et Autonome}
 \begin{itemize}
-  \item l'ensemble des ruches ne répond à \textbf{aucune entité centralisée fédéral}.
-  \item chaque ruche s'occupe de ses propres besoins et de leur gestion sans besoin d'un intermédiaire et d'une hiérarchie autoritaire à respecter.
+  \item l'ensemble des ruches ne répond à \textbf{aucune entité centralisée}.
+  \item chaque ruche s'occupe de ses propres besoins et de leur gestion sans besoin d'un intermédiaire et d'une hiérarchie à respecter.
 \end{itemize}
 \end{block}
 \end{frame}
@@ -126,22 +115,14 @@ Une approche de développement logiciel de plus en plus prépondérante basée s
 %----------------------------------------------------------------------------------------
 \section{Conception}
 \subsection{Outils de conception utilisés}
+
 \begin{frame}{Outils de conception utilisés}{Conception}
-\begin{block}{Diagrammes de cas d'usage}
-Des diagrammes dynamiques, souvent utilisés en \textbf{UML} pour décrire en haut niveau des fonctionnalités d'un système.
-\end{block}
-
-\begin{block}{Modèle EA}
-Un modèle \textbf{conceptuel} utilisé pour décrire les entités du projet et les associations décrivant leurs relations et comportements.
-\end{block}
-
-\begin{block}{Schéma de base de données}
-Un schéma en modèle \textbf{relationnel} traduit à partir du \textbf{modèle EA} et servant comme \textbf{support} lors de l'implémentation de la \textbf{base de données}.
-\end{block}
-
-\begin{block}{\textit{mockup storyboard}}
-Un document de haut niveau (peu de détails sur les fonctionnalités) pour schématiser l'utilisation d'un projet.
-\end{block}
+\begin{enumerate}
+  \item Diagrammes de cas d'usage
+  \item Modèle EA
+  \item Schéma de base de données
+  \item \textit{Mockup storyboard}
+\end{enumerate}
 \end{frame}
 
 \subsection{\protect\textit{User Stories} : outil de conception agile}
@@ -189,12 +170,21 @@ En tant que \textcolor{DarkOrchid}{fournisseur}, je souhaite {\color{BrickRed} \
 \end{frame}
 
 \subsubsection*{Profil fournisseur}
-\begin{frame}{Profil fournisseur}{Côté fournisseur}
+\begin{frame}{Profil fournisseur(1)}{Côté fournisseur}
 \begin{enumerate}
   \item Un fournisseur offre des produits/paniers de produits divers.
   \item Un fournisseur gére ses produits/paniers dans des stocks.
   \item Un fournisseur suit l'évolution de ses ressources via des rapports de suivi périodiques.
-  \item Un fournisseur interagit avec d'autres fournisseurs pour créer des ruches et organiser des évènements de collecte et uniquement avec des clients qui l'ont déjà contacté.
+  \item Un fournisseur interagit :
+  \begin{itemize}
+    \item avec d'autres \textbf{fournisseurs} pour créer des ruches et organiser des évènements de collecte.
+    \item avec les \textbf{clients} qui l'ont déjà contacté.
+  \end{itemize}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Profil fournisseur(2)}{Côté fournisseur}
+\begin{enumerate}
   \item Un fournisseur valide les commandes de réservation des produits.
   \item Un fournisseur règle les commandes physiquement, en premier temps, et puis via le site dans les versions ultérieures.
   \item Un fournisseur imprime les factures, créées par le site lors de la réservation des produits par des clients, et les émet aux clients correspondants lors de la collecte de leurs produits.
@@ -226,50 +216,6 @@ En tant que \textcolor{DarkOrchid}{fournisseur}, je souhaite {\color{BrickRed} \
       \umlassoc{Database}{usecase-3}
       \umlassoc{Database}{usecase-4}
       \umlnote[x=-2, y=-4]{ext-1}{Products have to exist in the database prior to the introduction of baskets}
-    \end{tikzpicture}
-  }
-\end{figure}
-\end{frame}
-
-\begin{frame}{Exemple d'un diagramme de cas d'usage (version ultérieure)}{Côté fournisseur}
-\begin{figure}[!ht]
-  \centering
-  \resizebox{0.65\textwidth}{!}{
-    \begin{tikzpicture}
-      \setcounter{tikzumlUseCaseNum}{0}
-      \umlactor{Vendor}
-      \umlactor[x=12, y=-2]{Database}
-      \umlactor[y=-13]{Client User Database}
-      \umlactor[x=12, y=-11]{Bill Reception Platform}
-      \umlactor[x=4.5, y=-13]{Bank/PayPal}
-      \begin{umlsystem}[x=4, fill=red!10]{vendor home page}
-        \umlusecase[width=2cm]{Check Stocks}
-        \umlusecase[x=5, width=2cm]{Allow Delayed Orders}
-        \umlusecase[x=2.6, y=-3, width=3cm]{Set Purchase Deadline}
-        \umlusecase[x=4, y=-6, width=3cm]{Check Pending Orders}
-        \umlusecase[y=-8, width=2cm]{Process Pending Orders}
-        \umlusecase[x=5, y=-8, width=2cm]{Send Bill}
-        \umlusecase[x=4.5, y=-11, width=2cm]{Update Sales' History}
-      \end{umlsystem}
-      \umlextend{usecase-2}{usecase-1}
-      \umlextend[name=deadline]{usecase-3}{usecase-4}
-      \umlextend[name=checkPending1]{usecase-4}{usecase-5}
-      \umlinclude{usecase-5}{usecase-6}
-      \umlinclude{usecase-6}{usecase-7}
-      \umlassoc{Vendor}{usecase-1}
-      \umlassoc[name=checkPending2]{Vendor}{usecase-4}
-      \umlassoc[name=process]{Vendor}{usecase-5}
-      \umlassoc{Database}{usecase-2}
-      \umlassoc{Database}{usecase-3}
-      \umlassoc{Database}{usecase-4}
-      \umlassoc{Database}{usecase-7}
-      \umlassoc{Bill Reception Platform}{usecase-6}
-      \umlassoc{Bank/PayPal}{usecase-6}
-      \umlassoc{Client User Database}{usecase-6}
-      \umlnote[x=-0.5, y=-5]{checkPending1-1}{only if validating transactions is set to manual}
-      \umlnote[x=-0.5, y=-5]{checkPending2-1}{only if validating transactions is set to manual}
-      \umlnote[x=-0.5, y=-8]{process-1}{only if validating transactions is set to automatic}
-      \umlnote[x=-0.5, y=-11]{deadline-1}{according to the number of pending orders}
     \end{tikzpicture}
   }
 \end{figure}
@@ -324,16 +270,11 @@ Soient $v_1$ et $v_2$ deux fournisseurs tels que $v_2 \notin \texttt{Voisins}(v_
 \end{frame}
 
 \subsection{Côté client}
-
-
-% TODO:
-%  need to fix the umlassoc
-% 
-% 
 \begin{frame}{Côté client}{Conception}
   \begin{figure}[!ht]
-    \resizebox{0.65\textwidth}{!}{
+    \resizebox{0.9\textwidth}{!}{
       \begin{tikzpicture}
+        \setcounter{tikzumlUseCaseNum}{0}
         \umlactor{User}
         \umlactor[x=12, y=-1]{Database}
         \begin{umlsystem}[x=4, fill=red!10]{index page}
@@ -345,7 +286,7 @@ Soient $v_1$ et $v_2$ deux fournisseurs tels que $v_2 \notin \texttt{Voisins}(v_
         \end{umlsystem}
         \umlassoc{User}{usecase-1}
         \umlassoc{User}{usecase-2}
-        % \umlassoc{User}{usecase-5}
+        \umlassoc{User}{usecase-5}
         \umlassoc{Database}{usecase-3}
         \umlassoc{Database}{usecase-4}
         \umlinclude{usecase-1}{usecase-3}
@@ -353,11 +294,9 @@ Soient $v_1$ et $v_2$ deux fournisseurs tels que $v_2 \notin \texttt{Voisins}(v_
         \umlinclude{usecase-3}{usecase-4}
       \end{tikzpicture}
     }
+  \caption{Page d'accueil du site}
   \end{figure}
 \end{frame}
-
-
-
 
 \begin{frame}{Côté client}{Conception}
   \begin{figure}[!ht]
@@ -384,11 +323,55 @@ Soient $v_1$ et $v_2$ deux fournisseurs tels que $v_2 \notin \texttt{Voisins}(v_
       \umlassoc{Database}{usecase-3}
     \end{tikzpicture}
     }
+  \caption{Page d'accueil de l'utilisateur client}
   \end{figure}
-  
 \end{frame}
 
-
+\begin{frame}{Côté client}{Conception}
+\begin{figure}[!ht]
+  \centering
+  \resizebox{0.65\textwidth}{!}{
+    \begin{tikzpicture}
+      \setcounter{tikzumlUseCaseNum}{0}
+      \umlactor[x=-2]{Client}
+      \umlactor[x=-2, y=-4]{Database}
+      \umlactor[x=11, y=-6]{Vendor User Database}
+      \umlactor[x=6, y=-11]{Bill Reception Platform}
+      \umlactor[x=1, y=-11]{Bank/PayPal}
+      \begin{umlsystem}[x=1, fill=green!10]{client home page}
+        \umlusecase[width=2cm] {Add Items to Shopping Cart} %1
+        \umlusecase[x=5, width=2cm]{Delete Items from Shopping Cart} %2
+        \umlusecase[x=2, y=-2.5, width=3cm]{Choose Time of Collection} %3
+        \umlusecase[x=5, y=-4.5, width=3cm]{Choose Payment Method} %4
+        \umlusecase[x=5, y=-7.5, width=3cm]{Get Reductions from Wallet Points} %5
+        \umlusecase[y=-9.5]{Check Wallet} %6
+        \umlusecase[y=-7.5, width=3cm]{Checkout from Payment} %7
+        \umlusecase[y=-4.5, width=3cm]{Update Purchases' History} %8
+        \umlusecase[x=5, y=-9.5, width=3cm]{Receive Bill} %9
+      \end{umlsystem}
+      \begin{umlsystem}[x=11.2, fill=red!10]{vendor home page}
+        \umlusecase[width=1.5cm]{Send a Bill} %10
+      \end{umlsystem}
+      \umlextend{usecase-2}{usecase-1}
+      \umlextend{usecase-5}{usecase-4}
+      \umlinclude{usecase-1}{usecase-3}
+      \umlinclude{usecase-3}{usecase-4}
+      \umlinclude{usecase-7}{usecase-8}
+      \umlinclude[pos stereo=0.2]{usecase-9}{usecase-8}
+      \umlassoc{Client}{usecase-1}
+      \umlassoc{Client}{usecase-6}
+      \umlassoc{Vendor User Database}{usecase-7}
+      \umlassoc{Vendor User Database}{usecase-9}
+      \umlassoc[name=send]{Vendor User Database}{usecase-10}
+      \umlassoc{Bill Reception Platform}{usecase-9}
+      \umlassoc{Bank/PayPal}{usecase-9}
+      \umlassoc{Database}{usecase-8}
+      \umlnote[x=9, y=-3]{usecase-10}{only if transaction validated by vendor}
+    \end{tikzpicture}
+  }
+\caption{Gestion des commandes du point de vue du client}
+\end{figure}
+\end{frame}
 
 \begin{frame}{Côté client}{Conception}
   \begin{figure}[!ht]
@@ -398,17 +381,17 @@ Soient $v_1$ et $v_2$ deux fournisseurs tels que $v_2 \notin \texttt{Voisins}(v_
        \setcounter{tikzumlUseCaseNum}{0}
        \umlactor{Vendor}
        \umlactor[x=12, y=-2]{Database}
-       \umlactor[y=-13]{Client User Database}
-       \umlactor[x=12, y=-11]{Bill Reception Platform}
-       \umlactor[x=4.5, y=-13]{Bank/PayPal}
+       \umlactor[x=12, y=-5]{Client User Database}
+       \umlactor[x=12, y=-7]{Bank/PayPal}
+       \umlactor[x=12, y=-9]{Bill Reception Platform}
        \begin{umlsystem}[x=4, fill=red!10]{vendor home page}
          \umlusecase[width=2cm]{Check Stocks}
          \umlusecase[x=5, width=2cm]{Allow Delayed Orders}
-         \umlusecase[x=2.6, y=-3, width=3cm]{Set Purchase Deadline}
-         \umlusecase[x=4, y=-6, width=3cm]{Check Pending Orders}
-         \umlusecase[y=-8, width=2cm]{Process Pending Orders}
-         \umlusecase[x=5, y=-8, width=2cm]{Send Bill}
-         \umlusecase[x=4.5, y=-11, width=2cm]{Update Sales' History}
+         \umlusecase[x=2.6, y=-2, width=3cm]{Set Purchase Deadline}
+         \umlusecase[x=4, y=-5, width=3cm]{Check Pending Orders}
+         \umlusecase[y=-7, width=2cm]{Process Pending Orders}
+         \umlusecase[x=5, y=-7, width=2cm]{Send Bill}
+         \umlusecase[x=4.5, y=-10, width=2cm]{Update Sales' History}
        \end{umlsystem}
        \umlextend{usecase-2}{usecase-1}
        \umlextend[name=deadline]{usecase-3}{usecase-4}
@@ -425,80 +408,75 @@ Soient $v_1$ et $v_2$ deux fournisseurs tels que $v_2 \notin \texttt{Voisins}(v_
        \umlassoc{Bill Reception Platform}{usecase-6}
        \umlassoc{Bank/PayPal}{usecase-6}
        \umlassoc{Client User Database}{usecase-6}
-       \umlnote[x=-0.5, y=-5]{checkPending1-1}{only if validating transactions is set to manual}
-       \umlnote[x=-0.5, y=-5]{checkPending2-1}{only if validating transactions is set to manual}
-       \umlnote[x=-0.5, y=-8]{process-1}{only if validating transactions is set to automatic}
-       \umlnote[x=-0.5, y=-11]{deadline-1}{according to the number of pending orders}
+       \umlnote[x=-0.5, y=-3]{checkPending2-1}{only if validating transactions is set to manual}
+       \umlnote[x=-0.5, y=-6]{process-1}{only if validating transactions is set to automatic}
+       \umlnote[x=-0.5, y=-9]{deadline-1}{according to the number of pending orders}
      \end{tikzpicture}
    }
+   \caption{Gestion des commandes du point de vue du fournisseur}
  \end{figure}
- %%Complexité cachée des ruches du point de vue des clients
- %%Use Cases
- %%Storyboard
- %%inscription, recherche
- %%chat
- %%réservation de produits, choix de lieu et date de collecte
  \end{frame}
+
 \section{Outils d'implémentation}
 \subsection{\protect\textit{Front-end}}
 \begin{frame}{\textit{Front-end}}{Outils d'implémentation}
-%%Bootstrap, JS, JQuery, React
 \begin{block}{React.js}
-React est une librairie JavaScript, créée par Facebook, utilisée uniquement pour le côté “vue” dans le paradigme MVC.
+\texttt{React} est une librairie JavaScript, créée par Facebook, utilisée uniquement pour le côté \og vue \fg dans le paradigme \textbf{MVC}.
 \end{block}
 \end{frame}
+
 \begin{frame}{\textit{Front-end}}{Outils d'implémentation}
-%%Bootstrap, JS, JQuery, React
 \begin{figure}
   \includegraphics[scale=0.25]{images/schema-react.png}
-  \caption{Schéma explicatif du principe de réconciliation de la librairie React}
-
+  \caption{Schéma explicatif du principe de réconciliation de la librairie \texttt{React}}
 \end{figure}
 \end{frame}
+
 \begin{frame}{\textit{Front-end}}{Outils d'implémentation}
   \begin{block}{JSX}
- JSX est une extension JavaScript dont l'usage est très recommandé lors du développement d'une application React.  
+  \texttt{JSX} est une extension JavaScript dont l'usage est très recommandé lors du développement d'une application \texttt{React}.
   \end{block}
-  \includegraphics[scale=0.25]{images/JSX.png}
-
-  %%Bootstrap, JS, JQuery, React
+  \begin{figure}[!ht]
+    \centering
+    \includegraphics[scale=0.25]{images/JSX.png}
+  \end{figure}
 \end{frame}
 
 \subsection{\protect\textit{Back-end}}
 \begin{frame}{\textit{Back-end}}{Outils d'implémentation}
 %%PHP, MySQL
   \begin{description}
-    \item[Language de développement :] Serveur codé en PHP et le framework Symfony pour un système modulaire et basé sur le design pattern MVC.
-    \item[Base de données :] Base de données relationnelle mise en place via MySQL, interaction avec l'ORM Doctrine.
+    \item[Langage de développement :] Serveur codé en PHP et le framework \texttt{Symfony} pour un système modulaire basé sur le \textit{design pattern} \textbf{MVC}.
+    \item[Base de données :] Base de données relationnelle mise en place via MySQL interagissant avec l'\textbf{ORM} \texttt{Doctrine}.
   \end{description}
 \end{frame}
 %----------------------------------------------------------------------------------------
 %   CONCLUSION
 %----------------------------------------------------------------------------------------
 \section{Conclusion}
-\subsection{Écosystème décentralisé et autonome}
-\begin{frame}{Écosystème décentralisé et autonome}{Conclusion}
+\subsection{Écosystème décentralisé/autonome et extensible}
+\begin{frame}{Écosystème décentralisé/autonome et extensible}{Conclusion}
 
-\begin{block}{Autonomie}
-Les fournisseurs sont \textbf{autonomes} : la formation des ruches et l'organisation des évènements de collecte.
+\begin{block}{Décenstralisation/Autonomie}
+\begin{enumerate}
+  \item Réseau de ruches \textbf{décenstralisée} : ensemble de ruches indépendantes et coopératives ne répondant pas à une entité centrale.
+  \item Les fournisseurs sont \textbf{autonomes} : responsables de la formation des ruches et de l'organisation des évènements de collecte.
+\end{enumerate}
 \end{block}
 
 \begin{block}{Extensibilité}
-Le système est versatile et extensible : extension des ruches, augmentation de leur nombre, ajout de fonctionnalités supplémentaires, $\dots$.
+Le système est \textbf{versatile} et \textbf{extensible} : extension des ruches, augmentation de leur nombre, ajout de fonctionnalités supplémentaires, $\dots$.
 \end{block}
-
 \end{frame}
 
 \subsection{Perspectives}
 \begin{frame}{Perspectives}{Conclusion}
  \begin{itemize}
    \item Changement du nom du projet
-   \item Récolte de feedback de la part d'utilisateurs potentiels
-   \item Optimisation de la logistique 
-   \item Implémentation de quelques fonctionnalités (inscription,paiement...)
+   \item Récolte de \textit{feedback} des utilisateurs potentiels
+   \item Optimisation de la logistique
+   \item Implémentation de quelques fonctionnalités (inscription, paiement, $\dots$)
    \item Internationalisation
  \end{itemize}
-%fonctionnalités déjà discutées : paiement en ligne (CB, Paypal), politique de quasi rupture de stock et autres approches d'optimisation, etc.. (cf. section logistiques et user stories supplémentaires)
-%fonctionnalités pondérées non discutées : internationalisation du site, etc...
 \end{frame}
 \end{document}
