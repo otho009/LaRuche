@@ -270,33 +270,45 @@ Soient $v_1$ et $v_2$ deux fournisseurs tels que $v_2 \notin \texttt{Voisins}(v_
 \end{frame}
 
 \subsection{Côté client}
-\begin{frame}{Côté client}{Conception}
-  \begin{figure}[!ht]
-    \resizebox{0.9\textwidth}{!}{
-      \begin{tikzpicture}
-        \setcounter{tikzumlUseCaseNum}{0}
-        \umlactor{User}
-        \umlactor[x=12, y=-1]{Database}
-        \begin{umlsystem}[x=4, fill=red!10]{index page}
-          \umlusecase{Sign-up}
-          \umlusecase[y=-2]{Sign-in}
-          \umlusecase[x=4, width=1.5cm]{Create database entry}
-          \umlusecase[x=4, y=-3, width=1.5cm]{Verify credentials}
-          \umlusecase[y=-4]{Footer menu}
-        \end{umlsystem}
-        \umlassoc{User}{usecase-1}
-        \umlassoc{User}{usecase-2}
-        \umlassoc{User}{usecase-5}
-        \umlassoc{Database}{usecase-3}
-        \umlassoc{Database}{usecase-4}
-        \umlinclude{usecase-1}{usecase-3}
-        \umlinclude{usecase-2}{usecase-4}
-        \umlinclude{usecase-3}{usecase-4}
-      \end{tikzpicture}
-    }
-  \caption{Page d'accueil du site}
-  \end{figure}
-\end{frame}
+  \begin{frame}{Côté client}{Profil client}
+    Un client peut:
+    \begin{enumerate}
+      \item faire des recherches de produits selon plusieurs paramètres. 
+      \item visualiser des informations à propos d'un produit/producteur/ruche 
+      \item communiquer avec un producteur
+      \item réaliser une commande au près d'un producteur et choisir une date de récolte parmi celles proposées
+      \item régler sa commande en recevant une facture détaillée
+      \item donner son avis sur un produit acheté
+    \end{enumerate}
+  \end{frame}
+
+% \begin{frame}{Côté client}{Conception}
+%   \begin{figure}[!ht]
+%     \resizebox{0.9\textwidth}{!}{
+%       \begin{tikzpicture}
+%         \setcounter{tikzumlUseCaseNum}{0}
+%         \umlactor{User}
+%         \umlactor[x=12, y=-1]{Database}
+%         \begin{umlsystem}[x=4, fill=red!10]{index page}
+%           \umlusecase{Sign-up}
+%           \umlusecase[y=-2]{Sign-in}
+%           \umlusecase[x=4, width=1.5cm]{Create database entry}
+%           \umlusecase[x=4, y=-3, width=1.5cm]{Verify credentials}
+%           \umlusecase[y=-4]{Footer menu}
+%         \end{umlsystem}
+%         \umlassoc{User}{usecase-1}
+%         \umlassoc{User}{usecase-2}
+%         \umlassoc{User}{usecase-5}
+%         \umlassoc{Database}{usecase-3}
+%         \umlassoc{Database}{usecase-4}
+%         \umlinclude{usecase-1}{usecase-3}
+%         \umlinclude{usecase-2}{usecase-4}
+%         \umlinclude{usecase-3}{usecase-4}
+%       \end{tikzpicture}
+%     }
+%   \caption{Page d'accueil du site}
+%   \end{figure}
+% \end{frame}
 
 \begin{frame}{Côté client}{Conception}
   \begin{figure}[!ht]
@@ -439,7 +451,7 @@ Soient $v_1$ et $v_2$ deux fournisseurs tels que $v_2 \notin \texttt{Voisins}(v_
 
 \begin{frame}{\textit{Front-end}}{Outils d'implémentation}
   \begin{block}{JSX}
-  \texttt{JSX} est une extension JavaScript dont l'usage est très recommandé lors du développement d'une application \texttt{React}.
+    \texttt{JSX} est une extension JavaScript dont l'usage est très recommandé lors du développement d'une application \texttt{React}.
   \end{block}
   \begin{figure}[!ht]
     \centering
