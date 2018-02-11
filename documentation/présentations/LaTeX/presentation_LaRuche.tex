@@ -427,6 +427,53 @@ En tant que \textcolor{DarkOrchid}{fournisseur}, je souhaite {\color{BrickRed} \
 \end{figure}
 \end{frame}
 
+<<<<<<< HEAD
+% \begin{frame}{Côté client}{Conception}
+%   \begin{figure}[!ht]
+%    \centering
+%    \resizebox{0.65\textwidth}{!}{
+%      \begin{tikzpicture}
+%        \setcounter{tikzumlUseCaseNum}{0}
+%        \umlactor{Vendor}
+%        \umlactor[x=12, y=-2]{Database}
+%        \umlactor[x=12, y=-5]{Client User Database}
+%        \umlactor[x=12, y=-7]{Bank/PayPal}
+%        \umlactor[x=12, y=-9]{Bill Reception Platform}
+%        \begin{umlsystem}[x=4, fill=red!10]{vendor home page}
+%          \umlusecase[width=2cm]{Check Stocks}
+%          \umlusecase[x=5, width=2cm]{Allow Delayed Orders}
+%          \umlusecase[x=2.6, y=-2, width=3cm]{Set Purchase Deadline}
+%          \umlusecase[x=4, y=-5, width=3cm]{Check Pending Orders}
+%          \umlusecase[y=-7, width=2cm]{Process Pending Orders}
+%          \umlusecase[x=5, y=-7, width=2cm]{Send Bill}
+%          \umlusecase[x=4.5, y=-10, width=2cm]{Update Sales' History}
+%        \end{umlsystem}
+%        \umlextend{usecase-2}{usecase-1}
+%        \umlextend[name=deadline]{usecase-3}{usecase-4}
+%        \umlextend[name=checkPending1]{usecase-4}{usecase-5}
+%        \umlinclude{usecase-5}{usecase-6}
+%        \umlinclude{usecase-6}{usecase-7}
+%        \umlassoc{Vendor}{usecase-1}
+%        \umlassoc[name=checkPending2]{Vendor}{usecase-4}
+%        \umlassoc[name=process]{Vendor}{usecase-5}
+%        \umlassoc{Database}{usecase-2}
+%        \umlassoc{Database}{usecase-3}
+%        \umlassoc{Database}{usecase-4}
+%        \umlassoc{Database}{usecase-7}
+%        \umlassoc{Bill Reception Platform}{usecase-6}
+%        \umlassoc{Bank/PayPal}{usecase-6}
+%        \umlassoc{Client User Database}{usecase-6}
+%        \umlnote[x=-0.5, y=-3]{checkPending2-1}{only if validating transactions is set to manual}
+%        \umlnote[x=-0.5, y=-6]{process-1}{only if validating transactions is set to automatic}
+%        \umlnote[x=-0.5, y=-9]{deadline-1}{according to the number of pending orders}
+%      \end{tikzpicture}
+%    }
+%    \caption{Gestion des commandes du point de vue du fournisseur}
+%  \end{figure}
+%  \end{frame}
+
+=======
+>>>>>>> 5848dfd7300dfa57d6924b2ddc8595337427e2c6
 \section{Outils d'implémentation}
 \subsection{\protect\textit{Front-end}}
 \begin{frame}{\textit{Front-end}}{Outils d'implémentation}
