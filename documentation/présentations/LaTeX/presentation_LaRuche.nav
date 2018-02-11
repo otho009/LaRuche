@@ -28,36 +28,36 @@
 \headcommand {\beamer@subsectionentry {0}{3}{1}{8}{Outils de conception utilis\IeC {\'e}s}}\headcommand {\beamer@subsectionpages {8}{7}}
 \headcommand {\slideentry {3}{1}{1}{8/8}{Outils de conception utilis\IeC {\'e}s}{0}}
 \headcommand {\beamer@framepages {8}{8}}
-\headcommand {\beamer@subsectionentry {0}{3}{2}{9}{\textit {User Stories} : outil de conception agile}}\headcommand {\beamer@subsectionpages {8}{8}}
-\headcommand {\slideentry {3}{2}{1}{9/9}{\textit {User Stories} : outil de conception agile}{0}}
+\headcommand {\slideentry {3}{1}{2}{9/9}{Outils de conception utilis\IeC {\'e}s}{0}}
 \headcommand {\beamer@framepages {9}{9}}
-\headcommand {\beamer@subsectionentry {0}{3}{3}{10}{C\IeC {\^o}t\IeC {\'e} fournisseur}}\headcommand {\beamer@subsectionpages {9}{9}}
-\headcommand {\slideentry {3}{3}{1}{10/10}{C\IeC {\^o}t\IeC {\'e} fournisseur}{0}}
+\headcommand {\beamer@subsectionentry {0}{3}{2}{10}{Besoins}}\headcommand {\beamer@subsectionpages {8}{9}}
+\headcommand {\slideentry {3}{2}{1}{10/10}{Besoins}{0}}
 \headcommand {\beamer@framepages {10}{10}}
+\headcommand {\beamer@subsectionentry {0}{3}{3}{11}{C\IeC {\^o}t\IeC {\'e} fournisseur}}\headcommand {\beamer@subsectionpages {10}{10}}
 \headcommand {\beamer@subsubsectionentry {0}{3}{3}{1}{11}{Ruche : Structure de donn\IeC {\'e}es propos\IeC {\'e}e}}
-\headcommand {\slideentry {3}{3}{2}{11/11}{C\IeC {\^o}t\IeC {\'e} fournisseur}{0}}
+\headcommand {\slideentry {3}{3}{1}{11/11}{C\IeC {\^o}t\IeC {\'e} fournisseur}{0}}
 \headcommand {\beamer@framepages {11}{11}}
-\headcommand {\slideentry {3}{3}{3}{12/12}{C\IeC {\^o}t\IeC {\'e} fournisseur}{0}}
+\headcommand {\slideentry {3}{3}{2}{12/12}{C\IeC {\^o}t\IeC {\'e} fournisseur}{0}}
 \headcommand {\beamer@framepages {12}{12}}
-\headcommand {\slideentry {3}{3}{4}{13/13}{C\IeC {\^o}t\IeC {\'e} fournisseur}{0}}
+\headcommand {\slideentry {3}{3}{3}{13/13}{C\IeC {\^o}t\IeC {\'e} fournisseur}{0}}
 \headcommand {\beamer@framepages {13}{13}}
-\headcommand {\slideentry {3}{3}{5}{14/14}{C\IeC {\^o}t\IeC {\'e} fournisseur}{0}}
+\headcommand {\slideentry {3}{3}{4}{14/14}{C\IeC {\^o}t\IeC {\'e} fournisseur}{0}}
 \headcommand {\beamer@framepages {14}{14}}
 \headcommand {\beamer@subsubsectionentry {0}{3}{3}{2}{15}{\textit {User-stories} des fournisseurs}}
-\headcommand {\slideentry {3}{3}{6}{15/15}{C\IeC {\^o}t\IeC {\'e} fournisseur}{0}}
+\headcommand {\slideentry {3}{3}{5}{15/15}{C\IeC {\^o}t\IeC {\'e} fournisseur}{0}}
 \headcommand {\beamer@framepages {15}{15}}
-\headcommand {\slideentry {3}{3}{7}{16/16}{C\IeC {\^o}t\IeC {\'e} fournisseur}{0}}
+\headcommand {\slideentry {3}{3}{6}{16/16}{C\IeC {\^o}t\IeC {\'e} fournisseur}{0}}
 \headcommand {\beamer@framepages {16}{16}}
 \headcommand {\beamer@subsubsectionentry {0}{3}{3}{3}{17}{Profil fournisseur}}
-\headcommand {\slideentry {3}{3}{8}{17/17}{C\IeC {\^o}t\IeC {\'e} fournisseur}{0}}
+\headcommand {\slideentry {3}{3}{7}{17/17}{C\IeC {\^o}t\IeC {\'e} fournisseur}{0}}
 \headcommand {\beamer@framepages {17}{17}}
-\headcommand {\slideentry {3}{3}{9}{18/18}{C\IeC {\^o}t\IeC {\'e} fournisseur}{0}}
+\headcommand {\slideentry {3}{3}{8}{18/18}{C\IeC {\^o}t\IeC {\'e} fournisseur}{0}}
 \headcommand {\beamer@framepages {18}{18}}
-\headcommand {\slideentry {3}{3}{10}{19/19}{C\IeC {\^o}t\IeC {\'e} fournisseur}{0}}
+\headcommand {\slideentry {3}{3}{9}{19/19}{C\IeC {\^o}t\IeC {\'e} fournisseur}{0}}
 \headcommand {\beamer@framepages {19}{19}}
-\headcommand {\slideentry {3}{3}{11}{20/20}{C\IeC {\^o}t\IeC {\'e} fournisseur}{0}}
+\headcommand {\slideentry {3}{3}{10}{20/20}{C\IeC {\^o}t\IeC {\'e} fournisseur}{0}}
 \headcommand {\beamer@framepages {20}{20}}
-\headcommand {\beamer@subsectionentry {0}{3}{4}{21}{C\IeC {\^o}t\IeC {\'e} client}}\headcommand {\beamer@subsectionpages {10}{20}}
+\headcommand {\beamer@subsectionentry {0}{3}{4}{21}{C\IeC {\^o}t\IeC {\'e} client}}\headcommand {\beamer@subsectionpages {11}{20}}
 \headcommand {\slideentry {3}{4}{1}{21/21}{C\IeC {\^o}t\IeC {\'e} client}{0}}
 \headcommand {\beamer@framepages {21}{21}}
 \headcommand {\slideentry {3}{4}{2}{22/22}{C\IeC {\^o}t\IeC {\'e} client}{0}}
