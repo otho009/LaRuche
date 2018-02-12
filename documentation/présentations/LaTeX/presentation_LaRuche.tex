@@ -56,7 +56,7 @@
     \end{block}
 
     \begin{block}{Producteurs :}
-      Maitriser le prix de vente et les débouchés de leurs productions en se libérant des intermédiaires de distrubution.
+      Maîtriser le prix de vente et les débouchés de leurs productions en se libérant des intermédiaires de distrubution.
     \end{block}
 \end{columns}
 \end{frame}
@@ -125,7 +125,7 @@ Une approche de développement logiciel de plus en plus prépondérante basée s
 \end{enumerate}
 \end{frame}
 
-\subsection{\protect\textit{User Stories} : outil de conception agile}
+% \subsection{\protect\textit{User Stories} : outil de conception agile}
 \begin{frame}{\textit{User Stories} : outil de conception agile}{Conception}
 \begin{block}{\textit{User Stories}}
 Des requis fournis par les clients, décrivant en langage naturel les fonctionnalités qu'ils souhaitent avoir dans le produit développé.
@@ -139,18 +139,67 @@ Des requis fournis par les clients, décrivant en langage naturel les fonctionna
 \end{block}
 \end{frame}
 
-\subsection{Côté fournisseur}
-\begin{frame}{Côté fournisseur}{Conception}
+\subsection{Besoins}
+\begin{frame}{Besoins}{Conception}
 \begin{block}{Besoins}
 \begin{enumerate}
-  \item Un profil d'utilisateur \textbf{fournisseur} : propriétés et fonctionnalités via des \textit{user-stories}.
+  \item Des profils d'utilisateurs \textbf{fournisseur/client} : propriétés et fonctionnalités via des \textit{user-stories}.
   \item Une \textbf{structure de données} pour décrire le \textbf{regroupement des fournisseurs} et leurs \textbf{interactions} : \texttt{ruche}, \texttt{opérateur cellule}, \texttt{voisins}, $\dots$
 \end{enumerate}
 \end{block}
 \end{frame}
 
+\subsection{Côté fournisseur}
+\subsubsection*{Ruche : Structure de données proposée}
+\begin{frame}{Côté fournisseur}{Ruche : Structure de données proposée}
+\begin{block}{Définitions de base}
+\begin{description}
+  \item[$\textbf{V}$]{ensemble des fournisseurs.}
+  \item[$\textbf{C}$]{ensemble des clients.}
+  \item[$\pi_v$]{\textbf{opérateur} appliqué à $v \in V$ désignant une \textbf{cellule}, c.à.d. un \textbf{cercle} dont le centre est le point représentant les coordonnées du fournisseur $v$ et dont le rayon est la distance maximale en \textbf{km} qu'il souhaite parcourir afin de se rendre à un lieu de collecte.}
+\end{description}
+\end{block}
+\end{frame}
+
+\begin{frame}{Côté fournisseur}{Ruche : Structure de données proposée($2$)}
+\begin{block}{Ruche}
+Soit $v_1, v_2, \dots, v_n \in V^n$. Une \textbf{ruche} $R = (p, V_R)$ est composée de :
+\begin{description}
+  \item[$\mathbf{V_R}$]{ensemble de fournisseurs dont les cellules s'intersectent;}
+  \item[$\mathbf{p}$]{un point de collecte obtenu à partir d'une opération\footnote{le choix du point est relatif aux fournisseurs de la ruche, étant indéterministe en soi} sur la zone d'intersection des cellules correspondantes aux vendeurs de $V$.}
+\end{description}
+Autrement dit, $R = \{p, \{v_1, v_2, \dots, v_n \in V\; |\; \pi_{v_1} \cap \pi_{v_2} \cap \dots \cap \pi_{v_2} \neq \varnothing\}\}$
+\end{block}
+\end{frame}
+
+\begin{frame}{Côté fournisseur}{Ruche : Structure de données proposée($3$)}
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[scale=0.17]{images/exemple_introductif1.png}
+\end{figure}
+
+\begin{block}{Appartenance Simultanée}
+Un fournisseur peut appartenir à plusieurs ruches simultanément.
+\end{block}
+
+\begin{block}{Fournisseurs Voisins}
+Soit $R = \{p, V_R\}$ une ruche. Deux fournisseurs $v_1$ et $v_2$ sont dits \textbf{voisins} $\iff v_1 \in V_R\; \text{et}\; v_2 \in V_R$. On note $\texttt{Voisins}(v)$ l'\textbf{ensemble des voisins} d'un fournisseur $v$, contenant \textbf{tous les voisins} de \textbf{toutes les ruches} auxquelles il appartient.
+\end{block}
+\end{frame}
+
+\begin{frame}{Côté fournisseur}{Ruche : Structure de données proposée($4$)}
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[scale=0.08]{images/exemple_introductif2.png}
+\end{figure}
+
+\begin{block}{Voisinage Imposé}
+Soient $v_1$ et $v_2$ deux fournisseurs tels que $v_2 \notin \texttt{Voisins}(v_1)$. S'il existe des fournisseurs $v_3$ et $v_4$ tels que $v_3, v_4 \in \texttt{Voisins}(v_1) \cap \texttt{Voisins}(v_2)$ et $v_3 \notin \texttt{Voisins}(v_4)$, alors il existe une ruche plus optimale contenant $v_1, v_2, v_3\; \text{et}\; v_4$ que les ruches séparées les contenant.
+\end{block}
+\end{frame}
+
 \subsubsection*{\protect\textit{User-stories} des fournisseurs}
-\begin{frame}{Intitulés des \textit{user-stories} fournisseurs}{Côté fournisseur}
+\begin{frame}{Côté fournisseur}{Intitulés des \textit{user-stories} fournisseur}
 \begin{enumerate}
   \item Définition et stockage de produits.
   \item Offre de Paniers.
@@ -162,7 +211,7 @@ Des requis fournis par les clients, décrivant en langage naturel les fonctionna
 \end{enumerate}
 \end{frame}
 
-\begin{frame}{Exemple d'une \textit{user-story} fournisseur}{Côté fournisseur}
+\begin{frame}{Côté fournisseur}{Exemple d'une \textit{user-story} fournisseur}
 \begin{block}{\textcolor{Sepia}{\texttt{Définition et stockage de produits}}}
 En tant que \textcolor{DarkOrchid}{fournisseur}, je souhaite {\color{BrickRed} \textbf{définir} ma \textbf{sélection de produits} selon des \textbf{informations caractéristiques} à fournir dans des \textbf{formulaires}},\\
 ~~~~~~~~~dans le but de {\color{OliveGreen}maximiser la transparence de mes produits pour gagner la fidelité de mes clients, tout en \textbf{gérant} (création, modification, ajout, suppression) ma sélection à travers le site}.
@@ -170,9 +219,9 @@ En tant que \textcolor{DarkOrchid}{fournisseur}, je souhaite {\color{BrickRed} \
 \end{frame}
 
 \subsubsection*{Profil fournisseur}
-\begin{frame}{Profil fournisseur}{Côté fournisseur}
+\begin{frame}{Côté fournisseur}{Profil fournisseur}
 \begin{enumerate}
-  \item Un fournisseur offre des produits/paniers de produits divers.
+  \item Un fournisseur offre des produits/paniers divers.
   \item Un fournisseur gére ses produits/paniers dans des stocks.
   \item Un fournisseur suit l'évolution de ses ressources via des rapports de suivi périodiques.
   \item Un fournisseur interagit :
@@ -183,7 +232,7 @@ En tant que \textcolor{DarkOrchid}{fournisseur}, je souhaite {\color{BrickRed} \
 \end{enumerate}
 \end{frame}
 
-\begin{frame}{Profil fournisseur(2)}{Côté fournisseur}
+\begin{frame}{Côté fournisseur}{Profil fournisseur($2$)}
 \begin{enumerate}
   \item Un fournisseur valide les commandes de réservation des produits.
   \item Un fournisseur règle les commandes physiquement, en premier temps, et puis via le site dans les versions ultérieures.
@@ -191,7 +240,7 @@ En tant que \textcolor{DarkOrchid}{fournisseur}, je souhaite {\color{BrickRed} \
 \end{enumerate}
 \end{frame}
 
-\begin{frame}{Exemple d'un diagramme de cas d'usage (version de base)}{Côté fournisseur}
+\begin{frame}{Côté fournisseur}{Page d'accueil de l'utilisateur fournisseur}
 \begin{figure}[!ht]
   \centering
   \resizebox{0.75\textwidth}{!}{
@@ -221,53 +270,48 @@ En tant que \textcolor{DarkOrchid}{fournisseur}, je souhaite {\color{BrickRed} \
 \end{figure}
 \end{frame}
 
-\subsubsection*{Ruche : Structure de données proposée}
-\begin{frame}{Ruche : Structure de données proposée}{Côté fournisseur}
-\begin{block}{Définitions de base}
-\begin{description}
-  \item[$\textbf{V}$]{ensemble des fournisseurs.}
-  \item[$\textbf{C}$]{ensemble des clients.}
-  \item[$\pi_v$]{\textbf{opérateur} appliqué à $v \in V$ désignant une \textbf{cellule}, c.à.d. un \textbf{cercle} dont le centre est le point représentant les coordonnées du fournisseur $v$ et dont le rayon est la distance maximale en \textbf{km} qu'il souhaite parcourir afin de se rendre à un lieu de collecte.}
-\end{description}
-\end{block}
-\end{frame}
-
-\begin{frame}{Ruche : Structure de données proposée($2$)}{Côté fournisseur}
-\begin{block}{Ruche}
-Soit $v_1, v_2, \dots, v_n \in V^n$. Une \textbf{ruche} $R = (p, V_R)$ est composée de :
-\begin{description}
-  \item[$\mathbf{V_R}$]{ensemble de fournisseurs dont les cellules s'intersectent;}
-  \item[$\mathbf{p}$]{un point de collecte obtenu à partir d'une opération\footnote{le choix du point est relatif aux fournisseurs de la ruche, étant indéterministe en soi} sur la zone d'intersection des cellules correspondantes aux vendeurs de $V$.}
-\end{description}
-Autrement dit, $R = \{p, \{v_1, v_2, \dots, v_n \in V\; |\; \pi_{v_1} \cap \pi_{v_2} \cap \dots \cap \pi_{v_2} \neq \varnothing\}\}$
-\end{block}
-\end{frame}
-
-\begin{frame}{Ruche : Structure de données proposée($3$)}{Côté fournisseur}
-\begin{figure}[!ht]
-  \centering
-  \includegraphics[scale=0.17]{images/exemple_introductif1.png}
-\end{figure}
-
-\begin{block}{Appartenance Simultanée}
-Un fournisseur peut appartenir à plusieurs ruches simultanément.
-\end{block}
-
-\begin{block}{Fournisseurs Voisins}
-Soit $R = \{p, V_R\}$ une ruche. Deux fournisseurs $v_1$ et $v_2$ sont dits \textbf{voisins} $\iff v_1 \in V_R\; \text{et}\; v_2 \in V_R$. On note $\texttt{Voisins}(v)$ l'\textbf{ensemble des voisins} d'un fournisseur $v$, contenant \textbf{tous les voisins} de \textbf{toutes les ruches} auxquelles il appartient.
-\end{block}
-\end{frame}
-
-\begin{frame}{Ruche : Structure de données proposée($4$)}{Côté fournisseur}
-\begin{figure}[!ht]
-  \centering
-  \includegraphics[scale=0.08]{images/exemple_introductif2.png}
-\end{figure}
-
-\begin{block}{Voisinage Imposé}
-Soient $v_1$ et $v_2$ deux fournisseurs tels que $v_2 \notin \texttt{Voisins}(v_1)$. S'il existe des fournisseurs $v_3$ et $v_4$ tels que $v_3, v_4 \in \texttt{Voisins}(v_1) \cap \texttt{Voisins}(v_2)$ et $v_3 \notin \texttt{Voisins}(v_4)$, alors il existe une ruche plus optimale contenant $v_1, v_2, v_3\; \text{et}\; v_4$ que les ruches séparées les contenant.
-\end{block}
-\end{frame}
+\begin{frame}{Côté fournisseur}{Gestion des commandes du point de vue du fournisseur}
+  \begin{figure}[!ht]
+   \centering
+   \resizebox{0.65\textwidth}{!}{
+     \begin{tikzpicture}
+       \setcounter{tikzumlUseCaseNum}{0}
+       \umlactor{Vendor}
+       \umlactor[x=12, y=-2]{Database}
+       \umlactor[x=12, y=-5]{Client User Database}
+       \umlactor[x=12, y=-7]{Bank/PayPal}
+       \umlactor[x=12, y=-9]{Bill Reception Platform}
+       \begin{umlsystem}[x=4, fill=red!10]{vendor home page}
+         \umlusecase[width=2cm]{Check Stocks}
+         \umlusecase[x=5, width=2cm]{Allow Delayed Orders}
+         \umlusecase[x=2.6, y=-2, width=3cm]{Set Purchase Deadline}
+         \umlusecase[x=4, y=-5, width=3cm]{Check Pending Orders}
+         \umlusecase[y=-7, width=2cm]{Process Pending Orders}
+         \umlusecase[x=5, y=-7, width=2cm]{Send Bill}
+         \umlusecase[x=4.5, y=-10, width=2cm]{Update Sales' History}
+       \end{umlsystem}
+       \umlextend{usecase-2}{usecase-1}
+       \umlextend[name=deadline]{usecase-3}{usecase-4}
+       \umlextend[name=checkPending1]{usecase-4}{usecase-5}
+       \umlinclude{usecase-5}{usecase-6}
+       \umlinclude{usecase-6}{usecase-7}
+       \umlassoc{Vendor}{usecase-1}
+       \umlassoc[name=checkPending2]{Vendor}{usecase-4}
+       \umlassoc[name=process]{Vendor}{usecase-5}
+       \umlassoc{Database}{usecase-2}
+       \umlassoc{Database}{usecase-3}
+       \umlassoc{Database}{usecase-4}
+       \umlassoc{Database}{usecase-7}
+       \umlassoc{Bill Reception Platform}{usecase-6}
+       \umlassoc{Bank/PayPal}{usecase-6}
+       \umlassoc{Client User Database}{usecase-6}
+       \umlnote[x=-0.5, y=-3]{checkPending2-1}{only if validating transactions is set to manual}
+       \umlnote[x=-0.5, y=-6]{process-1}{only if validating transactions is set to automatic}
+       \umlnote[x=-0.5, y=-9]{deadline-1}{according to the number of pending orders}
+     \end{tikzpicture}
+   }
+ \end{figure}
+ \end{frame}
 
 \subsection{Côté client}
   \begin{frame}{Côté client}{Profil client}
@@ -310,7 +354,7 @@ Soient $v_1$ et $v_2$ deux fournisseurs tels que $v_2 \notin \texttt{Voisins}(v_
 %   \end{figure}
 % \end{frame}
 
-\begin{frame}{Côté client}{Conception}
+\begin{frame}{Côté client}{Page d'accueil de l'utilisateur client}
   \begin{figure}[!ht]
     \centering
     \resizebox{0.65\textwidth}{!}{
@@ -335,11 +379,10 @@ Soient $v_1$ et $v_2$ deux fournisseurs tels que $v_2 \notin \texttt{Voisins}(v_
       \umlassoc{Database}{usecase-3}
     \end{tikzpicture}
     }
-  \caption{Page d'accueil de l'utilisateur client}
   \end{figure}
 \end{frame}
 
-\begin{frame}{Côté client}{Conception}
+\begin{frame}{Côté client}{Gestion des commandes du point de vue du client}
 \begin{figure}[!ht]
   \centering
   \resizebox{0.65\textwidth}{!}{
@@ -381,54 +424,56 @@ Soient $v_1$ et $v_2$ deux fournisseurs tels que $v_2 \notin \texttt{Voisins}(v_
       \umlnote[x=9, y=-3]{usecase-10}{only if transaction validated by vendor}
     \end{tikzpicture}
   }
-\caption{Gestion des commandes du point de vue du client}
 \end{figure}
 \end{frame}
 
-\begin{frame}{Côté client}{Conception}
-  \begin{figure}[!ht]
-   \centering
-   \resizebox{0.65\textwidth}{!}{
-     \begin{tikzpicture}
-       \setcounter{tikzumlUseCaseNum}{0}
-       \umlactor{Vendor}
-       \umlactor[x=12, y=-2]{Database}
-       \umlactor[x=12, y=-5]{Client User Database}
-       \umlactor[x=12, y=-7]{Bank/PayPal}
-       \umlactor[x=12, y=-9]{Bill Reception Platform}
-       \begin{umlsystem}[x=4, fill=red!10]{vendor home page}
-         \umlusecase[width=2cm]{Check Stocks}
-         \umlusecase[x=5, width=2cm]{Allow Delayed Orders}
-         \umlusecase[x=2.6, y=-2, width=3cm]{Set Purchase Deadline}
-         \umlusecase[x=4, y=-5, width=3cm]{Check Pending Orders}
-         \umlusecase[y=-7, width=2cm]{Process Pending Orders}
-         \umlusecase[x=5, y=-7, width=2cm]{Send Bill}
-         \umlusecase[x=4.5, y=-10, width=2cm]{Update Sales' History}
-       \end{umlsystem}
-       \umlextend{usecase-2}{usecase-1}
-       \umlextend[name=deadline]{usecase-3}{usecase-4}
-       \umlextend[name=checkPending1]{usecase-4}{usecase-5}
-       \umlinclude{usecase-5}{usecase-6}
-       \umlinclude{usecase-6}{usecase-7}
-       \umlassoc{Vendor}{usecase-1}
-       \umlassoc[name=checkPending2]{Vendor}{usecase-4}
-       \umlassoc[name=process]{Vendor}{usecase-5}
-       \umlassoc{Database}{usecase-2}
-       \umlassoc{Database}{usecase-3}
-       \umlassoc{Database}{usecase-4}
-       \umlassoc{Database}{usecase-7}
-       \umlassoc{Bill Reception Platform}{usecase-6}
-       \umlassoc{Bank/PayPal}{usecase-6}
-       \umlassoc{Client User Database}{usecase-6}
-       \umlnote[x=-0.5, y=-3]{checkPending2-1}{only if validating transactions is set to manual}
-       \umlnote[x=-0.5, y=-6]{process-1}{only if validating transactions is set to automatic}
-       \umlnote[x=-0.5, y=-9]{deadline-1}{according to the number of pending orders}
-     \end{tikzpicture}
-   }
-   \caption{Gestion des commandes du point de vue du fournisseur}
- \end{figure}
- \end{frame}
+<<<<<<< HEAD
+% \begin{frame}{Côté client}{Conception}
+%   \begin{figure}[!ht]
+%    \centering
+%    \resizebox{0.65\textwidth}{!}{
+%      \begin{tikzpicture}
+%        \setcounter{tikzumlUseCaseNum}{0}
+%        \umlactor{Vendor}
+%        \umlactor[x=12, y=-2]{Database}
+%        \umlactor[x=12, y=-5]{Client User Database}
+%        \umlactor[x=12, y=-7]{Bank/PayPal}
+%        \umlactor[x=12, y=-9]{Bill Reception Platform}
+%        \begin{umlsystem}[x=4, fill=red!10]{vendor home page}
+%          \umlusecase[width=2cm]{Check Stocks}
+%          \umlusecase[x=5, width=2cm]{Allow Delayed Orders}
+%          \umlusecase[x=2.6, y=-2, width=3cm]{Set Purchase Deadline}
+%          \umlusecase[x=4, y=-5, width=3cm]{Check Pending Orders}
+%          \umlusecase[y=-7, width=2cm]{Process Pending Orders}
+%          \umlusecase[x=5, y=-7, width=2cm]{Send Bill}
+%          \umlusecase[x=4.5, y=-10, width=2cm]{Update Sales' History}
+%        \end{umlsystem}
+%        \umlextend{usecase-2}{usecase-1}
+%        \umlextend[name=deadline]{usecase-3}{usecase-4}
+%        \umlextend[name=checkPending1]{usecase-4}{usecase-5}
+%        \umlinclude{usecase-5}{usecase-6}
+%        \umlinclude{usecase-6}{usecase-7}
+%        \umlassoc{Vendor}{usecase-1}
+%        \umlassoc[name=checkPending2]{Vendor}{usecase-4}
+%        \umlassoc[name=process]{Vendor}{usecase-5}
+%        \umlassoc{Database}{usecase-2}
+%        \umlassoc{Database}{usecase-3}
+%        \umlassoc{Database}{usecase-4}
+%        \umlassoc{Database}{usecase-7}
+%        \umlassoc{Bill Reception Platform}{usecase-6}
+%        \umlassoc{Bank/PayPal}{usecase-6}
+%        \umlassoc{Client User Database}{usecase-6}
+%        \umlnote[x=-0.5, y=-3]{checkPending2-1}{only if validating transactions is set to manual}
+%        \umlnote[x=-0.5, y=-6]{process-1}{only if validating transactions is set to automatic}
+%        \umlnote[x=-0.5, y=-9]{deadline-1}{according to the number of pending orders}
+%      \end{tikzpicture}
+%    }
+%    \caption{Gestion des commandes du point de vue du fournisseur}
+%  \end{figure}
+%  \end{frame}
 
+=======
+>>>>>>> 5848dfd7300dfa57d6924b2ddc8595337427e2c6
 \section{Outils d'implémentation}
 \subsection{\protect\textit{Front-end}}
 \begin{frame}{\textit{Front-end}}{Outils d'implémentation}
