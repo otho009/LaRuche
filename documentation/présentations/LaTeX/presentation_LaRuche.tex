@@ -2,7 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[francais]{babel}
-\usepackage{xcolor} 
+\usepackage{xcolor}
 \usepackage{packages/tikz-uml}
 \usetheme{Singapore} %Boadilla | Bergen | Madrid | Antibes | Hannover | Singapore | Warsaw
 %----------------------------------------------------------------------------------------
@@ -504,18 +504,18 @@ En tant que \textcolor{DarkOrchid}{fournisseur}, je souhaite {\color{BrickRed} \
 \subsection{\protect\textit{Back-end}}
 \begin{frame}{\textit{Back-end}}{Outils d'implémentation}
 %%PHP, MySQL
-  \begin{figure}
-      \includegraphics[scale=0.06]{images/mysql.png}
-    
+  \begin{figure}[!htb]
+  \minipage{0.25\textwidth}
+    \includegraphics[width=\linewidth, scale=0.03]{images/mysql.png}
+  \endminipage\hfill
+  \minipage{0.25\textwidth}
+    \includegraphics[width=\linewidth, scale=0.04]{images/php.png}
+  \endminipage\hfill
+  \minipage{0.25\textwidth}
+    \includegraphics[width=\linewidth, scale=0.15]{images/symfony.png}
+  \endminipage
   \end{figure}
-  \begin{figure}
-      \includegraphics[scale=0.07]{images/php.png}
-    
-  \end{figure}
-  \begin{figure}
-      \includegraphics[scale=0.3]{images/symfony.png}
-    
-  \end{figure}
+
   \begin{description}
     \item[Langage de développement :] Serveur codé en PHP et le framework \texttt{Symfony} pour un système modulaire basé sur le \textit{design pattern} \textbf{MVC}.
     \item[Base de données :] Base de données relationnelle mise en place via MySQL interagissant avec l'\textbf{ORM} \texttt{Doctrine}.
