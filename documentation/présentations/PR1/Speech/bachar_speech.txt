@@ -1,0 +1,49 @@
+Solutions + Côté fournisseur + prespectives
+
+Solutions :
+===========
+Solution possible : La Ruche Qui Dit Oui
+Pour adresser cette problématique, La Ruche Qui Dit Oui a déjà proposé un site web désignant une interface directe entre les consommateurs et les fournisseurs.
+Ils définissent une structure de données intitulé Ruche, consistant d'un ensemble de fournisseurs et de consommateurs d'une région, guidé par un responsable de ruche.
+Cette modélisation tombe dans le cadre d'une vision centralisée des rôles des utilisateurs du site, où l'ensemble des ruches obéit à une Ruche centralisée dénotée Ruche-Mama s'occupant de la gestion des ruches et de leurs interactions, mais aussi de l'extension des services offerts.
+
+Solution proposée : LaRuche
+De notre part, nous souhaitons implémenter une interface web directe entre les consommateurs et les fournisseurs, mais en adoptant une structuration de rôles décentralisée. Pour ce faire, nous définissons une structure de données Ruche qui consiste uniquement d'un ensemble de fournisseurs d'une région sans responsable de ruche préfixé par le site.
+De plus, l'ensemble des ruches ne répond à aucune entité centrale, et chaque ruche s'occupe de ses propres besoins et de leur gestion sans être soumise à une hiérarchie de rôles à respecter.
+
+Méthodologie de résolution : méthodes agiles
+============================================
+Pour procéder à concevoir et implémenter notre projet, nous avons opter pour une méthodologie de résolution basée sur les méthodes agiles.
+Les méthodes agiles constituent une approche de développement logiciel de plus en plus prépondérante basée sur un processus de travail itératif, dont chaque itération est complétée par une période de tests et de consultations de clients, d'où la désignation orientée-test et orientée-client.
+L'utilisation des méthodes agiles permet une meilleure gestion des ressources, une sortie plus fréquente de versions fonctionnelles et testées du produits, et une interaction plus fréquente avec les clients afin d'adapter le produit et d'étendre ses fonctionnalités constamment selon leurs besoins.
+
+Outils de conception utilisés :
+===============================
+Dans le cadre de la conception, nous nous sommes servis des outils de modélisation suivants :
+1. Diagrammes de cas d'usage : souvent utilisés en UML pour décrire en haut niveau des fonctionnalités d'un système.
+2. Modèle EA : un modèle conceptuel permettant d'identifier les entités du projet ainsi que l'ensemble des associations décrivant leurs interactions.
+3. Schéma de BD : un schéma en modèle relationnel composé des relations du projet et des contraintes d'intégrité, généralement traduit à partir du modèle EA, et servant de support lors de l'implémentation de la base de données.
+4. Mockup storyboard : un document de haut niveau schématisant l'utilisation d'un projet en haut niveau sans rentrer dans les détails de leur implémentation.
+
+User Stories : outil de conception agile :
+==========================================
+Outre les outils de conception classiques, nous nous sommes servis aussi des user stories, un outil fréquemment utilisé dans le cadre des méthodes agiles. Il s'agit de requis fournis par les clients, décrivant en langage naturel les fonctionnalités qu'ils souhaitent obtenir dans le produit développé.
+Et voici en l'occurrence sa syntaxe : (explication de la syntaxe). On verra dans la suite de la présentation un exemple de user story dans le cadre de la conception
+
+Conception : côté fournisseur :
+===============================
+Rentrons maintenant dans le vif du sujet, notamment la conception. La conception doit répondre aux besoins suivants : des profils utilisateurs fournisseur et client décrits par un ensemble de propriétés et de fonctionnalités déduites à partir des user-stories et une structure de données décrivant le regroupement des fournisseurs et leurs interactions.
+
+Commençons par la partie du profil. Pour ce faire, voici la liste (non exhaustive) des intitulés des user-stories lui concernant : On voit la définition et le stockage de produits, l'offre de paniers, la validation de commandes et l'attribution de factures, entre autres.
+En particulier, voici un exemple explicité de l'une des user-stories de la liste, en particulier celle concernant la définition et le stockage des produits (explication).
+En analysant le contenu de chacune de ces user stories, nous nous sommes arrivés à en tirer l'essence du profil fournisseur que l'on voit ici sous forme de phrases décrivant les actions et les propriétés d'un fournisseur (explication).
+Enfin voici un exemple de cas d'usage représentatant quelques fonctionnalités de base d'un fournisseur (explication).
+Maintenant, pour la partie structure de données, je vous laisse avec Wissem qui vous l'expliquera par la suite.
+
+Perspectives :
+==============
+Étant donné que le terme LaRuche ne reflète pas forcément la philosophie de décentralisation de rôles qu'on a opté pour notre modélisation, nous nous sommes toujours pas arrivé à trouver un nom significatif intitulant notre projet. Pour cette raison, nous avons décidé pour le moment de garder le nom qui a été proposé lors de l'affectation du projet dans ce module.
+En accord avec la philosophie des méthodes agiles, nous prévoyons la récolte de feedbacks de plusieurs utilisateurs potentiels pour implémenter des fonctionnalités supplémentaires et optimiser celles déjà existantes.
+Enfin, nous prévoyons lancer notre site à l'international en l'offrant en plusieurs langues pour que plusieurs communautés locales puissent en profiter.
+
+Merci beaucoup pour votre attention, et n'hésitez pas à nous poser vos questions.
