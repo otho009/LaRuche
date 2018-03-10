@@ -1,0 +1,120 @@
+CORRECTION DU MODÈLE EA
+========================
+- Entité : Produit(ID(key), description, prix, unité_stockage)
+- Entité : Stock(ID(key), qté_stockée)
+- Entité : Panier(ID(key), description, prix)
+- Entité : HistoriqueProduit (ID(key), date_production, date_expiration, qte_ajoute, qte_vendue, qte_expiree);
+- Entité : Souk(ID(key), nom)
+- Entité : Point_Collecte(ID(key), rue_adresse, rue_numero_adresse, code_postal_adresse)
+- Association : Client 0,N Communique 0,N Fournisseur
+- Association : Client 0,N Effectue 1,1 Commande_globale
+- Association : Fournisseur 1,N Valide 1,1 Commande
+- Association Produit 0,1 A_Pour_Valeur 1,1 UContenuQte
+- Association Panier 2,N Regroupe 0,N Produit
+- Association Fournisseur 0,N Appartient 2,N Souk
+- Association Souk 1,N  ChoisitPointCollecte 1,N Point_Collecte (attribut : date_reservation)
+- Association Fournisseur 1,N ChoisitPointCollecteIndiv 1,N Point_Collecte (attribut : date_reservation)
+- Association Commande 0,N InclutPanier 0,N Panier (attribut : qté_commandée)
+- Association Panier 1,N Regroupe 0,N Produit (attribut : qté_ajoutée)
+
+- Renommage :
+=============
+  1. renommage de l'association Possède en PossedeWallet
+  2. renommage de l'association Appartient en PossedeStock
+
+TRIGGERS:
+=========
+1- un trigger à la création d'un produit (table Produit) : vérifier s'il s'agit d'un type de vente unitaire ou en vrac pour remplir la table UContenuQte
+2- un trigger à l'ajout d'un produit (table HistoriqueProduit) : additioner la quantité ajoutée à la quantité dans la table Produit.
+3- un trigger pour les ventes : modifier l'attribut "quantité" dans la table Produit
+début
+  Var qteV, t; //quantité calculée avant l'appel du trigger, correspondant à la quantité commandée dans la table des ventes
+  si le produit vendu possède plusieurs dates dans la table HistoriqueProduit alors
+    choisir t comme le tuple ayant la date la plus ancienne;
+    tant que qte_ajoutee(t) > qte_vendue(t) alors
+      si qteV + qte_vendue(t) > qte_ajoutee(t) alors
+        qteV <- qteV + qte_vendue(t) - qte_ajoutee(t);
+        qte_vendue(t) <- qte_ajoutee(t);
+        t <- (t+1); //t+1 est le tuple du même produit ayant la date de récolte la plus ancienne prochaine
+      sinon
+        qte_vendue <- qte_vendue + qteV;
+  sinon //il n'existe qu'un seul tuple valide avec une date de récolte la plus récente
+    t <- le tuple ayant cette date;
+    qte_vendue(t) <- qte_vendue + qteV;
+  fin si
+fin
+
+FORMULAIRES:
+============
+Formulaire de création d'un compte client
+si client est déjà un fournisseur alors
+  récupérer les informations du compte fournisseur
+
+Formulaire d'ajout d'un produit :
+si radio = vrac alors
+  choisir radio kg ou l;
+  spécifier quantité dans textbox de quantité;
+sinon // radio = unité
+  choisir radio kg ou l;
+  spécifier quantité dans textbox de quantité; //nombre d'unités
+  spécifier quantité dans textbox de UValeur; //quantité dans l'unité
+fin si
+
+ARBORESCENCE DU SITE :
+======================
+index.html (home page)
+  connexion
+    si client -> index.html
+    si fournisseur -> profile_fournisseur.html
+    mot de passe oublié ?
+      demande de consultation d'email
+      tapper sur lien envoyé
+        saisi un nouveau mot de passage
+        succès et -> même méchanisme de redirection vu précédemment selon le type d'utilisateur
+  inscription
+    formulaire
+    si client -> index.html
+    si fournisseur -> profile_fournisseur.html
+  recherche produits
+  header (logo)
+  content (description du site)
+  menu de navigation
+  footer (termes et conditions, about us, FAQ, etc...)
+
+profile_fournisseur
+  ajouter produits/paniers
+    ajouter un nouveau produit
+    ajouter un nouvea panier
+    modifier stock
+  consulter stocks
+    modifier stock
+  historique de ventes et de stocks
+    validation des commandes en attente
+    consulter graphiques et statistiques
+    télécharger pdf
+  messages
+    envoyer un message
+    consulter chats
+      supprimer un chat
+  paramètres personnelles
+    profile
+      changer mot de passe
+      changer photo du profile
+      supprimer ton compte
+  recherche
+
+  profile_utilisateur
+
+
+
+
+
+
+
+PERSPECTIVES:
+=============
+- voisinage facultatif par inclusion de zones :
+s'il existe deux souks R1 et R2 telles que, Z(R1) \subseteq Z(R2) ou Z(R2) \subseteq Z(R2)
+On peut trouver un meillure souk R' formée de R1 et R2 mais telle que Z(R') = Z(R1) \cap Z(R2).
+
+- fonctionnalité de téléchargement de pdf/excel/... pour les graphiques et statistiques
