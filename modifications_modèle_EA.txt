@@ -1,26 +1,72 @@
-CORRECTION DU MODÈLE EA
-========================
-- Entité : Produit(ID(key), description, prix, unité_stockage)
-- Entité : Stock(ID(key), qté_stockée)
-- Entité : Panier(ID(key), description, prix)
-- Entité : HistoriqueProduit (ID(key), date_production, date_expiration, qte_ajoute, qte_vendue, qte_expiree);
-- Entité : Souk(ID(key), nom)
-- Entité : Point_Collecte(ID(key), rue_adresse, rue_numero_adresse, code_postal_adresse)
-- Association : Client 0,N Communique 0,N Fournisseur
-- Association : Client 0,N Effectue 1,1 Commande_globale
-- Association : Fournisseur 1,N Valide 1,1 Commande
-- Association Produit 0,1 A_Pour_Valeur 1,1 UContenuQte
-- Association Panier 2,N Regroupe 0,N Produit
-- Association Fournisseur 0,N Appartient 2,N Souk
-- Association Souk 1,N  ChoisitPointCollecte 1,N Point_Collecte (attribut : date_reservation)
-- Association Fournisseur 1,N ChoisitPointCollecteIndiv 1,N Point_Collecte (attribut : date_reservation)
-- Association Commande 0,N InclutPanier 0,N Panier (attribut : qté_commandée)
-- Association Panier 1,N Regroupe 0,N Produit (attribut : qté_ajoutée)
+NOMS POSSIBLES:
+===============
+Projet : CCC ou C3 (Circuit-Court des Coopératives)
+site web : www.c3.com
+<Ruche> :
+  - Cooperative
+  - Souk
 
-- Renommage :
-=============
-  1. renommage de l'association Possède en PossedeWallet
-  2. renommage de l'association Appartient en PossedeStock
+SYNTAXE EA:
+===========
+Entités : (nom[(key[, attribut calculé, ...])][, ...])
+Associations :
+  - binaire : Entite1 cardMin,cardMax nomAssociation cardMin,cardMax Entite2 [attributs : nom1[, ...]]
+  - ternaire : Entite1 cardMin,cardMax nomAssociation cardMin,cardMax Entite2 cardMin,cardMax Entite3 [attributs : nom[, ...]] (relation ternaire)
+
+CONVENTIONS DE NOMMAGE:
+=======================
+- entité en modèle EA et relations en modèle relationnel : CamelCase (Client, HistoriqueAchat, ...)
+- association en modèle EA : camelCase (contient, possedeStock, ...)
+- attribut en modèle EA et modèle relationnel : snake_case (prix, unite_stockage, qte_stockee, ...)
+
+MODÈLE EA:
+==========
+- Entités :
+  1- Client(ID(key), email, password, date_naissance, age (attribut calculé), tel_portable, date_inscription, num_rue, nom_rue, code_postal)
+  2- Fournisseur(ID(key), num_siret, email, password, date_naissance, age (attribut calculé), tel_portable, date_inscription, num_rue, nom_rue, code_postal)
+  3- Cooperative(ID(key), nom, description)
+  4- PointCollecte(ID(key), description, num_rue, nom_rue, code_postal)
+  5- Produit(ID(key), description, prix, unite_stockage)
+  6- Recolte(ID(key), qte_recoltee, date_recolte, date_expiration)
+  7- Stock(ID(key), qte_stockee)
+  8- Panier(ID(key), description, prix)
+  9- Commande(ref(key))
+  10- CommandeGlobale(ref(key))
+  11- Facture(ref(key))
+  12- Review(ID(key), title, score, content)
+  13- Wallet(ID(key), solde)
+  14- MethodePaiement(ID(key), designation)
+
+- Associations :
+  1- Fournisseur 1,N possedeStock 1,1 Stock
+  2- Stock 0,N contient 1,1 Produit
+  3- Produit 1,N possedeRecolte 1,1 Recolte
+  4- Panier 1,N regroupe 0,N Produit (attributs : qte_regroupee)
+  5- Fournisseur 0,N propose 1,1 Panier (attributs : date_creation)
+  6- Client 1,1 possedeWallet 1,1 Wallet
+  7- Client 0,N effectue 1,1 CommandeGlobale
+  8- Client 1,N choisitMP 0,1 MethodePaiement 1,N CommandeGlobale (relation ternaire)
+  9- CommandeGlobale 0,1 consommeSolde 0,N Wallet (attributs : qte_consommee)
+  10- CommandeGlobale 1,N seCompose 1,1 Commande (attributs : date_achat, qté_totale, prix_total)
+  11- CommandeGlobale 0,1 genere 1,1 Facture
+  12- Commande 1,N inclutProduit 0,N Produit (attributs : qte_commandee, prix)
+  13- Commande 1,N inclutPanier 0,N Panier (attributs : qte_paniers_commandee, prix)
+  14- Fournisseur 1,N valide 1,1 Commande
+  15- Client 0,N ecrit 1,1 Review 0,1 Produit (attributs : date_review) (relation ternaire)
+  16- Client 0,N communique 0,N Fournisseur (attributs : date_communication, contenu)
+  17- Fournisseur 0,N appartient 2,N Cooperative (attributs : date_affiliation)
+  18- Cooperative 1,N choisitPC 1,N PointCollecte (attributs : date_reservation)
+  19- Fournisseur 1,N choisitPCI 1,N PointCollecte (attribut : date_reservation)
+
+MODÈLE RELATIONNEL:
+===================
+
+CONTRAINTES:
+============
+
+PROCÉDURES:
+===========
+- Pour une coopérative sans nom, on fournit un nom par défaut = nomRegion + numéro de la coopérative dans la région
 
 TRIGGERS:
 =========
@@ -104,12 +150,6 @@ profile_fournisseur
   recherche
 
   profile_utilisateur
-
-
-
-
-
-
 
 PERSPECTIVES:
 =============
