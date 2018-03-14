@@ -38,28 +38,171 @@ MODÈLE EA:
   14- MethodePaiement(ID(key), designation)
 
 - Associations :
-  1- Fournisseur 1,N possedeStock 1,1 Stock
-  2- Stock 0,N contient 1,1 Produit
-  3- Produit 1,N possedeRecolte 1,1 Recolte
-  4- Panier 1,N regroupe 0,N Produit (attributs : qte_regroupee)
-  5- Fournisseur 0,N propose 1,1 Panier (attributs : date_creation)
-  6- Client 1,1 possedeWallet 1,1 Wallet
-  7- Client 0,N effectue 1,1 CommandeGlobale
-  8- Client 1,N choisitMP 0,1 MethodePaiement 1,N CommandeGlobale (relation ternaire)
-  9- CommandeGlobale 0,1 consommeSolde 0,N Wallet (attributs : qte_consommee)
-  10- CommandeGlobale 1,N seCompose 1,1 Commande (attributs : date_achat, qté_totale, prix_total)
-  11- CommandeGlobale 0,1 genere 1,1 Facture
-  12- Commande 1,N inclutProduit 0,N Produit (attributs : qte_commandee, prix)
-  13- Commande 1,N inclutPanier 0,N Panier (attributs : qte_paniers_commandee, prix)
-  14- Fournisseur 1,N valide 1,1 Commande
-  15- Client 0,N ecrit 1,1 Review 0,1 Produit (attributs : date_review) (relation ternaire)
-  16- Client 0,N communique 0,N Fournisseur (attributs : date_communication, contenu)
-  17- Fournisseur 0,N appartient 2,N Cooperative (attributs : date_affiliation)
-  18- Cooperative 1,N choisitPC 1,N PointCollecte (attributs : date_reservation)
-  19- Fournisseur 1,N choisitPCI 1,N PointCollecte (attribut : date_reservation)
+  1- Fournisseur 1,N stocke 1,1 Stock 1,1 Produit (relation ternaire)
+  2- Produit 1,N possedeRecolte 1,1 Recolte
+  3- Panier 1,N regroupe 0,N Produit (attributs : qte_regroupee)
+  4- Fournisseur 0,N propose 1,1 Panier (attributs : date_creation)
+  5- Client 1,1 possedeWallet 1,1 Wallet
+  6- Client 0,N effectue 1,1 CommandeGlobale
+  7- Client 1,N choisitMP 0,1 MethodePaiement 1,1 CommandeGlobale (relation ternaire)
+  8- CommandeGlobale 0,1 consommeSolde 0,N Wallet (attributs : qte_consommee)
+  9-  CommandeGlobale 1,N seCompose 1,1 Commande (attributs : date_achat, qté_totale, prix_total)
+  10- CommandeGlobale 0,1 genere 1,1 Facture
+  11- Commande 1,N inclutProduit 0,N Produit (attributs : qte_commandee, prix)
+  12- Commande 1,N inclutPanier 0,N Panier (attributs : qte_paniers_commandee, prix)
+  13- Fournisseur 1,N valide 1,1 Commande
+  14- Client 0,N ecrit 1,1 Review 0,1 Produit (attributs : date_review) (relation ternaire)
+  15- Client 0,N communique 0,N Fournisseur (attributs : date_communication, contenu)
+  16- Fournisseur 0,N appartient 2,N Cooperative (attributs : date_affiliation)
+  17- Cooperative 1,N choisitPC 1,N PointCollecte (attributs : date_reservation)
+  18- Fournisseur 1,N choisitPCI 1,N PointCollecte (attribut : date_reservation)
 
 MODÈLE RELATIONNEL:
 ===================
+1- Client :
+  - id_client : clé primaire, entier non nul
+  - email : varchar selon regex pour les emails, unique
+  - password : varchar 50 caractères max
+  - date_naissance : date
+  - age : entier non nul, calculé à partir de date_naissance
+  - tel_portable : format telephone
+  - date_inscription : date
+  - num_rue : entier non nul
+  - nom_rue : varchar 50 caractères max
+  - ville : varchar 50 caractères max
+  - code_postal : entier non nul
+  - Client_id_wallet : clé étrangère référençant id_wallet
+2- Fournisseur :
+  - id_fournisseur : clé primaire, entier non nul
+  - num_siret : à vérifier, unique
+  - email : varchar selon regex pour les emails, unique
+  - password : varchar 50 caractères max
+  - date_naissance : date
+  - age : entier non nul, calculé à partir de date_naissance
+  - tel_portable : format téléphone
+  - date_inscription : date
+  - num_rue : entier non nul
+  - nom_rue : varchar 50 caractères max
+  - ville : varchar 50 caractères max
+  - code_postal : entier non nul
+3- Cooperative :
+  - id_cooperative : clé primaire, entier non nul
+  - nom : varchar 50 caractères max
+  - description : varchar 1024 caractères max
+4- PointCollecte :
+  - id_PC : clé primaire, entier non nul
+  - description : varchar 50 caractères max
+  - num_rue : entier non nul
+  - nom_rue : varchar 50 caractères max
+  - code_postal : entier non nul
+5- Produit :
+  - id_produit : clé primaire, entier non nul
+  - description : varchar 1024 caractères max
+  - prix : double
+  - unite_stockage : varchar 5 caractères max, a priori soit L soit Kg
+  - Produit_id_fourniseur : clé étrangère référençant id_fournisseur
+  - qte_stockee : entier non nul
+6- Recolte :
+  - id_recolte : clé primaire, entier non nul
+  - qte_recoltee : entier non nul
+  - date_recolte : date
+  - date_expiration : date
+  - Recolte_id_produit : clé étrangère référençant id_produit
+7- Panier :
+  - id_panier : clé primaire, entier non nul
+  - description : varchar 1024 caractères max
+  - prix : double
+  - Panier_id_fournisseur : clé étrangère référençant id_fournisseur
+  - date_creation : date
+8- Commande :
+  - ref_commande : clé primaire, alphanumérique 20 caractères max
+  - Commande_ref_CG : clé étrangère référençant ref_commande_globale
+  - Commande_id_fournisseur : clé étrangère référençant id_fournisseur
+9- CommandeGlobale :
+  - ref_commande_globale : clé primaire, alphanumérique 20 caractères max
+  - CG_id_client : clé étrangère référençant id_client
+  - CG_id_MP : clé étrangère référençant id_methode_paiement
+  - date_achat : date
+  - qté_totale : entier non nul
+  - prix_total : double
+10- Facture :
+  - ref_facture : clé primaire, alphanumérique 20 caractères max
+  - Facture_ref_CG : clé étrangère référençant ref_commande_globale
+11- Review :
+  - id_review : clé primaire, entier non nul
+  - titre : varchar 50 caractères max
+  - score : entier entre 1 et 5
+  - contenu : varchar 1024 caractères max
+  - Review_id_client : clé étrangère référençant id_client
+  - Review_id_produit : clé étrangère référençant id_produit
+  - date_review : date
+  @ clé primaire : id_review + Review_id_client + Review_id_produit
+12- Wallet :
+  - id_wallet : clé primaire, entier non nul
+  - solde : double
+13- MethodePaiement :
+  - id_methode_paiement : clé primaire, entier non nul
+  - designation : varchar 50 caractères max
+14- PanierRegroupeProduit :
+  - Regroupe_id_panier : clé étrangère référençant id_panier
+  - Regoupe_id_produit : clé étrangère référençant id_produit
+  - qte_regroupee : entier non nul
+  @ clé primaire : Regroupe_id_panier + Regoupe_id_produit
+15- ConsommeSolde :
+  - Consomme_ref_CG : clé étrangère référençant ref_commande_globale, alphanumérique 20 caractères max
+  - Consomme_id_wallet : clé étrangère référençant id_wallet
+  - qte_consommee : entier non nul
+  @ clé primaire : Consomme_ref_CG + Consomme_id_wallet
+16- InclutProduit :
+  - Inclut_ref_commande : clé étrangère référençant ref_commande
+  - Inclut_id_produit : clé étrangère référençant id_produit
+  - qte_commandee : entier non nul
+  - prix : double
+17- InclutPanier :
+  - Inclut_ref_commande : clé étrangère référençant ref_commande
+  - Inclut_id_panier : clé étrangère référençant id_panier
+  - qte_paniers_commandee : entier non nul
+  - prix : double
+18- Communique :
+  - Communique_id_client : clé étrangère référençant id_client
+  - Communique_id_fournisseur : clé étrangère référençant id_fournisseur
+  - date_communication : date
+  - contenu : varchar de longueur maximale
+  @ clé primaire : Communique_id_client + Communique_id_fournisseur
+19- AppartientCoop :
+  - AppartientCoop_id_fournisseur : clé étrangère référençant id_fournisseur
+  - AppartientCoop_id_cooperative : clé étrangère id_cooperative
+  - date_affiliation
+  @ clé primaire : AppartientCoop_id_fournisseur + AppartientCoop_id_coop
+20- ChoisitPC :
+  - ChoisitPC_id_cooperative : clé étrangère référençant id_cooperative
+  - ChoisitPC_id_PC : clé étrangère référençant id_PC
+  - date_reservation : date
+  @ clé primaire : ChoisitPC_id_cooperative + ChoisitPC_id_PC
+21- ChoisitPCI :
+  - ChoisitPC_id_fournisseur : clé étrangère référençant id_fournisseur
+  - ChoisitPC_id_PC : clé étrangère référençant id_PC
+  - date_reservation : date
+  @ clé primaire : ChoisitPC_id_fournisseur + ChoisitPC_id_PC
+
+  1- Fournisseur 1,N stocke 1,1 Stock 1,1 Produit (relation ternaire) (check)
+  2- Produit 1,N possedeRecolte 1,1 Recolte (check)
+  3- Panier 1,N regroupe 0,N Produit (attributs : qte_regroupee) (check)
+  4- Fournisseur 0,N propose 1,1 Panier (attributs : date_creation) (check)
+  5- Client 1,1 possedeWallet 1,1 Wallet (check)
+  6- Client 0,N effectue 1,1 CommandeGlobale (check)
+  7- Client 1,N choisitMP 0,1 MethodePaiement 1,1 CommandeGlobale (relation ternaire) (check)
+  8- CommandeGlobale 0,1 consommeSolde 0,N Wallet (attributs : qte_consommee) (check)
+  9-  CommandeGlobale 1,N seCompose 1,1 Commande (attributs : date_achat, qté_totale, prix_total) (check)
+  10- CommandeGlobale 0,1 genere 1,1 Facture (check)
+  11- Commande 1,N inclutProduit 0,N Produit (attributs : qte_commandee, prix) (check)
+  12- Commande 1,N inclutPanier 0,N Panier (attributs : qte_paniers_commandee, prix) (check)
+  13- Fournisseur 1,N valide 1,1 Commande (check)
+  14- Client 0,N ecrit 1,1 Review 0,1 Produit (attributs : date_review) (relation ternaire) (check)
+  15- Client 0,N communique 0,N Fournisseur (attributs : date_communication, contenu) (check)
+  16- Fournisseur 0,N appartient 2,N Cooperative (attributs : date_affiliation) (check)
+  17- Cooperative 1,N choisitPC 1,N PointCollecte (attributs : date_reservation) (check)
+  18- Fournisseur 1,N choisitPCI 1,N PointCollecte (attribut : date_reservation) (check)
 
 CONTRAINTES:
 ============
