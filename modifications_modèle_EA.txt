@@ -301,3 +301,13 @@ s'il existe deux souks R1 et R2 telles que, Z(R1) \subseteq Z(R2) ou Z(R2) \subs
 On peut trouver un meillure souk R' formée de R1 et R2 mais telle que Z(R') = Z(R1) \cap Z(R2).
 
 - fonctionnalité de téléchargement de pdf/excel/... pour les graphiques et statistiques
+
+
+FONCTIONNALITÉS (version 1.0):
+==============================
+- connexion et inscription
+- ajouter/modifier/supprimer produits/paniers
+- consulter stocks
+- recherche de produits/fournisseurs/ruches
+- supprimer le compte
+- faire des commandes basiques : validation automatique des commandes.
