@@ -2,9 +2,6 @@ import React, {Component} from "react";
 import fruitCarousel from "../Images/fruitCarousel.jpeg"
 import vegetablesCarousel from "../Images/vegetablesCarousel.jpeg"
 import grainsCaroussel from "../Images/grainsCaroussel.jpeg"
-import background from "../Images/local-900x600.jpg"
-import background2 from "../Images/greenhouse.jpg"
-import background3 from "../Images/handshake.jpg"
 
 
 const carouselContent = [fruitCarousel, grainsCaroussel, vegetablesCarousel]
@@ -15,16 +12,16 @@ export default class Accueil extends Component {
                  <div class="row">
 
                     <div class="col-lg-3">
-                        <h1 class="my-4">Shop Name</h1>
+                        <h1 class="my-4">Catégories</h1>
                         <div class="list-group">
                             <a href="#" class="list-group-item">
-                                Category 1
+                                Catégorie  1
                             </a>
                             <a href="#" class="list-group-item">
-                                Category 2
+                                Catégorie  2
                             </a>
                             <a href="#" class="list-group-item">
-                                Category 3
+                                Catégorie  3
                             </a>
                         </div>
                     </div>
@@ -78,28 +75,7 @@ export default class Accueil extends Component {
                         </div>
                     </div>
                 </div> 
-                
-                <div class="row">
-                    <section class="showcase">
-                        <div class="container-fluid p-0">
-                            <div class="row no-gutters">
-                                <div class="col-lg-6 order-lg-2 text-white showcase-img" style={{ backgroundImage: "url(" + background + ")" }}></div>
-                                <div class="col-lg-6 order-lg-1 my-auto showcase-text"> <h2>Des Produits Locaux</h2> <p class="lead mb-0">Acheter des fruits et des légumes chez nous c'est bien !</p> </div>
-                            </div>
-                            <div class="row no-gutters">
-                                <div class="col-lg-6 text-white showcase-img" style={{ backgroundImage: "url(" + background2 + ")" }}></div>
-                                <div class="col-lg-6 my-auto showcase-text"> <h2>Des Producteurs Responsables </h2> <p class="lead mb-0">We all know that this site will look great on any device, whether it's a phone, tablet, or desktop bisous bisous</p> </div>
-                            </div>
-                            <div class="row no-gutters">
-                                <div class="col-lg-6 order-lg-1 my-auto showcase-text"> <h2>Un esprit de coopération </h2> <p class="lead mb-0">We all know that this site will look great on any device, whether it's a phone, tablet, or desktop bisous bisous</p> </div>
-                                <div class="col-lg-6 order-lg-2 text-white showcase-img" style={{ backgroundImage: "url(" + background3 + ")" }}></div>
-                            </div>
-                            
-                        </div>
-                    </section>
-                </div>
-
-                {/* <div class="row">
+                 <div class="row">
               <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card h-100">
                   <a href="#">
@@ -113,7 +89,7 @@ export default class Accueil extends Component {
                     <h4 class="card-title">
                       <a href="#">Item One</a>
                     </h4>
-                    <h5>$24.99</h5>
+                    <h5>€24.99</h5>
                     <p class="card-text">
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                       Amet numquam aspernatur!
@@ -140,7 +116,7 @@ export default class Accueil extends Component {
                     <h4 class="card-title">
                       <a href="#">Item Two</a>
                     </h4>
-                    <h5>$24.99</h5>
+                    <h5>€24.99</h5>
                     <p class="card-text">
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                       Amet numquam aspernatur! Lorem ipsum dolor sit amet.
@@ -167,7 +143,7 @@ export default class Accueil extends Component {
                     <h4 class="card-title">
                       <a href="#">Item Three</a>
                     </h4>
-                    <h5>$24.99</h5>
+                    <h5>€24.99</h5>
                     <p class="card-text">
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                       Amet numquam aspernatur!
@@ -194,7 +170,7 @@ export default class Accueil extends Component {
                     <h4 class="card-title">
                       <a href="#">Item Four</a>
                     </h4>
-                    <h5>$24.99</h5>
+                    <h5>€24.99</h5>
                     <p class="card-text">
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                       Amet numquam aspernatur!
@@ -221,7 +197,7 @@ export default class Accueil extends Component {
                     <h4 class="card-title">
                       <a href="#">Item Five</a>
                     </h4>
-                    <h5>$24.99</h5>
+                    <h5>€24.99</h5>
                     <p class="card-text">
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                       Amet numquam aspernatur! Lorem ipsum dolor sit amet.
@@ -248,7 +224,7 @@ export default class Accueil extends Component {
                     <h4 class="card-title">
                       <a href="#">Item Six</a>
                     </h4>
-                    <h5>$24.99</h5>
+                    <h5>€24.99</h5>
                     <p class="card-text">
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                       Amet numquam aspernatur!
@@ -261,7 +237,7 @@ export default class Accueil extends Component {
                   </div>
                 </div>
               </div>
-            </div> */}
+            </div> 
             </div>
         );
     }
