@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "./node_modules/.bin/webpack-dev-server --content-base src --inline --hot",
+    "dev": "webpack-dev-server --content-base src --inline --hot",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Farajallah Othmane, Rima Bachar, Soussi Wissem",
@@ -18,12 +18,15 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "bootstrap.native": "^2.0.21",
+    "history": "^1.17.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "webpack": "^4.1.1",
+    "react-router-dom": "^4.2.2",
+    "webpack": "^4.3.0",
     "webpack-dev-server": "^3.1.1"
   },
   "devDependencies": {
-    "webpack-cli": "^2.0.12"
+    "webpack-cli": "^2.0.13"
   }
 }

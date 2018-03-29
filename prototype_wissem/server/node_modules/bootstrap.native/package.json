@@ -1,0 +1,64 @@
+{
+  "_from": "bootstrap.native",
+  "_id": "bootstrap.native@2.0.21",
+  "_inBundle": false,
+  "_integrity": "sha512-YrUBk0jLpX8JHnkFgn2yWEpHhgN8a0mTZU6snal7dJzQ8kalIuMMwRidOZDHqF8d2sql0zMMLpGkzwBT+Or0uQ==",
+  "_location": "/bootstrap.native",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "bootstrap.native",
+    "name": "bootstrap.native",
+    "escapedName": "bootstrap.native",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/bootstrap.native/-/bootstrap.native-2.0.21.tgz",
+  "_shasum": "8368fd66bbd2c36c461ac6497fe4ca8ca4deba86",
+  "_spec": "bootstrap.native",
+  "_where": "/var/www/html/s6/LaRuche/prototype_wissem/server",
+  "author": {
+    "name": "dnp_theme"
+  },
+  "bugs": {
+    "url": "https://github.com/thednp/bootstrap.native/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Native Javascript for Bootstrap, the sweetest Javascript library without jQuery.",
+  "devDependencies": {
+    "onchange": "^3.0.2",
+    "uglify-js": "^2.7.3",
+    "yargs": "^5.0.0"
+  },
+  "homepage": "https://thednp.github.io/bootstrap.native/",
+  "keywords": [
+    "bootstrap.native",
+    "bootstrap",
+    "vanilla js",
+    "native javascript",
+    "vanilla javascript"
+  ],
+  "license": "MIT",
+  "main": "dist/bootstrap-native.js",
+  "name": "bootstrap.native",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thednp/bootstrap.native.git"
+  },
+  "scripts": {
+    "build": "node build.js > dist/bootstrap-native.js && npm run build-min",
+    "build-min": "node build.js -m > dist/bootstrap-native.min.js",
+    "build-v4": "node build-v4.js > dist/bootstrap-native-v4.js && npm run build-v4-min",
+    "build-v4-min": "node build-v4.js -m > dist/bootstrap-native-v4.min.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "onchange \"lib/*\" -i -- npm run build"
+  },
+  "version": "2.0.21"
+}
