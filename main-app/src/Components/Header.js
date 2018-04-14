@@ -32,15 +32,15 @@ export default class Header extends Component {
                 </li>
                 <li class="nav-item">
                   <a class="nav-link ">
-                    <NavLink to="/" style={{ color: "white" }}>
-                      <i class="fas fa-sign-out-alt" /> S'enregistrer
+                    <NavLink to="/SignIn" style={{ color: "white" }} activeStyle={{ color: "black" }} >
+                      <i class="fas fa-sign-in-alt" /> S'enregistrer
                     </NavLink>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link ">
                     <NavLink to="/about"style={{ color: "white" }} activeStyle={{ color: "white" }} >
-                      <i class="fas fa-address-book fa-fw"> </i> Contact         
+                      <i class="fas fa-address-book fa-fw"> </i> Contact
                     </NavLink>
                   </a>
                 </li>

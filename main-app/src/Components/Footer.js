@@ -9,9 +9,9 @@ export default class Header extends Component {
     return (
       <div>
         <footer class="py-5 bg-primary ">
-          <div class="container">
+          <div class="container py-5">
 
-            <div class="footer-right ">
+            <div class="footer-right">
               <a href="#">
                 <i class="fab fa-facebook "></i>
               </a>
@@ -24,19 +24,17 @@ export default class Header extends Component {
               <a href="#">
                 <i class="fab fa-github"></i>
               </a>
-
             </div>
 
             <div class="footer-left">
 
               <p class="footer-links">
                 <a href="#">Home </a>
-                .                 
-                 
+                .
                 <a href="#">About </a>
                 .
                 <a href="#">Blog </a>
-                 .  
+                 .
                 <a href="#">Faq </a>
                 .
                 <a href="#">Contact </a>

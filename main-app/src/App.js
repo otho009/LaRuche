@@ -7,22 +7,29 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      message: "Hey every one",
-      onAlert: () => {
-        alert("AAALERT"   );
-      }
+      showHF: true,
     };
+  }
+  changeShowHF(val){
+    this.setState({showHF: val});
   }
 
   render() {
     const authors= ["Othmane","Wissam","Bachar"];
-    return (
-      <div className="App">
-        <Header onClick={this.state.onAlert} message={this.state.message} />
-        <Main />
-        <Footer message={"Brought you by "} authors={authors} />
-      </div>
-    );
+    if (this.state.showHF)
+      return (
+        <div className="App">
+          <Header />
+          <Main changeShowHF={this.changeShowHF.bind(this)} pere={this} />
+          <Footer message={"Brought you by "} authors={authors} />
+        </div>
+      );
+    else
+      return (
+        <div className="App">
+          <Main />
+        </div>
+      );
   }
 }
 
