@@ -68,7 +68,7 @@ export default class Accueil extends Component {
                     </section>
                 </div>
             </div>
-            <Footer message={"brought by "} />
+            <Footer />
           </div>
         );
     }
