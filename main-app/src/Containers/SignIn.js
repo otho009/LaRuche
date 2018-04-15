@@ -1,15 +1,18 @@
 import React, {Component} from "react";
 import { Link, NavLink } from "react-router-dom";
-
+import logo from "../Images/electrGreen.png";
 import "./signin.css";
 
 export default class Accueil extends Component {
   render() {
       return (
+        <div>
           <div class="container">
             <form class="form-signin">
               <div class="text-center mb-4">
-                <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"></img>
+              <NavLink exact to="/" style={{ color: "white" }} activeStyle={{ color: "white" }} >
+                <img class="mb-4" src={logo} alt="" width="72" height="72" />
+              </NavLink>
                 <h1 class="h3 mb-3 font-weight-normal">Bienvenu!</h1>
               </div>
               <div class="form-label-group">
@@ -34,9 +37,10 @@ export default class Accueil extends Component {
                 </a>
               </label>
               <button class="btn btn-lg btn-primary btn-block" type="submit">Accéder</button>
-              <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2018</p>
+              <p class="mt-5 mb-3 text-muted text-center">CourtCircuit &copy; 2018</p>
             </form>
           </div>
+        </div>
       );
   }
 }
