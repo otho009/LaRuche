@@ -9,7 +9,6 @@ import grainsCaroussel from "../Images/grainsCaroussel.jpeg";
 const carouselContent = [fruitCarousel, grainsCaroussel, vegetablesCarousel]
 export default class Accueil extends Component {
   render() {
-    const authors= ["Othmane","Wissam","Bachar"];
     return (
       <div class="container-fluid">
         <Header />
@@ -243,7 +242,7 @@ export default class Accueil extends Component {
             </div>
           </div>
         </div>
-        <Footer message={"brought by "} authors={authors} />
+        <Footer />
       </div>
     );
   }
