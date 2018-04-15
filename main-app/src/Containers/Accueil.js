@@ -22,7 +22,7 @@ export default class Accueil extends Component {
                 </a>
                 <a href="#" class="list-group-item">
                     Catégorie  2
-                </a>
+                </a> 
                 <a href="#" class="list-group-item">
                     Catégorie  3
                 </a>
