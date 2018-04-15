@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Main from "./Containers/Main.js";
-import "./App.css";
+import "./css/App.css";
 export default class App extends Component {
   constructor() {
     super();

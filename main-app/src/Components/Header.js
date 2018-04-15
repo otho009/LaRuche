@@ -13,7 +13,7 @@ export default class Header extends Component {
                 CourtCircuit
               </NavLink>
             </a>
-            <img src={logo} height="70" class="d-inline-block align-top" alt="" />
+            <img src={logo} height="50" class="d-inline-block align-top" alt="" />
 
             <div class="collapse navbar-collapse" id="navbarResponsive">
               <ul class="navbar-nav ml-auto">
