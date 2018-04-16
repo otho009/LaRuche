@@ -14,9 +14,7 @@ export default class Main extends Component {
       <Switch>
         <Route exact path="/" component={Accueil} />
         <Route path="/about" component={AboutUs} />
-        <Route path="/SignIn">
-          <SignIn />
-        </Route>
+        <Route path="/SignIn" component={SignIn} />          
       </Switch>
     );
   }

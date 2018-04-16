@@ -1,3 +1,8 @@
+body {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
 .App {
   text-align: center;
 }
@@ -42,15 +47,11 @@
   }
 }
 
-
-
-
-
 .footer-left p{
 	color:  #8f9296;
 	font-size: 14px;
   margin: 0;
-  
+
 }
 
 /* Footer links */
