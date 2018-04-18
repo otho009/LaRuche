@@ -35,9 +35,7 @@ export default class Header extends Component {
                     <a href="#">Nous contacter</a>
                   </li>
                 </ul>
-              </div>
-
-           
+              </div>   
               <div class="col-sm-3 myCols">
                 <h5>Informations légales</h5>
                 <ul>
