@@ -1,4 +1,311 @@
-	commit 949ab2a52f297594ca17f4ae8f6faf05f13c7964
+commit b6a96eddbf8398a87c58e9047e7590971beab80d
+Author: Farajallah Othmane <othmane.farjallah@etu.umontpellier.fr>
+Date:   Wed Apr 18 17:32:36 2018 +0200
+
+    implemented a new routing solution to handle pages without header and footer
+
+commit 801ec608cc9cceb36c73664662eb8f52f64e12e8
+Author: Farajallah Othmane <othmane.farjallah@etu.umontpellier.fr>
+Date:   Wed Apr 18 17:31:36 2018 +0200
+
+    Fixed the issue with the header, added a new footer, fixed the page problems
+
+commit 047d44512dfea380cbf0e657b6ef8d9259bd90ae
+Author: Farajallah Othmane <othmane.farjallah@etu.umontpellier.fr>
+Date:   Sun Apr 15 18:43:36 2018 +0200
+
+    deleted newfeatures
+
+commit a9ff364f3467cb454f822c3727776def201e6d5f
+Author: ONIZUKAGTO <wiwi.sam96@outlook.it>
+Date:   Sun Apr 15 17:15:36 2018 +0200
+
+    clean code
+
+commit 67d72998d409a69fd8abc49d505ecfe192822066
+Author: ONIZUKAGTO <wiwi.sam96@outlook.it>
+Date:   Sun Apr 15 17:13:59 2018 +0200
+
+    delete list of authors
+
+commit 08fdf35ff58cb3a55ce30c114c19e86caedb5532
+Author: ONIZUKAGTO <wiwi.sam96@outlook.it>
+Date:   Sun Apr 15 17:04:37 2018 +0200
+
+    cleaned the code
+
+commit 2ea0a196ea35e2f25d3ce0488ae91d17eee35ca4
+Author: ONIZUKAGTO <wiwi.sam96@outlook.it>
+Date:   Sun Apr 15 16:58:42 2018 +0200
+
+    SIGN IN PAGE WITHOUT HEADER AND FOOTER
+
+commit f86a7fb16077949200df1331b5082d23d32a53e5
+Author: ONIZUKAGTO <wiwi.sam96@outlook.it>
+Date:   Sat Apr 14 22:40:10 2018 +0200
+
+    Ajout de states à App pour cacher le footer et header
+
+commit 64b662b1882d78c27a61c5be92fd340152da0b46
+Author: Othmane Farajallah <othfarajallah@hotmail.fr>
+Date:   Fri Apr 13 14:32:13 2018 +0200
+
+    Create LICENSE
+
+commit 35c46933ce6fc2adb1b2b92b497477b40b26c049
+Author: Rima Bachar <bachar.rima@etu.umontpellier.fr>
+Date:   Fri Apr 13 03:17:16 2018 +0200
+
+    added and finalized tested database version 1.0 and created liens utiles file for references and tutorials
+
+commit 54bfe9c986f36679e776dbb2cb92c89b1675d7d5
+Author: Rima Bachar <bachar.rima@etu.umontpellier.fr>
+Date:   Thu Mar 29 19:12:45 2018 +0200
+
+    removed global .gitignore and created local .gitignore in documentations folder
+
+commit f75bf6557047c0319873a69cab67b813a2ef503f
+Author: ONIZUKAGTO <wiwi.sam96@outlook.it>
+Date:   Thu Mar 29 19:09:18 2018 +0200
+
+    removed node modules from prototype_wissem
+
+commit 77df77ca56b3dcb852f444d45348fad1deaf17c4
+Author: ONIZUKAGTO <wiwi.sam96@outlook.it>
+Date:   Thu Mar 29 19:04:19 2018 +0200
+
+    ^
+
+commit e457ccb7cb826c235afd19cfe4d3a0adfac3cb7b
+Author: ONIZUKAGTO <wiwi.sam96@outlook.it>
+Date:   Thu Mar 29 18:59:49 2018 +0200
+
+    moved .gitignore
+
+commit 7feb7a45ca2206d7bb8de73fd2c3888be3921d33
+Author: ONIZUKAGTO <wiwi.sam96@outlook.it>
+Date:   Thu Mar 29 18:58:28 2018 +0200
+
+    added .gitignore for prototype_wissem
+
+commit fede781ef25913fc303686e1a57c4092245c3044
+Author: Rima Bachar <bachar.rima@etu.umontpellier.fr>
+Date:   Thu Mar 29 18:51:52 2018 +0200
+
+    removed mainApp from root folder
+
+commit ee3c871c3f5edca06ee3f869992c7eef71b6277a
+Author: ONIZUKAGTO <wiwi.sam96@outlook.it>
+Date:   Thu Mar 29 17:36:09 2018 +0200
+
+    deleted the directory prototype
+
+commit 2e06adfe6af207ebfcad019e058f1c3ac6a35838
+Merge: 6abdc9df 77c2c922
+Author: ONIZUKAGTO <wiwi.sam96@outlook.it>
+Date:   Thu Mar 29 17:29:22 2018 +0200
+
+    Merge branch 'master' of github.com:otho009/LaRuche
+
+commit 6abdc9dffbae4f000e496175558ced9be2ebc255
+Author: ONIZUKAGTO <wiwi.sam96@outlook.it>
+Date:   Thu Mar 29 17:28:31 2018 +0200
+
+    saved things for prototype_wissem before pulling othmane prototype
+
+commit 77c2c922a82ed9c02274c32415be856d827102cd
+Author: Farajallah Othmane <othmane.farjallah@etu.umontpellier.fr>
+Date:   Thu Mar 29 17:26:21 2018 +0200
+
+    Main commit 2: added features in the menu, the aboutUs page and the homepage
+
+commit 183aa579df693757159c2d0982c51bb339beaf10
+Author: Farajallah Othmane <othmane.farjallah@etu.umontpellier.fr>
+Date:   Wed Mar 28 10:27:47 2018 +0200
+
+    Big update in the main-app project:changed header footer, added routes, created accueil page, created about page bis
+
+commit caae6ac5a24e76ecda55d6490c23f532d7a4146b
+Author: Farajallah Othmane <othmane.farjallah@etu.umontpellier.fr>
+Date:   Wed Mar 28 10:27:15 2018 +0200
+
+    Big update in the main-app project:changed header footer, added routes, created accueil page, created about page
+
+commit 8173d2a4da7b1012291ecc57039115cf3f638ed8
+Merge: a06bbbe2 43c4b911
+Author: Rima Bachar <bachar.rima@etu.umontpellier.fr>
+Date:   Sat Mar 17 12:11:52 2018 +0100
+
+    Merge branch 'master' of https://github.com/otho009/LaRuche
+
+commit a06bbbe2cfc9d9a9116917283dd5827a52337bf2
+Author: Rima Bachar <bachar.rima@etu.umontpellier.fr>
+Date:   Sat Mar 17 12:10:24 2018 +0100
+
+    added base functionalities for version 1.0 of the website
+
+commit 43c4b911f253061fd5553cc5a8d74800f9c5345f
+Author: ONIZUKAGTO <wiwi.sam96@outlook.it>
+Date:   Sat Mar 17 11:37:54 2018 +0100
+
+    wissem prototype
+
+commit 65185c6f551499cb6fb211c6cd390a72da7adffe
+Author: Farajallah Othmane <othmane.farjallah@etu.umontpellier.fr>
+Date:   Fri Mar 16 22:35:26 2018 +0100
+
+    added the react mainApp directory with a little project
+
+commit 3200c8afb50f92ea46565d1ed103bbd67c03692f
+Author: Farajallah Othmane <othmane.farjallah@etu.umontpellier.fr>
+Date:   Fri Mar 16 22:14:18 2018 +0100
+
+    added the ea model 2
+
+commit 5bd936146ebcd08cbc01474c577714a6d3bf4c3c
+Author: Farajallah Othmane <othmane.farjallah@etu.umontpellier.fr>
+Date:   Fri Mar 16 02:09:07 2018 +0100
+
+    added the ea model
+
+commit 763499d574ffc4544c6ac34a95c7095368d2272e
+Author: ONIZUKAGTO <wiwi.sam96@outlook.it>
+Date:   Thu Mar 15 14:52:02 2018 +0100
+
+    remove of synfony server
+
+commit 7497b69cbf1da2550b8e2f2712875eb5647b054c
+Author: Rima Bachar <bachar.rima@etu.umontpellier.fr>
+Date:   Wed Mar 14 04:32:16 2018 +0100
+
+    fixed EA model incoherences and proposed relational model
+
+commit bd8fe022e75447ed430db01dbe39768722b76171
+Author: Rima Bachar <bachar.rima@etu.umontpellier.fr>
+Date:   Wed Mar 14 02:36:13 2018 +0100
+
+    fixed mistakes in modifications_modele_EA.txt
+
+commit 5f7661b26c944c486cff2e10e22e0a5baff136cf
+Author: Rima Bachar <bachar.rima@etu.umontpellier.fr>
+Date:   Sat Mar 10 16:55:55 2018 +0100
+
+    added the modifications needed to the EA model
+
+commit e98221400fcc65716b330154f04eafee8a3fb1ce
+Author: Rima Bachar <bachar.rima@etu.umontpellier.fr>
+Date:   Sun Feb 25 16:38:22 2018 +0100
+
+    removed the duplicated presentation folder and organized some files and folders
+
+commit 70d1814bae7ac21c1f7098da1d2a73e55d6fa8fe
+Author: Rima Bachar <bachar.rima@etu.umontpellier.fr>
+Date:   Mon Feb 12 19:58:17 2018 +0100
+
+    fixed some errors and presentation final version
+
+commit 34fcc9e9631795c3aeb18fe58c5cfc314f2f6ce8
+Author: Farajallah Othmane <othmane.farjallah@etu.umontpellier.fr>
+Date:   Mon Feb 12 19:43:08 2018 +0100
+
+    added php logo
+
+commit 65df957e077e2cd41ec17b8893880510386a5099
+Merge: d3169bd0 a2306b8e
+Author: ONIZUKAGTO <wiwi.sam96@outlook.it>
+Date:   Mon Feb 12 18:39:05 2018 +0100
+
+    Merge branch 'master' of github.com:otho009/LaRuche
+
+commit d3169bd0b38eafa32e4de4e3cb2b0d16de288131
+Author: ONIZUKAGTO <wiwi.sam96@outlook.it>
+Date:   Mon Feb 12 18:31:24 2018 +0100
+
+    png back-end
+
+commit a2306b8e47ab0160badfe7d5eef30d5101dc597e
+Merge: 5f40f1cf 4de99016
+Author: Rima Bachar <bachar.rima@etu.umontpellier.fr>
+Date:   Sun Feb 11 15:24:12 2018 +0100
+
+    merged conflicts
+
+commit 5f40f1cf2fdf6a4e383bbda75d503d9d2a11ee13
+Author: Rima Bachar <bachar.rima@etu.umontpellier.fr>
+Date:   Sun Feb 11 15:20:37 2018 +0100
+
+    changed the outline of the presentation and fixed minor bugs
+
+commit 4de990167efd4c12b4117638f51e2efdef978df4
+Merge: 6e71f716 5848dfd7
+Author: Farajallah Othmane <othmane.farjallah@etu.umontpellier.fr>
+Date:   Sun Feb 11 14:50:24 2018 +0100
+
+    fixed the conflict between the two last commits
+
+commit 6e71f7163e52e439f76cbe2451ed8bdadf4d785f
+Author: Farajallah Othmane <othmane.farjallah@etu.umontpellier.fr>
+Date:   Sun Feb 11 14:46:45 2018 +0100
+
+    readme modification
+
+commit 5848dfd7300dfa57d6924b2ddc8595337427e2c6
+Author: Rima Bachar <bachar.rima@etu.umontpellier.fr>
+Date:   Sun Feb 11 14:33:55 2018 +0100
+
+    fixed some minor bugs and restructured the presentation
+
+commit 5b599e642808fc33b40f6689e49c646693b2d092
+Merge: dc372e15 8e2928cf
+Author: Rima Bachar <bachar.rima@etu.umontpellier.fr>
+Date:   Sun Feb 11 13:13:27 2018 +0100
+
+    merged conflicts
+
+commit 8e2928cfed47f28f03be96055aabebc55e468bf7
+Author: Farajallah Othmane <othmane.farjallah@etu.umontpellier.fr>
+Date:   Sun Feb 11 13:05:34 2018 +0100
+
+     quick modifications
+
+commit dc372e15acc6a9ec99a9506fbda97fbf4bf2a85a
+Merge: 804a6e7c a9740e71
+Author: Rima Bachar <bachar.rima@etu.umontpellier.fr>
+Date:   Sun Feb 11 12:41:00 2018 +0100
+
+    fixed a mistake in the report and the presentation
+
+commit 804a6e7c87aece39436c32a80712bbccb764f849
+Author: Rima Bachar <bachar.rima@etu.umontpellier.fr>
+Date:   Sun Feb 11 12:35:25 2018 +0100
+
+    fixed a mistake in the report
+
+commit a9740e711c7d107ad8b5165af9a66ca4125f0e43
+Author: Farajallah Othmane <othmane.farjallah@etu.umontpellier.fr>
+Date:   Sun Feb 11 11:20:59 2018 +0100
+
+    deleted auxiliary files
+
+commit dcabc33f831603a905af70ccc05e2e90c0b83160
+Author: Farajallah Othmane <othmane.farjallah@etu.umontpellier.fr>
+Date:   Sun Feb 11 11:17:20 2018 +0100
+
+    added React logo, changed JSX example, made some few modifications in my part's first slides
+
+commit d8a901eed77772926b101f9408776ab0ebb9d3da
+Author: Rima Bachar <bachar.rima@etu.umontpellier.fr>
+Date:   Sat Feb 10 14:32:31 2018 +0100
+
+    reviewed presentation, and distributed speech parts accordingly
+
+commit b381d3de1067b9813994e06f71720dca94820885
+Author: Farajallah Othmane <othmane.farjallah@etu.umontpellier.fr>
+Date:   Mon Feb 5 20:21:59 2018 +0100
+
+    Updated the ChangeLog file
+
+commit 949ab2a52f297594ca17f4ae8f6faf05f13c7964
 Author: Farajallah Othmane <othmane.farjallah@etu.umontpellier.fr>
 Date:   Mon Feb 5 20:21:07 2018 +0100
 
@@ -83,7 +390,7 @@ Date:   Wed Jan 24 18:32:20 2018 +0100
     added the storyboard chapter to appendices and modified the cover page of the report
 
 commit 39fd6f4ad20e1cf0076bb30b3d00037d0a230bd9
-Merge: 7b803b6 5df41a2
+Merge: 7b803b66 5df41a28
 Author: Rima Bachar <bachar.rima@etu.umontpellier.fr>
 Date:   Wed Jan 24 17:46:18 2018 +0100
 
