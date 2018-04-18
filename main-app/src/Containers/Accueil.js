@@ -1,6 +1,4 @@
 import React, {Component} from "react";
-import Header from "../Components/Header.js";
-import Footer from "../Components/Footer.js";
 import fruitCarousel from "../Images/fruitCarousel.jpeg";
 import vegetablesCarousel from "../Images/vegetablesCarousel.jpeg";
 import grainsCaroussel from "../Images/grainsCaroussel.jpeg";
@@ -10,8 +8,6 @@ const carouselContent = [fruitCarousel, grainsCaroussel, vegetablesCarousel]
 export default class Accueil extends Component {
   render() {
     return (
-      <div class="container-fluid">
-        <Header />
         <div class="container">
           <div class="row">
             <div class="col-lg-3">
@@ -242,8 +238,6 @@ export default class Accueil extends Component {
             </div>
           </div>
         </div>
-        <Footer />
-      </div>
     );
   }
 }

@@ -6,14 +6,18 @@ export default class Header extends Component {
   render() {
     return (
       <div>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary ">
           <div class="container">
             <a class="navbar-brand">
               <NavLink exact to="/" style={{ color: "white" }} activeStyle={{ color: "white" }} >
                 CourtCircuit
               </NavLink>
             </a>
-            <img src={logo} height="70" class="d-inline-block align-top" alt="" />
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <img class="App-logo" src={logo} height="60" class="d-inline-block align-top" alt="" />
 
             <div class="collapse navbar-collapse" id="navbarResponsive">
               <ul class="navbar-nav ml-auto">
@@ -45,13 +49,13 @@ export default class Header extends Component {
                   </a>
                 </li>
               </ul>
-            </div>
             <form class="form-inline">
               <input class="form-control mr-sm-2" type="search" placeholder="" aria-label="Search" />
-              <button class="btn btn-warning my-2 my-sm-0" type="submit">
+              <button class="btn  btn-warning my-2 my-sm-0" type="submit">
                 Rechercher
               </button>
             </form>
+            </div>
           </div>
         </nav>
       </div>
