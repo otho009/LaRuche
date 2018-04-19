@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "../Images/electrGreen.png";
 import "./signin.css";
 
-export default class Accueil extends Component {
+export default class SignIn extends Component {
   render() {
       return (
         <div>
@@ -31,7 +31,7 @@ export default class Accueil extends Component {
               </div>
               <label>
                 <a class="nav-link ">
-                  <NavLink to="/SignIn" style={{ color: "white" }} activeStyle={{ color: "black" }} >
+                  <NavLink to="/SignUp" style={{ color: "black" }} activeStyle={{ color: "black" }} >
                     <i class="fas fa-sign-out-alt" /> Je voudrais m'inscrir
                   </NavLink>
                 </a>
