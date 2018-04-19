@@ -6,7 +6,7 @@ import "./signin.css";
 export default class SignUp extends Component {
   render() {
       return (
-        <div>
+        <div class="py-5" id="signUpPage">
           <div>
             <NavLink exact to="/" style={{ color: "white" }} activeStyle={{ color: "white" }} >
               <img class="mb-4" src={logo} alt="" width="72" height="72" />
@@ -132,8 +132,7 @@ export default class SignUp extends Component {
                   </div>
                 </div>
               </div>
-              <button class="btn btn-primary" type="submit">Enregistrez vous</button>
-              <p class="mt-5 mb-3 text-muted text-center">CourtCircuit &copy; 2018</p>
+              <button class="btn btn-warning" type="submit">Enregistrez vous</button>
             </form>
             <div class="col-lg-3 col-md-2 col-sm-0">
             </div>

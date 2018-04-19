@@ -45,8 +45,8 @@ export default class Accueil extends Component {
             <label>
               <a class="nav-link ">
                 <NavLink
-                  to="/SignIn"
-                  style={{ color: "white" }}
+                  to="/SignUp"
+                  style={{ color: "black" }}
                   activeStyle={{ color: "black" }}
                 >
                   <i class="fas fa-sign-out-alt" /> Pas encore inscrit?
@@ -56,7 +56,7 @@ export default class Accueil extends Component {
             <button class="btn btn-lg btn-warning btn-block" type="submit">
               Connexion
             </button>
-            
+
           </form>
         </div>
       </div>
