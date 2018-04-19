@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import { Link, NavLink } from "react-router-dom";
 import Header from "../Components/Header.js";
 import Footer from "../Components/Footer.js";
 import fruitCarousel from "../Images/fruitCarousel.jpeg";
@@ -7,11 +8,10 @@ import grainsCaroussel from "../Images/grainsCaroussel.jpeg";
 
 
 const carouselContent = [fruitCarousel, grainsCaroussel, vegetablesCarousel]
-export default class Accueil extends Component {
+export default class Chariot extends Component {
   render() {
     return (
-      <div class="container-fluid">
-        <Header />
+      <div id="CartPage" class="py-5">
         <div class="container">
           <h1 class="display-5">Panier</h1>
           <table class="table table-striped table-hover">
@@ -29,7 +29,12 @@ export default class Accueil extends Component {
           <tbody>
             <tr>
               <th scope="row">1</th>
-              <td>Tomate cerise en vrac</td>
+              <td>
+                <a class="nav-link"> <NavLink exact to="/Produit">
+                    Tomate cerise
+                  </NavLink>
+                </a>
+              </td>
               <td>2,50</td>
               <td>
                 <select class="custom-select" id="inputGroupSelect01">
@@ -57,8 +62,6 @@ export default class Accueil extends Component {
         <button type="button" class="btn btn-outline-success btn-lg">Validez</button>
         </div>
       </div>
-      <p/>
-      <Footer/>
     </div>
     );
   }

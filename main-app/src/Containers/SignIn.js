@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "../Images/electrGreen.png";
 import "./signin.css";
 
-export default class Accueil extends Component {
+export default class SignIn extends Component {
   render() {
     return (
       <div class="py-5" id="signInPage">

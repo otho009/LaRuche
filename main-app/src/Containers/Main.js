@@ -4,11 +4,11 @@ import Accueil from "./Accueil.js";
 import AboutUs from "./AboutUs.js";
 import SignIn from "./SignIn.js";
 import SignUp from "./SignUp.js";
-import Chariot from "./Chariot.js";
+import Cart from "./Cart.js";
 import Produit from "./Produit.js";
 import Vendeur from "./Vendeur.js";
 import Cooperative from "./Cooperative.js";
-import Header from "../Components/Header.js";
+import Header from "../Components/Header2.js";
 import Footer from "../Components/Footer.js";
 export default class Main extends Component {
   constructor() {
@@ -25,7 +25,7 @@ export default class Main extends Component {
         <Route exact path="/SignIn" component={SignIn}/>
         <Route path="/about" component={AboutUs} />
         <Route path="/SignUp" component={SignUp} />
-        <Route path="/Chariot" component={Chariot} />
+        <Route path="/Cart" component={Cart} />
         <Route path="/Produit" component={Produit} />
         <Route path="/Vendeur" component={Vendeur} />
         <Route path="/Cooperative" component={Cooperative} />
