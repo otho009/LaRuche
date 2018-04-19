@@ -1,25 +1,25 @@
 import React, {Component} from "react";
-import Header from "../Components/Header.js";
-import Footer from "../Components/Footer.js";
+
 import fruitCarousel from "../Images/fruitCarousel.jpeg";
 import vegetablesCarousel from "../Images/vegetablesCarousel.jpeg";
 import grainsCaroussel from "../Images/grainsCaroussel.jpeg";
 import background from "../Images/local-900x600.jpg";
 import background2 from "../Images/greenhouse.jpg";
 import background3 from "../Images/handshake.jpg";
-
+import "./aboutUs.css";
 // A list to save the images we use in the carousel
 const carouselContent = [fruitCarousel, grainsCaroussel, vegetablesCarousel]
 export default class Accueil extends Component {
     render() {
         return (
-          <div class="container-fluid">
-            <Header />
-            <div class="container">
-                <div class="jumbotron">
-                    <h1>Qui sommes-nous?</h1>
-                    <p>Une présentation en quelques points clés</p>
+
+            <div class="container aboutUs">
+
+                    <div   class=" jumbotron jumbotron-fluid">
+                            <h1>Qui sommes-nous?</h1>
+                            <p>Une présentation en quelques points clés</p>
                 </div>
+                
 
                 <div class="row">
                     <section class="showcase">
@@ -68,8 +68,6 @@ export default class Accueil extends Component {
                     </section>
                 </div>
             </div>
-            <Footer />
-          </div>
         );
     }
 }

@@ -1,93 +1,83 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.showcase .showcase-text {
-  padding: 3rem;
-}
-
-.showcase .showcase-img {
-  min-height: 30rem;
-  background-size: cover;
-}
-
-@media (min-width: 768px) {
-  .showcase .showcase-text {
-    padding: 7rem;
-  }
-}
-
-
-
-
-
-.footer-left p{
-	color:  #8f9296;
-	font-size: 14px;
-  margin: 0;
+.App{
+	text-align:center;
 
 }
 
-/* Footer links */
 
- p.footer-links{
-	font-size:18px;
+
+
+
+
+
+#myFooter ul{
+	list-style-type: none;
+    padding-left: 0;
+    line-height: 1.7;
+
+}
+
+#myFooter h5{
+	font-size: 18px;
+	color:#054752;
 	font-weight: bold;
-	color:  #ffffff;
-	margin: 0 0 10px;
-	padding: 0;
+    margin-top: 30px;
 }
 
- p.footer-links a{
-	display:inline-block;
-	line-height: 1.8;
+#myFooter a{
+	color:white;
+
 	text-decoration: none;
-	color:  inherit;
 }
 
- .footer-right{
-	float: right;
-  margin-top: 2px;
-  margin-right: -80px;
-	max-width: 180px;
+#myFooter a:hover, #myFooter a:focus{
+	color:black
+
 }
 
- .footer-right a{
-	display: inline-block;
-	width: 35px;
-	height: 35px;
-	background-color:  #ebae08;
-	border-radius: 2px;
-
-	font-size: 20px;
-	color: #ffffff;
+#myFooter .myCols{
 	text-align: center;
-	line-height: 35px;
+}
 
-	margin-left: 3px;
+#myFooter .social-networks{
+	text-align: center;
+	padding-top: 30px;
+	padding-bottom: 38px;
+}
+
+#myFooter .social-networks a{
+
+    font-size: 32px;
+    margin-right: 5px;
+    margin-left: 5px;
+    color: #f9f9f9;
+    padding: 10px;
+    transition: 0.2s;
+}
+
+#myFooter .social-networks p:hover{
+	color:white;
+
+
+}
+#myFooter .social-networks p{
+	color:#054752;
+}
+
+#myFooter .facebook:hover{
+	color:#0077e2;
+}
+
+#myFooter .google:hover{
+	color:#ef1a1a;
+}
+
+#myFooter .twitter:hover{
+	color: #00aced;
+}
+
+@media screen and (max-width: 767px){
+	#myFooter {
+		text-align: center;
+	}
 }
