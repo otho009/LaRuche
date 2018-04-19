@@ -19,7 +19,7 @@ export default class Accueil extends Component {
                             <h1>Qui sommes-nous?</h1>
                             <p>Une présentation en quelques points clés</p>
                 </div>
-                
+
 
                 <div class="row">
                     <section class="showcase">
