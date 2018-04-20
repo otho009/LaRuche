@@ -11,10 +11,10 @@ const carouselContent = [fruitCarousel, grainsCaroussel, vegetablesCarousel]
 export default class Chariot extends Component {
   render() {
     return (
-      <div id="CartPage" class="py-5">
-        <div class="container">
-          <h1 class="display-5">Panier</h1>
-          <table class="table table-striped table-hover">
+      <div id="CartPage" className="py-5">
+        <div className="container">
+          <h1 className="display-5">Panier</h1>
+          <table className="table table-striped table-hover">
           <thead>
             <tr>
               <th scope="col">#</th>
@@ -30,36 +30,36 @@ export default class Chariot extends Component {
             <tr>
               <th scope="row">1</th>
               <td>
-                <a class="nav-link"> <NavLink exact to="/Produit">
+                <div className="nav-link"> <NavLink exact to="/Produit">
                     Tomate cerise
                   </NavLink>
-                </a>
+                </div>
               </td>
               <td>2,50</td>
               <td>
-                <select class="custom-select" id="inputGroupSelect01">
-                  <option selected>Ruche 1</option>
-                  <option value="1">Ruche 2</option>
+                <select className="custom-select" id="inputGroupSelect01">
+                  <option value="1">Ruche 1</option>
+                  <option value="2">Ruche 2</option>
                   <option value="3">Ruche 3</option>
                 </select>
               </td>
               <td>16/05/2018</td>
               <td>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" id="">gr</span>
+                <div className="input-group">
+                  <div className="input-group-prepend">
+                    <span className="input-group-text" id="">gr</span>
                   </div>
-                  <input type="text" class="form-control" placeholder="quantité"/>
+                  <input type="text" className="form-control" placeholder="quantité"/>
                 </div>
               </td>
               <td>7,50</td>
-              <td><button type="button" class="btn btn-outline-danger">Supprimer</button>
+              <td><button type="button" className="btn btn-outline-danger">Supprimer</button>
               </td>
             </tr>
           </tbody>
         </table>
-        <div class="container text-center">
-        <button type="button" class="btn btn-outline-success btn-lg">Validez</button>
+        <div className="container text-center">
+        <button type="button" className="btn btn-outline-success btn-lg">Validez</button>
         </div>
       </div>
     </div>

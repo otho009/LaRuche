@@ -6,54 +6,54 @@ import "./signin.css";
 export default class SignIn extends Component {
   render() {
     return (
-      <div class="py-5" id="signInPage">
-        <div class="container" >
-          <form class="form-signin ">
-            <div class="text-center mb-4"> <NavLink exact to="/" style={{ color: "white" }} activeStyle={{ color: "white" }} >
-                <img class="mb-4" src={logo} alt="" width="72" height="72" />
+      <div className="py-5" id="signInPage">
+        <div className="container" >
+          <form className="form-signin">
+            <div className="text-center mb-4"> <NavLink exact to="/" style={{ color: "white" }} activeStyle={{ color: "white" }} >
+                <img className="mb-4" src={logo} alt="" width="72" height="72" />
               </NavLink>
-              <h1 class="h3 mb-3 font-weight-normal">Bienvenue</h1>
+              <h1 className="h3 mb-3 font-weight-normal">Bienvenue</h1>
             </div>
-            <div class="form-label-group">
+            <div className="form-label-group">
               <input
                 type="email"
                 id="inputEmail"
-                class="form-control"
+                className="form-control"
                 placeholder="Adresse mail"
                 required
-                autofocus
+                autoFocus
               />
-              <label for="inputEmail">Email</label>
+              <label htmlFor="inputEmail">Email</label>
             </div>
-            <div class="form-label-group">
+            <div className="form-label-group">
               <input
                 type="password"
                 id="inputPassword"
-                class="form-control"
+                className="form-control"
                 placeholder="Mot de passe"
                 required
               />
-              <label for="inputPassword">Mot de passe</label>
+              <label htmlFor="inputPassword">Mot de passe</label>
             </div>
 
-            <div class="checkbox mb-3">
+            <div className="checkbox mb-3">
               <label>
                 <input type="checkbox" value="remember-me" /> Se souvenir de ce
                 compte
               </label>
             </div>
             <label>
-              <a class="nav-link ">
+              <div className="nav-link ">
                 <NavLink
                   to="/SignUp"
                   style={{ color: "black" }}
                   activeStyle={{ color: "black" }}
                 >
-                  <i class="fas fa-sign-out-alt" /> Pas encore inscrit?
+                  <i className="fas fa-sign-out-alt" /> Pas encore inscrit?
                 </NavLink>
-              </a>
+              </div>
             </label>
-            <button class="btn btn-lg btn-warning btn-block" type="submit">
+            <button className="btn btn-lg btn-warning btn-block" type="submit">
               Connexion
             </button>
 

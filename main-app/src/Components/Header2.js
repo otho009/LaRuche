@@ -8,73 +8,60 @@ export default class Header2 extends Component {
   render() {
     return (
       <div>
-        <nav class="navbar navbar-expand-md navbar-dark bg-primary">
-          <a class="navbar-brand">
+        <nav className="navbar navbar-expand-md navbar-dark bg-primary">
             <NavLink exact to="/" style={{ color: "white" }} activeStyle={{ color: "white" }} >
               CourtCircuit
             </NavLink>
-          </a>
-          <a class="navbar-brand">
             <NavLink exact to="/">
-              <img src={logo} height="60" class="d-inline-block align-top" alt="" />
+              <img src={logo} height="60" className="d-inline-block align-top" alt="" />
             </NavLink>
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
         </button>
-          <div class="collapse navbar-collapse text-right" id="navbarCollapse">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item ">
-                <a class="nav-link"> <NavLink exact to="/" style={{ color: "white" }} activeStyle={{ color: "black" }} >
-                    <i class="fas fa-home" /> Accueil
+          <div className="collapse navbar-collapse text-right" id="navbarCollapse">
+            <ul className="navbar-nav mr-auto">
+              <li className="nav-item ">
+                  <NavLink exact to="/" style={{ color: "white" }} activeStyle={{ color: "black" }} >
+                    <i className="fas fa-home" /> Accueil
                   </NavLink>
-                </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link">
+              <li className="nav-item">
                   <NavLink to="/about" style={{ color: "white" }} activeStyle={{ color: "black" }} >
-                    <i class="fas fa-users" /> A propos
+                    <i className="fas fa-users" /> A propos
                   </NavLink>
-                </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link ">
+              <li className="nav-item">
                   <NavLink to="/SignIn" style={{ color: "white" }} activeStyle={{ color: "black" }} >
-                    <i class="fas fa-sign-in-alt" /> Identifiez vous
+                    <i className="fas fa-sign-in-alt" /> Identifiez vous
                   </NavLink>
-                </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link ">
+              <li className="nav-item">
                   <NavLink to="/about"style={{ color: "white" }} activeStyle={{ color: "white" }} >
-                    <i class="fas fa-address-book fa-fw"> </i> Contact
+                    <i className="fas fa-address-book fa-fw"> </i> Contact
                   </NavLink>
-                </a>
               </li>
-              <li class="nav-item">
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <button type="button" class="btn btn-warning my-2 my-sm-0"><i class="fas fa-search"/></button>
-                    <button type="button" class="btn btn-warning categories dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <li className="nav-item">
+                <div className="input-group mb-3">
+                  <div className="input-group-prepend">
+                    <button type="button" className="btn btn-warning my-2 my-sm-0"><i className="fas fa-search"/></button>
+                    <button type="button" className="btn btn-warning categories dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Catégories
                     </button>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="#">Fruits</a>
-                      <a class="dropdown-item" href="#">Légumes</a>
-                      <a class="dropdown-item" href="#">Lait et dérivées</a>
-                      <div role="separator" class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Separated link</a>
+                    <div className="dropdown-menu">
+                      <a className="dropdown-item" href="#">Fruits</a>
+                      <a className="dropdown-item" href="#">Légumes</a>
+                      <a className="dropdown-item" href="#">Lait et dérivées</a>
+                      <div role="separator" className="dropdown-divider"></div>
+                      <a className="dropdown-item" href="#">Separated link</a>
                     </div>
                   </div>
-                  <input class="form-control" type="text" placeholder="Search" aria-label="Search" />
+                  <input className="form-control" type="text" placeholder="Search" aria-label="Search" />
                 </div>
               </li>
-              <li class="nav-item">
-                <a class="nav-link ">
+              <li className="nav-item">
                   <NavLink to="/Cart"style={{ color: "white" }} activeStyle={{ color: "white" }} >
-                    <i class="fas fa-shopping-cart"/> Panier
+                    <i className="fas fa-shopping-cart"/> Panier
                   </NavLink>
-                </a>
               </li>
             </ul>
           </div>

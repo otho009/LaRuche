@@ -8,10 +8,10 @@ export default class Header extends Component {
   render() {
     return (
       <div>
-        <footer class="bg-primary py-3" id="myFooter">
-          <div class="container">
-            <div class="row">
-              <div class="col-sm-3 myCols">
+        <footer className="bg-primary py-3" id="myFooter">
+          <div className="container">
+            <div className="row">
+              <div className="col-sm-3 myCols">
                 <h5>Infos pratiques</h5>
                 <ul>
                   <li>
@@ -25,7 +25,7 @@ export default class Header extends Component {
                   </li>
                 </ul>
               </div>
-              <div class="col-sm-3 myCols">
+              <div className="col-sm-3 myCols">
                 <h5>Des questions?</h5>
                 <ul>
                   <li>
@@ -35,8 +35,8 @@ export default class Header extends Component {
                     <a href="#">Nous contacter</a>
                   </li>
                 </ul>
-              </div>   
-              <div class="col-sm-3 myCols">
+              </div>
+              <div className="col-sm-3 myCols">
                 <h5>Informations légales</h5>
                 <ul>
                   <li>
@@ -50,16 +50,16 @@ export default class Header extends Component {
                   </li>
                 </ul>
               </div>
-              <div class="social-networks col-sm-3 myCols">
+              <div className="social-networks col-sm-3 myCols">
 
-                <a href="#" class="twitter">
-                  <i class="fab fa-twitter" />
+                <a href="#" className="twitter">
+                  <i className="fab fa-twitter" />
                 </a>
-                <a href="#" class="facebook">
-                  <i class="fab fa-facebook" />
+                <a href="#" className="facebook">
+                  <i className="fab fa-facebook" />
                 </a>
-                <a href="#" class="google">
-                  <i class="fab fa-youtube" />
+                <a href="#" className="google">
+                  <i className="fab fa-youtube" />
                 </a>
 
 
