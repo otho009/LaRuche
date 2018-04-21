@@ -4,11 +4,12 @@ function Liste(props) {
   const listItems = elements.map(number => <li>{number}</li>);
   return <ul>{listItems}</ul>;
 }
-export default class Header extends Component {
+export default class Footer extends Component {
   render() {
     return (
       <div>
-        <footer class="bg-primary py-3" id="myFooter">
+        <footer class=" 
+        sticky-bottom bg-primary py-3" id="myFooter">
           <div class="container">
             <div class="row">
               <div class="col-sm-3 myCols">

@@ -14,7 +14,7 @@ export default class Header2 extends Component {
               CourtCircuit
             </NavLink>
           </a>
-          <a class="navbar-brand">
+          <a class="navbar-brand mx-auto p-auto">
             <NavLink exact to="/">
               <img src={logo} height="60" class="d-inline-block align-top" alt="" />
             </NavLink>
@@ -23,7 +23,30 @@ export default class Header2 extends Component {
           <span class="navbar-toggler-icon"></span>
         </button>
           <div class="collapse navbar-collapse text-right" id="navbarCollapse">
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav m-auto">
+              
+              <li class="nav-item p-auto">
+                <div class="input-group  mx-auto">
+                  <div class="input-group-prepend ">
+                    <button type="button" class="btn btn-warning my-10 "><i class="fas fa-search"/></button>
+                    <button type="button" class="btn btn-warning categories dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Catégories
+                    </button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item">Fruits</a>
+                      <a class="dropdown-item">Légumes</a>
+                      <a class="dropdown-item">Lait et dérivées</a>
+                      <div role="separator" class="dropdown-divider"></div>
+                      <a class="dropdown-item">Separated link</a>
+                    </div>
+                  </div>
+                  <input class="form-control w-50" type="text" placeholder="rechercher" aria-label="Rechercher" />
+                </div>
+              </li>
+
+            </ul>
+            <ul class="navbar-nav float-right">
+
               <li class="nav-item ">
                 <a class="nav-link"> <NavLink exact to="/" style={{ color: "white" }} activeStyle={{ color: "black" }} >
                     <i class="fas fa-home" /> Accueil
@@ -40,34 +63,9 @@ export default class Header2 extends Component {
               <li class="nav-item">
                 <a class="nav-link ">
                   <NavLink to="/SignIn" style={{ color: "white" }} activeStyle={{ color: "black" }} >
-                    <i class="fas fa-sign-in-alt" /> Identifiez vous
+                    <i class="fas fa-sign-in-alt" /> Connexion
                   </NavLink>
                 </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link ">
-                  <NavLink to="/about"style={{ color: "white" }} activeStyle={{ color: "white" }} >
-                    <i class="fas fa-address-book fa-fw"> </i> Contact
-                  </NavLink>
-                </a>
-              </li>
-              <li class="nav-item">
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <button type="button" class="btn btn-warning my-2 my-sm-0"><i class="fas fa-search"/></button>
-                    <button type="button" class="btn btn-warning categories dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Catégories
-                    </button>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="#">Fruits</a>
-                      <a class="dropdown-item" href="#">Légumes</a>
-                      <a class="dropdown-item" href="#">Lait et dérivées</a>
-                      <div role="separator" class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Separated link</a>
-                    </div>
-                  </div>
-                  <input class="form-control" type="text" placeholder="Search" aria-label="Search" />
-                </div>
               </li>
               <li class="nav-item">
                 <a class="nav-link ">
@@ -76,6 +74,8 @@ export default class Header2 extends Component {
                   </NavLink>
                 </a>
               </li>
+             
+              
             </ul>
           </div>
         </nav>
