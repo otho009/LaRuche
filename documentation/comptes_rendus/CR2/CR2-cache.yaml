@@ -128,9 +128,9 @@ files:
       intermediatePostScript: false
     type: ParsedYAML
   CR2.tex:
-    timeStamp: 2018-05-05T14:12:03.479Z
+    timeStamp: 2018-05-05T15:23:40.462Z
     jobNames: []
-    hash: SgVLAHlGhyOTZ1DnyzcBeErfvJt4hHa/kyzCHWk9pNA=
+    hash: NgCvk4BURRHOm/m4xYbantByNBZbHrt7RkTZeQC7hhg=
     type: LaTeX
     subType: report
   /home/wissem/.config/dicy/config.yaml:
@@ -467,7 +467,7 @@ files:
       calls: []
     type: ParsedFileListing
   CR2.log-ParsedLaTeXLog:
-    timeStamp: 2018-05-05T12:54:04.491Z
+    timeStamp: 2018-05-05T15:23:45.047Z
     jobNames: []
     value:
       messages:
@@ -2512,17 +2512,17 @@ files:
         - severity: info
           name: pdfTeX
           category: Package pdftex.def
-          text: images/Clients.jpg used on input line 257.
+          text: images/Clients.jpg used on input line 279.
           source:
             file: \T1/cmr/bx/n/12 M\T1/cmr/m/n/12 �thodes
             range:
-              start: 257
-              end: 257
+              start: 279
+              end: 279
           log:
             file: CR2.log
             range:
-              start: 1386
-              end: 1387
+              start: 1392
+              end: 1393
         - severity: info
           name: pdfTeX
           category: Package pdftex.def
@@ -2530,13 +2530,13 @@ files:
           source:
             file: \T1/cmr/bx/n/12 M\T1/cmr/m/n/12 �thodes
             range:
-              start: 257
-              end: 257
+              start: 279
+              end: 279
           log:
             file: CR2.log
             range:
-              start: 1388
-              end: 1389
+              start: 1394
+              end: 1395
         - severity: info
           name: pdfTeX
           category: Package atveryend
@@ -2544,50 +2544,8 @@ files:
           source:
             file: $
             range:
-              start: 318
-              end: 318
-          log:
-            file: CR2.log
-            range:
-              start: 1423
-              end: 1423
-        - severity: info
-          name: pdfTeX
-          category: Package atveryend
-          text: Empty hook `AfterLastShipout'
-          source:
-            file: $
-            range:
-              start: 318
-              end: 318
-          log:
-            file: CR2.log
-            range:
-              start: 1424
-              end: 1424
-        - severity: info
-          name: pdfTeX
-          category: Package atveryend
-          text: Executing hook `AtVeryEndDocument'
-          source:
-            file: $
-            range:
-              start: 318
-              end: 318
-          log:
-            file: CR2.log
-            range:
-              start: 1428
-              end: 1428
-        - severity: info
-          name: pdfTeX
-          category: Package atveryend
-          text: Executing hook `AtEndAfterFileList'
-          source:
-            file: $
-            range:
-              start: 318
-              end: 318
+              start: 340
+              end: 340
           log:
             file: CR2.log
             range:
@@ -2595,17 +2553,59 @@ files:
               end: 1429
         - severity: info
           name: pdfTeX
+          category: Package atveryend
+          text: Empty hook `AfterLastShipout'
+          source:
+            file: $
+            range:
+              start: 340
+              end: 340
+          log:
+            file: CR2.log
+            range:
+              start: 1430
+              end: 1430
+        - severity: info
+          name: pdfTeX
+          category: Package atveryend
+          text: Executing hook `AtVeryEndDocument'
+          source:
+            file: $
+            range:
+              start: 340
+              end: 340
+          log:
+            file: CR2.log
+            range:
+              start: 1434
+              end: 1434
+        - severity: info
+          name: pdfTeX
+          category: Package atveryend
+          text: Executing hook `AtEndAfterFileList'
+          source:
+            file: $
+            range:
+              start: 340
+              end: 340
+          log:
+            file: CR2.log
+            range:
+              start: 1435
+              end: 1435
+        - severity: info
+          name: pdfTeX
           category: Package rerunfilecheck
           text: >-
             File `CR2.out' has not changed. Checksum:
-            83161B50FDB047ED2AC8FB7F0B7E6794;1413.
+            98E500F42223F354ECFDB00A63FABD0F;1413.
           source:
             file: $
           log:
             file: CR2.log
             range:
-              start: 1430
-              end: 1431
+              start: 1436
+              end: 1437
         - severity: info
           name: pdfTeX
           category: Package atveryend
@@ -2613,46 +2613,46 @@ files:
           source:
             file: $
             range:
-              start: 318
-              end: 318
+              start: 340
+              end: 340
           log:
             file: CR2.log
             range:
-              start: 1432
-              end: 1432
+              start: 1438
+              end: 1438
       inputs: []
       outputs:
         - CR2.pdf
       calls: []
     type: ParsedLaTeXLog
   CR2.log:
-    timeStamp: 2018-05-05T14:12:06.779Z
+    timeStamp: 2018-05-05T15:23:44.902Z
     jobNames: []
-    hash: gGiGOuxLA5+aUIdDT6HGJuNO0YfVYTmkSj7acP267Co=
+    hash: Xyc0rGirFMmc9FH5/V1qwkbjoeeoJYQq/7MpBNcz6pY=
     type: LaTeXLog
     subType: pdfTeX
   CR2.pdf:
-    timeStamp: 2018-05-05T14:12:06.779Z
+    timeStamp: 2018-05-05T15:23:44.902Z
     jobNames: []
-    hash: Rs4dzmlfLtH9eSSBMg4pKAJhIjh+Ag8h1QbM+V23wxs=
+    hash: vjhRJnZHFOStRb+PmtwFwxqX0cZ46qLWGid/YJcj7ZY=
     type: PortableDocumentFormat
   CR2.aux:
-    timeStamp: 2018-05-05T14:12:06.631Z
+    timeStamp: 2018-05-05T15:23:44.806Z
     jobNames: []
-    hash: /F3H5HjZyvlVAIDe5LMTFgXgv49fnduD1EA55VZu8rE=
+    hash: tCMxXF680+JccDnMPk48uPr/OLWsi/Z6wR11/HqCOeA=
     type: LaTeXAuxilary
   CR2.fls:
-    timeStamp: 2018-05-05T14:12:06.763Z
+    timeStamp: 2018-05-05T15:23:44.894Z
     jobNames: []
     hash: Mb+RDLR9RzQXB6ueQq1IIDJYzfYBaX8RkZekyu2MCT8=
     type: FileListing
   CR2.synctex.gz:
-    timeStamp: 2018-05-05T14:12:06.779Z
+    timeStamp: 2018-05-05T15:23:44.902Z
     jobNames: []
-    hash: COKQKaOf+8ldri5q1DGKxJ92Aif5eUwXkIiU+cq6Ipw=
+    hash: s2dkGtRl2LZGstzxXuVj1Avw2y1g436VazwYBn6XaR8=
     type: SyncTeX
   CR2.aux-ParsedLaTeXAuxilary:
-    timeStamp: 2018-05-05T12:54:03.004Z
+    timeStamp: 2018-05-05T15:23:43.865Z
     jobNames: []
     value:
       commands:
@@ -2701,6 +2701,10 @@ files:
         - '@writefile'
         - '@writefile'
         - '@writefile'
+        - '@writefile'
+        - '@writefile'
+        - '@writefile'
+        - newlabel
         - '@writefile'
         - '@writefile'
         - '@writefile'
@@ -3536,14 +3540,14 @@ files:
     timeStamp: 2018-05-05T12:43:35.415Z
     jobNames: []
   CR2.out:
-    timeStamp: 2018-05-05T14:12:06.631Z
+    timeStamp: 2018-05-05T15:23:44.806Z
     jobNames: []
-    hash: AXI5jaaoDJgKy3OfxtkB9NN9OZJWWENg6R2NnFFhNqo=
+    hash: LdydlEpTDFUzwZEHW6zmFoP0egNEV9OmM2TKjBUgLhU=
     type: OUT
   CR2.toc:
-    timeStamp: 2018-05-05T14:12:06.631Z
+    timeStamp: 2018-05-05T15:23:44.806Z
     jobNames: []
-    hash: 0R8udC8y9TDWN5ylg4214whiJb1yKkkcy9sYCcuJlts=
+    hash: nNV+/9yUOzk0RnIgsuJcZDlPA7Ocx3gTnh+jqKegv5Q=
     type: TableOfContents
   images/Clients.jpg:
     timeStamp: 2018-05-05T09:50:02.094Z
@@ -3571,15 +3575,15 @@ files:
     hash: ufJo2lCasaFTSp8TXm7irxTP3hz0sR4MTHi8IJRcLdw=
     type: LaTeXStyle
   CR2.thm:
-    timeStamp: 2018-05-05T14:12:06.631Z
+    timeStamp: 2018-05-05T15:23:44.806Z
     jobNames: []
     hash: 47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
   CR2.bbl:
-    timeStamp: 2018-05-05T14:12:05.555Z
+    timeStamp: 2018-05-05T15:23:44.050Z
     jobNames: []
     hash: tVnqipi8npFINdDJ7v/+xV0B3Tg6ggQ9GOf43uKRMGM=
   CR2.blg:
-    timeStamp: 2018-05-05T14:12:05.555Z
+    timeStamp: 2018-05-05T15:23:44.054Z
     jobNames: []
     hash: J/epQiDNlJn5MLJXEUCRkKOOfwGRwGudyP8nlgJ4b2E=
     type: BibTeXLog
