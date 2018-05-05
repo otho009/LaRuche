@@ -11,10 +11,17 @@ const carouselContent = [fruitCarousel, grainsCaroussel, vegetablesCarousel]
 export default class Chariot extends Component {
   render() {
     return (
+<<<<<<< HEAD
       <div id="CartPage" className="py-5">
         <div className="container">
           <h1 className="display-5">Panier</h1>
           <table className="table table-striped table-hover">
+=======
+      <div  class="wrapper"id="CartPage" class="py-5">
+        <div class="container">
+          <h1 class="display-5">Panier</h1>
+          <table class="table table-striped table-hover">
+>>>>>>> 7c2850f3a0fc0e0cb55a81888df5f0dac875fac0
           <thead>
             <tr>
               <th scope="col">#</th>
@@ -62,6 +69,8 @@ export default class Chariot extends Component {
         <button type="button" className="btn btn-outline-success btn-lg">Validez</button>
         </div>
       </div>
+      <div class="push"></div>
+
     </div>
     );
   }

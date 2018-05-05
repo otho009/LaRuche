@@ -1,0 +1,4377 @@
+version: 0.12.2
+filePath: CR2.tex
+options:
+  $BIBINPUTS:
+    - $ROOTDIR
+    - $ROOTDIR/$OUTDIR
+    - ''
+  $TEXINPUTS:
+    - $ROOTDIR
+    - $ROOTDIR/$OUTDIR
+    - ''
+  bibtexEngine: bibtex
+  cleanPatterns:
+    - '**/*.aux'
+    - '**/*.aux.bak'
+    - '**/*.bbl'
+    - '**/*.bcf'
+    - '**/*.blg'
+    - '**/*.dvi'
+    - '**/*.fdb_latexmk'
+    - '**/*.fls'
+    - '**/*.idx'
+    - '**/*.idx.bak'
+    - '**/*.ilg'
+    - '**/*.ind'
+    - '**/*.lof'
+    - '**/*.log'
+    - '**/*.lol'
+    - '**/*.lot'
+    - '**/*.nav'
+    - '**/*.out'
+    - '**/*.pdf'
+    - '**/*.ps'
+    - '**/*.snm'
+    - '**/*.synctex.gz'
+    - '**/*.toc'
+    - '/**/_minted-${JOB}'
+    - '/${OUTDIR}/sage-plots-for-${JOB}.tex'
+    - /missfont.log
+    - /texput.log
+    - /texput.aux
+  dviToPdfEngine: xdvipdfmx
+  engine: pdflatex
+  epstopdfBoundingBox: default
+  epstopdfOutputPath: $DIR_0/$NAME_0.pdf
+  indexAutomaticRanges: true
+  indexEngine: makeindex
+  indexOrdering: word
+  indexSorting: default
+  knitrConcordance: true
+  knitrOutputPath: $JOB.tex
+  lhs2texStyle: poly
+  literateAgdaEngine: agda
+  literateHaskellEngine: lhs2TeX
+  loadCache: true
+  loadUserOptions: true
+  outputFormat: pdf
+  phaseCycles: 20
+  pweaveCacheDirectory: pweave-cache-for-$JOB
+  pweaveFigureDirectory: pweave-figures-for-$JOB
+  pweaveKernel: python3
+  pweaveOutputFormat: tex
+  pweaveOutputPath: $JOB.tex
+  saveCache: true
+  severity: info
+  validateCache: true
+  synctex: true
+  copyTargetsToRoot: true
+  outputDirectory: ''
+  intermediatePostScript: false
+files:
+  dicy-instance.yaml-ParsedYAML:
+    timeStamp: 2018-05-05T12:45:38.869Z
+    jobNames: []
+    value:
+      severity: info
+    type: ParsedYAML
+  dicy.yaml-ParsedYAML:
+    jobNames: []
+    type: ParsedYAML
+  CR2.yaml-ParsedYAML:
+    jobNames: []
+    type: ParsedYAML
+  CR2.tex-ParsedLaTeXMagic:
+    timeStamp: 2018-05-05T12:45:39.002Z
+    jobNames: []
+    value: {}
+    type: ParsedLaTeXMagic
+  /home/wissem/.config/dicy/config.yaml-ParsedYAML:
+    timeStamp: 2018-05-05T12:45:38.993Z
+    jobNames: []
+    value:
+      synctex: true
+      engine: pdflatex
+      severity: warning
+      copyTargetsToRoot: true
+      outputDirectory: ''
+      outputFormat: pdf
+      cleanPatterns:
+        - '**/*.aux'
+        - '**/*.aux.bak'
+        - '**/*.bbl'
+        - '**/*.bcf'
+        - '**/*.blg'
+        - '**/*.dvi'
+        - '**/*.fdb_latexmk'
+        - '**/*.fls'
+        - '**/*.idx'
+        - '**/*.idx.bak'
+        - '**/*.ilg'
+        - '**/*.ind'
+        - '**/*.lof'
+        - '**/*.log'
+        - '**/*.lol'
+        - '**/*.lot'
+        - '**/*.nav'
+        - '**/*.out'
+        - '**/*.pdf'
+        - '**/*.ps'
+        - '**/*.snm'
+        - '**/*.synctex.gz'
+        - '**/*.toc'
+        - '/**/_minted-${JOB}'
+        - '/${OUTDIR}/sage-plots-for-${JOB}.tex'
+        - /missfont.log
+        - /texput.log
+        - /texput.aux
+      intermediatePostScript: false
+    type: ParsedYAML
+  CR2.tex:
+    timeStamp: 2018-05-05T14:12:03.479Z
+    jobNames: []
+    hash: SgVLAHlGhyOTZ1DnyzcBeErfvJt4hHa/kyzCHWk9pNA=
+    type: LaTeX
+    subType: report
+  /home/wissem/.config/dicy/config.yaml:
+    timeStamp: 2018-05-05T12:45:38.903Z
+    jobNames: []
+    type: YAML
+  x.y-Nil:
+    jobNames: []
+    type: Nil
+  CR2.fls-ParsedFileListing:
+    timeStamp: 2018-05-05T12:54:03.125Z
+    jobNames: []
+    value:
+      messages: []
+      inputs:
+        - /etc/texmf/web2c/texmf.cnf
+        - /usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map
+        - /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbi1200.tfm
+        - /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1000.tfm
+        - /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm
+        - /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1440.tfm
+        - /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1728.tfm
+        - /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx2488.tfm
+        - /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/eccc1200.tfm
+        - /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/eccc1440.tfm
+        - /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/eccc1728.tfm
+        - /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/eccc2074.tfm
+        - /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm0800.tfm
+        - /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1000.tfm
+        - /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1200.tfm
+        - /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1440.tfm
+        - /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1728.tfm
+        - /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm2488.tfm
+        - /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecsl1200.tfm
+        - /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ectc1728.tfm
+        - /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecti1000.tfm
+        - /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecti1200.tfm
+        - /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecti1440.tfm
+        - /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ectt1200.tfm
+        - /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecxc1440.tfm
+        - /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecxc1728.tfm
+        - >-
+          /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+        - >-
+          /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm
+        - >-
+          /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+        - >-
+          /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+        - >-
+          /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+        - >-
+          /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+        - /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
+        - /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
+        - /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm
+        - /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm
+        - /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
+        - /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
+        - /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
+        - /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
+        - /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+        - /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm
+        - /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm
+        - /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
+        - /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb
+        - /usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+        - /usr/share/texlive/texmf-dist/tex/generic/babel-french/french.ldf
+        - /usr/share/texlive/texmf-dist/tex/generic/babel-french/frenchb.ldf
+        - /usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+        - /usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+        - /usr/share/texlive/texmf-dist/tex/generic/babel/switch.def
+        - /usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+        - /usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+        - /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+        - /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybackgrounds.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.markings.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfadings.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfit.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshadows.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.arrows.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.callouts.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.misc.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.multipart.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.symbols.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.markings.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.arrows.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.callouts.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.misc.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.symbols.code.tex
+        - /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+        - /usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+        - >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+        - /usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
+        - /usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
+        - /usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+        - /usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+        - /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/appendix/appendix.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu
+        - /usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu
+        - /usr/share/texlive/texmf-dist/tex/latex/base/report.cls
+        - /usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
+        - /usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+        - /usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def
+        - /usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu
+        - /usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
+        - /usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/carlisle/scalefnt.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+        - /usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+        - /usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+        - /usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+        - /usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+        - /usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+        - /usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+        - /usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/ntheorem/ntheorem.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+        - >-
+          /usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+        - >-
+          /usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/pgfopts/pgfopts.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/silence/silence.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/tocbibind/tocbibind.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+        - /usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+        - /usr/share/texlive/texmf-dist/web2c/texmf.cnf
+        - /usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc
+        - /usr/share/texmf/fonts/type1/public/cm-super/sfbi1200.pfb
+        - /usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb
+        - /usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb
+        - /usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb
+        - /usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb
+        - /usr/share/texmf/fonts/type1/public/cm-super/sfbx2488.pfb
+        - /usr/share/texmf/fonts/type1/public/cm-super/sfcc1200.pfb
+        - /usr/share/texmf/fonts/type1/public/cm-super/sfcc1440.pfb
+        - /usr/share/texmf/fonts/type1/public/cm-super/sfcc1728.pfb
+        - /usr/share/texmf/fonts/type1/public/cm-super/sfcc2074.pfb
+        - /usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb
+        - /usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb
+        - /usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb
+        - /usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb
+        - /usr/share/texmf/fonts/type1/public/cm-super/sfsl1200.pfb
+        - /usr/share/texmf/fonts/type1/public/cm-super/sftc1728.pfb
+        - /usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb
+        - /usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb
+        - /usr/share/texmf/fonts/type1/public/cm-super/sfti1440.pfb
+        - /usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb
+        - /usr/share/texmf/fonts/type1/public/cm-super/sfxc1440.pfb
+        - /usr/share/texmf/fonts/type1/public/cm-super/sfxc1728.pfb
+        - /usr/share/texmf/web2c/texmf.cnf
+        - /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
+        - /var/lib/texmf/web2c/pdftex/pdflatex.fmt
+        - CR2.aux
+        - CR2.bbl
+        - CR2.out
+        - CR2.tex
+        - CR2.toc
+        - images/Clients.jpg
+        - images/fdsLogo.jpg
+        - images/lirmmLogo.png
+        - images/lirmmPhoto.jpg
+        - images/umLogo.png
+        - packages/tikz-uml.sty
+      outputs:
+        - CR2.aux
+        - CR2.log
+        - CR2.out
+        - CR2.pdf
+        - CR2.thm
+        - CR2.toc
+      calls: []
+    type: ParsedFileListing
+  CR2.log-ParsedLaTeXLog:
+    timeStamp: 2018-05-05T12:54:04.491Z
+    jobNames: []
+    value:
+      messages:
+        - name: pdfTeX
+          severity: info
+          text: inputenc 2015/03/17 v1.2c Input encoding file
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+          log:
+            file: CR2.log
+            range:
+              start: 30
+              end: 30
+        - name: pdfTeX
+          severity: info
+          text: babel 2017/06/29 3.12 The Babel package
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+          log:
+            file: CR2.log
+            range:
+              start: 343
+              end: 343
+        - severity: warning
+          name: pdfTeX
+          category: Package babel-french
+          text: >-
+            Option `francais' for Babel is *deprecated*, it might be removed
+            sooner or later. Please use `french' instead; reported.
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/generic/babel-french/frenchb.ldf
+            range:
+              start: 45
+              end: 45
+          log:
+            file: CR2.log
+            range:
+              start: 349
+              end: 351
+        - severity: info
+          name: pdfTeX
+          category: Package babel
+          text: 'Making : an active character'
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/generic/babel-french/french.ldf
+            range:
+              start: 321
+              end: 321
+          log:
+            file: CR2.log
+            range:
+              start: 366
+              end: 366
+        - severity: info
+          name: pdfTeX
+          category: Package babel
+          text: Making ; an active character
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/generic/babel-french/french.ldf
+            range:
+              start: 322
+              end: 322
+          log:
+            file: CR2.log
+            range:
+              start: 367
+              end: 367
+        - severity: info
+          name: pdfTeX
+          category: Package babel
+          text: Making ! an active character
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/generic/babel-french/french.ldf
+            range:
+              start: 323
+              end: 323
+          log:
+            file: CR2.log
+            range:
+              start: 368
+              end: 368
+        - severity: info
+          name: pdfTeX
+          category: Package babel
+          text: Making ? an active character
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/generic/babel-french/french.ldf
+            range:
+              start: 324
+              end: 324
+          log:
+            file: CR2.log
+            range:
+              start: 369
+              end: 369
+        - name: pdfTeX
+          severity: info
+          text: keyval 2014/10/28 v1.15 key=value parser (DPC)
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+          log:
+            file: CR2.log
+            range:
+              start: 387
+              end: 387
+        - name: pdfTeX
+          severity: info
+          text: fontenc 2017/04/05 v2.0i Standard LaTeX package
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+          log:
+            file: CR2.log
+            range:
+              start: 390
+              end: 390
+        - severity: info
+          name: pdfTeX
+          category: LaTeX Font
+          text: Redeclaring font encoding T1
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def
+            range:
+              start: 48
+              end: 48
+          log:
+            file: CR2.log
+            range:
+              start: 393
+              end: 393
+        - name: pdfTeX
+          severity: info
+          text: 'graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)'
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+          log:
+            file: CR2.log
+            range:
+              start: 395
+              end: 395
+        - name: pdfTeX
+          severity: info
+          text: 'graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)'
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+          log:
+            file: CR2.log
+            range:
+              start: 397
+              end: 397
+        - name: pdfTeX
+          severity: info
+          text: trig 2016/01/03 v1.10 sin cos tan (DPC)
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+          log:
+            file: CR2.log
+            range:
+              start: 399
+              end: 399
+        - severity: info
+          name: pdfTeX
+          category: Package graphics
+          text: 'Driver file: pdftex.def'
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+            range:
+              start: 99
+              end: 99
+          log:
+            file: CR2.log
+            range:
+              start: 403
+              end: 403
+        - name: pdfTeX
+          severity: info
+          text: subcaption 2016/05/22 v1.1-161 Sub-captions (AR)
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+          log:
+            file: CR2.log
+            range:
+              start: 410
+              end: 410
+        - name: pdfTeX
+          severity: info
+          text: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+          log:
+            file: CR2.log
+            range:
+              start: 412
+              end: 412
+        - name: pdfTeX
+          severity: info
+          text: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+          log:
+            file: CR2.log
+            range:
+              start: 414
+              end: 414
+        - severity: info
+          name: pdfTeX
+          category: Package caption3
+          text: 'TeX engine: e-TeX'
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+            range:
+              start: 67
+              end: 67
+          log:
+            file: CR2.log
+            range:
+              start: 415
+              end: 415
+        - name: pdfTeX
+          severity: info
+          text: hyperref 2017/03/14 v6.85a Hypertext links for LaTeX
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+          log:
+            file: CR2.log
+            range:
+              start: 429
+              end: 429
+        - name: pdfTeX
+          severity: info
+          text: >-
+            hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref
+            (HO)
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+          log:
+            file: CR2.log
+            range:
+              start: 431
+              end: 432
+        - name: pdfTeX
+          severity: info
+          text: 'hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)'
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+          log:
+            file: CR2.log
+            range:
+              start: 434
+              end: 434
+        - name: pdfTeX
+          severity: info
+          text: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+          log:
+            file: CR2.log
+            range:
+              start: 435
+              end: 435
+        - name: pdfTeX
+          severity: info
+          text: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+          log:
+            file: CR2.log
+            range:
+              start: 436
+              end: 436
+        - name: pdfTeX
+          severity: info
+          text: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+          log:
+            file: CR2.log
+            range:
+              start: 437
+              end: 437
+        - name: pdfTeX
+          severity: info
+          text: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+          log:
+            file: CR2.log
+            range:
+              start: 438
+              end: 438
+        - severity: info
+          name: pdfTeX
+          category: Package ifluatex
+          text: LuaTeX not detected.
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+          log:
+            file: CR2.log
+            range:
+              start: 439
+              end: 439
+        - name: pdfTeX
+          severity: info
+          text: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+          log:
+            file: CR2.log
+            range:
+              start: 440
+              end: 440
+        - severity: info
+          name: pdfTeX
+          category: Package ifvtex
+          text: VTeX not detected.
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+          log:
+            file: CR2.log
+            range:
+              start: 441
+              end: 441
+        - name: pdfTeX
+          severity: info
+          text: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+          log:
+            file: CR2.log
+            range:
+              start: 442
+              end: 442
+        - name: pdfTeX
+          severity: info
+          text: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+          log:
+            file: CR2.log
+            range:
+              start: 443
+              end: 443
+        - name: pdfTeX
+          severity: info
+          text: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+          log:
+            file: CR2.log
+            range:
+              start: 444
+              end: 444
+        - severity: info
+          name: pdfTeX
+          category: Package etexcmds
+          text: >-
+            Could not find \expanded. That can mean that you are not using
+            pdfTeX 1.50 or that some package has redefined \expanded. In the
+            latter case, load this package earlier.
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+          log:
+            file: CR2.log
+            range:
+              start: 445
+              end: 448
+        - name: pdfTeX
+          severity: info
+          text: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+          log:
+            file: CR2.log
+            range:
+              start: 449
+              end: 449
+        - name: pdfTeX
+          severity: info
+          text: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+          log:
+            file: CR2.log
+            range:
+              start: 450
+              end: 450
+        - name: pdfTeX
+          severity: info
+          text: >-
+            pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX
+            (HO)
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+          log:
+            file: CR2.log
+            range:
+              start: 451
+              end: 452
+        - severity: info
+          name: pdfTeX
+          category: Package pdftexcmds
+          text: LuaTeX not detected.
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+          log:
+            file: CR2.log
+            range:
+              start: 453
+              end: 453
+        - severity: info
+          name: pdfTeX
+          category: Package pdftexcmds
+          text: \pdf@primitive is available.
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+          log:
+            file: CR2.log
+            range:
+              start: 454
+              end: 454
+        - severity: info
+          name: pdfTeX
+          category: Package pdftexcmds
+          text: \pdf@ifprimitive is available.
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+          log:
+            file: CR2.log
+            range:
+              start: 455
+              end: 455
+        - severity: info
+          name: pdfTeX
+          category: Package pdftexcmds
+          text: \pdfdraftmode found.
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+          log:
+            file: CR2.log
+            range:
+              start: 456
+              end: 456
+        - name: pdfTeX
+          severity: info
+          text: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+          log:
+            file: CR2.log
+            range:
+              start: 457
+              end: 457
+        - name: pdfTeX
+          severity: info
+          text: >-
+            bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers
+            (HO)
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+          log:
+            file: CR2.log
+            range:
+              start: 458
+              end: 459
+        - name: pdfTeX
+          severity: info
+          text: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+          log:
+            file: CR2.log
+            range:
+              start: 460
+              end: 460
+        - name: pdfTeX
+          severity: info
+          text: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+          log:
+            file: CR2.log
+            range:
+              start: 461
+              end: 461
+        - severity: info
+          name: pdfTeX
+          category: Package hobsub
+          text: Skipping package `hobsub' (already loaded).
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+          log:
+            file: CR2.log
+            range:
+              start: 463
+              end: 463
+        - name: pdfTeX
+          severity: info
+          text: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+          log:
+            file: CR2.log
+            range:
+              start: 464
+              end: 464
+        - name: pdfTeX
+          severity: info
+          text: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+          log:
+            file: CR2.log
+            range:
+              start: 465
+              end: 465
+        - name: pdfTeX
+          severity: info
+          text: xcolor-patch 2016/05/16 xcolor patch
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+          log:
+            file: CR2.log
+            range:
+              start: 466
+              end: 466
+        - name: pdfTeX
+          severity: info
+          text: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+          log:
+            file: CR2.log
+            range:
+              start: 467
+              end: 467
+        - severity: info
+          name: pdfTeX
+          category: Package atveryend
+          text: \enddocument detected (standard20110627).
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+          log:
+            file: CR2.log
+            range:
+              start: 468
+              end: 468
+        - name: pdfTeX
+          severity: info
+          text: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+          log:
+            file: CR2.log
+            range:
+              start: 469
+              end: 469
+        - name: pdfTeX
+          severity: info
+          text: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+          log:
+            file: CR2.log
+            range:
+              start: 470
+              end: 470
+        - name: pdfTeX
+          severity: info
+          text: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+          log:
+            file: CR2.log
+            range:
+              start: 471
+              end: 471
+        - name: pdfTeX
+          severity: info
+          text: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+          log:
+            file: CR2.log
+            range:
+              start: 473
+              end: 473
+        - name: pdfTeX
+          severity: info
+          text: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
+          log:
+            file: CR2.log
+            range:
+              start: 475
+              end: 475
+        - name: pdfTeX
+          severity: info
+          text: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+          log:
+            file: CR2.log
+            range:
+              start: 477
+              end: 477
+        - severity: info
+          name: pdfTeX
+          category: Package hyperref
+          text: Option `colorlinks' set `true'
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+            range:
+              start: 4374
+              end: 4374
+          log:
+            file: CR2.log
+            range:
+              start: 491
+              end: 491
+        - severity: info
+          name: pdfTeX
+          category: Package hyperref
+          text: Hyper figures OFF
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+            range:
+              start: 4498
+              end: 4498
+          log:
+            file: CR2.log
+            range:
+              start: 492
+              end: 492
+        - severity: info
+          name: pdfTeX
+          category: Package hyperref
+          text: Link nesting OFF
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+            range:
+              start: 4503
+              end: 4503
+          log:
+            file: CR2.log
+            range:
+              start: 493
+              end: 493
+        - severity: info
+          name: pdfTeX
+          category: Package hyperref
+          text: Hyper index ON
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+            range:
+              start: 4506
+              end: 4506
+          log:
+            file: CR2.log
+            range:
+              start: 494
+              end: 494
+        - severity: info
+          name: pdfTeX
+          category: Package hyperref
+          text: Plain pages OFF
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+            range:
+              start: 4513
+              end: 4513
+          log:
+            file: CR2.log
+            range:
+              start: 495
+              end: 495
+        - severity: info
+          name: pdfTeX
+          category: Package hyperref
+          text: Backreferencing OFF
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+            range:
+              start: 4518
+              end: 4518
+          log:
+            file: CR2.log
+            range:
+              start: 496
+              end: 496
+        - severity: info
+          name: pdfTeX
+          category: Package hyperref
+          text: Implicit mode ON; LaTeX internals redefined.
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+          log:
+            file: CR2.log
+            range:
+              start: 497
+              end: 497
+        - severity: info
+          name: pdfTeX
+          category: Package hyperref
+          text: Bookmarks ON
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+            range:
+              start: 4751
+              end: 4751
+          log:
+            file: CR2.log
+            range:
+              start: 498
+              end: 498
+        - name: pdfTeX
+          severity: info
+          text: 'url 2013/09/16 ver 3.4 Verb mode for urls, etc.'
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+          log:
+            file: CR2.log
+            range:
+              start: 502
+              end: 502
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: Redefining \url
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+            range:
+              start: 5104
+              end: 5104
+          log:
+            file: CR2.log
+            range:
+              start: 504
+              end: 504
+        - severity: info
+          name: pdfTeX
+          category: Package hyperref
+          text: Hyper figures OFF
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+            range:
+              start: 6358
+              end: 6358
+          log:
+            file: CR2.log
+            range:
+              start: 509
+              end: 509
+        - severity: info
+          name: pdfTeX
+          category: Package hyperref
+          text: Link nesting OFF
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+            range:
+              start: 6363
+              end: 6363
+          log:
+            file: CR2.log
+            range:
+              start: 510
+              end: 510
+        - severity: info
+          name: pdfTeX
+          category: Package hyperref
+          text: Hyper index ON
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+            range:
+              start: 6366
+              end: 6366
+          log:
+            file: CR2.log
+            range:
+              start: 511
+              end: 511
+        - severity: info
+          name: pdfTeX
+          category: Package hyperref
+          text: backreferencing OFF
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+            range:
+              start: 6373
+              end: 6373
+          log:
+            file: CR2.log
+            range:
+              start: 512
+              end: 512
+        - severity: info
+          name: pdfTeX
+          category: Package hyperref
+          text: Link coloring ON
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+            range:
+              start: 6376
+              end: 6376
+          log:
+            file: CR2.log
+            range:
+              start: 513
+              end: 513
+        - severity: info
+          name: pdfTeX
+          category: Package hyperref
+          text: Link coloring with OCG OFF
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+            range:
+              start: 6383
+              end: 6383
+          log:
+            file: CR2.log
+            range:
+              start: 514
+              end: 514
+        - severity: info
+          name: pdfTeX
+          category: Package hyperref
+          text: PDF/A mode OFF
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+            range:
+              start: 6388
+              end: 6388
+          log:
+            file: CR2.log
+            range:
+              start: 515
+              end: 515
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: Redefining \ref
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+            range:
+              start: 6428
+              end: 6428
+          log:
+            file: CR2.log
+            range:
+              start: 516
+              end: 516
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: Redefining \pageref
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+            range:
+              start: 6432
+              end: 6432
+          log:
+            file: CR2.log
+            range:
+              start: 517
+              end: 517
+        - name: pdfTeX
+          severity: info
+          text: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+          log:
+            file: CR2.log
+            range:
+              start: 530
+              end: 530
+        - severity: info
+          name: pdfTeX
+          category: Package uniquecounter
+          text: New unique counter `rerunfilecheck'
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+            range:
+              start: 282
+              end: 282
+          log:
+            file: CR2.log
+            range:
+              start: 531
+              end: 532
+        - name: pdfTeX
+          severity: info
+          text: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+          log:
+            file: CR2.log
+            range:
+              start: 536
+              end: 536
+        - severity: info
+          name: pdfTeX
+          category: Package xcolor
+          text: 'Driver file: pdftex.def'
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+            range:
+              start: 225
+              end: 225
+          log:
+            file: CR2.log
+            range:
+              start: 540
+              end: 540
+        - severity: info
+          name: pdfTeX
+          category: Package xcolor
+          text: Model `cmy' substituted by `cmy0'
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+            range:
+              start: 1348
+              end: 1348
+          log:
+            file: CR2.log
+            range:
+              start: 541
+              end: 541
+        - severity: info
+          name: pdfTeX
+          category: Package xcolor
+          text: Model `hsb' substituted by `rgb'
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+            range:
+              start: 1352
+              end: 1352
+          log:
+            file: CR2.log
+            range:
+              start: 542
+              end: 542
+        - severity: info
+          name: pdfTeX
+          category: Package xcolor
+          text: Model `RGB' extended
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+            range:
+              start: 1364
+              end: 1364
+          log:
+            file: CR2.log
+            range:
+              start: 543
+              end: 543
+        - severity: info
+          name: pdfTeX
+          category: Package xcolor
+          text: Model `HTML' substituted by `rgb'
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+            range:
+              start: 1366
+              end: 1366
+          log:
+            file: CR2.log
+            range:
+              start: 544
+              end: 544
+        - severity: info
+          name: pdfTeX
+          category: Package xcolor
+          text: Model `Hsb' substituted by `hsb'
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+            range:
+              start: 1367
+              end: 1367
+          log:
+            file: CR2.log
+            range:
+              start: 545
+              end: 545
+        - severity: info
+          name: pdfTeX
+          category: Package xcolor
+          text: Model `tHsb' substituted by `hsb'
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+            range:
+              start: 1368
+              end: 1368
+          log:
+            file: CR2.log
+            range:
+              start: 546
+              end: 546
+        - severity: info
+          name: pdfTeX
+          category: Package xcolor
+          text: Model `HSB' substituted by `hsb'
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+            range:
+              start: 1369
+              end: 1369
+          log:
+            file: CR2.log
+            range:
+              start: 547
+              end: 547
+        - severity: info
+          name: pdfTeX
+          category: Package xcolor
+          text: Model `Gray' substituted by `gray'
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+            range:
+              start: 1370
+              end: 1370
+          log:
+            file: CR2.log
+            range:
+              start: 548
+              end: 548
+        - severity: info
+          name: pdfTeX
+          category: Package xcolor
+          text: Model `wave' substituted by `hsb'
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+            range:
+              start: 1371
+              end: 1371
+          log:
+            file: CR2.log
+            range:
+              start: 549
+              end: 549
+        - name: pdfTeX
+          severity: info
+          text: ntheorem 2011/08/15 1.33
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/ntheorem/ntheorem.sty
+          log:
+            file: CR2.log
+            range:
+              start: 552
+              end: 552
+        - name: pdfTeX
+          severity: info
+          text: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+          log:
+            file: CR2.log
+            range:
+              start: 554
+              end: 554
+        - severity: info
+          name: pdfTeX
+          category: Package ntheorem
+          text: Option `amsthm' loaded
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/ntheorem/ntheorem.sty
+            range:
+              start: 1175
+              end: 1175
+          log:
+            file: CR2.log
+            range:
+              start: 586
+              end: 586
+        - name: pdfTeX
+          severity: info
+          text: amsmath 2016/11/05 v2.16a AMS math features
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+          log:
+            file: CR2.log
+            range:
+              start: 589
+              end: 589
+        - name: pdfTeX
+          severity: info
+          text: amstext 2000/06/29 v2.01 AMS text
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+          log:
+            file: CR2.log
+            range:
+              start: 593
+              end: 593
+        - name: pdfTeX
+          severity: info
+          text: amsbsy 1999/11/29 v1.2d Bold Symbols
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+          log:
+            file: CR2.log
+            range:
+              start: 599
+              end: 599
+        - name: pdfTeX
+          severity: info
+          text: amsopn 2016/03/08 v2.02 operator names
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+          log:
+            file: CR2.log
+            range:
+              start: 602
+              end: 602
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: Redefining \frac
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+            range:
+              start: 213
+              end: 213
+          log:
+            file: CR2.log
+            range:
+              start: 605
+              end: 605
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: Redefining \overline
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+            range:
+              start: 375
+              end: 375
+          log:
+            file: CR2.log
+            range:
+              start: 608
+              end: 608
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: Redefining \ldots
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+            range:
+              start: 472
+              end: 472
+          log:
+            file: CR2.log
+            range:
+              start: 611
+              end: 611
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: Redefining \dots
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+            range:
+              start: 475
+              end: 475
+          log:
+            file: CR2.log
+            range:
+              start: 612
+              end: 612
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: Redefining \cdots
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+            range:
+              start: 596
+              end: 596
+          log:
+            file: CR2.log
+            range:
+              start: 613
+              end: 613
+        - severity: info
+          name: pdfTeX
+          category: LaTeX Font
+          text: Redeclaring font encoding OML
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+            range:
+              start: 712
+              end: 712
+          log:
+            file: CR2.log
+            range:
+              start: 617
+              end: 617
+        - severity: info
+          name: pdfTeX
+          category: LaTeX Font
+          text: Redeclaring font encoding OMS
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+            range:
+              start: 713
+              end: 713
+          log:
+            file: CR2.log
+            range:
+              start: 618
+              end: 618
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: 'Redefining \['
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+            range:
+              start: 2817
+              end: 2817
+          log:
+            file: CR2.log
+            range:
+              start: 639
+              end: 639
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: 'Redefining \]'
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+            range:
+              start: 2818
+              end: 2818
+          log:
+            file: CR2.log
+            range:
+              start: 640
+              end: 640
+        - name: pdfTeX
+          severity: info
+          text: amssymb 2013/01/14 v3.01 AMS font symbols
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+          log:
+            file: CR2.log
+            range:
+              start: 642
+              end: 642
+        - name: pdfTeX
+          severity: info
+          text: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+          log:
+            file: CR2.log
+            range:
+              start: 644
+              end: 644
+        - severity: info
+          name: pdfTeX
+          category: LaTeX Font
+          text: >-
+            Overwriting math alphabet `\mathfrak' in version `bold' U/euf/m/n
+            --> U/euf/b/n.
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+            range:
+              start: 106
+              end: 106
+          log:
+            file: CR2.log
+            range:
+              start: 647
+              end: 648
+        - name: pdfTeX
+          severity: info
+          text: appendix 2009/09/02 v1.2b extra appendix facilities
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/appendix/appendix.sty
+          log:
+            file: CR2.log
+            range:
+              start: 650
+              end: 650
+        - name: pdfTeX
+          severity: info
+          text: 'natbib 2010/09/13 8.31b (PWD, AO)'
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
+          log:
+            file: CR2.log
+            range:
+              start: 655
+              end: 655
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: Redefining \cite
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
+            range:
+              start: 694
+              end: 694
+          log:
+            file: CR2.log
+            range:
+              start: 658
+              end: 658
+        - name: pdfTeX
+          severity: info
+          text: tocbibind 2010/10/13 v1.5k extra ToC listings
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/tocbibind/tocbibind.sty
+          log:
+            file: CR2.log
+            range:
+              start: 661
+              end: 661
+        - severity: info
+          name: pdfTeX
+          category: Package tocbibind
+          text: The document has chapter divisions
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/tocbibind/tocbibind.sty
+            range:
+              start: 50
+              end: 50
+          log:
+            file: CR2.log
+            range:
+              start: 662
+              end: 662
+        - severity: warning
+          name: pdfTeX
+          category: LaTeX
+          text: 'You have requested package `packages/tikz-uml'','
+          source:
+            file: packages/tikz-uml.sty
+          log:
+            file: CR2.log
+            range:
+              start: 670
+              end: 670
+        - name: pdfTeX
+          severity: info
+          text: tikz-uml 2011/01/26
+          source:
+            file: packages/tikz-uml.sty
+          log:
+            file: CR2.log
+            range:
+              start: 673
+              end: 673
+        - name: pdfTeX
+          severity: info
+          text: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
+          log:
+            file: CR2.log
+            range:
+              start: 686
+              end: 686
+        - name: pdfTeX
+          severity: info
+          text: pgfrcs 2015/08/07 v3.0.1a (rcs-revision 1.31)
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+          log:
+            file: CR2.log
+            range:
+              start: 688
+              end: 688
+        - name: pdfTeX
+          severity: info
+          text: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+          log:
+            file: CR2.log
+            range:
+              start: 690
+              end: 690
+        - name: pdfTeX
+          severity: info
+          text: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+          log:
+            file: CR2.log
+            range:
+              start: 694
+              end: 694
+        - name: pdfTeX
+          severity: info
+          text: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+          log:
+            file: CR2.log
+            range:
+              start: 741
+              end: 741
+        - name: pdfTeX
+          severity: info
+          text: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+          log:
+            file: CR2.log
+            range:
+              start: 872
+              end: 872
+        - name: pdfTeX
+          severity: info
+          text: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+          log:
+            file: CR2.log
+            range:
+              start: 878
+              end: 878
+        - name: pdfTeX
+          severity: info
+          text: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+          log:
+            file: CR2.log
+            range:
+              start: 885
+              end: 885
+        - name: pdfTeX
+          severity: info
+          text: xstring 2013/10/13 v1.7c String manipulations (C Tellechea)
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
+          log:
+            file: CR2.log
+            range:
+              start: 933
+              end: 933
+        - name: pdfTeX
+          severity: info
+          text: 'calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)'
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+          log:
+            file: CR2.log
+            range:
+              start: 935
+              end: 935
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: Redefining \setlength
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+            range:
+              start: 80
+              end: 80
+          log:
+            file: CR2.log
+            range:
+              start: 942
+              end: 942
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: Redefining \addtolength
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+            range:
+              start: 81
+              end: 81
+          log:
+            file: CR2.log
+            range:
+              start: 943
+              end: 943
+        - name: pdfTeX
+          severity: info
+          text: pgfopts 2014/07/10 v2.1a LaTeX package options with pgfkeys
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/pgfopts/pgfopts.sty
+          log:
+            file: CR2.log
+            range:
+              start: 947
+              end: 947
+        - name: pdfTeX
+          severity: info
+          text: >-
+            silence 2012/07/02 v1.5b Selective filtering of warnings and error
+            messages
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/silence/silence.sty
+          log:
+            file: CR2.log
+            range:
+              start: 1177
+              end: 1178
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: Redefining \GenericWarning
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/silence/silence.sty
+            range:
+              start: 433
+              end: 433
+          log:
+            file: CR2.log
+            range:
+              start: 1192
+              end: 1192
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: Redefining \GenericError
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/silence/silence.sty
+            range:
+              start: 601
+              end: 601
+          log:
+            file: CR2.log
+            range:
+              start: 1198
+              end: 1198
+        - severity: info
+          name: pdfTeX
+          category: LaTeX Font
+          text: Checking defaults for OML/cmm/m/it ... okay
+          source:
+            file: CR2.tex
+            range:
+              start: 52
+              end: 52
+          log:
+            file: CR2.log
+            range:
+              start: 1211
+              end: 1212
+        - severity: info
+          name: pdfTeX
+          category: LaTeX Font
+          text: Checking defaults for T1/cmr/m/n ... okay
+          source:
+            file: CR2.tex
+            range:
+              start: 52
+              end: 52
+          log:
+            file: CR2.log
+            range:
+              start: 1213
+              end: 1214
+        - severity: info
+          name: pdfTeX
+          category: LaTeX Font
+          text: Checking defaults for OT1/cmr/m/n ... okay
+          source:
+            file: CR2.tex
+            range:
+              start: 52
+              end: 52
+          log:
+            file: CR2.log
+            range:
+              start: 1215
+              end: 1216
+        - severity: info
+          name: pdfTeX
+          category: LaTeX Font
+          text: Checking defaults for OMS/cmsy/m/n ... okay
+          source:
+            file: CR2.tex
+            range:
+              start: 52
+              end: 52
+          log:
+            file: CR2.log
+            range:
+              start: 1217
+              end: 1218
+        - severity: info
+          name: pdfTeX
+          category: LaTeX Font
+          text: Checking defaults for OMX/cmex/m/n ... okay
+          source:
+            file: CR2.tex
+            range:
+              start: 52
+              end: 52
+          log:
+            file: CR2.log
+            range:
+              start: 1219
+              end: 1220
+        - severity: info
+          name: pdfTeX
+          category: LaTeX Font
+          text: Checking defaults for U/cmr/m/n ... okay
+          source:
+            file: CR2.tex
+            range:
+              start: 52
+              end: 52
+          log:
+            file: CR2.log
+            range:
+              start: 1221
+              end: 1222
+        - severity: info
+          name: pdfTeX
+          category: LaTeX Font
+          text: Checking defaults for PD1/pdf/m/n ... okay
+          source:
+            file: CR2.tex
+            range:
+              start: 52
+              end: 52
+          log:
+            file: CR2.log
+            range:
+              start: 1223
+              end: 1224
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: Redefining \degres
+          source:
+            file: CR2.tex
+            range:
+              start: 52
+              end: 52
+          log:
+            file: CR2.log
+            range:
+              start: 1225
+              end: 1225
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: Redefining \dots
+          source:
+            file: CR2.tex
+            range:
+              start: 52
+              end: 52
+          log:
+            file: CR2.log
+            range:
+              start: 1226
+              end: 1226
+        - severity: warning
+          name: pdfTeX
+          category: Package french.ldf
+          text: Please load the "natbib" package BEFORE babel/frenchb; reported.
+          source:
+            file: CR2.tex
+            range:
+              start: 52
+              end: 52
+          log:
+            file: CR2.log
+            range:
+              start: 1228
+              end: 1229
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: Redefining \up
+          source:
+            file: CR2.tex
+            range:
+              start: 52
+              end: 52
+          log:
+            file: CR2.log
+            range:
+              start: 1231
+              end: 1231
+        - name: pdfTeX
+          severity: info
+          text: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+          log:
+            file: CR2.log
+            range:
+              start: 1246
+              end: 1246
+        - name: pdfTeX
+          severity: info
+          text: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+          log:
+            file: CR2.log
+            range:
+              start: 1248
+              end: 1248
+        - severity: info
+          name: pdfTeX
+          category: Package epstopdf-base
+          text: Redefining graphics rule for `.eps'
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+            range:
+              start: 438
+              end: 438
+          log:
+            file: CR2.log
+            range:
+              start: 1250
+              end: 1251
+        - severity: info
+          name: pdfTeX
+          category: Package grfext
+          text: >-
+            Graphics extension search list:
+            [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
+            \AppendGraphicsExtensions.
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+            range:
+              start: 456
+              end: 456
+          log:
+            file: CR2.log
+            range:
+              start: 1252
+              end: 1255
+        - severity: info
+          name: pdfTeX
+          category: Package caption
+          text: Begin \AtBeginDocument code.
+          source:
+            file: CR2.tex
+          log:
+            file: CR2.log
+            range:
+              start: 1260
+              end: 1260
+        - severity: info
+          name: pdfTeX
+          category: Package caption
+          text: hyperref package is loaded.
+          source:
+            file: CR2.tex
+          log:
+            file: CR2.log
+            range:
+              start: 1261
+              end: 1261
+        - severity: info
+          name: pdfTeX
+          category: Package caption
+          text: End \AtBeginDocument code.
+          source:
+            file: CR2.tex
+          log:
+            file: CR2.log
+            range:
+              start: 1262
+              end: 1262
+        - severity: info
+          name: pdfTeX
+          category: Package hyperref
+          text: Link coloring ON
+          source:
+            file: CR2.tex
+            range:
+              start: 52
+              end: 52
+          log:
+            file: CR2.log
+            range:
+              start: 1264
+              end: 1264
+        - name: pdfTeX
+          severity: info
+          text: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+          source:
+            file: /usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+          log:
+            file: CR2.log
+            range:
+              start: 1266
+              end: 1266
+        - name: pdfTeX
+          severity: info
+          text: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+          source:
+            file: >-
+              /usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+          log:
+            file: CR2.log
+            range:
+              start: 1268
+              end: 1268
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: Redefining \ref
+          source:
+            file: CR2.tex
+            range:
+              start: 52
+              end: 52
+          log:
+            file: CR2.log
+            range:
+              start: 1272
+              end: 1272
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: Redefining \pageref
+          source:
+            file: CR2.tex
+            range:
+              start: 52
+              end: 52
+          log:
+            file: CR2.log
+            range:
+              start: 1273
+              end: 1273
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: Redefining \nameref
+          source:
+            file: CR2.tex
+            range:
+              start: 52
+              end: 52
+          log:
+            file: CR2.log
+            range:
+              start: 1274
+              end: 1274
+        - severity: info
+          name: pdfTeX
+          category: Package pdftex.def
+          text: images/umLogo.png used on input line 62.
+          source:
+            file: CR2.tex
+            range:
+              start: 62
+              end: 62
+          log:
+            file: CR2.log
+            range:
+              start: 1287
+              end: 1288
+        - severity: info
+          name: pdfTeX
+          category: Package pdftex.def
+          text: 'Requested size: 70.26231pt x 67.75294pt'
+          source:
+            file: CR2.tex
+            range:
+              start: 62
+              end: 62
+          log:
+            file: CR2.log
+            range:
+              start: 1289
+              end: 1290
+        - severity: info
+          name: pdfTeX
+          category: Package pdftex.def
+          text: images/fdsLogo.jpg used on input line 64.
+          source:
+            file: CR2.tex
+            range:
+              start: 64
+              end: 64
+          log:
+            file: CR2.log
+            range:
+              start: 1294
+              end: 1295
+        - severity: info
+          name: pdfTeX
+          category: Package pdftex.def
+          text: 'Requested size: 60.22484pt x 60.22484pt'
+          source:
+            file: CR2.tex
+            range:
+              start: 64
+              end: 64
+          log:
+            file: CR2.log
+            range:
+              start: 1296
+              end: 1297
+        - severity: info
+          name: pdfTeX
+          category: Package pdftex.def
+          text: images/lirmmLogo.png used on input line 66.
+          source:
+            file: CR2.tex
+            range:
+              start: 66
+              end: 66
+          log:
+            file: CR2.log
+            range:
+              start: 1301
+              end: 1302
+        - severity: info
+          name: pdfTeX
+          category: Package pdftex.def
+          text: 'Requested size: 51.67291pt x 63.35654pt'
+          source:
+            file: CR2.tex
+            range:
+              start: 66
+              end: 66
+          log:
+            file: CR2.log
+            range:
+              start: 1303
+              end: 1304
+        - severity: info
+          name: pdfTeX
+          category: LaTeX Font
+          text: Try loading font information for T1+cmtt
+          source:
+            file: CR2.tex
+            range:
+              start: 72
+              end: 72
+          log:
+            file: CR2.log
+            range:
+              start: 1305
+              end: 1305
+        - severity: info
+          name: pdfTeX
+          category: LaTeX Font
+          text: Try loading font information for U+msa
+          source:
+            file: CR2.tex
+            range:
+              start: 77
+              end: 77
+          log:
+            file: CR2.log
+            range:
+              start: 1309
+              end: 1309
+        - severity: info
+          name: pdfTeX
+          category: LaTeX Font
+          text: Try loading font information for U+msb
+          source:
+            file: CR2.tex
+            range:
+              start: 77
+              end: 77
+          log:
+            file: CR2.log
+            range:
+              start: 1313
+              end: 1313
+        - severity: info
+          name: pdfTeX
+          category: Package pdftex.def
+          text: images/lirmmPhoto.jpg used on input line 144.
+          source:
+            file: \T1/cmr/bx/n/12 M\T1/cmr/m/n/12 �thodes
+            range:
+              start: 144
+              end: 144
+          log:
+            file: CR2.log
+            range:
+              start: 1358
+              end: 1359
+        - severity: info
+          name: pdfTeX
+          category: Package pdftex.def
+          text: 'Requested size: 195.12718pt x 146.3454pt'
+          source:
+            file: \T1/cmr/bx/n/12 M\T1/cmr/m/n/12 �thodes
+            range:
+              start: 144
+              end: 144
+          log:
+            file: CR2.log
+            range:
+              start: 1360
+              end: 1361
+        - severity: info
+          name: pdfTeX
+          category: Package pdftex.def
+          text: images/Clients.jpg used on input line 257.
+          source:
+            file: \T1/cmr/bx/n/12 M\T1/cmr/m/n/12 �thodes
+            range:
+              start: 257
+              end: 257
+          log:
+            file: CR2.log
+            range:
+              start: 1386
+              end: 1387
+        - severity: info
+          name: pdfTeX
+          category: Package pdftex.def
+          text: 'Requested size: 376.2887pt x 425.43268pt'
+          source:
+            file: \T1/cmr/bx/n/12 M\T1/cmr/m/n/12 �thodes
+            range:
+              start: 257
+              end: 257
+          log:
+            file: CR2.log
+            range:
+              start: 1388
+              end: 1389
+        - severity: info
+          name: pdfTeX
+          category: Package atveryend
+          text: Empty hook `BeforeClearDocument'
+          source:
+            file: $
+            range:
+              start: 318
+              end: 318
+          log:
+            file: CR2.log
+            range:
+              start: 1423
+              end: 1423
+        - severity: info
+          name: pdfTeX
+          category: Package atveryend
+          text: Empty hook `AfterLastShipout'
+          source:
+            file: $
+            range:
+              start: 318
+              end: 318
+          log:
+            file: CR2.log
+            range:
+              start: 1424
+              end: 1424
+        - severity: info
+          name: pdfTeX
+          category: Package atveryend
+          text: Executing hook `AtVeryEndDocument'
+          source:
+            file: $
+            range:
+              start: 318
+              end: 318
+          log:
+            file: CR2.log
+            range:
+              start: 1428
+              end: 1428
+        - severity: info
+          name: pdfTeX
+          category: Package atveryend
+          text: Executing hook `AtEndAfterFileList'
+          source:
+            file: $
+            range:
+              start: 318
+              end: 318
+          log:
+            file: CR2.log
+            range:
+              start: 1429
+              end: 1429
+        - severity: info
+          name: pdfTeX
+          category: Package rerunfilecheck
+          text: >-
+            File `CR2.out' has not changed. Checksum:
+            83161B50FDB047ED2AC8FB7F0B7E6794;1413.
+          source:
+            file: $
+          log:
+            file: CR2.log
+            range:
+              start: 1430
+              end: 1431
+        - severity: info
+          name: pdfTeX
+          category: Package atveryend
+          text: Empty hook `AtVeryVeryEnd'
+          source:
+            file: $
+            range:
+              start: 318
+              end: 318
+          log:
+            file: CR2.log
+            range:
+              start: 1432
+              end: 1432
+      inputs: []
+      outputs:
+        - CR2.pdf
+      calls: []
+    type: ParsedLaTeXLog
+  CR2.log:
+    timeStamp: 2018-05-05T14:12:06.779Z
+    jobNames: []
+    hash: gGiGOuxLA5+aUIdDT6HGJuNO0YfVYTmkSj7acP267Co=
+    type: LaTeXLog
+    subType: pdfTeX
+  CR2.pdf:
+    timeStamp: 2018-05-05T14:12:06.779Z
+    jobNames: []
+    hash: Rs4dzmlfLtH9eSSBMg4pKAJhIjh+Ag8h1QbM+V23wxs=
+    type: PortableDocumentFormat
+  CR2.aux:
+    timeStamp: 2018-05-05T14:12:06.631Z
+    jobNames: []
+    hash: /F3H5HjZyvlVAIDe5LMTFgXgv49fnduD1EA55VZu8rE=
+    type: LaTeXAuxilary
+  CR2.fls:
+    timeStamp: 2018-05-05T14:12:06.763Z
+    jobNames: []
+    hash: Mb+RDLR9RzQXB6ueQq1IIDJYzfYBaX8RkZekyu2MCT8=
+    type: FileListing
+  CR2.synctex.gz:
+    timeStamp: 2018-05-05T14:12:06.779Z
+    jobNames: []
+    hash: COKQKaOf+8ldri5q1DGKxJ92Aif5eUwXkIiU+cq6Ipw=
+    type: SyncTeX
+  CR2.aux-ParsedLaTeXAuxilary:
+    timeStamp: 2018-05-05T12:54:03.004Z
+    jobNames: []
+    value:
+      commands:
+        - relax
+        - providecommand
+        - catcode
+        - catcode
+        - catcode
+        - catcode
+        - providecommand
+        - HyperFirstAtBeginDocument
+        - global
+        - gdef
+        - global
+        - gdef
+        - gdef
+        - AtEndDocument
+        - let
+        - let
+        - fi
+        - fi
+        - global
+        - gdef
+        - providecommand
+        - providecommand
+        - select@language
+        - '@writefile'
+        - '@writefile'
+        - '@writefile'
+        - '@writefile'
+        - '@writefile'
+        - '@writefile'
+        - '@writefile'
+        - citation
+        - '@writefile'
+        - '@writefile'
+        - providecommand
+        - newlabel
+        - '@writefile'
+        - '@writefile'
+        - '@writefile'
+        - '@writefile'
+        - '@writefile'
+        - '@writefile'
+        - '@writefile'
+        - '@writefile'
+        - '@writefile'
+        - '@writefile'
+        - '@writefile'
+        - '@writefile'
+        - '@writefile'
+        - '@writefile'
+        - '@writefile'
+        - '@writefile'
+        - '@writefile'
+        - '@writefile'
+        - '@writefile'
+        - newlabel
+        - '@writefile'
+        - '@writefile'
+        - '@writefile'
+        - '@writefile'
+        - '@writefile'
+        - '@writefile'
+        - newlabel
+        - '@writefile'
+        - bibstyle
+        - bibdata
+        - bibcite
+        - '@writefile'
+    type: ParsedLaTeXAuxilary
+  CR2.blg-ParsedBibTeXLog:
+    timeStamp: 2018-05-05T12:54:01.983Z
+    jobNames: []
+    value:
+      messages:
+        - severity: warning
+          name: BibTeX
+          text: entry type for "lirmmPres" isn't style-file defined
+          log:
+            file: CR2.blg
+            range:
+              start: 6
+              end: 7
+          source:
+            file: mybib.bib
+            range:
+              start: 1
+              end: 1
+      inputs:
+        - CR2.aux
+        - /usr/share/texlive/texmf-dist/bibtex/bst/harvard/agsm.bst
+        - mybib.bib
+      outputs: []
+      calls: []
+    type: ParsedBibTeXLog
+  /etc/texmf/web2c/texmf.cnf:
+    timeStamp: 2018-05-05T12:40:48.566Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map:
+    timeStamp: 2016-11-25T18:31:10.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbi1200.tfm:
+    timeStamp: 2016-11-25T18:31:36.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1000.tfm:
+    timeStamp: 2016-11-25T18:31:36.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm:
+    timeStamp: 2016-11-25T18:31:36.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1440.tfm:
+    timeStamp: 2016-11-25T18:31:36.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1728.tfm:
+    timeStamp: 2016-11-25T18:31:36.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx2488.tfm:
+    timeStamp: 2016-11-25T18:31:36.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/eccc1200.tfm:
+    timeStamp: 2016-11-25T18:31:36.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/eccc1440.tfm:
+    timeStamp: 2016-11-25T18:31:36.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/eccc1728.tfm:
+    timeStamp: 2016-11-25T18:31:36.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/eccc2074.tfm:
+    timeStamp: 2016-11-25T18:31:36.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm0800.tfm:
+    timeStamp: 2016-11-25T18:31:36.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1000.tfm:
+    timeStamp: 2016-11-25T18:31:36.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1200.tfm:
+    timeStamp: 2016-11-25T18:31:36.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1440.tfm:
+    timeStamp: 2016-11-25T18:31:36.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1728.tfm:
+    timeStamp: 2016-11-25T18:31:36.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm2488.tfm:
+    timeStamp: 2016-11-25T18:31:36.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecsl1200.tfm:
+    timeStamp: 2016-11-25T18:31:36.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ectc1728.tfm:
+    timeStamp: 2016-11-25T18:31:36.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecti1000.tfm:
+    timeStamp: 2016-11-25T18:31:36.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecti1200.tfm:
+    timeStamp: 2016-11-25T18:31:36.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecti1440.tfm:
+    timeStamp: 2016-11-25T18:31:36.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ectt1200.tfm:
+    timeStamp: 2016-11-25T18:31:36.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecxc1440.tfm:
+    timeStamp: 2016-11-25T18:31:36.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecxc1728.tfm:
+    timeStamp: 2016-11-25T18:31:36.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm:
+    timeStamp: 2016-11-25T18:31:38.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm:
+    timeStamp: 2016-11-25T18:31:38.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm:
+    timeStamp: 2016-11-25T18:31:38.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm:
+    timeStamp: 2016-11-25T18:31:38.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm:
+    timeStamp: 2016-11-25T18:31:38.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm:
+    timeStamp: 2016-11-25T18:31:38.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmex10.tfm:
+    timeStamp: 2016-11-25T18:31:41.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm:
+    timeStamp: 2016-11-25T18:31:41.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm:
+    timeStamp: 2016-11-25T18:31:41.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm:
+    timeStamp: 2016-11-25T18:31:41.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr12.tfm:
+    timeStamp: 2016-11-25T18:31:41.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr17.tfm:
+    timeStamp: 2016-11-25T18:31:41.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr6.tfm:
+    timeStamp: 2016-11-25T18:31:41.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr8.tfm:
+    timeStamp: 2016-11-25T18:31:41.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm:
+    timeStamp: 2016-11-25T18:31:41.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm:
+    timeStamp: 2016-11-25T18:31:41.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm:
+    timeStamp: 2016-11-25T18:31:41.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb:
+    timeStamp: 2016-11-25T18:32:13.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb:
+    timeStamp: 2016-11-25T18:32:13.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii:
+    timeStamp: 2016-11-25T18:33:26.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/tex/generic/babel-french/french.ldf:
+    timeStamp: 2017-07-13T23:06:10.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/tex/generic/babel-french/frenchb.ldf:
+    timeStamp: 2017-07-13T23:06:10.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/tex/generic/babel/babel.def:
+    timeStamp: 2017-06-29T21:28:45.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty:
+    timeStamp: 2017-06-29T21:28:45.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/generic/babel/switch.def:
+    timeStamp: 2017-06-29T21:28:45.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty:
+    timeStamp: 2016-11-25T18:33:35.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty:
+    timeStamp: 2016-11-25T18:33:35.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty:
+    timeStamp: 2017-03-26T21:48:50.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty:
+    timeStamp: 2016-11-25T18:33:35.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybackgrounds.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.markings.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfadings.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfit.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshadows.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.arrows.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.callouts.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.misc.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.multipart.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.symbols.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.markings.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.arrows.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.callouts.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.misc.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.symbols.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def:
+    timeStamp: 2016-11-25T18:33:36.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty:
+    timeStamp: 2016-11-25T18:33:39.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex:
+    timeStamp: 2016-11-25T18:33:39.000Z
+    jobNames: []
+    type: TeX
+  /usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty:
+    timeStamp: 2016-11-25T18:33:40.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty:
+    timeStamp: 2016-11-25T18:33:40.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd:
+    timeStamp: 2016-11-25T18:33:40.000Z
+    jobNames: []
+    type: FontDescription
+  /usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd:
+    timeStamp: 2016-11-25T18:33:40.000Z
+    jobNames: []
+    type: FontDescription
+  /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty:
+    timeStamp: 2016-11-25T18:33:40.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty:
+    timeStamp: 2016-11-25T18:33:40.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty:
+    timeStamp: 2017-01-23T00:01:05.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty:
+    timeStamp: 2016-11-25T18:33:40.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty:
+    timeStamp: 2016-11-25T18:33:40.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/appendix/appendix.sty:
+    timeStamp: 2016-11-25T18:33:40.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty:
+    timeStamp: 2017-04-15T22:59:15.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty:
+    timeStamp: 2016-11-25T18:33:41.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty:
+    timeStamp: 2016-11-25T18:33:41.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu:
+    timeStamp: 2017-02-22T00:01:07.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu:
+    timeStamp: 2017-02-22T00:01:07.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/tex/latex/base/report.cls:
+    timeStamp: 2016-11-25T18:33:41.000Z
+    jobNames: []
+    type: LaTeXClass
+  /usr/share/texlive/texmf-dist/tex/latex/base/size12.clo:
+    timeStamp: 2016-11-25T18:33:41.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd:
+    timeStamp: 2016-11-25T18:33:41.000Z
+    jobNames: []
+    type: FontDescription
+  /usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def:
+    timeStamp: 2017-04-15T22:59:15.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu:
+    timeStamp: 2017-02-22T00:01:07.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/tex/latex/base/utf8.def:
+    timeStamp: 2017-02-22T00:01:07.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty:
+    timeStamp: 2016-11-25T18:33:43.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty:
+    timeStamp: 2016-11-25T18:33:43.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty:
+    timeStamp: 2016-11-25T18:33:43.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/carlisle/scalefnt.sty:
+    timeStamp: 2016-11-25T18:33:43.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg:
+    timeStamp: 2016-11-25T18:33:50.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg:
+    timeStamp: 2016-11-25T18:33:50.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def:
+    timeStamp: 2017-06-25T21:51:33.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty:
+    timeStamp: 2017-06-25T21:52:12.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty:
+    timeStamp: 2017-06-25T21:52:12.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty:
+    timeStamp: 2016-11-25T18:33:50.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty:
+    timeStamp: 2016-11-25T18:33:50.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def:
+    timeStamp: 2017-03-19T23:01:09.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty:
+    timeStamp: 2017-03-19T23:01:09.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty:
+    timeStamp: 2016-11-25T18:33:51.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def:
+    timeStamp: 2017-03-19T23:01:09.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg:
+    timeStamp: 2016-11-25T18:33:53.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg:
+    timeStamp: 2016-11-25T18:33:53.000Z
+    jobNames: []
+  /usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty:
+    timeStamp: 2016-11-25T18:33:55.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty:
+    timeStamp: 2017-08-18T02:46:06.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/ntheorem/ntheorem.sty:
+    timeStamp: 2016-11-25T18:33:56.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty:
+    timeStamp: 2016-11-25T18:33:56.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty:
+    timeStamp: 2016-11-25T18:33:56.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty:
+    timeStamp: 2016-11-25T18:33:56.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty:
+    timeStamp: 2016-11-25T18:33:56.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty:
+    timeStamp: 2016-11-25T18:33:56.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty:
+    timeStamp: 2016-11-25T18:33:57.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty:
+    timeStamp: 2016-11-25T18:33:57.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty:
+    timeStamp: 2016-11-25T18:33:57.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty:
+    timeStamp: 2016-11-25T18:33:57.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty:
+    timeStamp: 2016-11-25T18:33:57.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty:
+    timeStamp: 2016-11-25T18:33:57.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty:
+    timeStamp: 2016-11-25T18:33:57.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty:
+    timeStamp: 2016-11-25T18:33:57.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty:
+    timeStamp: 2016-11-25T18:33:57.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty:
+    timeStamp: 2016-11-25T18:33:57.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/pgfopts/pgfopts.sty:
+    timeStamp: 2016-11-25T18:33:57.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/silence/silence.sty:
+    timeStamp: 2016-11-25T18:33:59.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/tocbibind/tocbibind.sty:
+    timeStamp: 2016-11-25T18:34:01.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty:
+    timeStamp: 2016-11-25T18:34:01.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/url/url.sty:
+    timeStamp: 2016-11-25T18:34:02.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty:
+    timeStamp: 2016-11-25T18:34:03.000Z
+    jobNames: []
+    type: LaTeXStyle
+  /usr/share/texlive/texmf-dist/web2c/texmf.cnf:
+    timeStamp: 2017-08-18T02:46:06.000Z
+    jobNames: []
+  /usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc:
+    timeStamp: 2017-06-19T07:41:21.000Z
+    jobNames: []
+  /usr/share/texmf/fonts/type1/public/cm-super/sfbi1200.pfb:
+    timeStamp: 2018-05-05T12:42:32.945Z
+    jobNames: []
+  /usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb:
+    timeStamp: 2017-06-19T07:41:21.000Z
+    jobNames: []
+  /usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb:
+    timeStamp: 2018-05-05T12:42:33.073Z
+    jobNames: []
+  /usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb:
+    timeStamp: 2018-05-05T12:42:33.089Z
+    jobNames: []
+  /usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb:
+    timeStamp: 2018-05-05T12:42:33.093Z
+    jobNames: []
+  /usr/share/texmf/fonts/type1/public/cm-super/sfbx2488.pfb:
+    timeStamp: 2018-05-05T12:42:33.097Z
+    jobNames: []
+  /usr/share/texmf/fonts/type1/public/cm-super/sfcc1200.pfb:
+    timeStamp: 2018-05-05T12:42:33.117Z
+    jobNames: []
+  /usr/share/texmf/fonts/type1/public/cm-super/sfcc1440.pfb:
+    timeStamp: 2018-05-05T12:42:33.121Z
+    jobNames: []
+  /usr/share/texmf/fonts/type1/public/cm-super/sfcc1728.pfb:
+    timeStamp: 2018-05-05T12:42:33.121Z
+    jobNames: []
+  /usr/share/texmf/fonts/type1/public/cm-super/sfcc2074.pfb:
+    timeStamp: 2018-05-05T12:42:33.125Z
+    jobNames: []
+  /usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb:
+    timeStamp: 2018-05-05T12:42:33.457Z
+    jobNames: []
+  /usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb:
+    timeStamp: 2017-06-19T07:41:21.000Z
+    jobNames: []
+  /usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb:
+    timeStamp: 2018-05-05T12:42:33.461Z
+    jobNames: []
+  /usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb:
+    timeStamp: 2018-05-05T12:42:33.461Z
+    jobNames: []
+  /usr/share/texmf/fonts/type1/public/cm-super/sfsl1200.pfb:
+    timeStamp: 2018-05-05T12:42:33.537Z
+    jobNames: []
+  /usr/share/texmf/fonts/type1/public/cm-super/sftc1728.pfb:
+    timeStamp: 2018-05-05T12:42:33.725Z
+    jobNames: []
+  /usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb:
+    timeStamp: 2017-06-19T07:41:21.000Z
+    jobNames: []
+  /usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb:
+    timeStamp: 2018-05-05T12:42:33.765Z
+    jobNames: []
+  /usr/share/texmf/fonts/type1/public/cm-super/sfti1440.pfb:
+    timeStamp: 2018-05-05T12:42:33.765Z
+    jobNames: []
+  /usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb:
+    timeStamp: 2018-05-05T12:42:33.801Z
+    jobNames: []
+  /usr/share/texmf/fonts/type1/public/cm-super/sfxc1440.pfb:
+    timeStamp: 2018-05-05T12:42:33.953Z
+    jobNames: []
+  /usr/share/texmf/fonts/type1/public/cm-super/sfxc1728.pfb:
+    timeStamp: 2018-05-05T12:42:33.953Z
+    jobNames: []
+  /usr/share/texmf/web2c/texmf.cnf:
+    timeStamp: 2017-08-18T02:46:06.000Z
+    jobNames: []
+  /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map:
+    timeStamp: 2018-05-05T12:42:56.618Z
+    jobNames: []
+  /var/lib/texmf/web2c/pdftex/pdflatex.fmt:
+    timeStamp: 2018-05-05T12:43:35.415Z
+    jobNames: []
+  CR2.out:
+    timeStamp: 2018-05-05T14:12:06.631Z
+    jobNames: []
+    hash: AXI5jaaoDJgKy3OfxtkB9NN9OZJWWENg6R2NnFFhNqo=
+    type: OUT
+  CR2.toc:
+    timeStamp: 2018-05-05T14:12:06.631Z
+    jobNames: []
+    hash: 0R8udC8y9TDWN5ylg4214whiJb1yKkkcy9sYCcuJlts=
+    type: TableOfContents
+  images/Clients.jpg:
+    timeStamp: 2018-05-05T09:50:02.094Z
+    jobNames: []
+    hash: C+D1mXh9jqPKl+51QAJdOUPzB4V9Qem0yNd1f677eSs=
+  images/fdsLogo.jpg:
+    timeStamp: 2018-05-05T09:50:02.098Z
+    jobNames: []
+    hash: KrAngrUUMnliDr6sXjPaDHQPxDFrJLcY6LzyS3B8a6Q=
+  images/lirmmLogo.png:
+    timeStamp: 2018-05-05T09:50:02.098Z
+    jobNames: []
+    hash: yc2zhNxMUGwiV8DM5mVJiZKRNV2Lgmw/vaSJ1qtj2OM=
+  images/lirmmPhoto.jpg:
+    timeStamp: 2018-05-05T09:50:02.110Z
+    jobNames: []
+    hash: cIgKwOs3AVaxFSbx+kf7MKNcP9enQxkuRNiPsP1kYNg=
+  images/umLogo.png:
+    timeStamp: 2018-05-05T09:50:02.142Z
+    jobNames: []
+    hash: oW7o2XAYEbKA0ScqwjpFWlsxXlFEHOictXddBkucZCw=
+  packages/tikz-uml.sty:
+    timeStamp: 2018-05-05T09:50:02.146Z
+    jobNames: []
+    hash: ufJo2lCasaFTSp8TXm7irxTP3hz0sR4MTHi8IJRcLdw=
+    type: LaTeXStyle
+  CR2.thm:
+    timeStamp: 2018-05-05T14:12:06.631Z
+    jobNames: []
+    hash: 47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+  CR2.bbl:
+    timeStamp: 2018-05-05T14:12:05.555Z
+    jobNames: []
+    hash: tVnqipi8npFINdDJ7v/+xV0B3Tg6ggQ9GOf43uKRMGM=
+  CR2.blg:
+    timeStamp: 2018-05-05T14:12:05.555Z
+    jobNames: []
+    hash: J/epQiDNlJn5MLJXEUCRkKOOfwGRwGudyP8nlgJ4b2E=
+    type: BibTeXLog
+    subType: BibTeX
+  /usr/share/texlive/texmf-dist/bibtex/bst/harvard/agsm.bst:
+    timeStamp: 2016-11-25T18:27:15.000Z
+    jobNames: []
+    type: BibTeXStyle
+  mybib.bib:
+    timeStamp: 2018-05-05T09:50:02.142Z
+    jobNames: []
+    hash: MZeoNuHdBywu05wXFnWtQh0/0rZBFJeRnP5peUGvWhw=
+    type: BibTeXFile
+rules:
+  - name: ApplyOptions
+    command: load
+    phase: initialize
+    parameters: []
+    inputs:
+      - file: dicy.yaml-ParsedYAML
+        type: default
+      - file: CR2.yaml-ParsedYAML
+        type: default
+      - file: CR2.tex-ParsedLaTeXMagic
+        type: default
+      - file: dicy-instance.yaml-ParsedYAML
+        type: default
+      - file: /home/wissem/.config/dicy/config.yaml-ParsedYAML
+        type: default
+    outputs: []
+  - name: LoadAndValidateCache
+    command: load
+    phase: initialize
+    parameters: []
+    inputs: []
+    outputs: []
+  - name: Migrate
+    command: load
+    phase: initialize
+    parameters: []
+    inputs: []
+    outputs: []
+  - name: ApplyOptions
+    command: load
+    phase: execute
+    parameters: []
+    inputs:
+      - file: dicy.yaml-ParsedYAML
+        type: default
+      - file: CR2.yaml-ParsedYAML
+        type: default
+      - file: CR2.tex-ParsedLaTeXMagic
+        type: default
+      - file: dicy-instance.yaml-ParsedYAML
+        type: default
+      - file: /home/wissem/.config/dicy/config.yaml-ParsedYAML
+        type: default
+    outputs: []
+  - name: ParseOptionsFile
+    command: load
+    phase: execute
+    parameters: []
+    inputs:
+      - file: /home/wissem/.config/dicy/config.yaml
+        type: default
+    outputs:
+      - file: /home/wissem/.config/dicy/config.yaml-ParsedYAML
+        type: default
+  - name: ParseLaTeXMagic
+    command: load
+    phase: execute
+    parameters:
+      - CR2.tex
+    inputs:
+      - file: CR2.tex
+        type: default
+    outputs:
+      - file: CR2.tex-ParsedLaTeXMagic
+        type: default
+  - name: AssignJobNames
+    command: load
+    phase: finalize
+    parameters: []
+    inputs: []
+    outputs: []
+  - name: FindLogFiles
+    command: build
+    phase: initialize
+    parameters: []
+    inputs: []
+    outputs: []
+  - name: LaTeX
+    command: build
+    phase: execute
+    parameters:
+      - CR2.tex
+    inputs:
+      - file: CR2.tex
+        type: default
+      - file: CR2.fls-ParsedFileListing
+        type: default
+      - file: CR2.log-ParsedLaTeXLog
+        type: default
+      - file: CR2.aux
+        type: default
+      - file: /etc/texmf/web2c/texmf.cnf
+        type: default
+      - file: /usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map
+        type: default
+      - file: /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbi1200.tfm
+        type: default
+      - file: /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1000.tfm
+        type: default
+      - file: /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm
+        type: default
+      - file: /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1440.tfm
+        type: default
+      - file: /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1728.tfm
+        type: default
+      - file: /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx2488.tfm
+        type: default
+      - file: /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/eccc1200.tfm
+        type: default
+      - file: /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/eccc1440.tfm
+        type: default
+      - file: /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/eccc1728.tfm
+        type: default
+      - file: /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/eccc2074.tfm
+        type: default
+      - file: /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm0800.tfm
+        type: default
+      - file: /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1000.tfm
+        type: default
+      - file: /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1200.tfm
+        type: default
+      - file: /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1440.tfm
+        type: default
+      - file: /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1728.tfm
+        type: default
+      - file: /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm2488.tfm
+        type: default
+      - file: /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecsl1200.tfm
+        type: default
+      - file: /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ectc1728.tfm
+        type: default
+      - file: /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecti1000.tfm
+        type: default
+      - file: /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecti1200.tfm
+        type: default
+      - file: /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecti1440.tfm
+        type: default
+      - file: /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ectt1200.tfm
+        type: default
+      - file: /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecxc1440.tfm
+        type: default
+      - file: /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecxc1728.tfm
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+        type: default
+      - file: /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
+        type: default
+      - file: /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
+        type: default
+      - file: /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm
+        type: default
+      - file: /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm
+        type: default
+      - file: /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
+        type: default
+      - file: /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
+        type: default
+      - file: /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
+        type: default
+      - file: /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
+        type: default
+      - file: /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+        type: default
+      - file: /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm
+        type: default
+      - file: /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm
+        type: default
+      - file: /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
+        type: default
+      - file: /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/generic/babel-french/french.ldf
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/generic/babel-french/frenchb.ldf
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/generic/babel/switch.def
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybackgrounds.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.markings.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfadings.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfit.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshadows.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.arrows.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.callouts.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.misc.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.multipart.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.symbols.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.markings.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.arrows.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.callouts.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.misc.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.symbols.code.tex
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/appendix/appendix.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/base/report.cls
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/carlisle/scalefnt.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/ntheorem/ntheorem.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+        type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/pgfopts/pgfopts.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/silence/silence.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/tocbibind/tocbibind.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+        type: default
+      - file: /usr/share/texlive/texmf-dist/web2c/texmf.cnf
+        type: default
+      - file: /usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc
+        type: default
+      - file: /usr/share/texmf/fonts/type1/public/cm-super/sfbi1200.pfb
+        type: default
+      - file: /usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb
+        type: default
+      - file: /usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb
+        type: default
+      - file: /usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb
+        type: default
+      - file: /usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb
+        type: default
+      - file: /usr/share/texmf/fonts/type1/public/cm-super/sfbx2488.pfb
+        type: default
+      - file: /usr/share/texmf/fonts/type1/public/cm-super/sfcc1200.pfb
+        type: default
+      - file: /usr/share/texmf/fonts/type1/public/cm-super/sfcc1440.pfb
+        type: default
+      - file: /usr/share/texmf/fonts/type1/public/cm-super/sfcc1728.pfb
+        type: default
+      - file: /usr/share/texmf/fonts/type1/public/cm-super/sfcc2074.pfb
+        type: default
+      - file: /usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb
+        type: default
+      - file: /usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb
+        type: default
+      - file: /usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb
+        type: default
+      - file: /usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb
+        type: default
+      - file: /usr/share/texmf/fonts/type1/public/cm-super/sfsl1200.pfb
+        type: default
+      - file: /usr/share/texmf/fonts/type1/public/cm-super/sftc1728.pfb
+        type: default
+      - file: /usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb
+        type: default
+      - file: /usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb
+        type: default
+      - file: /usr/share/texmf/fonts/type1/public/cm-super/sfti1440.pfb
+        type: default
+      - file: /usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb
+        type: default
+      - file: /usr/share/texmf/fonts/type1/public/cm-super/sfxc1440.pfb
+        type: default
+      - file: /usr/share/texmf/fonts/type1/public/cm-super/sfxc1728.pfb
+        type: default
+      - file: /usr/share/texmf/web2c/texmf.cnf
+        type: default
+      - file: /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
+        type: default
+      - file: /var/lib/texmf/web2c/pdftex/pdflatex.fmt
+        type: default
+      - file: CR2.out
+        type: default
+      - file: CR2.toc
+        type: default
+      - file: images/Clients.jpg
+        type: default
+      - file: images/fdsLogo.jpg
+        type: default
+      - file: images/lirmmLogo.png
+        type: default
+      - file: images/lirmmPhoto.jpg
+        type: default
+      - file: images/umLogo.png
+        type: default
+      - file: packages/tikz-uml.sty
+        type: default
+      - file: CR2.bbl
+        type: default
+    outputs:
+      - file: CR2.pdf
+        type: target
+      - file: CR2.aux
+        type: default
+      - file: CR2.fls
+        type: default
+      - file: CR2.log
+        type: default
+      - file: CR2.synctex.gz
+        type: target
+      - file: CR2.out
+        type: default
+      - file: CR2.thm
+        type: default
+      - file: CR2.toc
+        type: default
+  - name: LogProducedTargets
+    command: build
+    phase: finalize
+    parameters: []
+    inputs: []
+    outputs: []
+  - name: CheckForMissingBuildRule
+    command: build
+    phase: finalize
+    parameters:
+      - CR2.tex
+    inputs:
+      - file: CR2.tex
+        type: default
+    outputs: []
+  - name: FindLogFiles
+    command: log
+    phase: initialize
+    parameters: []
+    inputs: []
+    outputs: []
+  - name: ReportLogMessages
+    command: log
+    phase: execute
+    parameters:
+      - CR2.log-ParsedLaTeXLog
+    inputs:
+      - file: CR2.log-ParsedLaTeXLog
+        type: default
+    outputs: []
+  - name: ParseLaTeXLog
+    command: log
+    phase: execute
+    parameters:
+      - CR2.log
+    inputs:
+      - file: CR2.log
+        type: default
+    outputs:
+      - file: CR2.log-ParsedLaTeXLog
+        type: default
+  - name: SaveCache
+    command: save
+    phase: execute
+    parameters: []
+    inputs: []
+    outputs: []
+  - name: ParseLaTeXLog
+    command: build
+    phase: execute
+    parameters:
+      - CR2.log
+    inputs:
+      - file: CR2.log
+        type: default
+    outputs:
+      - file: CR2.log-ParsedLaTeXLog
+        type: default
+  - name: ParseLaTeXAuxilary
+    command: build
+    phase: execute
+    parameters:
+      - CR2.aux
+    inputs:
+      - file: CR2.aux
+        type: default
+    outputs:
+      - file: CR2.aux-ParsedLaTeXAuxilary
+        type: default
+  - name: ParseFileListing
+    command: build
+    phase: execute
+    parameters:
+      - CR2.fls
+    inputs:
+      - file: CR2.fls
+        type: default
+    outputs:
+      - file: CR2.fls-ParsedFileListing
+        type: default
+  - name: BibTeX
+    command: build
+    phase: execute
+    parameters:
+      - CR2.aux
+      - CR2.aux-ParsedLaTeXAuxilary
+    inputs:
+      - file: CR2.aux
+        type: default
+      - file: CR2.aux-ParsedLaTeXAuxilary
+        type: default
+      - file: CR2.log-ParsedLaTeXLog
+        type: default
+      - file: CR2.blg-ParsedBibTeXLog
+        type: default
+      - file: /usr/share/texlive/texmf-dist/bibtex/bst/harvard/agsm.bst
+        type: default
+      - file: mybib.bib
+        type: default
+    outputs:
+      - file: CR2.bbl
+        type: default
+      - file: CR2.blg
+        type: default
+  - name: ParseBibTeXLog
+    command: build
+    phase: execute
+    parameters:
+      - CR2.blg
+    inputs:
+      - file: CR2.blg
+        type: default
+    outputs:
+      - file: CR2.blg-ParsedBibTeXLog
+        type: default
+  - name: ReportLogMessages
+    command: log
+    phase: execute
+    parameters:
+      - CR2.blg-ParsedBibTeXLog
+    inputs:
+      - file: CR2.blg-ParsedBibTeXLog
+        type: default
+    outputs: []
+  - name: ParseBibTeXLog
+    command: log
+    phase: execute
+    parameters:
+      - CR2.blg
+    inputs:
+      - file: CR2.blg
+        type: default
+    outputs:
+      - file: CR2.blg-ParsedBibTeXLog
+        type: default

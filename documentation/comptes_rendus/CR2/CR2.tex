@@ -1,0 +1,318 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage[colorlinks,urlcolor=blue,citecolor=red]{hyperref} %hyperlinks
+\usepackage{xcolor} %color text
+\usepackage[amsthm]{ntheorem} %theorems and co.
+\usepackage{amsmath} %mathematical symbols
+\usepackage{amssymb} %squares in itemize
+\usepackage[page,toc,titletoc,title]{appendix} %appendices
+\usepackage{natbib} %bibliography
+\usepackage[nottoc,notlot,notlof]{tocbibind} %bind the table of contents to the bibligoraphy
+\usepackage{packages/tikz-uml} %UML elements
+\usepackage{silence} %silencing warnings
+\WarningFilter{latex}{Text page}
+
+%Defining custom commands for relational model
+\newcommand{\attr}[1]{\emph{#1}}
+\newcommand{\texit}[1]{\#\textsl{#1}}
+
+%Redefining the appendices name to "Annexes" in toc and removing "Annexe" from appendice title
+\renewcommand{\appendixtocname}{Annexes}
+\appendixtitletocoff
+
+%Redefining the appendices name to "Annexes" in the report
+\renewcommand{\appendixpagename}{Annexes}
+
+%Defining a new command for the horizontal lines
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+%Defining custom environments
+\theoremstyle{break}
+\newtheorem*{userStory}{User Story}
+
+\theoremstyle{break}
+\newtheorem*{definition}{Définition}
+
+\theoremstyle{break}
+\newtheorem*{property}{Propriété}
+
+\theoremstyle{break}
+\newtheorem*{constraint}{Règle}
+
+\theoremstyle{definition}
+\newtheorem*{example}{Exemple}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{\textbf{Remarque}}
+
+\begin{document}
+\pagenumbering{roman}
+%----------------------------------------------------------------------------------------
+%   TITLE PAGE
+%----------------------------------------------------------------------------------------
+\begin{titlepage}
+\centering
+%----------------------------------------------------------------------------------------
+%   LOGOS SECTION
+%----------------------------------------------------------------------------------------
+\includegraphics[scale=0.5]{images/umLogo.png} %Université de Montpellier Logo
+\hspace{\fill}
+\includegraphics[scale=0.25]{images/fdsLogo.jpg} %Faculté de Sciences Logo
+\hspace{\fill}
+\includegraphics[scale=0.25]{images/lirmmLogo.png}~\\[2cm] %LIRMM Logo
+%----------------------------------------------------------------------------------------
+%   HEADING SECTIONS
+%----------------------------------------------------------------------------------------
+\textsc{\LARGE L3 CMI Informatique}\\[0.5cm]
+\textsc{\Large \textbf{HLIN601} -- TERL3}\\[0.25cm]
+\textsc{\Large \texttt{CourtCircuit}}\\[2cm]
+%----------------------------------------------------------------------------------------
+%   TITLE SECTION
+%----------------------------------------------------------------------------------------
+\HRule \\[0.4cm]
+{\huge \bfseries RAPPORT \#$2$}\\[0.1cm]
+\HRule \\[2cm]
+%----------------------------------------------------------------------------------------
+%   STUDENTS SECTION
+%----------------------------------------------------------------------------------------
+\begin{minipage}{0.5\textwidth}
+\centering \large
+\textbf{Bachar \textsc{Rima}}\\
+\textbf{Othmane \textsc{Farajallah}}\\
+\textbf{Wissem \textsc{Soussi}}
+\end{minipage} \\[2cm]
+%----------------------------------------------------------------------------------------
+%   SUPERVISORS SECTION
+%----------------------------------------------------------------------------------------
+\begin{minipage}[b]{0.5\textwidth}
+\begin{flushleft} \large
+\emph{Responsable CMI Informatique :} \\
+Anne-Elisabeth \textsc{Baert} \\
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}[b]{0.4\textwidth}
+\begin{flushright} \large
+\emph{Encadrant :}\\
+Eric \textsc{Bourreau}
+\end{flushright}
+\end{minipage}\\[1.5cm]
+%----------------------------------------------------------------------------------------
+%   DATE SECTION
+%----------------------------------------------------------------------------------------
+{\large \today}\\[1cm]
+\hspace{\fill}
+\vfill % Fill the rest of the page with whitespace
+\end{titlepage}
+%----------------------------------------------------------------------------------------
+%   TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+{
+  \hypersetup{linkcolor=black}
+  \tableofcontents
+  \setcounter{page}{3}
+}
+%----------------------------------------------------------------------------------------
+%   INTRODUCTION
+%----------------------------------------------------------------------------------------
+\chapter{Introduction}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+%----------------------------------------------------------------------------------------
+%   CONTEXTE DU PROJET
+%----------------------------------------------------------------------------------------
+\section{Contexte du projet}
+Dans ce rapport, nous nous consacrons à la description détaillée de la phase d'implémentation du projet intitulé \texttt{CourCircuit}\footnote{précédemment nommé \textbf{LaRuche}} à effectuer au sein du \textbf{LIRMM} (\textbf{L}aboratoire d'\textbf{I}nformatique, de \textbf{R}obotique et de \textbf{M}icroélectronique de \textbf{M}ontpellier) dans le cadre du module \textbf{HLIN601 -- TER} de la $3$\ieme{} année de licence en informatique \textbf{CMI} (\textbf{C}ursus \textbf{M}aster \textbf{I}ngénierie).
+
+Le projet se déroule sous l'encadrement de Mme Anne-Elisabeth Baert, enseignante/chercheuse au sein du LIRMM dans l'équipe \textbf{MAORE} (\textbf{M}éthodes \textbf{A}lgorithmes pour l'\textbf{O}rdonnancement et les \textbf{Ré}seaux), en tant que responsable de la formation CMI informatique et M. Eric Bourreau, enseignant/chercheur au sein du LIRMM dans la même équipe \textbf{MAORE}, en tant que responsable pédagogique et encadrant du projet.
+
+Le sujet du projet consiste en la création d'un site web représentant une interface de communication entre fournisseurs de produits locaux et leurs clients. Il est inspiré du site \og \href{https://laruchequiditoui.fr/fr}{La Ruche Qui Dit Oui} \fg traitant le même thème et répondant aux mêmes besoins, cependant adoptant une approche différente, surtout au niveau de la logistique et de l'architecture du site, afin de fournir une vision différente, voire plus optimisée de la gestion des interactions directes entre clients et fournisseurs.
+
+Nous commencerons ce rapport en faisant un récapitulatif du contexte du projet, des problématiques traitées, et de la méthodologie et des outils de conception adoptés. De plus, nous proposerons une courte description des outils d'implémentation choisis pour la mise en \oe{}uvre. Après, nous procéderons à la description détaillée des outils d'implémentation et à la présentation des résultats obtenus. Enfin, nous conclurons en discutant les difficultés survenues lors du développement et les perspectives du projet.
+%----------------------------------------------------------------------------------------
+%   PRÉSENTATION DU LIRMM
+%----------------------------------------------------------------------------------------
+\section{Présentation du LIRMM}
+\og Le [...] – LIRMM – est une unité mixte de recherche, dépendant conjointement de l'Université Montpellier et du Centre National de la Recherche Scientifique [(CNRS)]. Il est situé sur le Campus Saint-Priest de l'UM [(Figure \ref{fig:lirmmPhoto})].
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[scale=0.9]{images/lirmmPhoto.jpg}
+  \caption{bâtiment 3 du LIRMM, Campus St. Priest}
+  \label{fig:lirmmPhoto}
+\end{figure}
+
+Les travaux sont menés dans trois départements scientifiques de recherche, [(L’Informatique, La Robotique, et La Microélectronique)] eux-mêmes organisés en \og équipes-projet \fg.
+
+Les recherches menées au LIRMM trouvent généralement une finalisation dans des domaines applicatifs aussi divers que la biologie, la chimie, les télécommunications, la santé, l'environnement... et dans les domaines propres du laboratoire : l'informatique, l'électronique et l'automatique.
+
+Ses activités de recherche [le] positionnent [...] pleinement au coeur des sciences et technologies de l’information, de la communication et des systèmes. [En particulier,] les thématiques du département Informatique s’étendent des frontières des mathématiques à la recherche appliquée : algorithmique des graphes, bioinformatique, cryptographie, réseaux, bases de données et systèmes d'information [...], génie logiciel [...], intelligence artificielle [...], interaction homme-machine [...]. \fg{} \citep{lirmmPres}
+%----------------------------------------------------------------------------------------
+%   PROBLÈME, MÉTHODOLOGIE, OUTILS ET PLANNING
+%----------------------------------------------------------------------------------------
+\chapter{Problème, Méthodologie, et Outils}
+%----------------------------------------------------------------------------------------
+%   PROBLÈME
+%----------------------------------------------------------------------------------------
+\section{Problème}
+Les consommateurs cherchent de \textit{plus en plus} à acheter des produits frais minimisant les étapes de \textit{processing}, alors que les producteurs cherchent à se libérer des centres d’achat et des intermédiaires de distribution.
+
+Dans l’esprit du site francais \href{https://laruchequiditoui.fr/fr}{LaRucheQuiDitOui}, on souhaite implémenter une interface sous forme d'un \textbf{site web} d'\textit{e-commerce} permettant aux producteurs de vendre des sélections diversifiées de produits aux consommateurs en se regroupant dans des endroits précis de collecte.
+
+Le site web offrira ainsi \textbf{tout ce dont il est nécessaire} aux consommateurs pour effectuer des commandes prépayées et précisera ensuite les points de collecte de produits les plus proches. D'autre part, il mettra à la disposition des fournisseurs la possibilité d'organiser ces points, de gérer la mise à jour des stocks et la mise en vente/prise de commandes par les clients, en se basant sur des algorithmes d'optimisation se portant aussi bien sur la gestion de la logistique, la préparation/facturation des commandes, que sur la redistribution/partage des produits entre les différents fournisseurs voisins.
+%----------------------------------------------------------------------------------------
+%   MÉTHODOLOGIE
+%----------------------------------------------------------------------------------------
+\section{Méthodologie}
+Dans le but d'assurer une bonne gestion des ressources et d'offrir le plus de fonctionnalités possibles aux utilisateurs, en les implémentant itérativement dans des versions fonctionnelles et testées du site, nous avons opté pour une approche basée sur les \textbf{méthodes agiles} de développement, en particulier sur \textbf{XP}\footnote{\textit{eXtreme Programming}}.
+
+En effet, la méthodologie de développement proposée par les méthodes agiles étant de plus en plus prépondérante en génie logiciel, nous avons décidé de l'utiliser pour la modélisation et l'implémentation de notre site web afin d'assurer le plus d'extensibilité et de flexibilité possibles.
+%----------------------------------------------------------------------------------------
+%   OUTILS DE CONCEPTION
+%----------------------------------------------------------------------------------------
+\section{Outils de conception}
+Pour garantir une bonne modélisation du projet, en cohérence avec l'approche de la méthodologie discutée précédemment, nous avons explicité les spécifications fonctionnelles et organisationnelles de notre projet en servant des outils suivants :
+\begin{description}
+  \item[\textit{user stories}]{des requis fournis par les utilisateurs décrivant en langage naturel les fonctionnalités qu'ils souhaitent avoir dans le site.}
+  \item[diagrammes de cas d'usage]{des diagrammes dynamiques, souvent utilisés en \textbf{UML} pour décrire en haut niveau les fonctionnalités d'un système, en se servant de notions telles que \textbf{acteurs}, \textbf{cas d'usage}, \textbf{systèmes} et les \textbf{relations} entre chacune de ces entités.}
+  \item[modèle EA]{un modèle \textbf{conceptuel} utilisé pour décrire les entités du projet ainsi que les associations décrivant leurs relations et comportements.}
+  \item[schéma de base de données]{schéma en modèle \textbf{relationnel} composé des schémas des relations et des contraintes d'intégrité sur l'ensemble des relations, traduit généralement à partir du \textbf{modèle EA} et servant comme \textbf{modèle logique} lors de l'implémentation de la \textbf{base de données}.}
+  \item[\textit{mockup storyboard}]{document de haut niveau offrant un moyen pour schématiser l'utilisation d'un projet, en positionant les différents éléments le composant, sans rentrer dans les détails de leur fonctionnement.}
+\end{description}
+%----------------------------------------------------------------------------------------
+%   OUTILS D'IMPLÉMENTATION
+%----------------------------------------------------------------------------------------
+\section{Outils d'implémentation}
+%----------------------------------------------------------------------------------------
+%   IMPLÉMENTATION
+%----------------------------------------------------------------------------------------
+\chapter{Implémentation et Résultats}
+%----------------------------------------------------------------------------------------
+%   APPLICATION WEB MONOPAGE
+%----------------------------------------------------------------------------------------
+\section{Application web monopage}
+Une application web est dite monopage quand elle est concu pour ne pas avoir plusieurs fichiers
+HTML relatives aux differentes pages du site, mais plutot une unique page HTML avec les rélatives ressources
+Javascript et CSS permettant d'afficher les differentes pages dinamiquement.
+Avec un site web classique le navigateur affiche simplement les pages envoyées par le serveur et lui transmet les actions de l’utilisateur.
+Le navigateur prend donc un rôle plus important que dans un site web classique, puisqu'il ce charge de toute la logique applicative,
+en reagissant aux actions de l'utilisateur. Le serveur devient donc responsable que des ressource a fournir en effectuant de son coté
+que les verifications de securité necessaire avant qu'il n'envoie quelque ce soit.
+C'est pour cela que la page web unique deviens une veritable application, qui tourne coté client pour fluidifier l'experience de l'utilisateur:
+en evite de charger a chaque requette de l'utilisateur une page entiere, et on change la page en fonction du serveur partiellement.
+
+%----------------------------------------------------------------------------------------
+%   FRONT-END
+%----------------------------------------------------------------------------------------
+\section{Front-end }
+%----------------------------------------------------------------------------------------
+%   REACT-JS
+%----------------------------------------------------------------------------------------
+\subsection{React.js}
+%----------------------------------------------------------------------------------------
+%   BOOTSTRAP
+%----------------------------------------------------------------------------------------
+\subsection{Bootstrap et Font-Awesome}
+\textbf{Bootstrap} est un framework pour le developpement front-end, donc coté client d'un site web.
+Il est pricipalement un framework CSS mais embarque aussi des composants Javascript et HTML.
+En utilisant un systeme de grille pour gerer le Layout d'une page Bootstrap est capable de changer dynamiquement
+ce Layout par rapport à la taille de la fenetre du navigateur permettant d'avoir un site responsive utilisable
+avec praticité soit sur les petits ecrans tel que smartphone ou tablet, comme sur les grands comme un moniteur ou un téléviseur.
+Grace à l'ensemble de classes css, Bootstrap permet un developpement du site-web rapide tout en permettant de personnaliser le design
+en ajoutant peut de lignes de code. On a par exemple des boutons, des formulaires, des navbars,
+des accordilons, des carousels, tous esthetiques et personalisables avec l'ajout d'animations javascript qui est de base fait avec
+JQuery.
+Sur notre site on a donc utilisé Bootstrap pour tout ce qu'on a mentionné, en evitant de reinventer la roue et definir
+l'eshtetique de chaque element HTML à partir de zerò.
+\textbf{Font-awesome} a été crée pour etre utilisé avec Bootstrap et c'est un outils qui permets d'utiliser les icons comme des polices d'écritures
+qui peuvent subir des changement de style avec CSS, SASS ou LESS.
+Avec ces deux frameworks, chaque composante REACT a été esthétiquement personnalisée, nottament:
+\begin{itemize}
+  \item L'entete du site, qui est un Navbar (barre de navigation) responsive et "collapsable" pour les écran de petite taille;
+  \item Le footer du site, en utilisant des icones Font-awesome pour les liens vers d'autres pages.
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%   BACK-END
+%----------------------------------------------------------------------------------------
+\section{Back-end}
+%----------------------------------------------------------------------------------------
+%   NODE.JS
+%----------------------------------------------------------------------------------------
+\subsection{Node.js}
+%----------------------------------------------------------------------------------------
+%   EXPRESS
+%----------------------------------------------------------------------------------------
+\subsection{Express}
+%----------------------------------------------------------------------------------------
+%   MYSQL
+%----------------------------------------------------------------------------------------
+\subsection{MySQL}
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[scale=0.6]{images/Clients.jpg}
+  \caption{Modèle Entité-Association}
+  \label{fig:modele_EA}
+\end{figure}
+
+\newpage
+%----------------------------------------------------------------------------------------
+%   SCHÉMA DE BD
+%----------------------------------------------------------------------------------------
+Le modèle relationnel obtenu par traduction du \textbf{modèle EA} des données est le suivant :
+\begin{enumerate}
+  \item { \texttt{REVIEW } (\underline{ID\_review}, \texit{ID\_client}, \texit{ID\_produit}) }
+  \item { \texttt{CLIENT } (\underline{ID\_client}, \attr{email}, \attr{age}, \attr{numero\_tel}, \attr{date\_inscription}, \attr{adresse}) }
+  \item { \texttt{FOURNISSEUR } (\underline{ID\_fournisseur}, \texit{ID\_commande}, \texit{ID\_client}) }
+  \item { \texttt{STOCK } (\underline{ID\_stock}, \texit{ID\_fournisseur}) }
+  \item { \texttt{PANIER } (\underline{ID\_panier}, \texit{ID\_fournisseur}) }
+  \item { \texttt{PRODUIT } (\underline{ID\_produit}, \attr{prix}, \attr{categorie}, \attr{date\_recolte}, \texit{ID\_stock}, \texit{ID\_panier}, \texit{ID\_product\_type}) }
+  \item { \texttt{CHOISIS } (\texit{\underline{ID\_client}}, \texit{\underline{Id\_method}}) }
+  \item { \texttt{INCLUT\_P } (\texit{\underline{ID\_commande}}, \texit{\underline{ID\_panier}}, \attr{quantite}) }
+  \item { \texttt{METHODE\_PAIEMENT } (\underline{Id\_method}) }
+  \item { \texttt{WALLET } (\underline{ID\_wallet}, \attr{solde}, \texit{ID\_client}) }
+  \item { \texttt{UTILISE } (\texit{\underline{ID\_commande\_globale}}, \texit{\underline{Id\_method}}) }
+  \item { \texttt{COMMANDE } (\underline{ID\_commande}, \texit{ID\_commande\_globale}, \texit{ID\_client}, \texit{ID\_fournisseur}) }
+  \item { \texttt{INCLUT } (\texit{\underline{ID\_commande}}, \texit{\underline{ID\_produit}}, \attr{quantite}) }
+  \item { \texttt{COMMANDE\_GLOBALE } (\underline{ID\_commande\_globale}, \texit{ID\_wallet}) }
+  \item { \texttt{FACTURE } (\underline{ID\_facture}, \attr{montant}, \attr{date}, \texit{ID\_commande\_globale}) }
+  \item { \texttt{TYPE\_PRODUIT } (\underline{ID\_product\_type})}
+\end{enumerate}
+
+%----------------------------------------------------------------------------------------
+%   RESULTATS
+%----------------------------------------------------------------------------------------
+\section{Résultats}
+%----------------------------------------------------------------------------------------
+%   CONCLUSION
+%----------------------------------------------------------------------------------------
+\chapter{Conclusion}
+%----------------------------------------------------------------------------------------
+%   DIFFICULTÉS SURVENUES
+%----------------------------------------------------------------------------------------
+\section{Difficultés survenues}
+%----------------------------------------------------------------------------------------
+%   PERSPECTIVES
+%----------------------------------------------------------------------------------------
+\section{Perspectives}
+\label{sec:perspectives}
+Outre les fonctionnalités que nous avons jugées essentielles au projet, nous avons pensé à ajouter des fonctionnalités supplémentaires une fois celles de base établies. En effet, plusieurs extensions sont possibles afin de proposer aux utilisateurs un choix plus diversifié et plus complet.
+
+Dans ce cadre, nous avons prévu de donner aux clients la possibilité de régler des achats à l'aide d'une carte bancaire mais également à l'aide de services de paiements en ligne tels que Paypal.
+
+En addition, nous pourrions également internationaliser le site et son concept en proposant des versions en plusieurs langues.
+%----------------------------------------------------------------------------------------
+%   ANNEXES
+%----------------------------------------------------------------------------------------
+\begin{appendices}
+\end{appendices}
+%----------------------------------------------------------------------------------------
+%   BIBLIOGRAPHIE
+%----------------------------------------------------------------------------------------
+\bibliographystyle{agsm}
+\bibliography{mybib}
+\end{document}
