@@ -175,7 +175,7 @@ En effet, la méthodologie de développement proposée par les méthodes agiles 
 %   OUTILS DE CONCEPTION
 %----------------------------------------------------------------------------------------
 \section{Outils de conception}
-Pour garantir une bonne modélisation du projet, en cohérence avec l'approche de la méthodologie discutée précédemment, nous avons explicité les spécifications fonctionnelles et organisationnelles de notre projet en servant des outils suivants :
+Pour garantir une bonne modélisation du projet, en cohérence avec l'approche de la méthodologie discutée précédemment, nous avons explicité les spécifications fonctionnelles et organisationnelles de notre projet en se servant des outils suivants :
 \begin{description}
   \item[\textit{user stories}]{des requis fournis par les utilisateurs décrivant en langage naturel les fonctionnalités qu'ils souhaitent avoir dans le site.}
   \item[diagrammes de cas d'usage]{des diagrammes dynamiques, souvent utilisés en \textbf{UML} pour décrire en haut niveau les fonctionnalités d'un système, en se servant de notions telles que \textbf{acteurs}, \textbf{cas d'usage}, \textbf{systèmes} et les \textbf{relations} entre chacune de ces entités.}
@@ -187,10 +187,32 @@ Pour garantir une bonne modélisation du projet, en cohérence avec l'approche d
 %   OUTILS D'IMPLÉMENTATION
 %----------------------------------------------------------------------------------------
 \section{Outils d'implémentation}
+Afin de réaliser les impératifs de la partie conception du projet, nous avons prévu, pendant la partie de modélisation, d'utiliser principalement \textit{React.js}, \textit{JQuery}, \textit{Boostrap}, \textit{PHP} et \textit{MySQL}, ainsi que d'autres \textbf{API} pour l'implémentation de certaines parties du projet. Toutefois, après avoir compléter notre soutenance et suite à des recherches supplémentaires, nous avons décidé d'abandonner quelques technologies et de les remplacer par d'autres plus pertinentes afin d'obtenir un ecosystème de travail plus cohérent et plus efficace.
+
+Ce choix fût alimenté par plusieurs facteurs que nous discuterons plus en détail dans le chapitre \ref{chap:implementation_resultats} de ce rapport. Pour cette section, nous nous contentons simplement de fournir une courte description de l'ensemble de l'écosystème qui, en l'occurrence, est composé de :
+
+\subsubsection{\textit{Front-end}}
+\begin{description}
+  \item [React.js :] une bibliothèque \textbf{JavaScript} créée par \textit{Facebook} et sortie en $2013$ pour la création des interfaces graphiques.
+  \item [JSX :] (\textit{JavaScript XML}) une extension syntaxique du \textbf{JavaScript} permettant de simplifier la création des composants \textit{React} à travers une syntaxe à la \textbf{XML}.
+  \item [Bootstrap :] un \textit{framework} \textbf{CSS} permettant la gestion du \textit{responsive web} du site.
+\end{description}
+
+\subsubsection{\textit{Back-end}}
+\begin{description}
+  \item [Node.js :] un environnement d'exécution \textbf{JavaScript} côté serveur gratuit et \textit{open-source} utilisant le moteur \textbf{JavaScript V8} de \textit{Google Chrome}.
+  \item [Express :] un framework minimaliste gratuit et open-source, devenu standard pour construire des applications web et des \textbf{API}s côte serveur sur \textbf{Node.js}.
+  \item [MariaDB :] un serveur de base de données gratuit et open-source remplaçant \textbf{MySQL}\footnote{en restant compatible avec \textbf{MySQL}}, introduit par les créateurs de \textbf{MySQL} suite à l'achat de ce dernier par \textbf{Oracle}.
+\end{description}
+
+\subsubsection{Editeur de texte}
+\noindent
+Pour la rédaction du code de notre projet, nous avons choisi unanimement d'utiliser l'éditeur de texte gratuit, open-source et multiplateforme \textbf{Atom} pour son architecture basée sur \textbf{Node.js}. En effet, cette architecture permet de personnaliser son utilisation et de le rendre plus souple via des modules téléchargeables par le biais de son gestionnaire de packages \textbf{APM} (\textit{Atom Package Manager}).
 %----------------------------------------------------------------------------------------
 %   IMPLÉMENTATION
 %----------------------------------------------------------------------------------------
 \chapter{Implémentation et Résultats}
+\label{chap:implementation_resultats}
 %----------------------------------------------------------------------------------------
 %   APPLICATION WEB MONOPAGE
 %----------------------------------------------------------------------------------------
