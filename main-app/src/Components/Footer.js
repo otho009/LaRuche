@@ -8,18 +8,10 @@ export default class Footer extends Component {
   render() {
     return (
       <div>
-<<<<<<< HEAD
         <footer className="bg-primary py-3" id="myFooter">
           <div className="container">
             <div className="row">
               <div className="col-sm-3 myCols">
-=======
-        <footer class=" 
-        sticky-bottom bg-primary py-3" id="myFooter">
-          <div class="container">
-            <div class="row">
-              <div class="col-sm-3 myCols">
->>>>>>> 7c2850f3a0fc0e0cb55a81888df5f0dac875fac0
                 <h5>Infos pratiques</h5>
                 <ul>
                   <li>

@@ -12,11 +12,6 @@ export default class Header2 extends Component {
             <NavLink exact to="/" style={{ color: "white" }} activeStyle={{ color: "white" }} >
               CourtCircuit
             </NavLink>
-<<<<<<< HEAD
-=======
-          </a>
-          <a class="navbar-brand mx-auto p-auto">
->>>>>>> 7c2850f3a0fc0e0cb55a81888df5f0dac875fac0
             <NavLink exact to="/">
               <img src={logo} height="60" className="d-inline-block align-top" alt="" />
             </NavLink>
@@ -32,7 +27,7 @@ export default class Header2 extends Component {
 =======
           <div class="collapse navbar-collapse text-right" id="navbarCollapse">
             <ul class="navbar-nav m-auto">
-              
+
               <li class="nav-item p-auto">
                 <div class="input-group  mx-auto">
                   <div class="input-group-prepend ">
@@ -108,8 +103,8 @@ export default class Header2 extends Component {
                     <i className="fas fa-shopping-cart"/> Panier
                   </NavLink>
               </li>
-             
-              
+
+
             </ul>
           </div>
         </nav>

@@ -128,9 +128,9 @@ files:
       intermediatePostScript: false
     type: ParsedYAML
   CR2.tex:
-    timeStamp: 2018-05-05T15:23:40.462Z
+    timeStamp: 2018-05-05T17:27:11.099Z
     jobNames: []
-    hash: NgCvk4BURRHOm/m4xYbantByNBZbHrt7RkTZeQC7hhg=
+    hash: ZyFAjHqo22xxh1a7+uw79Ll4rkqS75/HcXaDVxz9wGw=
     type: LaTeX
     subType: report
   /home/wissem/.config/dicy/config.yaml:
@@ -141,7 +141,7 @@ files:
     jobNames: []
     type: Nil
   CR2.fls-ParsedFileListing:
-    timeStamp: 2018-05-05T12:54:03.125Z
+    timeStamp: 2018-05-05T17:26:45.548Z
     jobNames: []
     value:
       messages: []
@@ -452,6 +452,7 @@ files:
         - CR2.tex
         - CR2.toc
         - images/Clients.jpg
+        - images/bootstrap1.png
         - images/fdsLogo.jpg
         - images/lirmmLogo.png
         - images/lirmmPhoto.jpg
@@ -467,7 +468,7 @@ files:
       calls: []
     type: ParsedFileListing
   CR2.log-ParsedLaTeXLog:
-    timeStamp: 2018-05-05T15:23:45.047Z
+    timeStamp: 2018-05-05T17:26:45.529Z
     jobNames: []
     value:
       messages:
@@ -2040,38 +2041,21 @@ files:
             range:
               start: 1198
               end: 1198
+        - severity: warning
+          name: pdfTeX
+          category: LaTeX
+          text: 'Label `fig:modele_EA'' multiply defined.'
+          source:
+            file: CR2.aux
+          log:
+            file: CR2.log
+            range:
+              start: 1210
+              end: 1210
         - severity: info
           name: pdfTeX
           category: LaTeX Font
           text: Checking defaults for OML/cmm/m/it ... okay
-          source:
-            file: CR2.tex
-            range:
-              start: 52
-              end: 52
-          log:
-            file: CR2.log
-            range:
-              start: 1211
-              end: 1212
-        - severity: info
-          name: pdfTeX
-          category: LaTeX Font
-          text: Checking defaults for T1/cmr/m/n ... okay
-          source:
-            file: CR2.tex
-            range:
-              start: 52
-              end: 52
-          log:
-            file: CR2.log
-            range:
-              start: 1213
-              end: 1214
-        - severity: info
-          name: pdfTeX
-          category: LaTeX Font
-          text: Checking defaults for OT1/cmr/m/n ... okay
           source:
             file: CR2.tex
             range:
@@ -2085,7 +2069,7 @@ files:
         - severity: info
           name: pdfTeX
           category: LaTeX Font
-          text: Checking defaults for OMS/cmsy/m/n ... okay
+          text: Checking defaults for T1/cmr/m/n ... okay
           source:
             file: CR2.tex
             range:
@@ -2099,7 +2083,7 @@ files:
         - severity: info
           name: pdfTeX
           category: LaTeX Font
-          text: Checking defaults for OMX/cmex/m/n ... okay
+          text: Checking defaults for OT1/cmr/m/n ... okay
           source:
             file: CR2.tex
             range:
@@ -2113,7 +2097,7 @@ files:
         - severity: info
           name: pdfTeX
           category: LaTeX Font
-          text: Checking defaults for U/cmr/m/n ... okay
+          text: Checking defaults for OMS/cmsy/m/n ... okay
           source:
             file: CR2.tex
             range:
@@ -2127,7 +2111,7 @@ files:
         - severity: info
           name: pdfTeX
           category: LaTeX Font
-          text: Checking defaults for PD1/pdf/m/n ... okay
+          text: Checking defaults for OMX/cmex/m/n ... okay
           source:
             file: CR2.tex
             range:
@@ -2140,6 +2124,34 @@ files:
               end: 1224
         - severity: info
           name: pdfTeX
+          category: LaTeX Font
+          text: Checking defaults for U/cmr/m/n ... okay
+          source:
+            file: CR2.tex
+            range:
+              start: 52
+              end: 52
+          log:
+            file: CR2.log
+            range:
+              start: 1225
+              end: 1226
+        - severity: info
+          name: pdfTeX
+          category: LaTeX Font
+          text: Checking defaults for PD1/pdf/m/n ... okay
+          source:
+            file: CR2.tex
+            range:
+              start: 52
+              end: 52
+          log:
+            file: CR2.log
+            range:
+              start: 1227
+              end: 1228
+        - severity: info
+          name: pdfTeX
           category: LaTeX
           text: Redefining \degres
           source:
@@ -2150,8 +2162,8 @@ files:
           log:
             file: CR2.log
             range:
-              start: 1225
-              end: 1225
+              start: 1229
+              end: 1229
         - severity: info
           name: pdfTeX
           category: LaTeX
@@ -2164,8 +2176,8 @@ files:
           log:
             file: CR2.log
             range:
-              start: 1226
-              end: 1226
+              start: 1230
+              end: 1230
         - severity: warning
           name: pdfTeX
           category: Package french.ldf
@@ -2178,8 +2190,8 @@ files:
           log:
             file: CR2.log
             range:
-              start: 1228
-              end: 1229
+              start: 1232
+              end: 1233
         - severity: info
           name: pdfTeX
           category: LaTeX
@@ -2192,8 +2204,8 @@ files:
           log:
             file: CR2.log
             range:
-              start: 1231
-              end: 1231
+              start: 1235
+              end: 1235
         - name: pdfTeX
           severity: info
           text: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -2202,8 +2214,8 @@ files:
           log:
             file: CR2.log
             range:
-              start: 1246
-              end: 1246
+              start: 1250
+              end: 1250
         - name: pdfTeX
           severity: info
           text: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
@@ -2212,8 +2224,8 @@ files:
           log:
             file: CR2.log
             range:
-              start: 1248
-              end: 1248
+              start: 1252
+              end: 1252
         - severity: info
           name: pdfTeX
           category: Package epstopdf-base
@@ -2226,8 +2238,8 @@ files:
           log:
             file: CR2.log
             range:
-              start: 1250
-              end: 1251
+              start: 1254
+              end: 1255
         - severity: info
           name: pdfTeX
           category: Package grfext
@@ -2243,8 +2255,8 @@ files:
           log:
             file: CR2.log
             range:
-              start: 1252
-              end: 1255
+              start: 1256
+              end: 1259
         - severity: info
           name: pdfTeX
           category: Package caption
@@ -2254,8 +2266,8 @@ files:
           log:
             file: CR2.log
             range:
-              start: 1260
-              end: 1260
+              start: 1264
+              end: 1264
         - severity: info
           name: pdfTeX
           category: Package caption
@@ -2265,8 +2277,8 @@ files:
           log:
             file: CR2.log
             range:
-              start: 1261
-              end: 1261
+              start: 1265
+              end: 1265
         - severity: info
           name: pdfTeX
           category: Package caption
@@ -2276,8 +2288,8 @@ files:
           log:
             file: CR2.log
             range:
-              start: 1262
-              end: 1262
+              start: 1266
+              end: 1266
         - severity: info
           name: pdfTeX
           category: Package hyperref
@@ -2290,8 +2302,8 @@ files:
           log:
             file: CR2.log
             range:
-              start: 1264
-              end: 1264
+              start: 1268
+              end: 1268
         - name: pdfTeX
           severity: info
           text: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -2300,8 +2312,8 @@ files:
           log:
             file: CR2.log
             range:
-              start: 1266
-              end: 1266
+              start: 1270
+              end: 1270
         - name: pdfTeX
           severity: info
           text: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
@@ -2311,8 +2323,8 @@ files:
           log:
             file: CR2.log
             range:
-              start: 1268
-              end: 1268
+              start: 1272
+              end: 1272
         - severity: info
           name: pdfTeX
           category: LaTeX
@@ -2325,8 +2337,8 @@ files:
           log:
             file: CR2.log
             range:
-              start: 1272
-              end: 1272
+              start: 1276
+              end: 1276
         - severity: info
           name: pdfTeX
           category: LaTeX
@@ -2339,8 +2351,8 @@ files:
           log:
             file: CR2.log
             range:
-              start: 1273
-              end: 1273
+              start: 1277
+              end: 1277
         - severity: info
           name: pdfTeX
           category: LaTeX
@@ -2353,8 +2365,8 @@ files:
           log:
             file: CR2.log
             range:
-              start: 1274
-              end: 1274
+              start: 1278
+              end: 1278
         - severity: info
           name: pdfTeX
           category: Package pdftex.def
@@ -2367,8 +2379,8 @@ files:
           log:
             file: CR2.log
             range:
-              start: 1287
-              end: 1288
+              start: 1291
+              end: 1292
         - severity: info
           name: pdfTeX
           category: Package pdftex.def
@@ -2381,8 +2393,8 @@ files:
           log:
             file: CR2.log
             range:
-              start: 1289
-              end: 1290
+              start: 1293
+              end: 1294
         - severity: info
           name: pdfTeX
           category: Package pdftex.def
@@ -2395,8 +2407,8 @@ files:
           log:
             file: CR2.log
             range:
-              start: 1294
-              end: 1295
+              start: 1298
+              end: 1299
         - severity: info
           name: pdfTeX
           category: Package pdftex.def
@@ -2409,8 +2421,8 @@ files:
           log:
             file: CR2.log
             range:
-              start: 1296
-              end: 1297
+              start: 1300
+              end: 1301
         - severity: info
           name: pdfTeX
           category: Package pdftex.def
@@ -2423,8 +2435,8 @@ files:
           log:
             file: CR2.log
             range:
-              start: 1301
-              end: 1302
+              start: 1305
+              end: 1306
         - severity: info
           name: pdfTeX
           category: Package pdftex.def
@@ -2437,8 +2449,8 @@ files:
           log:
             file: CR2.log
             range:
-              start: 1303
-              end: 1304
+              start: 1307
+              end: 1308
         - severity: info
           name: pdfTeX
           category: LaTeX Font
@@ -2451,8 +2463,8 @@ files:
           log:
             file: CR2.log
             range:
-              start: 1305
-              end: 1305
+              start: 1309
+              end: 1309
         - severity: info
           name: pdfTeX
           category: LaTeX Font
@@ -2465,8 +2477,8 @@ files:
           log:
             file: CR2.log
             range:
-              start: 1309
-              end: 1309
+              start: 1313
+              end: 1313
         - severity: info
           name: pdfTeX
           category: LaTeX Font
@@ -2479,8 +2491,8 @@ files:
           log:
             file: CR2.log
             range:
-              start: 1313
-              end: 1313
+              start: 1317
+              end: 1317
         - severity: info
           name: pdfTeX
           category: Package pdftex.def
@@ -2493,8 +2505,8 @@ files:
           log:
             file: CR2.log
             range:
-              start: 1358
-              end: 1359
+              start: 1362
+              end: 1363
         - severity: info
           name: pdfTeX
           category: Package pdftex.def
@@ -2507,22 +2519,50 @@ files:
           log:
             file: CR2.log
             range:
-              start: 1360
-              end: 1361
+              start: 1364
+              end: 1365
         - severity: info
           name: pdfTeX
           category: Package pdftex.def
-          text: images/Clients.jpg used on input line 279.
+          text: images/bootstrap1.png used on input line 255.
           source:
             file: \T1/cmr/bx/n/12 M\T1/cmr/m/n/12 �thodes
             range:
-              start: 279
-              end: 279
+              start: 255
+              end: 255
           log:
             file: CR2.log
             range:
-              start: 1392
-              end: 1393
+              start: 1393
+              end: 1394
+        - severity: info
+          name: pdfTeX
+          category: Package pdftex.def
+          text: 'Requested size: 482.40598pt x 24.69243pt'
+          source:
+            file: \T1/cmr/bx/n/12 M\T1/cmr/m/n/12 �thodes
+            range:
+              start: 255
+              end: 255
+          log:
+            file: CR2.log
+            range:
+              start: 1395
+              end: 1396
+        - severity: info
+          name: pdfTeX
+          category: Package pdftex.def
+          text: images/Clients.jpg used on input line 286.
+          source:
+            file: \T1/cmr/bx/n/12 M\T1/cmr/m/n/12 �thodes
+            range:
+              start: 286
+              end: 286
+          log:
+            file: CR2.log
+            range:
+              start: 1408
+              end: 1409
         - severity: info
           name: pdfTeX
           category: Package pdftex.def
@@ -2530,13 +2570,13 @@ files:
           source:
             file: \T1/cmr/bx/n/12 M\T1/cmr/m/n/12 �thodes
             range:
-              start: 279
-              end: 279
+              start: 286
+              end: 286
           log:
             file: CR2.log
             range:
-              start: 1394
-              end: 1395
+              start: 1410
+              end: 1411
         - severity: info
           name: pdfTeX
           category: Package atveryend
@@ -2544,13 +2584,13 @@ files:
           source:
             file: $
             range:
-              start: 340
-              end: 340
+              start: 364
+              end: 364
           log:
             file: CR2.log
             range:
-              start: 1429
-              end: 1429
+              start: 1446
+              end: 1446
         - severity: info
           name: pdfTeX
           category: Package atveryend
@@ -2558,13 +2598,13 @@ files:
           source:
             file: $
             range:
-              start: 340
-              end: 340
+              start: 364
+              end: 364
           log:
             file: CR2.log
             range:
-              start: 1430
-              end: 1430
+              start: 1447
+              end: 1447
         - severity: info
           name: pdfTeX
           category: Package atveryend
@@ -2572,13 +2612,13 @@ files:
           source:
             file: $
             range:
-              start: 340
-              end: 340
+              start: 364
+              end: 364
           log:
             file: CR2.log
             range:
-              start: 1434
-              end: 1434
+              start: 1451
+              end: 1451
         - severity: info
           name: pdfTeX
           category: Package atveryend
@@ -2586,26 +2626,37 @@ files:
           source:
             file: $
             range:
-              start: 340
-              end: 340
+              start: 364
+              end: 364
           log:
             file: CR2.log
             range:
-              start: 1435
-              end: 1435
+              start: 1452
+              end: 1452
         - severity: info
           name: pdfTeX
           category: Package rerunfilecheck
           text: >-
             File `CR2.out' has not changed. Checksum:
-            98E500F42223F354ECFDB00A63FABD0F;1413.
+            4AB4AB92F7E3EF9870DCC6F701813B7F;1478.
           source:
             file: $
           log:
             file: CR2.log
             range:
-              start: 1436
-              end: 1437
+              start: 1453
+              end: 1454
+        - severity: warning
+          name: pdfTeX
+          category: LaTeX
+          text: There were multiply-defined labels.
+          source:
+            file: $
+          log:
+            file: CR2.log
+            range:
+              start: 1456
+              end: 1456
         - severity: info
           name: pdfTeX
           category: Package atveryend
@@ -2613,46 +2664,46 @@ files:
           source:
             file: $
             range:
-              start: 340
-              end: 340
+              start: 364
+              end: 364
           log:
             file: CR2.log
             range:
-              start: 1438
-              end: 1438
+              start: 1458
+              end: 1458
       inputs: []
       outputs:
         - CR2.pdf
       calls: []
     type: ParsedLaTeXLog
   CR2.log:
-    timeStamp: 2018-05-05T15:23:44.902Z
+    timeStamp: 2018-05-05T17:27:13.755Z
     jobNames: []
-    hash: Xyc0rGirFMmc9FH5/V1qwkbjoeeoJYQq/7MpBNcz6pY=
+    hash: PO4wlAj2Jx1bM+mwG7L0tqNqNsJV/VmQ3lbRJs1sKNc=
     type: LaTeXLog
     subType: pdfTeX
   CR2.pdf:
-    timeStamp: 2018-05-05T15:23:44.902Z
+    timeStamp: 2018-05-05T17:27:13.755Z
     jobNames: []
-    hash: vjhRJnZHFOStRb+PmtwFwxqX0cZ46qLWGid/YJcj7ZY=
+    hash: Zyqa/wa87HJzyhOXMA6z16le0vAJy29tZ8Tq4B/LoOA=
     type: PortableDocumentFormat
   CR2.aux:
-    timeStamp: 2018-05-05T15:23:44.806Z
+    timeStamp: 2018-05-05T17:27:13.655Z
     jobNames: []
-    hash: tCMxXF680+JccDnMPk48uPr/OLWsi/Z6wR11/HqCOeA=
+    hash: kwiQ3KAHdekx2JjLs6mZdSB5NVse0t/zrQx8MZ7hfBQ=
     type: LaTeXAuxilary
   CR2.fls:
-    timeStamp: 2018-05-05T15:23:44.894Z
+    timeStamp: 2018-05-05T17:27:13.743Z
     jobNames: []
-    hash: Mb+RDLR9RzQXB6ueQq1IIDJYzfYBaX8RkZekyu2MCT8=
+    hash: 1Lk5q1pcHJ0tJ/20sfE3CGSor6ji+eWhKZogoTYBEj4=
     type: FileListing
   CR2.synctex.gz:
-    timeStamp: 2018-05-05T15:23:44.902Z
+    timeStamp: 2018-05-05T17:27:13.755Z
     jobNames: []
-    hash: s2dkGtRl2LZGstzxXuVj1Avw2y1g436VazwYBn6XaR8=
+    hash: GP15tcpEvbjP5lsjP4JGsfa86hWu2tbJ0PGu4S33Qvo=
     type: SyncTeX
   CR2.aux-ParsedLaTeXAuxilary:
-    timeStamp: 2018-05-05T15:23:43.865Z
+    timeStamp: 2018-05-05T17:25:59.545Z
     jobNames: []
     value:
       commands:
@@ -2710,6 +2761,8 @@ files:
         - '@writefile'
         - '@writefile'
         - '@writefile'
+        - newlabel
+        - '@writefile'
         - '@writefile'
         - '@writefile'
         - '@writefile'
@@ -2722,6 +2775,7 @@ files:
         - '@writefile'
         - '@writefile'
         - newlabel
+        - '@writefile'
         - '@writefile'
         - bibstyle
         - bibdata
@@ -3540,14 +3594,14 @@ files:
     timeStamp: 2018-05-05T12:43:35.415Z
     jobNames: []
   CR2.out:
-    timeStamp: 2018-05-05T15:23:44.806Z
+    timeStamp: 2018-05-05T17:27:13.655Z
     jobNames: []
-    hash: LdydlEpTDFUzwZEHW6zmFoP0egNEV9OmM2TKjBUgLhU=
+    hash: 0f7nWrRkbn40h8F2NCUBAKx0kngAs/vvRVyUPe4ikyw=
     type: OUT
   CR2.toc:
-    timeStamp: 2018-05-05T15:23:44.806Z
+    timeStamp: 2018-05-05T17:27:13.655Z
     jobNames: []
-    hash: nNV+/9yUOzk0RnIgsuJcZDlPA7Ocx3gTnh+jqKegv5Q=
+    hash: vQSYydDBk8NE131EaCVExPiX5nYfu3Mjurj2JB3nydc=
     type: TableOfContents
   images/Clients.jpg:
     timeStamp: 2018-05-05T09:50:02.094Z
@@ -3575,15 +3629,15 @@ files:
     hash: ufJo2lCasaFTSp8TXm7irxTP3hz0sR4MTHi8IJRcLdw=
     type: LaTeXStyle
   CR2.thm:
-    timeStamp: 2018-05-05T15:23:44.806Z
+    timeStamp: 2018-05-05T17:27:13.655Z
     jobNames: []
     hash: 47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
   CR2.bbl:
-    timeStamp: 2018-05-05T15:23:44.050Z
+    timeStamp: 2018-05-05T17:27:14.039Z
     jobNames: []
     hash: tVnqipi8npFINdDJ7v/+xV0B3Tg6ggQ9GOf43uKRMGM=
   CR2.blg:
-    timeStamp: 2018-05-05T15:23:44.054Z
+    timeStamp: 2018-05-05T17:27:14.039Z
     jobNames: []
     hash: J/epQiDNlJn5MLJXEUCRkKOOfwGRwGudyP8nlgJ4b2E=
     type: BibTeXLog
@@ -3597,6 +3651,10 @@ files:
     jobNames: []
     hash: MZeoNuHdBywu05wXFnWtQh0/0rZBFJeRnP5peUGvWhw=
     type: BibTeXFile
+  images/bootstrap1.png:
+    timeStamp: 2018-05-05T17:21:44.524Z
+    jobNames: []
+    hash: nfuXGU8MlIzZuyTEAkE9dDi+lhpZqZp+pPeRz0+44vI=
 rules:
   - name: ApplyOptions
     command: load
@@ -4226,6 +4284,8 @@ rules:
       - file: packages/tikz-uml.sty
         type: default
       - file: CR2.bbl
+        type: default
+      - file: images/bootstrap1.png
         type: default
     outputs:
       - file: CR2.pdf
