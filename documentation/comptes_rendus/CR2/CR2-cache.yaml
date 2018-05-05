@@ -70,7 +70,7 @@ options:
   intermediatePostScript: false
 files:
   dicy-instance.yaml-ParsedYAML:
-    timeStamp: 2018-05-05T12:45:38.869Z
+    timeStamp: 2018-05-05T18:58:43.517Z
     jobNames: []
     value:
       severity: info
@@ -128,20 +128,20 @@ files:
       intermediatePostScript: false
     type: ParsedYAML
   CR2.tex:
-    timeStamp: 2018-05-05T17:27:11.099Z
+    timeStamp: 2018-05-05T19:05:15.418Z
     jobNames: []
-    hash: ZyFAjHqo22xxh1a7+uw79Ll4rkqS75/HcXaDVxz9wGw=
+    hash: yFIcWMF40Jg1qkUisVtc49DtontJcYhWis6QJa1ICU8=
     type: LaTeX
     subType: report
   /home/wissem/.config/dicy/config.yaml:
-    timeStamp: 2018-05-05T12:45:38.903Z
+    timeStamp: 2018-05-05T18:58:43.565Z
     jobNames: []
     type: YAML
   x.y-Nil:
     jobNames: []
     type: Nil
   CR2.fls-ParsedFileListing:
-    timeStamp: 2018-05-05T17:26:45.548Z
+    timeStamp: 2018-05-05T19:04:41.367Z
     jobNames: []
     value:
       messages: []
@@ -195,6 +195,8 @@ files:
         - /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
         - /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm
         - /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm
+        - >-
+          /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
         - /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
         - /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb
         - /usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -456,7 +458,9 @@ files:
         - images/fdsLogo.jpg
         - images/lirmmLogo.png
         - images/lirmmPhoto.jpg
+        - images/nodejs_icon.png
         - images/umLogo.png
+        - images/website_architecture.jpeg
         - packages/tikz-uml.sty
       outputs:
         - CR2.aux
@@ -468,7 +472,7 @@ files:
       calls: []
     type: ParsedFileListing
   CR2.log-ParsedLaTeXLog:
-    timeStamp: 2018-05-05T17:26:45.529Z
+    timeStamp: 2018-05-05T19:05:18.537Z
     jobNames: []
     value:
       messages:
@@ -2524,12 +2528,26 @@ files:
         - severity: info
           name: pdfTeX
           category: Package pdftex.def
-          text: images/bootstrap1.png used on input line 255.
+          text: images/website_architecture.jpeg used on input line 214.
           source:
             file: \T1/cmr/bx/n/12 M\T1/cmr/m/n/12 �thodes
             range:
-              start: 255
-              end: 255
+              start: 214
+              end: 214
+          log:
+            file: CR2.log
+            range:
+              start: 1391
+              end: 1392
+        - severity: info
+          name: pdfTeX
+          category: Package pdftex.def
+          text: 'Requested size: 337.25917pt x 138.51715pt'
+          source:
+            file: \T1/cmr/bx/n/12 M\T1/cmr/m/n/12 �thodes
+            range:
+              start: 214
+              end: 214
           log:
             file: CR2.log
             range:
@@ -2538,31 +2556,73 @@ files:
         - severity: info
           name: pdfTeX
           category: Package pdftex.def
+          text: images/bootstrap1.png used on input line 264.
+          source:
+            file: \T1/cmr/bx/n/12 M\T1/cmr/m/n/12 �thodes
+            range:
+              start: 264
+              end: 264
+          log:
+            file: CR2.log
+            range:
+              start: 1401
+              end: 1402
+        - severity: info
+          name: pdfTeX
+          category: Package pdftex.def
           text: 'Requested size: 482.40598pt x 24.69243pt'
           source:
             file: \T1/cmr/bx/n/12 M\T1/cmr/m/n/12 �thodes
             range:
-              start: 255
-              end: 255
+              start: 264
+              end: 264
           log:
             file: CR2.log
             range:
-              start: 1395
-              end: 1396
+              start: 1403
+              end: 1404
         - severity: info
           name: pdfTeX
           category: Package pdftex.def
-          text: images/Clients.jpg used on input line 286.
+          text: images/nodejs_icon.png used on input line 288.
           source:
             file: \T1/cmr/bx/n/12 M\T1/cmr/m/n/12 �thodes
             range:
-              start: 286
-              end: 286
+              start: 288
+              end: 288
           log:
             file: CR2.log
             range:
-              start: 1408
-              end: 1409
+              start: 1416
+              end: 1417
+        - severity: info
+          name: pdfTeX
+          category: Package pdftex.def
+          text: 'Requested size: 92.50098pt x 56.665pt'
+          source:
+            file: \T1/cmr/bx/n/12 M\T1/cmr/m/n/12 �thodes
+            range:
+              start: 288
+              end: 288
+          log:
+            file: CR2.log
+            range:
+              start: 1418
+              end: 1419
+        - severity: info
+          name: pdfTeX
+          category: Package pdftex.def
+          text: images/Clients.jpg used on input line 315.
+          source:
+            file: \T1/cmr/bx/n/12 M\T1/cmr/m/n/12 �thodes
+            range:
+              start: 315
+              end: 315
+          log:
+            file: CR2.log
+            range:
+              start: 1425
+              end: 1426
         - severity: info
           name: pdfTeX
           category: Package pdftex.def
@@ -2570,13 +2630,13 @@ files:
           source:
             file: \T1/cmr/bx/n/12 M\T1/cmr/m/n/12 �thodes
             range:
-              start: 286
-              end: 286
+              start: 315
+              end: 315
           log:
             file: CR2.log
             range:
-              start: 1410
-              end: 1411
+              start: 1427
+              end: 1428
         - severity: info
           name: pdfTeX
           category: Package atveryend
@@ -2584,13 +2644,13 @@ files:
           source:
             file: $
             range:
-              start: 364
-              end: 364
+              start: 395
+              end: 395
           log:
             file: CR2.log
             range:
-              start: 1446
-              end: 1446
+              start: 1463
+              end: 1463
         - severity: info
           name: pdfTeX
           category: Package atveryend
@@ -2598,13 +2658,13 @@ files:
           source:
             file: $
             range:
-              start: 364
-              end: 364
+              start: 395
+              end: 395
           log:
             file: CR2.log
             range:
-              start: 1447
-              end: 1447
+              start: 1464
+              end: 1464
         - severity: info
           name: pdfTeX
           category: Package atveryend
@@ -2612,13 +2672,13 @@ files:
           source:
             file: $
             range:
-              start: 364
-              end: 364
+              start: 395
+              end: 395
           log:
             file: CR2.log
             range:
-              start: 1451
-              end: 1451
+              start: 1468
+              end: 1468
         - severity: info
           name: pdfTeX
           category: Package atveryend
@@ -2626,26 +2686,26 @@ files:
           source:
             file: $
             range:
-              start: 364
-              end: 364
+              start: 395
+              end: 395
           log:
             file: CR2.log
             range:
-              start: 1452
-              end: 1452
+              start: 1469
+              end: 1469
         - severity: info
           name: pdfTeX
           category: Package rerunfilecheck
           text: >-
             File `CR2.out' has not changed. Checksum:
-            4AB4AB92F7E3EF9870DCC6F701813B7F;1478.
+            0A25DF34AE68E2E46A9B8B3527892318;1482.
           source:
             file: $
           log:
             file: CR2.log
             range:
-              start: 1453
-              end: 1454
+              start: 1470
+              end: 1471
         - severity: warning
           name: pdfTeX
           category: LaTeX
@@ -2655,8 +2715,8 @@ files:
           log:
             file: CR2.log
             range:
-              start: 1456
-              end: 1456
+              start: 1473
+              end: 1473
         - severity: info
           name: pdfTeX
           category: Package atveryend
@@ -2664,46 +2724,46 @@ files:
           source:
             file: $
             range:
-              start: 364
-              end: 364
+              start: 395
+              end: 395
           log:
             file: CR2.log
             range:
-              start: 1458
-              end: 1458
+              start: 1475
+              end: 1475
       inputs: []
       outputs:
         - CR2.pdf
       calls: []
     type: ParsedLaTeXLog
   CR2.log:
-    timeStamp: 2018-05-05T17:27:13.755Z
+    timeStamp: 2018-05-05T19:05:18.366Z
     jobNames: []
-    hash: PO4wlAj2Jx1bM+mwG7L0tqNqNsJV/VmQ3lbRJs1sKNc=
+    hash: SSFArPrtDI9OlEnIHQLM8kn/iWzewKPIy3Rm/MZzhvA=
     type: LaTeXLog
     subType: pdfTeX
   CR2.pdf:
-    timeStamp: 2018-05-05T17:27:13.755Z
+    timeStamp: 2018-05-05T19:05:18.366Z
     jobNames: []
-    hash: Zyqa/wa87HJzyhOXMA6z16le0vAJy29tZ8Tq4B/LoOA=
+    hash: h0QD4xyrDUrCQ57r9at9MGTMPX3O2/8MExyR6utfdp8=
     type: PortableDocumentFormat
   CR2.aux:
-    timeStamp: 2018-05-05T17:27:13.655Z
+    timeStamp: 2018-05-05T19:05:18.258Z
     jobNames: []
-    hash: kwiQ3KAHdekx2JjLs6mZdSB5NVse0t/zrQx8MZ7hfBQ=
+    hash: uznxmKHdouL/Ooj64KN5jH0OW3gEjbRF7UUw2c2xIrk=
     type: LaTeXAuxilary
   CR2.fls:
-    timeStamp: 2018-05-05T17:27:13.743Z
+    timeStamp: 2018-05-05T19:05:18.350Z
     jobNames: []
-    hash: 1Lk5q1pcHJ0tJ/20sfE3CGSor6ji+eWhKZogoTYBEj4=
+    hash: d/UVYGePwKXITPM6iRZ4TnVD9BTYJdtAooMUtZuRbyA=
     type: FileListing
   CR2.synctex.gz:
-    timeStamp: 2018-05-05T17:27:13.755Z
+    timeStamp: 2018-05-05T19:05:18.366Z
     jobNames: []
-    hash: GP15tcpEvbjP5lsjP4JGsfa86hWu2tbJ0PGu4S33Qvo=
+    hash: Qs+uHmw1JF/yreqrIOozfuMd2tGjGRjGEMa94RkIUDc=
     type: SyncTeX
   CR2.aux-ParsedLaTeXAuxilary:
-    timeStamp: 2018-05-05T17:25:59.545Z
+    timeStamp: 2018-05-05T19:04:41.303Z
     jobNames: []
     value:
       commands:
@@ -2753,6 +2813,8 @@ files:
         - '@writefile'
         - '@writefile'
         - '@writefile'
+        - newlabel
+        - '@writefile'
         - '@writefile'
         - '@writefile'
         - newlabel
@@ -2762,6 +2824,7 @@ files:
         - '@writefile'
         - '@writefile'
         - newlabel
+        - '@writefile'
         - '@writefile'
         - '@writefile'
         - '@writefile'
@@ -2783,7 +2846,7 @@ files:
         - '@writefile'
     type: ParsedLaTeXAuxilary
   CR2.blg-ParsedBibTeXLog:
-    timeStamp: 2018-05-05T12:54:01.983Z
+    timeStamp: 2018-05-05T19:04:40.039Z
     jobNames: []
     value:
       messages:
@@ -3594,50 +3657,46 @@ files:
     timeStamp: 2018-05-05T12:43:35.415Z
     jobNames: []
   CR2.out:
-    timeStamp: 2018-05-05T17:27:13.655Z
+    timeStamp: 2018-05-05T19:05:18.258Z
     jobNames: []
-    hash: 0f7nWrRkbn40h8F2NCUBAKx0kngAs/vvRVyUPe4ikyw=
+    hash: C5Xy0cmY0zMI5DSlS8QWfsto9JltEcur3gZ0xwbfOuE=
     type: OUT
   CR2.toc:
-    timeStamp: 2018-05-05T17:27:13.655Z
+    timeStamp: 2018-05-05T19:05:18.258Z
     jobNames: []
-    hash: vQSYydDBk8NE131EaCVExPiX5nYfu3Mjurj2JB3nydc=
+    hash: Ugif6Pz1Gpa1V8DpFIhq31/Pl9ej1KVOXQIZ1VAOTbQ=
     type: TableOfContents
   images/Clients.jpg:
-    timeStamp: 2018-05-05T09:50:02.094Z
+    timeStamp: 2018-04-12T16:23:36.482Z
     jobNames: []
     hash: C+D1mXh9jqPKl+51QAJdOUPzB4V9Qem0yNd1f677eSs=
   images/fdsLogo.jpg:
-    timeStamp: 2018-05-05T09:50:02.098Z
+    timeStamp: 2018-04-12T16:23:36.498Z
     jobNames: []
     hash: KrAngrUUMnliDr6sXjPaDHQPxDFrJLcY6LzyS3B8a6Q=
   images/lirmmLogo.png:
-    timeStamp: 2018-05-05T09:50:02.098Z
+    timeStamp: 2018-04-12T16:23:36.498Z
     jobNames: []
     hash: yc2zhNxMUGwiV8DM5mVJiZKRNV2Lgmw/vaSJ1qtj2OM=
   images/lirmmPhoto.jpg:
-    timeStamp: 2018-05-05T09:50:02.110Z
+    timeStamp: 2018-02-08T15:19:47.080Z
     jobNames: []
     hash: cIgKwOs3AVaxFSbx+kf7MKNcP9enQxkuRNiPsP1kYNg=
   images/umLogo.png:
-    timeStamp: 2018-05-05T09:50:02.142Z
+    timeStamp: 2018-04-12T16:23:36.586Z
     jobNames: []
     hash: oW7o2XAYEbKA0ScqwjpFWlsxXlFEHOictXddBkucZCw=
   packages/tikz-uml.sty:
-    timeStamp: 2018-05-05T09:50:02.146Z
+    timeStamp: 2018-02-08T15:19:47.320Z
     jobNames: []
     hash: ufJo2lCasaFTSp8TXm7irxTP3hz0sR4MTHi8IJRcLdw=
     type: LaTeXStyle
-  CR2.thm:
-    timeStamp: 2018-05-05T17:27:13.655Z
-    jobNames: []
-    hash: 47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
   CR2.bbl:
-    timeStamp: 2018-05-05T17:27:14.039Z
+    timeStamp: 2018-05-05T19:05:17.154Z
     jobNames: []
     hash: tVnqipi8npFINdDJ7v/+xV0B3Tg6ggQ9GOf43uKRMGM=
   CR2.blg:
-    timeStamp: 2018-05-05T17:27:14.039Z
+    timeStamp: 2018-05-05T19:05:17.154Z
     jobNames: []
     hash: J/epQiDNlJn5MLJXEUCRkKOOfwGRwGudyP8nlgJ4b2E=
     type: BibTeXLog
@@ -3647,14 +3706,29 @@ files:
     jobNames: []
     type: BibTeXStyle
   mybib.bib:
-    timeStamp: 2018-05-05T09:50:02.142Z
+    timeStamp: 2018-05-05T19:03:17.690Z
     jobNames: []
     hash: MZeoNuHdBywu05wXFnWtQh0/0rZBFJeRnP5peUGvWhw=
     type: BibTeXFile
   images/bootstrap1.png:
-    timeStamp: 2018-05-05T17:21:44.524Z
+    timeStamp: 2018-05-05T19:03:17.690Z
     jobNames: []
     hash: nfuXGU8MlIzZuyTEAkE9dDi+lhpZqZp+pPeRz0+44vI=
+  /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb:
+    timeStamp: 2016-11-25T18:32:13.000Z
+    jobNames: []
+  images/nodejs_icon.png:
+    timeStamp: 2018-05-05T19:03:28.970Z
+    jobNames: []
+    hash: LRVF4RNYypfDOoJBKhqBo11crRS4oCLLD0R7PYmqbyk=
+  images/website_architecture.jpeg:
+    timeStamp: 2018-05-05T19:03:28.970Z
+    jobNames: []
+    hash: 3ZJCvEWA6QYLaJF8zndFBu3J1SmGy1iOwxUVO13Ggxw=
+  CR2.thm:
+    timeStamp: 2018-05-05T19:05:18.254Z
+    jobNames: []
+    hash: 47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
 rules:
   - name: ApplyOptions
     command: load
@@ -4287,6 +4361,13 @@ rules:
         type: default
       - file: images/bootstrap1.png
         type: default
+      - file: >-
+          /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
+        type: default
+      - file: images/nodejs_icon.png
+        type: default
+      - file: images/website_architecture.jpeg
+        type: default
     outputs:
       - file: CR2.pdf
         type: target
@@ -4300,9 +4381,9 @@ rules:
         type: target
       - file: CR2.out
         type: default
-      - file: CR2.thm
-        type: default
       - file: CR2.toc
+        type: default
+      - file: CR2.thm
         type: default
   - name: LogProducedTargets
     command: build

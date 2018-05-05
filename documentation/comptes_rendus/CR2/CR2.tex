@@ -187,7 +187,7 @@ Pour garantir une bonne modélisation du projet, en cohérence avec l'approche d
 %   OUTILS D'IMPLÉMENTATION
 %----------------------------------------------------------------------------------------
 \section{Outils d'implémentation}
-Afin de réaliser les impératifs de la partie conception du projet, nous avons prévu, pendant la partie de modélisation, d'utiliser principalement \textit{React.js}, \textit{JQuery}, \textit{Boostrap}, \textit{PHP} et \textit{MySQL}, ainsi que d'autres \textbf{API} pour l'implémentation de certaines parties du projet. Toutefois, après avoir compléter notre soutenance et suite à des recherches supplémentaires, nous avons décidé d'abandonner quelques technologies et de les remplacer par d'autres plus pertinentes afin d'obtenir un ecosystème de travail plus cohérent et plus efficace.
+Afin de réaliser les impératifs de la partie conception du projet, nous avons prévu, pendant la partie de modélisation, d'utiliser principalement \textit{React.js}, \textit{JQuery}, \textit{Boostrap}, \textit{PHP} et \textit{MySQL}, ainsi que d'autres \textbf{API} pour l'implémentation de certaines parties du projet. Toutefois, après avoir compléter notre soutenance et suite à des recherches supplémentaires, nous avons décidé d'abandonner quelques technologies et de les remplacer par d'autres plus pertinentes afin d'obtenir un écosystème de travail plus cohérent et plus efficace.
 
 Ce choix fût alimenté par plusieurs facteurs que nous discuterons plus en détail dans le chapitre \ref{chap:implementation_resultats} de ce rapport. Pour cette section, nous nous contentons simplement de fournir une courte description de l'ensemble de l'écosystème qui, en l'occurrence, est composé de :
 
@@ -208,6 +208,15 @@ Ce choix fût alimenté par plusieurs facteurs que nous discuterons plus en dét
 \subsubsection{Editeur de texte}
 \noindent
 Pour la rédaction du code de notre projet, nous avons choisi unanimement d'utiliser l'éditeur de texte gratuit, open-source et multiplateforme \textbf{Atom} pour son architecture basée sur \textbf{Node.js}. En effet, cette architecture permet de personnaliser son utilisation et de le rendre plus souple via des modules téléchargeables par le biais de son gestionnaire de packages \textbf{APM} (\textit{Atom Package Manager}).
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[scale=0.5]{images/website_architecture.jpeg}
+  \caption{L'architecture des technologies utilisées en CourtCircuit}
+  \label{fig:website_architecture}
+\end{figure}
+
+Par conséquent, l'architecture des technologies choisies pour l'implémentation de notre projet est illustrée dans la figure \ref{fig:website_architecture}.
 %----------------------------------------------------------------------------------------
 %   IMPLÉMENTATION
 %----------------------------------------------------------------------------------------
@@ -269,10 +278,30 @@ Avec ces deux frameworks, chaque composante REACT a été esthétiquement person
 %   BACK-END
 %----------------------------------------------------------------------------------------
 \section{Back-end}
+Pour la partie back-end, nous avons décidé d'utiliser \textbf{Node.js}/\textbf{Express.js} pour le serveur et \textbf{MariaDB} pour la base de données. Nous détaillerons les raisons et les résultats d'utilisation
 %----------------------------------------------------------------------------------------
 %   NODE.JS
 %----------------------------------------------------------------------------------------
 \subsection{Node.js}
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[scale=0.05]{images/nodejs_icon.png}
+  \caption{le logo de \textbf{Node.js}}
+\end{figure}
+
+\textbf{Node.js} est un environnement d'exécution \textbf{JavaScript} côté serveur utilisant le moteur \textbf{JavaScript V8} de \textit{Google Chrome}. Il est libre, gratuit et doté d'une efficacité et d'une légèreté provenant de sa modélisation événementielle, monothread et non-bloquante et de son architecture modulaire. Sa facilité d'usage et son extensibilité est dûe aussi à son gestionnaire de paquets \textbf{NPM} (\textit{Node Package Manager}) considéré comme l'un des plus larges écosystèmes de librairies open-source au monde.
+
+\textbf{Node.js} est une technologie récente qui est de plus en plus utilisée, surtout en développement web avec les architectures \textbf{MERN} (\textit{MongoDB Express React Node}) et \textbf{MEAN} (\textit{MongoDB Express Angular Node}). Par suite, ceci nous a motivé à l'intégrer dans notre projet au vu de ses nombreuses avantages.
+
+En premier, notre choix de \textbf{Node.js} découle du fait qu'il permet d'écrire du code \textbf{JavaScript} du côté serveur. Cette particularité nous a permis d'unifier la rédaction du code en un seul langage, pour les côtés client et serveur. En effet, l'unification du code a rendu possible à l'ensemble du groupe de participer au débogage du projet entier sans aucune restriction liée à la maîtrise d'un langage ou l'autre.
+
+Outre l'unification du code, étant donné que nous aurons besoin de gérer un ensemble important de données dans le cadre de notre projet, l'aspect monothread et non-bloquant de \textbf{Node.js} assure une performance fluide que nous ne trouverons pas forcément avec d'autres technologies back-end, utilisant généralement des modèles multi-processus ou multithread.
+
+Enfin, \textbf{Node.js} est le choix par défaut pour une architecture utilisant \textbf{React.js}\footnote{bien que pas le seul}, ce qui nous a encouragé davantage à s'en servir.
+
+Dans le cadre de notre projet, nous avons principalement utilisé \textbf{Node.js} pour la création d'une \textbf{API} côté serveur permettant d'interfacer avec la base de données. Ceci fût concrétisé par la création des objets pour les différentes entités manipulés (\textit{Client, Utilisateur, Produit, $\dots$}), en s'appuyant sur des concepts de la programmation orienté-objet. Par conséquent, nous avons pu factoriser le code pour éviter les redondances et  améliorer sa lisibilité lors de l'exécution des requêtes sur la base de données.
+
+D'autre part, nous nous sommes également servi de \textbf{Node.js} pour l'utilisation du framework \textbf{Express} que nous détaillerons dans la section suivante.
 %----------------------------------------------------------------------------------------
 %   EXPRESS
 %----------------------------------------------------------------------------------------
@@ -280,7 +309,7 @@ Avec ces deux frameworks, chaque composante REACT a été esthétiquement person
 %----------------------------------------------------------------------------------------
 %   MYSQL
 %----------------------------------------------------------------------------------------
-\subsection{MySQL}
+\subsection{MariaBD}
 \begin{figure}[!ht]
   \centering
   \includegraphics[scale=0.6]{images/Clients.jpg}
@@ -324,15 +353,16 @@ Le modèle relationnel obtenu par traduction du \textbf{modèle EA} des données
 %   DIFFICULTÉS SURVENUES
 %----------------------------------------------------------------------------------------
 \section{Difficultés survenues}
-On a rencontré des nombreux difficultés pendant le develpppement du projet, notament sur la maitrise de
+On a rencontré des nombreux difficultés pendant le développement du projet, notamment sur la maîtrise de
 nouveaux outils jamais utilisés auparavant: React, JSX, Express etc..
-On a eu le sentiment d'avoir passé trop de temps dans la partie de la modelisation et conception en ce retrouvant
-avec 3 mois (qui ne sont pas entierement dediés non plus) pour la realisation du site.
-De plus, on a vu des concepts theoriques nouveaux comme le design pattern MVC, le concept d'une application web monopage,
+On a eu le sentiment d'avoir passé trop de temps dans la partie de la modélisation et conception en se retrouvant
+avec 3 mois (qui ne sont pas entièrement dédiés non plus) pour la réalisation du site.
+De plus, on a vu des concepts théoriques nouveaux comme le design pattern MVC, le concept d'une application web monopage,
 et tous les outils conventionnellement utilisés pour des projets javascript : Babel, Npm, Node, React, Jsx etc ...
-La comprehension et la pris en main de ces outils ont eu une partie importante du projet avant de commencer a les utiliser dans la pratique.
-Une autre limitation a été le serveur d'hebergement d udepartement informatique, qui mets en place un environnement qui est pas mis a jours,
-sans base de données et avec beaucoup de limitations au niveau des droits utilisateurs.
+La compréhension et la pris en main de ces outils ont eu une partie importante du projet avant de commencer à les utiliser dans la pratique.
+Une autre limitation a été le serveur d'hébergement du département informatique, qui a mis en place des environnements node et npm non mis a jours,
+et qui nous n’a pas cree une base de données  dediee a notre projet comme c’etait prevu sur le site SIF. En manque des permissions necessaires, nous n’avons pas reussi a le faire nous-meme non plus, bien que nous avions signale ceci au parties concernees.
+
 
 %----------------------------------------------------------------------------------------
 %   PERSPECTIVES
@@ -348,9 +378,10 @@ En addition, nous pourrions également internationaliser le site et son concept 
 %   APPORT PERSONNEL
 %----------------------------------------------------------------------------------------
 \section{Apports personnels}
-Les difficultés qu'on a eu pendant le projet sont les elements qui nous a fait apprendre le plus,
-la nouveauté des outils et des concept, ansi que les convention de la programmation web, qui vont etre utiles pour
-notre parcours future, que ce soit dans une continuation d'études ou professionel.
+Les difficultés qu'on a eu pendant le projet sont les éléments qui nous a fait apprendre le plus,
+la nouveauté des outils et des concept, ainsi que les convention de la programmation web, qui vont être utiles pour
+notre parcours future, que ce soit dans une continuation d'études ou professionnel.
+
 %----------------------------------------------------------------------------------------
 %   ANNEXES
 %----------------------------------------------------------------------------------------
