@@ -10,12 +10,14 @@ export default class SignUp extends Component {
   render() {
       return (
         <div className="py-5" id="signUpPage">
-          <div>
-            <NavLink exact to="/" style={{ color: "white" }} activeStyle={{ color: "white" }} >
-              <img className="mb-4" src={logo} alt="" width="72" height="72" />
-            </NavLink>
-            <p className="h3 font-weight-normal">Créez un compte</p>
-          </div>
+          <center>
+            <div>
+              <NavLink exact to="/" style={{ color: "white" }} activeStyle={{ color: "white" }} >
+                <img className="mb-4" src={logo} alt="" width="72" height="72" />
+              </NavLink>
+              <p className="h3 font-weight-normal">Créez un compte</p>
+            </div>
+          </center>
           <div className="container-fluid row">
             <div className="col-lg-3 col-md-2 col-sm-0">
             </div>

@@ -5,7 +5,10 @@ import Footer from "../Components/Footer.js";
 import fruitCarousel from "../Images/fruitCarousel.jpeg";
 import vegetablesCarousel from "../Images/vegetablesCarousel.jpeg";
 import grainsCaroussel from "../Images/grainsCaroussel.jpeg";
-
+import producteur from "../Images/JeanMartin.jpg";
+import orange from "../Images/products/orange.jpg";
+import poivron from "../Images/products/poivronRouge.jpeg";
+import tomateCerise from "../Images/products/tomateCerise.jpg";
 
 const carouselContent = [fruitCarousel, grainsCaroussel, vegetablesCarousel]
 export default class Vendeur extends Component {
@@ -16,11 +19,11 @@ export default class Vendeur extends Component {
           <div className="container">
             <div className="row">
               <div className="col-lg-3 col-md-3 col-sm-4 col-xs-12">
-                <img className="rounded-circle d-block w-50" src=".../200x200?auto=yes&bg=777&fg=555&text=First slide"/>
+                <img className="rounded-circle d-block w-100" src={producteur}/>
               </div>
               <div className="col-lg-4 col-md-6 col-sm-8 col-xs-12">
-                <h1 className="display-5">Nom du vendeur</h1>
-                <p>Position</p>
+                <h1 className="display-5">Jean Martin</h1>
+                <p>Position: Fabrègues, Languedoc-Roussillon</p>
                 <p><button type="button" className="btn btn-primary">Contacter</button></p>
               </div>
             </div>
@@ -29,12 +32,11 @@ export default class Vendeur extends Component {
         <div className="container-fluid">
           <div className="row">
             <div className="col-lg-3 col-md-6 col-sm-12">
-              Autres informations sur le vendeur. (
-                <a className="nav-link"> <NavLink exact to="/Cooperative">
-                    ruches
-                  </NavLink>
-                </a>
-                d'appartenance)
+              <h6>Autres informations sur le vendeur</h6>
+              ruches d'appartenances:
+              <li>
+                <ul><a href="#">Saint Roche</a></ul>
+              </li>
             </div>
             <div className="col-lg-9 col-md-6 col-sm-12">
               <div className="text-center">
@@ -43,22 +45,19 @@ export default class Vendeur extends Component {
               <div className="container marketing">
                 <div className="row">
                   <div className="col-lg-4">
-                    <img className="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140" />
-                    <h2>Heading</h2>
-                    <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-                    <p><a className="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                    <img className="rounded-circle" src={orange} alt="Generic placeholder image" width="140" height="140" />
+                    <h2>Orange thomson en vrac</h2>
+                    <p><a className="btn btn-secondary" href="#" role="button">voir le produit &raquo;</a></p>
                   </div>
                   <div className="col-lg-4">
-                    <img className="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140" />
-                    <h2>Heading</h2>
-                    <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-                    <p><a className="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                    <img className="rounded-circle" src={poivron} alt="Generic placeholder image" width="140" height="140" />
+                    <h2>Poivron Rouge en vrac</h2>
+                    <p><a className="btn btn-secondary" href="#" role="button">voir le produit &raquo;</a></p>
                   </div>
                   <div className="col-lg-4">
-                    <img className="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140" />
-                    <h2>Heading</h2>
-                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                    <p><a className="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                    <img className="rounded-circle" src={tomateCerise} alt="Generic placeholder image" width="140" height="140" />
+                    <h2>Tomate cerise en vrac</h2>
+                    <p><a className="btn btn-secondary" href="#" role="button">voir le produit &raquo;</a></p>
                   </div>
                 </div>
               </div>

@@ -2,7 +2,9 @@ import React, {Component} from "react";
 import fruitCarousel from "../Images/fruitCarousel.jpeg";
 import vegetablesCarousel from "../Images/vegetablesCarousel.jpeg";
 import grainsCaroussel from "../Images/grainsCaroussel.jpeg";
-
+import orange from "../Images/products/orange.jpg";
+import poivron from "../Images/products/poivronRouge.jpeg";
+import tomateCerise from "../Images/products/tomateCerise.jpg";
 
 const carouselContent = [fruitCarousel, grainsCaroussel, vegetablesCarousel]
 export default class Accueil extends Component {
@@ -14,13 +16,13 @@ export default class Accueil extends Component {
               <h1 className="my-4">Catégories</h1>
               <div className="list-group">
                 <a href="#" className="list-group-item">
-                  Catégorie  1
+                    Fruits
                 </a>
                 <a href="#" className="list-group-item">
-                    Catégorie  2
+                    Légumes
                 </a>
                 <a href="#" className="list-group-item">
-                    Catégorie  3
+                    Lait et dérivés
                 </a>
               </div>
             </div>
@@ -80,18 +82,18 @@ export default class Accueil extends Component {
                 <a href="#">
                   <img
                     className="card-img-top"
-                    src="http://placehold.it/700x400"
+                    src={tomateCerise}
+                    height="250"
                     alt=""
                   />
                 </a>
                 <div className="card-body">
                   <h4 className="card-title">
-                    <a href="#">Item One</a>
+                    <a href="#">tomate cerise</a>
                   </h4>
-                  <h5>€24.99</h5>
+                  <h5>€2.50 par kg</h5>
                   <p className="card-text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Amet numquam aspernatur!
+                    Tomate cerise d'origine francaise.
                   </p>
                 </div>
                 <div className="card-footer">
@@ -107,15 +109,16 @@ export default class Accueil extends Component {
                 <a href="#">
                   <img
                     className="card-img-top"
-                    src="http://placehold.it/700x400"
+                    src={orange}
+                    height="250"
                     alt=""
                   />
                 </a>
                 <div className="card-body">
                   <h4 className="card-title">
-                    <a href="#">Item Two</a>
+                    <a href="#">Orange</a>
                   </h4>
-                  <h5>€24.99</h5>
+                  <h5>€2.99 par kg</h5>
                   <p className="card-text">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     Amet numquam aspernatur! Lorem ipsum dolor sit amet.
@@ -134,15 +137,16 @@ export default class Accueil extends Component {
                 <a href="#">
                   <img
                     className="card-img-top"
-                    src="http://placehold.it/700x400"
+                    src={poivron}
+                    height="250"
                     alt=""
                   />
                 </a>
                 <div className="card-body">
                   <h4 className="card-title">
-                    <a href="#">Item Three</a>
+                    <a href="#">poivron rouge</a>
                   </h4>
-                  <h5>€24.99</h5>
+                  <h5>€1.99 par kg</h5>
                   <p className="card-text">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     Amet numquam aspernatur!
