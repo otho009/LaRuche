@@ -201,8 +201,8 @@ Ce choix fût alimenté par plusieurs facteurs que nous discuterons plus en dét
 \subsubsection{\textit{Back-end}}
 \begin{description}
   \item [Node.js :] un environnement d'exécution \textbf{JavaScript} côté serveur gratuit et \textit{open-source} utilisant le moteur \textbf{JavaScript V8} de \textit{Google Chrome}.
-  \item [Express :] un framework minimaliste gratuit et open-source, devenu standard pour construire des applications web et des \textbf{API}s côte serveur sur \textbf{Node.js}.
-  \item [MariaDB :] un serveur de base de données gratuit et open-source remplaçant \textbf{MySQL}\footnote{en restant compatible avec \textbf{MySQL}}, introduit par les créateurs de \textbf{MySQL} suite à l'achat de ce dernier par \textbf{Oracle}.
+  \item [Express :] un framework gratuit et open-source pour construire des applications web et des \textbf{API}s sur \textbf{Node.js}.
+  \item [MariaDB :] un serveur de base de données gratuit et open-source remplaçant \textbf{MySQL} tout en restant compatible avec ce dernier.
 \end{description}
 
 \subsubsection{Editeur de texte}
@@ -260,8 +260,7 @@ JQuery.
 \begin{figure}[!ht]
   \centering
   \includegraphics[scale=0.4]{images/bootstrap.png}
-  \caption{navbar du site fait avec bootstrap}
-  \label{fig:modele_EA}
+  \caption{Navbar du site fait avec Bootstrap}
 \end{figure}
 Sur notre site on a donc utilisé Bootstrap pour tout ce qu'on a mentionné, en evitant de reinventer la roue et definir
 l'eshtetique de chaque element HTML à partir de zerò.
@@ -283,7 +282,6 @@ l'orange, qui donnent aux images des produits à vendre une embience de nature e
   \centering
   \includegraphics[scale=0.3]{images/accueil.png}
   \caption{Page d'accueil du site web}
-  \label{fig:modele_EA}
 \end{figure}
 %----------------------------------------------------------------------------------------
 %   BACK-END
@@ -296,7 +294,7 @@ Pour la partie back-end, nous avons décidé d'utiliser \textbf{Node.js}/\textbf
 \subsection{Node.js}
 \begin{figure}[!ht]
   \centering
-  \includegraphics[scale=0.05]{images/nodejs_icon.png}
+  \includegraphics[scale=0.04]{images/nodejs_icon.png}
   \caption{le logo de \textbf{Node.js}}
 \end{figure}
 
@@ -317,41 +315,43 @@ D'autre part, nous nous sommes également servi de \textbf{Node.js} pour l'utili
 %   EXPRESS
 %----------------------------------------------------------------------------------------
 \subsection{Express}
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[scale=0.4]{images/express_icon.png}
+  \caption{Le logo de \textbf{Express}}
+\end{figure}
+
+\textbf{Express} est un framework minimaliste gratuit et open-source, devenu standard pour construire des applications web et des \textbf{API}s côte serveur sur \textbf{Node.js}. Il s'appuie sur des concepts \textbf{MVC} (\textit{Model View Controller}) et offre plusieurs services notamment l'utilisation de moteurs de templates (\textit{EJS (Embedded JavaScript), Handlebars, et Jade}), l'utilisation de \textit{middleware}, la gestion des routes et des formulaires, $\dots$.
+
+Dans le cadre de notre projet nous nous sommes principalement servi d'\textbf{Express} pour la gestion côté serveur des routes implémentées par \textbf{React} en implémentant les opérations \textbf{CRUD} (\textit{Create, Read, Update, Delete}) correspondantes.
 %----------------------------------------------------------------------------------------
-%   MYSQL
+%   MARIADB
 %----------------------------------------------------------------------------------------
 \subsection{MariaBD}
 \begin{figure}[!ht]
   \centering
-  \includegraphics[scale=0.6]{images/Clients.jpg}
+  \includegraphics[scale=0.4]{images/mariadb_icon.png}
+  \caption{Le logo de \textbf{MariaDB}}
+\end{figure}
+
+En général, le serveur de base de données \textbf{MongoDB} est le choix par défaut pour une architecture incluant \textbf{React}, \textbf{Node.js} et \textbf{Express}. Ceci est dû principalement à sa modélisation \textbf{NoSQL} basée sur des documents au format \textbf{JSON} facilitant la récupération et le stockage des données à travers une technologie back-end utilisant \textbf{JavaScript} telle que \textbf{Node.js}.
+
+Toutefois, vu que nous avions déjà traduit notre \textbf{modèle EA} (cf. Figure \ref{fig:modele_EA}) en \textbf{modèle relationnel}, et vu que le serveur de la faculté qui nous a été attribué pour le déploiement de notre site n'hébérgeait pas un serveur \textbf{MongoDB} mais hébérgeait bien son contrepartie \textbf{MySQL}, nous avons opté pour un \textbf{SGBD} relationnel classique, notamment \textbf{MariaDB}.
+
+\textbf{MariaDB} est un serveur de base de données gratuit et open-source, assurant l'interopérabilité avec \textbf{MySQL}, qui fût introduit par les créateurs de \textbf{MySQL} suite à l'achat de ce dernier par \textbf{Oracle}. Il s'agit en réalité d'un fork communautaire de \textbf{MySQL} qui est mis à jour plus souvent que \textbf{MySQL}.
+
+Pour toutes ces raisons, nous avons ainsi décidé d'adopter \textbf{MariaDB} comme \textbf{SGBD} de notre base de données.
+
+Pour interfacer \textbf{Node.js} et \textbf{MariaDB} nous avons eu recours au \textit{package} \og \texttt{mysql} \fg que nous avions téléchargé via \texttt{npm}. Le package contient l'ensemble des fonctionnalités permettant de se connecter à la base de données et d'exécuter des requêtes \textbf{SQL} là-dessus.
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[scale=0.35]{images/er_model.png}
   \caption{Modèle Entité-Association}
   \label{fig:modele_EA}
 \end{figure}
 
 \newpage
-%----------------------------------------------------------------------------------------
-%   SCHÉMA DE BD
-%----------------------------------------------------------------------------------------
-Le modèle relationnel obtenu par traduction du \textbf{modèle EA} des données est le suivant :
-\begin{enumerate}
-  \item { \texttt{REVIEW } (\underline{ID\_review}, \texit{ID\_client}, \texit{ID\_produit}) }
-  \item { \texttt{CLIENT } (\underline{ID\_client}, \attr{email}, \attr{age}, \attr{numero\_tel}, \attr{date\_inscription}, \attr{adresse}) }
-  \item { \texttt{FOURNISSEUR } (\underline{ID\_fournisseur}, \texit{ID\_commande}, \texit{ID\_client}) }
-  \item { \texttt{STOCK } (\underline{ID\_stock}, \texit{ID\_fournisseur}) }
-  \item { \texttt{PANIER } (\underline{ID\_panier}, \texit{ID\_fournisseur}) }
-  \item { \texttt{PRODUIT } (\underline{ID\_produit}, \attr{prix}, \attr{categorie}, \attr{date\_recolte}, \texit{ID\_stock}, \texit{ID\_panier}, \texit{ID\_product\_type}) }
-  \item { \texttt{CHOISIS } (\texit{\underline{ID\_client}}, \texit{\underline{Id\_method}}) }
-  \item { \texttt{INCLUT\_P } (\texit{\underline{ID\_commande}}, \texit{\underline{ID\_panier}}, \attr{quantite}) }
-  \item { \texttt{METHODE\_PAIEMENT } (\underline{Id\_method}) }
-  \item { \texttt{WALLET } (\underline{ID\_wallet}, \attr{solde}, \texit{ID\_client}) }
-  \item { \texttt{UTILISE } (\texit{\underline{ID\_commande\_globale}}, \texit{\underline{Id\_method}}) }
-  \item { \texttt{COMMANDE } (\underline{ID\_commande}, \texit{ID\_commande\_globale}, \texit{ID\_client}, \texit{ID\_fournisseur}) }
-  \item { \texttt{INCLUT } (\texit{\underline{ID\_commande}}, \texit{\underline{ID\_produit}}, \attr{quantite}) }
-  \item { \texttt{COMMANDE\_GLOBALE } (\underline{ID\_commande\_globale}, \texit{ID\_wallet}) }
-  \item { \texttt{FACTURE } (\underline{ID\_facture}, \attr{montant}, \attr{date}, \texit{ID\_commande\_globale}) }
-  \item { \texttt{TYPE\_PRODUIT } (\underline{ID\_product\_type})}
-\end{enumerate}
-
 %----------------------------------------------------------------------------------------
 %   RESULTATS
 %----------------------------------------------------------------------------------------
@@ -392,10 +392,9 @@ Le projet nous interesse et nous avons envie de le continuer comme projet person
 %   APPORT PERSONNEL
 %----------------------------------------------------------------------------------------
 \section{Apports personnels}
-Les difficultés qu'on a eu pendant le projet sont les éléments qui nous a fait apprendre le plus,
-la nouveauté des outils et des concept, ainsi que les convention de la programmation web, qui vont être utiles pour
-notre parcours future, que ce soit dans une continuation d'études ou professionnel.
+Tout au long du projet, chaque difficulté rencontrée, qu'était une nouvelle expérience enrichissante. L'apprentissage de nouveaux concepts de programmation et de gestion de projet et la maîtrise de nouvelles technologies web, que nous n'avions guère manipulé au préalable, était un défi profondément apprécié. En particulier, nous avons eu la chance de profiter des richesses offertes par JavaScript dans différents contextes, ce qui a radicalement changé notre perception du langage.
 
+Nous sommes convaincus que, jusqu'à présent, ce projet fût le plus intéressant, quoique le plus exigeant, parmi les projets auxquels nous avions participé. De plus, nous sommes bien ravis par les connaissances acquises qui prouverons certainement utiles ultérieurement dans nos formations futures mais également dans nos démarches professionnelles.
 %----------------------------------------------------------------------------------------
 %   ANNEXES
 %----------------------------------------------------------------------------------------
