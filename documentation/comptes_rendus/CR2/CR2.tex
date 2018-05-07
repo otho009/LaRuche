@@ -131,13 +131,13 @@ Nous souhaitons aussi remercier tous ceux qui ont contribué directement et indi
 %   CONTEXTE DU PROJET
 %----------------------------------------------------------------------------------------
 \section{Contexte du projet}
-Dans ce rapport, nous nous consacrons à la description détaillée de la phase d'implémentation du projet intitulé \texttt{CourCircuit}\footnote{précédemment nommé \textbf{LaRuche}} à effectuer au sein du \textbf{LIRMM} (\textbf{L}aboratoire d'\textbf{I}nformatique, de \textbf{R}obotique et de \textbf{M}icroélectronique de \textbf{M}ontpellier) dans le cadre du module \textbf{HLIN601 -- TER} de la $3$\ieme{} année de licence en informatique \textbf{CMI} (\textbf{C}ursus \textbf{M}aster \textbf{I}ngénierie).
+Dans ce rapport, nous nous consacrons à la description détaillée de la phase d'implémentation du projet intitulé \texttt{CourCircuit}\footnote{précédemment nommé \textbf{LaRuche}} effectué au sein du \textbf{LIRMM} (\textbf{L}aboratoire d'\textbf{I}nformatique, de \textbf{R}obotique et de \textbf{M}icroélectronique de \textbf{M}ontpellier) dans le cadre du module \textbf{HLIN601 -- TER} de la $3$\ieme{} année de licence en informatique \textbf{CMI} (\textbf{C}ursus \textbf{M}aster \textbf{I}ngénierie).
 
 Le projet se déroule sous l'encadrement de Mme Anne-Elisabeth Baert, enseignante/chercheuse au sein du LIRMM dans l'équipe \textbf{MAORE} (\textbf{M}éthodes \textbf{A}lgorithmes pour l'\textbf{O}rdonnancement et les \textbf{Ré}seaux), en tant que responsable de la formation CMI informatique et M. Eric Bourreau, enseignant/chercheur au sein du LIRMM dans la même équipe \textbf{MAORE}, en tant que responsable pédagogique et encadrant du projet.
 
-Le sujet du projet consiste en la création d'un site web représentant une interface de communication entre fournisseurs de produits locaux et leurs clients. Il est inspiré du site \og \href{https://laruchequiditoui.fr/fr}{La Ruche Qui Dit Oui} \fg traitant le même thème et répondant aux mêmes besoins, cependant adoptant une approche différente, surtout au niveau de la logistique et de l'architecture du site, afin de fournir une vision différente, voire plus optimisée de la gestion des interactions directes entre clients et fournisseurs.
+Le sujet du projet consiste à créer un site web représentant une interface de communication entre fournisseurs de produits locaux et leurs clients. Il est inspiré du site \og \href{https://laruchequiditoui.fr/fr}{La Ruche Qui Dit Oui} \fg traitant les mêmes problématiques, cependant adoptant une approche différente, surtout au niveau de la logistique et de l'architecture du site, afin de fournir une gestion plus optimisée des interactions directes entre clients et fournisseurs.
 
-Nous commencerons ce rapport en faisant un récapitulatif du contexte du projet, des problématiques traitées, et de la méthodologie et des outils de conception adoptés. De plus, nous proposerons une courte description des outils d'implémentation choisis pour la mise en \oe{}uvre. Après, nous procéderons à la description détaillée des outils d'implémentation et à la présentation des résultats obtenus. Enfin, nous conclurons en discutant les difficultés survenues lors du développement et les perspectives du projet.
+Nous commencerons ce rapport en faisant un récapitulatif du contexte du projet, des problématiques traitées, de la méthodologie et des outils de conception. De plus, nous proposerons une courte description des outils d'implémentation choisis. Après, nous procéderons à la description détaillée de ces outils et à tout en présentant les résultats obtenus. Enfin, nous conclurons en discutant les difficultés survenues lors du développement et les perspectives du projet.
 %----------------------------------------------------------------------------------------
 %   PROBLÈME, MÉTHODOLOGIE, OUTILS ET PLANNING
 %----------------------------------------------------------------------------------------
@@ -281,7 +281,7 @@ Cette séparation permet d'optimiser la réutilisabilité des composants, et de 
 \subsection{Bootstrap et Font Awesome}
 \textbf{Bootstrap} est un \textit{framework open-source} et gratuit pour le développement \textit{front-end} d'un site web. Il est pricipalement un \textit{framework} \textbf{CSS} bien qu'il embarque aussi des composants \textbf{JavaScript} et \textbf{HTML}.
 
-En utilisant un système de grille pour gérer le mise en forme d'une page, \textbf{Bootstrap} est capable d'adapter dynamiquement les éléments d'une page par rapport à la taille de la fenêtre du navigateur, permettant ainsi d'avoir un site web \textit{responsive} utilisable sur toute sorte d'écrans (\textit{smartphone, tablet, moniteur, téléviseur, $\dots$}).
+En utilisant un système de grille pour gérer la mise en forme d'une page, \textbf{Bootstrap} est capable d'adapter dynamiquement les éléments d'une page par rapport à la taille de la fenêtre du navigateur, permettant ainsi d'avoir un site web \textit{responsive} utilisable sur toute sorte d'écrans (\textit{smartphone, tablet, moniteur, téléviseur, $\dots$}).
 
 D'autre part, \textbf{Bootstrap} offre un ensemble de classes \textbf{CSS}, des éléments prêts à l'usage (\textit{boutons, formulaires, accordéons, menus de navigation, $\dots$}), et des animations implémentées en \textbf{JQuery}, tout en rendant possible leur personnalisation. Ceci permet alors un développement rapide d'une application web avec peu de lignes de code.
 
@@ -299,7 +299,7 @@ D'autre part, nous nous sommes servis aussi des outils fournis par \textbf{Font 
 Ainsi en se servant de ces deux technologies, chaque composante \textbf{React} du site a été esthétiquement personnalisée, par exemple :
 \begin{itemize}
   \item le \textit{header} du site (cf. Figure \ref{fig:header_navbar_component}) contient une barre de navigation \textit{responsive} pouvant être pliée et dépliée ;
-  \item le \textit{footer} du site (cf. Figure \ref{fig:footer_font_awesome} contient des icônes fournis par \textbf{Font Awesome} comme liens vers d'autres pages.
+  \item le \textit{footer} du site (cf. Figure \ref{fig:footer_font_awesome}) contient des icônes fournis par \textbf{Font Awesome} comme liens vers d'autres pages.
 \end{itemize}
 %----------------------------------------------------------------------------------------
 %   CHARTE GRAPHIQUE
