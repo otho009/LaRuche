@@ -5,7 +5,7 @@ Les producteurs se regroupent pour ouvrir et diversifier leur offre : un maraich
 
 Le projet consiste à concevoir le site web client front et back office (mise à jour des stocks mis en vente et prise de commande par les clients versus organisation de la logistique de préparation des commande, facturation, et redistribution).
 
-# Installation et Utilisation pour Tester les Composants du site
+# Installation et utilisation pour tester les composants du site
 ## installation et utilisation de l'interface graphique
 Pour tester l'interface graphique du site, il faut avoir installé au préalable node et npm. les deux seront installés  si vous procédez à  l'installation de node.
 
