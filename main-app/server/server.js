@@ -9,7 +9,7 @@ app.use(express.json());
 
 const mysql = require("mysql");
 const mysql_user = {
-  login: "courcircuit",
+  login: "courtcircuit",
   password: "nyehenyehe123"
 };
 

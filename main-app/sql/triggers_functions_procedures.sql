@@ -816,11 +816,6 @@ BEGIN
     SET error_message = CONCAT(NEW.prix_total, " euros est un prix invalide de la commande globale ", NEW.id_CG, " !");
     SIGNAL SQLSTATE '45003' SET MYSQL_ERRNO = 30004, MESSAGE_TEXT = error_message;
   END IF;
-  /*vérifier que la date de commande est la date actuelle*/
-  IF date(NEW.date_achat) <> date(CURDATE()) THEN
-    SET error_message = CONCAT("la date de la commande globale ", date(NEW.date_achat), " est invalide ! : ", date(NEW.date_achat), " =/= ", date(CURDATE()));
-    SIGNAL SQLSTATE '45021' SET MYSQL_ERRNO = 30022, MESSAGE_TEXT = error_message;
-  END IF;
 END;//
 
 CREATE OR REPLACE TRIGGER before_update_commande_globale

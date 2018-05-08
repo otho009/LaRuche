@@ -42,63 +42,63 @@ INSERT INTO Fournisseur(prenom, nom, email, password, date_naissance, tel_portab
 
 /*INSERTION DE PRODUITS ET LEURS RÉCOLTES*/
 INSERT INTO Produit(description, prix_produit, unite_stockage, Produit_id_fournisseur) VALUES("Tomates cerises", 2.25, "kg", 1); /*1*/
-INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(1, 15, "2018-05-01", "2018-05-15");
-INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(1, 5, "2018-05-01", "2018-05-15");
-INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(1, 30, "2018-05-05", "2018-05-17");
+INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(1, 15, "2018-06-01", "2018-06-15");
+INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(1, 5, "2018-06-01", "2018-06-15");
+INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(1, 30, "2018-06-05", "2018-06-17");
 INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(1, 20, "2018-06-05", "2018-06-17");
 
 INSERT INTO Produit(description, prix_produit, unite_stockage, Produit_id_fournisseur) VALUES("Framboises", 3, "kg", 1); /*2*/
-INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(2, 10, "2018-05-01", "2018-05-17");
-INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(2, 7, "2018-05-01", "2018-05-17");
-INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(2, 23, "2018-05-05", "2018-05-30");
+INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(2, 10, "2018-06-01", "2018-06-17");
+INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(2, 7, "2018-06-01", "2018-06-17");
+INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(2, 23, "2018-06-05", "2018-06-30");
 
 INSERT INTO Produit(description, prix_produit, unite_stockage, Produit_id_fournisseur) VALUES("Vin rouge", 15, "L", 1); /*3*/
-INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte) VALUES(3, 17, "2018-05-05");
-INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte) VALUES(3, 5, "2018-05-20");
-INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte) VALUES(3, 3, "2018-05-30");
+INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte) VALUES(3, 17, "2018-06-05");
+INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte) VALUES(3, 5, "2018-06-20");
+INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte) VALUES(3, 3, "2018-06-30");
 
 INSERT INTO Produit(description, prix_produit, unite_stockage, Produit_id_fournisseur) VALUES("Vin blanc", 12, "L", 1); /*4*/
-INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte) VALUES(4, 11, "2018-05-05");
-INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte) VALUES(4, 7, "2018-05-20");
-INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte) VALUES(4, 7, "2018-05-30");
+INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte) VALUES(4, 11, "2018-06-05");
+INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte) VALUES(4, 7, "2018-06-20");
+INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte) VALUES(4, 7, "2018-06-30");
 
 INSERT INTO Produit(description, prix_produit, unite_stockage, Produit_id_fournisseur) VALUES("Concombres", 1.41, "piece", 1); /*5*/
-INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(5, 24, "2018-05-01", "2018-05-10");
-INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(5, 10, "2018-05-02", "2018-05-22");
-INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(5, 16, "2018-05-10", "2018-05-30");
+INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(5, 24, "2018-06-01", "2018-06-10");
+INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(5, 10, "2018-06-02", "2018-06-22");
+INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(5, 16, "2018-06-10", "2018-06-30");
 
 INSERT INTO Produit(description, prix_produit, unite_stockage, Produit_id_fournisseur) VALUES("Avocat", 2.5, "piece", 1); /*6*/
-INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(6, 27, "2018-05-01", "2018-05-10");
-INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(6, 23, "2018-05-02", "2018-05-25");
+INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(6, 27, "2018-06-01", "2018-06-10");
+INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(6, 23, "2018-06-02", "2018-06-25");
 
 INSERT INTO Produit(description, prix_produit, unite_stockage, Produit_id_fournisseur) VALUES("Oignons", 0.5, "kg", 2); /*7*/
-INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(7, 20, "2018-05-01", "2018-05-10");
-INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(7, 20, "2018-05-10", "2018-05-25");
+INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(7, 20, "2018-06-01", "2018-06-10");
+INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(7, 20, "2018-06-10", "2018-06-25");
 
 INSERT INTO Produit(description, prix_produit, unite_stockage, Produit_id_fournisseur) VALUES("Oranges", 1, "kg", 2); /*8*/
-INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(8, 10, "2018-05-02", "2018-05-11");
-INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(8, 20, "2018-05-11", "2018-05-26");
+INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(8, 10, "2018-06-02", "2018-06-11");
+INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(8, 20, "2018-06-11", "2018-06-26");
 
 INSERT INTO Produit(description, prix_produit, unite_stockage, Produit_id_fournisseur) VALUES("Fromage chèvre", 2, "kg", 2); /*9*/
-INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(9, 20, "2018-05-03", "2018-05-21");
-INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(9, 25, "2018-05-12", "2018-05-22");
+INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(9, 20, "2018-06-03", "2018-06-21");
+INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(9, 25, "2018-06-12", "2018-06-22");
 
 INSERT INTO Produit(description, prix_produit, unite_stockage, Produit_id_fournisseur) VALUES("Saucisses", 1.5, "kg", 2); /*10*/
-INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(10, 5, "2018-05-04", "2018-06-21");
-INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(10, 25, "2018-05-14", "2018-06-24");
-INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(10, 20, "2018-05-24", "2018-07-01");
+INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(10, 5, "2018-06-04", "2018-06-21");
+INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(10, 25, "2018-06-14", "2018-06-24");
+INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(10, 20, "2018-06-24", "2018-07-01");
 
 INSERT INTO Produit(description, prix_produit, unite_stockage, Produit_id_fournisseur) VALUES("Vin moelleux", 10, "L", 2); /*11*/
-INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte) VALUES(11, 15, "2018-05-05");
-INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte) VALUES(11, 30, "2018-05-30");
+INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte) VALUES(11, 15, "2018-06-05");
+INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte) VALUES(11, 30, "2018-06-30");
 
 INSERT INTO Produit(description, prix_produit, unite_stockage, Produit_id_fournisseur) VALUES("Lait vache", 2.5, "L", 2); /*12*/
-INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(12, 10, "2018-05-05", "2018-05-25");
-INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(12, 30, "2018-05-30", "2018-06-14");
+INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(12, 10, "2018-06-05", "2018-06-25");
+INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(12, 30, "2018-06-30", "2018-07-14");
 
 INSERT INTO Produit(description, prix_produit, unite_stockage, Produit_id_fournisseur) VALUES("Ananas", 2, "piece", 2); /*13*/
-INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(13, 10, "2018-05-05", "2018-05-25");
-INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(13, 20, "2018-05-30", "2018-06-14");
+INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(13, 10, "2018-06-05", "2018-06-25");
+INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(13, 20, "2018-06-30", "2018-07-14");
 INSERT INTO Recolte(Recolte_id_produit, qte_recoltee, date_recolte, date_expiration) VALUES(13, 5, "2018-06-01", "2018-06-20");
 
 INSERT INTO Produit(description, prix_produit, unite_stockage, Produit_id_fournisseur) VALUES("Pommes rouges", 2, "kg", 1); /*14*/
@@ -168,19 +168,19 @@ INSERT INTO AppartientCoop(AppartientCoop_id_cooperative, AppartientCoop_id_four
 INSERT INTO AppartientCoop(AppartientCoop_id_cooperative, AppartientCoop_id_fournisseur) VALUES(2, 13);
 
 /*CHOIX D'UN POINT DE COLLECTE PAR UNE COOPÉRATIVE*/
-INSERT INTO ChoisitPC VALUES(1, 1, "2018-05-12");
-INSERT INTO ChoisitPC VALUES(1, 1, "2018-05-20");
-INSERT INTO ChoisitPC VALUES(1, 3, "2018-05-25");
-INSERT INTO ChoisitPC VALUES(2, 2, "2018-05-15");
-INSERT INTO ChoisitPC VALUES(2, 3, "2018-05-25");
+INSERT INTO ChoisitPC VALUES(1, 1, "2018-06-12");
+INSERT INTO ChoisitPC VALUES(1, 1, "2018-06-20");
+INSERT INTO ChoisitPC VALUES(1, 3, "2018-06-25");
+INSERT INTO ChoisitPC VALUES(2, 2, "2018-06-15");
+INSERT INTO ChoisitPC VALUES(2, 3, "2018-06-25");
 
 /*CHOIX D'UN POINT DE COLLECTE PAR UN FOURNISSEUR*/
-INSERT INTO ChoisitPCF VALUES(1, 3, "2018-05-20");
-INSERT INTO ChoisitPCF VALUES(9, 1, "2018-05-12");
-INSERT INTO ChoisitPCF VALUES(9, 3, "2018-05-20");
-INSERT INTO ChoisitPCF VALUES(5, 1, "2018-05-12");
-INSERT INTO ChoisitPCF VALUES(5, 2, "2018-05-16");
-INSERT INTO ChoisitPCF VALUES(5, 4, "2018-05-17");
+INSERT INTO ChoisitPCF VALUES(1, 3, "2018-06-20");
+INSERT INTO ChoisitPCF VALUES(9, 1, "2018-06-12");
+INSERT INTO ChoisitPCF VALUES(9, 3, "2018-06-20");
+INSERT INTO ChoisitPCF VALUES(5, 1, "2018-06-12");
+INSERT INTO ChoisitPCF VALUES(5, 2, "2018-06-16");
+INSERT INTO ChoisitPCF VALUES(5, 4, "2018-06-17");
 
 /*INSERTION DE COMMANDES et COMMANDE GLOBALES*/
 INSERT INTO CommandeGlobale(ref_CG, CG_id_client) VALUES("CG1", 1);
