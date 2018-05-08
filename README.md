@@ -18,13 +18,14 @@ Une fois que node et npm installés, vous devez :
 1. créer un dossier qui contiendra l'application : `mkdir CourtCircuit`
 2. copier l'archive téléchargé dans le dossier de l'application : `cp code.tar.gz CourtCircuit/` 
 3. extraire le contenu de tar.gz : `tar -xvzf code.tar.gz`
-4. installer les modules dont l'application dépend : `npm install`
+4. Aller dans le dossier main-app  : `cd main-App`
+5. installer les modules dont l'application dépend : `npm install`
 5. démarrer l'application : `npm start`
 
 #### Si vous voulez faire un git clone  
 1. créer un dossier qui contiendra l'application : `mkdir CourtCircuit`
 2. Exécuter le clonage : ` git clone https://github.com/otho009/LaRuche.git`
-3. Aller dans le dossier main-app  : `cd main-App`
+3. Aller dans le dossier main-app  : `cd LaRuche/main-App`
 4. installer les modules dont l'application dépend : `npm install`
 5. démarrer l'application : `npm start`
 
