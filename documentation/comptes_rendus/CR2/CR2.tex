@@ -12,8 +12,8 @@
 \usepackage[page,toc,titletoc,title]{appendix} %appendices
 \usepackage[nottoc,notlot,notlof]{tocbibind} %bind the table of contents to the bibligoraphy
 \usepackage{silence} %silencing warnings
-\WarningFilter{latex}{Text page} 
-  
+\WarningFilter{latex}{Text page}
+
 %Defining custom commands for relational model
 \newcommand{\attr}[1]{\emph{#1}}
 \newcommand{\texit}[1]{\#\textsl{#1}}
@@ -417,29 +417,29 @@ Nous sommes convaincus que, jusqu'à présent, ce projet fût le plus intéressa
 %----------------------------------------------------------------------------------------
 %   ANNEXES
 %----------------------------------------------------------------------------------------
-\begin{appendices} 
+\begin{appendices}
 \pagenumbering{roman}
 \setcounter{page}{1}
 
-\chapter{Quelques images du site} 
+\chapter{Quelques images du site}
 Dans ce chapitre, nous illustrons quelques snapshots de notre application web.
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[scale=0.35]{images/signIn.png}
+  \caption{La page de connexion}
+\end{figure}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[scale=0.35]{images/signUp.png}
+  \caption{La page d'inscription}
+\end{figure}
 
 \begin{figure}[!ht]
   \centering
   \includegraphics[scale=0.23]{images/about.png}
   \caption{La page À propos}
-\end{figure}
-
-% \begin{figure}[!ht]
-%   \centering
-%   \includegraphics[scale=0.35]{images/signUp.png}
-%   \caption{La page d'inscription}
-% \end{figure}
-
-\begin{figure}[!ht]
-  \centering
-  \includegraphics[scale=0.35]{images/signin.png}
-  \caption{La page de connexion}
 \end{figure}
 
 \begin{figure}[!ht]
@@ -459,7 +459,5 @@ Dans ce chapitre, nous illustrons quelques snapshots de notre application web.
   \includegraphics[scale=0.35]{images/panier.png}
   \caption{La page du panier}
 \end{figure}
-
- 
 \end{appendices}
 \end{document}

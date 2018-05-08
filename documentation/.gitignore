@@ -11,6 +11,8 @@
 *.bbl
 *.blg
 *.dvi
+*.fdb_latexmk
+*.fls
 *.glg
 *.gls
 *.ilg
@@ -21,4 +23,5 @@
 *.mtc
 *.mtc1
 *.out
+*.thm
 *.synctex.gz

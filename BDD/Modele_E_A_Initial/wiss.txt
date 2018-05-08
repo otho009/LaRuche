@@ -1,1 +1,0 @@
-Modifications Wissem GestionCommande: enlever appartient et la relier avec produit au lieu de stock avec 1,1 
