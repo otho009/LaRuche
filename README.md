@@ -7,21 +7,31 @@ Le projet consiste à concevoir le site web client front et back office (mise à
 
 # Installation et Utilisation pour Tester les Composants du site
 ## installation et utilisation de l'interface graphique
-Pour tester l'interface graphique du site, il faut avoir installé au préalable node. npm lui qui sera intstallé pendant l'installation de node.
+Pour tester l'interface graphique du site, il faut avoir installé au préalable node et npm. les deux seront installés  si vous procédez à  l'installation de node.
 
-###Lien d'installation
-[Lien d'installation](https://nodejs.org/en/download/)
+### Lien d'installation
+- [Lien d'installation](https://nodejs.org/en/download/)
 
-Une fois que node et npm soient installés, vous devez :
+Une fois que node et npm installés, vous devez :
+#### Si vous voulez utiliser l'archive tar 
+
 1. créer un dossier qui contiendra l'application : `mkdir CourtCircuit`
-2. copier l'archive téléchargé dans le dossier de l'application : `cp code.tar.gz CourtCircuit/`
-3. extracter le contenu de tar.gz : `tar -xvzf code.tar.gz`
+2. copier l'archive téléchargé dans le dossier de l'application : `cp code.tar.gz CourtCircuit/` 
+3. extraire le contenu de tar.gz : `tar -xvzf code.tar.gz`
 4. installer les modules dont l'application dépend : `npm install`
 5. démarrer l'application : `npm start`
 
+#### Si vous voulez faire un git clone  
+1. créer un dossier qui contiendra l'application : `mkdir CourtCircuit`
+2. Exécuter le clonage : ` git clone https://github.com/otho009/LaRuche.git`
+3. Aller dans le dossier main-app  : `cd main-App`
+4. installer les modules dont l'application dépend : `npm install`
+5. démarrer l'application : `npm start`
+
+
 Vous serez redirigé vers le navigateur où l'interface graphique sera affichée.
 
-## installation et utilisation du serveur
+## Installation et utilisation du serveur
 Une fois que vous avez extrait l'archive du code :
 1. Rentrez dans dans le dossier `./server` depuis la racine de l'application : `cd /server`
 2. Installer les modules dont le serveur dépend : `npm install`
@@ -29,7 +39,7 @@ Une fois que vous avez extrait l'archive du code :
 
 Votre serveur sera alors mis en marche en attendant des requêtes d'un client
 
-##installation et utilisation de la base de données
+## Installation et utilisation de la base de données
 Une fois que vous avez extrait l'archive du code :
 1. Rentrez dans le dossier `/sql` depuis la racine de l'apllication : `cd /server`
 2. lancer mysql ou mariadb dans le terminal.
@@ -41,5 +51,5 @@ Une fois que vous avez extrait l'archive du code :
 
 Votre base de données sera ainsi créée et contient les tables et les données de l'application que vous pouvez tester via PHPMyAdmin
 
-##Remarque
-Pous pouvez aussi récupérer ces fichiers depuis notre [lien GitHub](https://github.com/otho009/LaRuche)
+## Remarque
+Pous pouvez aussi récupérer l'ensemble des fichiers depuis notre [lien GitHub](https://github.com/otho009/LaRuche)
