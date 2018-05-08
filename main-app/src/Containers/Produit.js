@@ -19,14 +19,14 @@ export default class Produit extends Component {
               <img className="d-block w-100" src={tomateCerise}/>
             </div>
             <div className="col-lg-4 col-md-6 col-sm-8 col-xs-12">
-              <h1 className="display-5">Tomate Cerise en vrac</h1>
+              <h1 className="display-5">Tomate Cerise </h1>
               <div id="lienVendeur">
                 <NavLink exact to="/Vendeur">
-                  producteur: Jean Martin
+                  Producteur: Jean-Pierre
                 </NavLink>
               </div>
               <p>
-                origine du produit: Languedoc-Roussillon
+                Origine du produit: Languedoc-Roussillon
                 <br/>
                 prix: €2.50
               </p>
@@ -46,10 +46,10 @@ export default class Produit extends Component {
                     <button className="btn btn-warning" type="button">Commander</button>
                   </div>
                   <select className="custom-select" id="inputPointCollect" placeholder="Choisir point de collecte et date">
-                    <option value="1">Saint Roche lundi cette semaine</option>
-                    <option value="2">Saint Roche jeudi cette semaine</option>
-                    <option value="3">Saint Roche lundi semaine prochaine</option>
-                    <option value="3">Saint Roche jeudi semaine prochaine</option>
+                    <option value="1">Place de la comédie, lundi 26 Aout</option>
+                    <option value="2"> Place de la comédie jeudi 29 Aout</option>
+                    <option value="3">Saint  lundi semaine prochaine</option>
+                    <option value="3">Saint  jeudi semaine prochaine</option>
                   </select>
                 </div>
               </form>
@@ -58,8 +58,8 @@ export default class Produit extends Component {
         </div>
         <div className="container">
           <h5>Description du produit:</h5>
-          Ces tomates Cerises sont coltivées en France, danla region du Languedoc-Roussillon, sans utilisation de pesticides chimiques.
-          Il sont toujours vendu au plus deux semaines après leurs collect.
+          Ces tomates cerises sont cultivées en France, dans la region du Languedoc-Roussillon, issues d'agriculture agriculture raisonnée.
+          Les reservations sont possibles, selon le stock disponible, à partir de deux semaines avant la récolte.
         </div>
         </div>
       </div>

@@ -12,8 +12,8 @@
 \usepackage[page,toc,titletoc,title]{appendix} %appendices
 \usepackage[nottoc,notlot,notlof]{tocbibind} %bind the table of contents to the bibligoraphy
 \usepackage{silence} %silencing warnings
-\WarningFilter{latex}{Text page}
-
+\WarningFilter{latex}{Text page} 
+  
 %Defining custom commands for relational model
 \newcommand{\attr}[1]{\emph{#1}}
 \newcommand{\texit}[1]{\#\textsl{#1}}
@@ -275,7 +275,7 @@ Cette séparation permet d'optimiser la réutilisabilité des composants, et de 
 \subsubsection{JSX : \textit{JavaScript XML}}
 \textbf{React} peut s’écrire avec une syntaxe \textbf{JavaScript pure}. Toutefois, ce processus devient fort répétitif et illisible. Pour gagner en lisibilité et économie d'écriture, \textbf{JSX} a été introduit comme extension syntaxique du \textbf{JavaScript}, d'où notre choix de l'utiliser dans notre projet.
 
-\textbf{JSX} rend le code beaucoup plus souple à lire et écrire, et donc facilite la compréhension du code et le rend plus déclarative. Cependant, \textbf{JSX} ne pouvant être interprété par le navigateur, \textbf{Babel} a proposé un \textit{preset} permettant de transpiler le code \textbf{JSX} en code \textbf{JavaScript} classique et interprétable par le navigateur.
+\textbf{JSX} rend le code beaucoup plus souple à lire et écrire, et donc facilite la compréhension du code. Cependant,  \textbf{JSX} ne pouvant être interprété par le navigateur, Nous avons recours à \textbf{Babel}  qui propose un \textit{preset} permettant de transpiler le code \textbf{JSX} en code \textbf{JavaScript} classique et interprétable par le navigateur.
 %----------------------------------------------------------------------------------------
 %   BOOTSTRAP
 %----------------------------------------------------------------------------------------
@@ -295,7 +295,7 @@ D'autre part, \textbf{Bootstrap} offre un ensemble de classes \textbf{CSS}, des 
 
 Dans notre projet, nous avons alors eu recours à \textbf{Bootstrap} pour éviter la redéfinition de l'aspect esthétique de chaque élément HTML à partir du zéro.
 
-D'autre part, nous nous sommes servis aussi des outils fournis par \textbf{Font Awesome}. \textbf{Font Awesome} a été créé pour être utilisé avec \textbf{Bootstrap} en rendant les icônes utilisables en tant que polices pouvant subir des changement de styles via CSS, SASS et LESS.
+D'autre part, nous nous sommes servis aussi des outils fournis par \textbf{Font Awesome}. Ce dernier a été créé pour être utilisé avec \textbf{Bootstrap} en rendant les icônes utilisables en tant que polices pouvant subir des changement de styles via CSS, SASS et LESS.
 
 Ainsi en se servant de ces deux technologies, chaque composante \textbf{React} du site a été esthétiquement personnalisée, par exemple :
 \begin{itemize}
@@ -417,22 +417,28 @@ Nous sommes convaincus que, jusqu'à présent, ce projet fût le plus intéressa
 %----------------------------------------------------------------------------------------
 %   ANNEXES
 %----------------------------------------------------------------------------------------
-\begin{appendices}
+\begin{appendices} 
 \pagenumbering{roman}
 \setcounter{page}{1}
 
-\chapter{Snapshots du site}
+\chapter{Quelques images du site} 
 Dans ce chapitre, nous illustrons quelques snapshots de notre application web.
 
 \begin{figure}[!ht]
   \centering
-  \includegraphics[scale=0.35]{images/signUp.png}
-  \caption{La page d'inscription}
+  \includegraphics[scale=0.23]{images/about.png}
+  \caption{La page À propos}
 \end{figure}
+
+% \begin{figure}[!ht]
+%   \centering
+%   \includegraphics[scale=0.35]{images/signUp.png}
+%   \caption{La page d'inscription}
+% \end{figure}
 
 \begin{figure}[!ht]
   \centering
-  \includegraphics[scale=0.35]{images/signIn.png}
+  \includegraphics[scale=0.35]{images/signin.png}
   \caption{La page de connexion}
 \end{figure}
 
@@ -444,14 +450,16 @@ Dans ce chapitre, nous illustrons quelques snapshots de notre application web.
 
 \begin{figure}[!ht]
   \centering
-  \includegraphics[scale=0.35]{images/cart.png}
-  \caption{La page du chariot}
+  \includegraphics[scale=0.35]{images/vendeur.png}
+  \caption{La page d'un vendeur}
 \end{figure}
 
 \begin{figure}[!ht]
   \centering
-  \includegraphics[scale=0.35]{images/vendeur.png}
-  \caption{La page d'un vendeur}
+  \includegraphics[scale=0.35]{images/panier.png}
+  \caption{La page du panier}
 \end{figure}
+
+
 \end{appendices}
 \end{document}
