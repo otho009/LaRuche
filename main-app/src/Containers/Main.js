@@ -8,7 +8,7 @@ import Cart from "./Cart.js";
 import Produit from "./Produit.js";
 import Vendeur from "./Vendeur.js";
 import Cooperative from "./Cooperative.js";
-import Header from "../Components/Header2.js";
+import Header from "../Components/Header.js";
 import Footer from "../Components/Footer.js";
 export default class Main extends Component {
   constructor() {
