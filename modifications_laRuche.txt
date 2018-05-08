@@ -1,0 +1,327 @@
+NOMS POSSIBLES:
+===============
+Projet : CCC ou C3 (Circuit-Court des Coopératives)
+site web : www.c3.com
+<Ruche> :
+  - Cooperative
+  - Souk
+
+SYNTAXE EA:
+===========
+Entités : (nom[(key[, attribut calculé, ...])][, ...])
+Associations :
+  - binaire : Entite1 cardMin,cardMax nomAssociation cardMin,cardMax Entite2 [attributs : nom1[, ...]]
+  - ternaire : Entite1 cardMin,cardMax nomAssociation cardMin,cardMax Entite2 cardMin,cardMax Entite3 [attributs : nom[, ...]] (relation ternaire)
+
+CONVENTIONS DE NOMMAGE:
+=======================
+- entité en modèle EA et relations en modèle relationnel : CamelCase (Client, HistoriqueAchat, ...)
+- association en modèle EA : camelCase (contient, possedeStock, ...)
+- attribut en modèle EA et modèle relationnel : snake_case (prix, unite_stockage, qte_stockee, ...)
+
+MODÈLE EA:
+==========
+- Entités :
+  1- Client(ID(key), email, password, date_naissance, age (attribut calculé), tel_portable, date_inscription, num_rue, nom_rue, code_postal)
+  2- Fournisseur(ID(key), num_siret, email, password, date_naissance, age (attribut calculé), tel_portable, date_inscription, num_rue, nom_rue, code_postal)
+  3- Cooperative(ID(key), nom, description)
+  4- PointCollecte(ID(key), description, num_rue, nom_rue, code_postal)
+  5- Produit(ID(key), description, prix, unite_stockage)
+  6- Recolte(ID(key), qte_recoltee, date_recolte, date_expiration)
+  7- Stock(ID(key), qte_stockee)
+  8- Panier(ID(key), description, prix)
+  9- Commande(ref(key))
+  10- CommandeGlobale(ref(key))
+  11- Facture(ref(key))
+  12- Review(ID(key), title, score, content)
+  13- Wallet(ID(key), solde)
+  14- MethodePaiement(ID(key), designation)
+  15- CarteBancaire(ID(key), num, nomTitulaire, codeVerif, date_expiration)
+
+  ajouter Entité Utilisateur
+
+- Associations :
+  1- Fournisseur 1,N stocke 1,1 Stock 1,1 Produit (relation ternaire)
+  2- Produit 1,N possedeRecolte 1,1 Recolte
+  3- Panier 1,N regroupe 0,N Produit (attributs : qte_regroupee)
+  4- Fournisseur 0,N propose 1,1 Panier (attributs : date_creation)
+  5- Client 1,1 possedeWallet 1,1 Wallet
+  6- Client 1,N possedeMP 1,1 MethodePaiement
+  7- Client 0,N effectue 1,1 CommandeGlobale
+  8- CommandeGlobale 0,1 utiliseMP 0,N MethodePaiement
+  9- CommandeGlobale 0,1 consommeSolde 0,N Wallet (attributs : qte_consommee)
+  10-CommandeGlobale 1,N seCompose 1,1 Commande (attributs : date_achat, qté_totale, prix_total)
+  11- CommandeGlobale 0,1 genere 1,1 Facture
+  12- Commande 1,N inclutProduit 0,N Produit (attributs : qte_commandee, prix)
+  13- Commande 1,N inclutPanier 0,N Panier (attributs : qte_paniers_commandee, prix)
+  14- Fournisseur 1,N valide 1,1 Commande
+  15- Client 0,N ecrit 1,1 Review 0,1 Produit (attributs : date_review) (relation ternaire)
+  16- Client 0,N communiqueC 0,N Fournisseur (attributs : date_communication, contenu) /*à relier à la relation Utilisateur dans la version 2 en changeant la modélisation entre client et fournisseur comme étant des sous-classes de Utilisateur)*/
+  17- Fournisseur 0,N communiqueF 0,N Fournisseur (attributs : date_communication, contenu) /*idem*/
+  18- Fournisseur 0,N appartient 2,N Cooperative (attributs : date_affiliation)
+  19- Cooperative 1,N choisitPC 1,N PointCollecte (attributs : date_reservation)
+  20- Fournisseur 1,N choisitPCI 1,N PointCollecte (attribut : date_reservation)
+
+- Héritage :
+  1- CarteBancaire est une MethodePaiement
+  2- Client est un Utilisateur
+  3- Fournisseur est un Utilisateur
+
+MODÈLE RELATIONNEL:
+===================
+1- Client :
+  - id_client : clé primaire, entier non nul
+  - email : varchar selon regex pour les emails, unique
+  - password : varchar 50 caractères max
+  - date_naissance : date
+  - age : entier non nul, calculé à partir de date_naissance
+  - tel_portable : format telephone
+  - date_inscription : date
+  - num_rue : entier non nul
+  - nom_rue : varchar 50 caractères max
+  - ville : varchar 50 caractères max
+  - code_postal : entier non nul
+  - Client_id_wallet : clé étrangère référençant id_wallet
+2- Fournisseur :
+  - id_fournisseur : clé primaire, entier non nul
+  - num_siret : à vérifier, unique
+  - email : varchar selon regex pour les emails, unique
+  - password : varchar 50 caractères max
+  - date_naissance : date
+  - age : entier non nul, calculé à partir de date_naissance
+  - tel_portable : format téléphone
+  - date_inscription : date
+  - num_rue : entier non nul
+  - nom_rue : varchar 50 caractères max
+  - ville : varchar 50 caractères max
+  - code_postal : entier non nul
+3- Cooperative :
+  - id_cooperative : clé primaire, entier non nul
+  - nom : varchar 50 caractères max
+  - description : varchar 1024 caractères max
+4- PointCollecte :
+  - id_PC : clé primaire, entier non nul
+  - description : varchar 50 caractères max
+  - num_rue : entier non nul
+  - nom_rue : varchar 50 caractères max
+  - code_postal : entier non nul
+5- Produit :
+  - id_produit : clé primaire, entier non nul
+  - description : varchar 1024 caractères max
+  - prix : double
+  - unite_stockage : varchar 5 caractères max, a priori soit L soit Kg
+  - Produit_id_fourniseur : clé étrangère référençant id_fournisseur
+  - qte_stockee : entier non nul
+6- Recolte :
+  - id_recolte : clé primaire, entier non nul
+  - qte_recoltee : entier non nul
+  - date_recolte : date
+  - date_expiration : date
+  - Recolte_id_produit : clé étrangère référençant id_produit
+7- Panier :
+  - id_panier : clé primaire, entier non nul
+  - description : varchar 1024 caractères max
+  - prix : double
+  - Panier_id_fournisseur : clé étrangère référençant id_fournisseur
+  - date_creation : date
+8- Commande :
+  - ref_commande : clé primaire, alphanumérique 20 caractères max
+  - Commande_ref_CG : clé étrangère référençant ref_commande_globale
+  - Commande_id_fournisseur : clé étrangère référençant id_fournisseur
+9- CommandeGlobale :
+  - ref_commande_globale : clé primaire, alphanumérique 20 caractères max
+  - CG_id_client : clé étrangère référençant id_client
+  - CG_id_MP : clé étrangère référençant id_methode_paiement
+  - date_achat : date
+  - qté_totale : entier non nul
+  - prix_total : double
+10- Facture :
+  - ref_facture : clé primaire, alphanumérique 20 caractères max
+  - Facture_ref_CG : clé étrangère référençant ref_commande_globale
+11- Review :
+  - id_review : clé primaire, entier non nul
+  - titre : varchar 50 caractères max
+  - score : entier entre 1 et 5
+  - contenu : varchar 1024 caractères max
+  - Review_id_client : clé étrangère référençant id_client
+  - Review_id_produit : clé étrangère référençant id_produit
+  - date_review : date
+  @ clé primaire : id_review + Review_id_client + Review_id_produit
+12- Wallet :
+  - id_wallet : clé primaire, entier non nul
+  - solde : double
+13- MethodePaiement :
+  - id_methode_paiement : clé primaire, entier non nul
+  - designation : varchar 50 caractères max
+14- CarteBancaire :
+  - id_carte : clé primaire, entier non nul, clé étrangère référençant id_MP
+  - num : char de taille fixe pour stocker le hachage correspondant au numéro de la carte
+  - nom_titulaire : varchar : 50 caractères maximum
+  - code_verification : char de taille fixe pour stocker le hachage correspondant au code de vérification de la carte.
+  - date_expiration : le mois et l'année d'expiration de la carte.
+15- PanierRegroupeProduit :
+  - Regroupe_id_panier : clé étrangère référençant id_panier
+  - Regoupe_id_produit : clé étrangère référençant id_produit
+  - qte_regroupee : entier non nul
+  @ clé primaire : Regroupe_id_panier + Regoupe_id_produit
+16- ConsommeSolde :
+  - Consomme_ref_CG : clé étrangère référençant ref_commande_globale, alphanumérique 20 caractères max
+  - Consomme_id_wallet : clé étrangère référençant id_wallet
+  - qte_consommee : entier non nul
+  @ clé primaire : Consomme_ref_CG + Consomme_id_wallet
+17- InclutProduit :
+  - Inclut_ref_commande : clé étrangère référençant ref_commande
+  - Inclut_id_produit : clé étrangère référençant id_produit
+  - qte_commandee : entier non nul
+  - prix : double
+18- InclutPanier :
+  - Inclut_ref_commande : clé étrangère référençant ref_commande
+  - Inclut_id_panier : clé étrangère référençant id_panier
+  - qte_paniers_commandee : entier non nul
+  - prix : double
+19- CommuniqueC :
+  - CommuniqueC_id_client : clé étrangère référençant id_client
+  - CommuniqueC_id_fournisseur : clé étrangère référençant id_fournisseur
+  - date_communication : date
+  - contenu : varchar de longueur maximale
+  @ clé primaire : CommuniqueC_id_client + CommuniqueC_id_fournisseur
+20- CommuniqueF :
+  - CommuniqueF_id_fournisseur1 : clé étrangère référençant id_fournisseur
+  - CommuniqueF_id_fournisseur2 : clé étrangère référençant id_fournisseur
+  - date_communication : date
+  - contenu : varchar de longueur maximale
+  @ clé primaire : CommuniqueF_id_fournisseur1 + CommuniqueC_id_fournisseur2
+21- AppartientCoop :
+  - AppartientCoop_id_fournisseur : clé étrangère référençant id_fournisseur
+  - AppartientCoop_id_cooperative : clé étrangère id_cooperative
+  - date_affiliation
+  @ clé primaire : AppartientCoop_id_fournisseur + AppartientCoop_id_coop
+22- ChoisitPC :
+  - ChoisitPC_id_cooperative : clé étrangère référençant id_cooperative
+  - ChoisitPC_id_PC : clé étrangère référençant id_PC
+  - date_reservation : date
+  @ clé primaire : ChoisitPC_id_cooperative + ChoisitPC_id_PC
+23- ChoisitPCI :
+  - ChoisitPC_id_fournisseur : clé étrangère référençant id_fournisseur
+  - ChoisitPC_id_PC : clé étrangère référençant id_PC
+  - date_reservation : date
+  @ clé primaire : ChoisitPC_id_fournisseur + ChoisitPC_id_PC
+
+CONTRAINTES:
+============
+7- Vérifier qu'il y a une correspondance entre la ville et le code postale avec possibilité d'ajout d'autocomplétion des deux lors du remplissage du formulaire.
+
+PROCÉDURES:
+===========
+- Pour une coopérative sans nom, on fournit un nom par défaut = nomRegion + numéro de la coopérative dans la région
+
+TRIGGERS:
+=========
+- un trigger qui se déclenche chaque soir pour vérifier que date_expiration ne correspond pas à la date actuelle.
+- un trigger pour supprimer un tuple de la table CommuniqueC si les deux clés étrangères sont null (le client et le fournisseur ont été supprimé).
+- un trigger pour supprimer un tuple de la table CommuniqueF si les deux clés étrangères sont null (fournisseur1 et fournisseur2 ont été supprimé).
+- un trigger pour vérifier que fournisseur 1 et fournisseur 2 sont différents en CommuniqueF. (un fournisseur ne peut pas se parler)
+- un trigger pour les ventes : modifier l'attribut "quantité" dans la table Produit
+début
+  Var qteV, t; //quantité calculée avant l'appel du trigger, correspondant à la quantité commandée dans la table des ventes
+  si le produit vendu possède plusieurs dates dans la table HistoriqueProduit alors
+    choisir t comme le tuple ayant la date la plus ancienne;
+    tant que qte_ajoutee(t) > qte_vendue(t) alors
+      si qteV + qte_vendue(t) > qte_ajoutee(t) alors
+        qteV <- qteV + qte_vendue(t) - qte_ajoutee(t);
+        qte_vendue(t) <- qte_ajoutee(t);
+        t <- (t+1); //t+1 est le tuple du même produit ayant la date de récolte la plus ancienne prochaine
+      sinon
+        qte_vendue <- qte_vendue + qteV;
+  sinon //il n'existe qu'un seul tuple valide avec une date de récolte la plus récente
+    t <- le tuple ayant cette date;
+    qte_vendue(t) <- qte_vendue + qteV;
+  fin si
+fin
+- un trigger pour vérifier qu'une méthode de paiement déjà référencée par une sous-classe S ne peut être insérée dans aucune autre sous-classe de MP.
+- un trigger pour insérer directement un wallet lors de la création d'un client.
+
+
+FORMULAIRES:
+============
+Formulaire de création d'un compte client
+si client est déjà un fournisseur alors
+  récupérer les informations du compte fournisseur
+
+Formulaire d'ajout d'un produit :
+si radio = vrac alors
+  choisir radio kg ou l;
+  spécifier quantité dans textbox de quantité;
+sinon // radio = unité
+  choisir radio kg ou l;
+  spécifier quantité dans textbox de quantité; //nombre d'unités
+  spécifier quantité dans textbox de UValeur; //quantité dans l'unité
+fin si
+
+ARBORESCENCE DU SITE :
+======================
+index.html (home page)
+  connexion
+    si client -> index.html
+    si fournisseur -> profile_fournisseur.html
+    mot de passe oublié ?
+      demande de consultation d'email
+      tapper sur lien envoyé
+        saisi un nouveau mot de passage
+        succès et -> même méchanisme de redirection vu précédemment selon le type d'utilisateur
+  inscription
+    formulaire
+    si client -> index.html
+    si fournisseur -> profile_fournisseur.html
+  recherche produits
+  header (logo)
+  content (description du site)
+  menu de navigation
+  footer (termes et conditions, about us, FAQ, etc...)
+
+profile_fournisseur
+  ajouter produits/paniers
+    ajouter un nouveau produit
+    ajouter un nouvea panier
+    modifier stock
+  consulter stocks
+    modifier stock
+  historique de ventes et de stocks
+    validation des commandes en attente
+    consulter graphiques et statistiques
+    télécharger pdf
+  messages
+    envoyer un message
+    consulter chats
+      supprimer un chat
+  paramètres personnelles
+    profile
+      changer mot de passe
+      changer photo du profile
+      supprimer ton compte
+  recherche
+
+  profile_utilisateur
+
+PERSPECTIVES:
+=============
+- voisinage facultatif par inclusion de zones :
+s'il existe deux souks R1 et R2 telles que, Z(R1) \subseteq Z(R2) ou Z(R2) \subseteq Z(R2)
+On peut trouver un meillure souk R' formée de R1 et R2 mais telle que Z(R') = Z(R1) \cap Z(R2).
+
+- fonctionnalité de téléchargement de pdf/excel/... pour les graphiques et statistiques
+- Lors de l'affichage de l'historique d'ajout de produits (avec leurs récoltes), additionner les qté récoltés d'un même produit de deux récoltes différentes occurrant le même jour
+
+
+
+
+
+VERSIONS:
+=========
+LaRuche 1.0 :
+- connexion et inscription
+- ajouter/modifier/supprimer produits/paniers
+- consulter stocks
+- recherche de produits/fournisseurs/ruches
+- supprimer le compte
+- faire des commandes basiques : validation automatique des commandes.

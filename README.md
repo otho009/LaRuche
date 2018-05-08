@@ -43,7 +43,8 @@ Votre serveur sera alors mis en marche en attendant des requêtes d'un client
 Une fois que vous avez extrait l'archive du code :
 1. Rentrez dans le dossier `/sql` depuis la racine de l'apllication : `cd /server`
 2. lancer mysql ou mariadb dans le terminal.
-3. exécuter les fichiers sql pour créer la base de données, les tables, les triggers/procédures/fonctions, et remplir les tables avec des données pour la tester :
+3. créez un utilisateur "courtcircuit" ayant un mot de passe "nyehenyehe123" pour pouvoir établir la connexion ultérieurement avec le serveur. 
+4. exécuter les fichiers sql pour créer la base de données, les tables, les triggers/procédures/fonctions, et remplir les tables avec des données pour la tester :
   * `mysql> \. db_creation.sql`
   * `mysql> \. tables_creation.sql`
   * `mysql> \. triggers_functions_procedures.sql`
