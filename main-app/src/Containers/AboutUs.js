@@ -54,8 +54,8 @@ export default class Accueil extends Component {
                                 <div className="col-lg-6 order-lg-1 my-auto showcase-text">
                                     <h2>Un Esprit de Coopération
                                     </h2>
-                                    <p className="lead mb-0">We all know that this site will look great on any device,
-                                        whether it's a phone, tablet, or desktop bisous bisous</p>
+                                    <p className="lead mb-0"> Chez Court-circuit, les producteurs travaillent main dans la main pour vous proposez des produits de qualité.
+                                        </p>
                                 </div>
                                 <div
                                     className="col-lg-6 order-lg-2 text-white showcase-img"
