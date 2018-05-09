@@ -13,25 +13,52 @@ import Footer from "../Components/Footer.js";
 export default class Main extends Component {
   constructor() {
     super();
+    this.state = 
+    {
+      connected: false,
+      headerIcon:{
+          linkDest: "/SignIn",
+          fontAw: "fas fa-sign-in-alt",
+          title: "Connexion"
+        }
+    };
+    this.handleConnect=this.handleConnect.bind(this);
+
   }
+  handleConnect(){
+    this.setState({
+      connected:true,
+     headerIcon:{linkDest:"/Account",fontAw:"fas fa-user",
+    title: "Mon compte"}
+    });
+    alert(this.state.headerIcon.fontAw);
+  }
+  
+
 
   render() {
     return (
-    <div className="Main">
+      <div className="Main">
+        <Header headerIcon={this.state.headerIcon }/>
+        <Switch>
+          <Route exact path="/" >
+            <Accueil/>
+          </Route>
+          <Route exact path="/SignIn">
+            <SignIn onConnection={
+              this.handleConnect}
+              />
+          </Route>
 
-      <Header/>
-      <Switch>
-        <Route exact path="/" component={Accueil} />
-        <Route exact path="/SignIn" component={SignIn}/>
-        <Route path="/about" component={AboutUs} />
-        <Route path="/SignUp" component={SignUp} />
-        <Route path="/Cart" component={Cart} />
-        <Route path="/Produit" component={Produit} />
-        <Route path="/Vendeur" component={Vendeur} />
-        <Route path="/Cooperative" component={Cooperative} />
-      </Switch>
-      <Footer/>
-    </div>
+          <Route path="/about" component={AboutUs} />
+          <Route path="/SignUp" component={SignUp} />
+          <Route path="/Cart" component={Cart} />
+          <Route path="/Produit" component={Produit} />
+          <Route path="/Vendeur" component={Vendeur} />
+          <Route path="/Cooperative" component={Cooperative} />
+        </Switch>
+        <Footer />
+      </div>
     );
   }
 }
