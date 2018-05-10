@@ -1,15 +1,22 @@
-const users_module = require("./users");
-const Client = users_module.Client;
-const Fournisseur = users_module.Fournisseur;
+/*IMPORTING DEPENDENCIES*/
 const express = require("express");
+const bodyParser = require("body-parser");
+const logger = require("morgan");
+// const users_module = require("./users");
+// const Client = users_module.Client;
+// const Fournisseur = users_module.Fournisseur;
+
+/*CREATING EXPRESS APP & EXPRESS ROUTER*/
 const app = express();
-const port = process.env.PORT || 3030;
+const router = express.Router();
 
-app.use(express.json());
+/*SETTING THE PORT TO A PREDETERMINED PORT NUMBER OR 3030*/
+const API_PORT = 3030;
 
+/*CONNECTING TO THE DATABASE*/
 const mysql = require("mysql");
 const mysql_user = {
-  login: "courtcircuit",
+  login: "root",
   password: "nyehenyehe123"
 };
 
@@ -26,15 +33,25 @@ connection.connect(err =>{
   console.log("Connected successfully to Database");
 });
 
+/*MIDDLEWARE*/
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+app.use(logger("dev"));
 
-/*TESTING LMD QUERIES OVER THE DATABASE*/
-connection.query('SELECT * FROM Fournisseur', function(err, rows){
-  if (err)
-    throw err;
-
-  console.log('Data received from db :\n');
-  g = rows;
-  console.log(rows);
+router.get("/nyehe", (req, res) => {
+  res.json({message: "Hello, world!"});
 });
 
-app.listen(3000, () => console.log(`Server started listening on port ${port}`));
+app.use("/api", router);
+
+/*TESTING LMD QUERIES OVER THE DATABASE*/
+// connection.query('SELECT * FROM Fournisseur', function(err, rows){
+//   if (err)
+//     throw err;
+//
+//   console.log('Data received from db :\n');
+//   g = rows;
+//   console.log(rows);
+// });
+
+app.listen(API_PORT, () => console.log(`Server started listening on port ${API_PORT}`));
