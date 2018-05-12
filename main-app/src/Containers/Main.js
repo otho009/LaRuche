@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Switch, Route } from "react-router-dom";
+import React, {Component} from "react";
+import {Switch, Route} from "react-router-dom";
 import Accueil from "./Accueil.js";
 import AboutUs from "./AboutUs.js";
 import SignIn from "./SignIn.js";
@@ -13,51 +13,51 @@ import Footer from "../Components/Footer.js";
 export default class Main extends Component {
   constructor() {
     super();
-    this.state = 
-    {
+    this.state = {
       connected: false,
-      headerIcon:{
-          linkDest: "/SignIn",
-          fontAw: "fas fa-sign-in-alt",
-          title: "Connexion"
-        }
+      headerIcon: {
+        linkDest: "/SignIn",
+        fontAw: "fas fa-sign-in-alt",
+        title: "Connexion"
+      }
     };
-    this.handleConnect=this.handleConnect.bind(this);
+    this.handleConnect = this
+      .handleConnect
+      .bind(this);
 
   }
-  handleConnect(){
+  handleConnect() {
     this.setState({
-      connected:true,
-     headerIcon:{linkDest:"/Account",fontAw:"fas fa-user",
-    title: "Mon compte"}
+      connected: true,
+      headerIcon: {
+        linkDest: "/Account",
+        fontAw: "fas fa-user",
+        title: "Mon compte"
+      }
     });
     alert(this.state.headerIcon.fontAw);
   }
-  
-
 
   render() {
     return (
       <div className="Main">
-        <Header headerIcon={this.state.headerIcon }/>
+        <Header headerIcon={this.state.headerIcon}/>
         <Switch>
-          <Route exact path="/" >
+          <Route exact path="/">
             <Accueil/>
           </Route>
           <Route exact path="/SignIn">
-            <SignIn onConnection={
-              this.handleConnect}
-              />
+            <SignIn onConnection={this.handleConnect}/>
           </Route>
-
-          <Route path="/about" component={AboutUs} />
-          <Route path="/SignUp" component={SignUp} />
-          <Route path="/Cart" component={Cart} />
-          <Route path="/Produit" component={Produit} />
-          <Route path="/Vendeur" component={Vendeur} />
-          <Route path="/Cooperative" component={Cooperative} />
+  
+          <Route path="/about" component={AboutUs}/>
+          <Route path="/SignUp" component={SignUp}/>
+          <Route path="/Cart" component={Cart}/>
+          <Route path="/Produit" component={Produit}/>
+          <Route path="/Vendeur" component={Vendeur}/>
+          <Route path="/Cooperative" component={Cooperative}/>
         </Switch>
-        <Footer />
+        <Footer/>
       </div>
     );
   }
