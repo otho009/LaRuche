@@ -53,9 +53,9 @@ export default class SignIn extends Component {
                 </NavLink>
               </div>
             </label>
-            <button className="btn btn-lg btn-warning btn-block" onClick={this.props.onConnection  }   type="submit">
+            <button className="btn btn-lg btn-warning btn-block" type="submit">
               Connexion
-            </button> 
+            </button>
 
           </form>
         </div>
@@ -63,3 +63,5 @@ export default class SignIn extends Component {
     );
   }
 }
+
+// onClick={this.props.onConnection  }
