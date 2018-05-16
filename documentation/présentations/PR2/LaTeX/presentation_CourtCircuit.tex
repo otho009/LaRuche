@@ -51,11 +51,11 @@
 
   \column{\dimexpr\linewidth-35mm-4mm}
     \begin{block}{Consommateurs :}
-    Acheter des produits frais et minimiser \\les étapes de processing
+    Acheter des produits frais et minimiser \\les étapes de processing.
     \end{block}
 
     \begin{block}{Producteurs :}
-    Maîtriser le prix de vente et \\les débouchés de leurs productions en \\se libérant des intermédiaires de distribution
+    Maîtriser le prix de vente et \\les débouchés de leurs productions en \\se libérant des intermédiaires de distribution.
     \end{block}
 \end{columns}
 \end{frame}
@@ -67,13 +67,13 @@
   \end{block}
 
   \begin{block}{Ruche}
-  Un regroupement de plusieurs \textbf{fournisseurs} d'une région, \textbf{sans guide explicite} préfixé par le site, associé à plusieurs points de collecte
+  Un regroupement de plusieurs \textbf{fournisseurs} d'une région, \textbf{sans guide explicite} préfixé par le site, associé à plusieurs points de collecte.
   \end{block}
 
   \begin{block}{Vision Décentralisée et Autonome}
   \begin{itemize}
-    \item l'ensemble des ruches ne répond à \textbf{aucune entité centrale}
-    \item chaque ruche s'occupe de ses propres besoins et de leur gestion sans besoin d'un intermédiaire et d'une hiérarchie à respecter
+    \item l'ensemble des ruches ne répond à \textbf{aucune entité centrale}.
+    \item chaque ruche s'occupe de ses propres besoins et de leur gestion sans besoin d'un intermédiaire et d'une hiérarchie à respecter.
   \end{itemize}
   \end{block}
 \end{frame}
@@ -94,6 +94,11 @@
 \section{Implémentation}
 \subsection{Outils d'implémentation}
 \begin{frame}{Outils d'implémentation}{Implémentation}
+  \begin{figure}[!ht]
+    \centering
+    \includegraphics[scale=0.3]{images/website_architecture.jpeg}
+  \end{figure}
+
   \begin{description}
     \item [\textit{Front-end} :] React.js, JSX, Bootstrap
     \item [\textit{Back-end} :] Node.js, Express.js
@@ -124,8 +129,33 @@ pros et cons d'une SPA
 \end{frame}
 
 \subsection{\protect\textit{Back-end}}
-\begin{frame}{\textit{Node.js}}{Back-end}
+\begin{frame}{\textit{Node.js} (Introduction)}{Back-end}
+  \begin{figure}[!ht]
+    \includegraphics[scale=0.03]{images/nodejs_icon.png}
+  \end{figure}
 
+  \begin{itemize}
+    \item environnement d'exécution \textbf{JavaScript} côté serveur utilisant le moteur \textbf{JavaScript V8} de \textit{Google Chrome}
+    \item libre et gratuit
+    \item modélisation événementielle, monothread et non-bloquante
+    \item architecture modulaire
+    \item gestionnaire de paquets \textbf{NPM} (\textit{Node Package Manager}) $\rightarrow$ facilité d'usage et d'extensibilité
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{\textit{Node.js} (Raisons du choix)}{Back-end}
+  \begin{itemize}
+    \item écrire du code \textbf{JavaScript} du côté serveur $\rightarrow$ un seul langage pour les côtés client et serveur
+    \item modélisation événementielle, monothread et non-bloquante $\rightarrow$ performance fluide et gestion efficace d'un ensemble important de données
+    \item ensemble important de modules utilitaires facilement téléchargeable via \textbf{NPM}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{\textit{Node.js} (Utilisation)}{Back-end}
+  \begin{itemize}
+    \item création d'une \textbf{API} factorisée, non redondante et facilement lisible (\textit{Client, Utilisateur, Produit, $\dots$}) permettant d'interfacer avec la base de données.
+    \item héberger \textbf{Express}.
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{\textit{Express}}{Back-end}
