@@ -22,6 +22,8 @@
 *.maf
 *.mtc
 *.mtc1
+*.nav
 *.out
+*.snm
 *.thm
 *.synctex.gz

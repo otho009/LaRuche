@@ -3,7 +3,11 @@
 \usepackage[T1]{fontenc}
 \usepackage[french]{babel}
 \usepackage{xcolor}
+\usepackage{pifont}
 \usetheme{Singapore} %Boadilla | Bergen | Madrid | Antibes | Hannover | Singapore | Warsaw
+
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\xmark}{\ding{55}}
 %----------------------------------------------------------------------------------------
 %   TITLE INFORMATION
 %----------------------------------------------------------------------------------------
@@ -239,11 +243,31 @@ pros et cons d'une SPA
 %----------------------------------------------------------------------------------------
 \section{Résultats}
 %----------------------------------------------------------------------------------------
-%   CE QUI MARCHE ET CE QUI NE MARCHE PAS
+%   BILAN
 %----------------------------------------------------------------------------------------
-\subsection{Ce qui marche et ce qui ne marche pas}
-\begin{frame}{Ce qui marche et ce qui ne marche pas}{Résultats}
-
+\subsection{Bilan}
+\begin{frame}{Bilan}{Résultats}
+\begin{table}[!ht]
+  \centering
+  \begin{tabular}{|l|c|}
+  \hline
+  Base de données conçue et testée & \cmark\\
+  \hline
+  Composants de base de l'interface graphique & \cmark\\
+  \hline
+  Connexion du client au serveur & \cmark\\
+  \hline
+  Connexion du serveur à la base de données & \cmark\\
+  \hline
+  Gestion des routes entre le serveur et le client & \xmark\\
+  \hline
+  Test du comportement dynamique des composants & \xmark\\
+  \hline
+  Déploiement en ligne & \xmark\\
+  \hline
+  \end{tabular}
+  \caption{Bilan des résultats}
+\end{table}
 \end{frame}
 %----------------------------------------------------------------------------------------
 %   DIFFICULTÉS SURVENUES
