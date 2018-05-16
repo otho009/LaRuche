@@ -135,19 +135,19 @@ pros et cons d'une SPA
   \end{figure}
 
   \begin{itemize}
-    \item environnement d'exécution \textbf{JavaScript} côté serveur utilisant le moteur \textbf{JavaScript V8} de \textit{Google Chrome}
-    \item libre et gratuit
-    \item modélisation événementielle, monothread et non-bloquante
-    \item architecture modulaire
-    \item gestionnaire de paquets \textbf{NPM} (\textit{Node Package Manager}) $\rightarrow$ facilité d'usage et d'extensibilité
+    \item environnement d'exécution \textbf{JavaScript} côté serveur utilisant le moteur \textbf{JavaScript V8} de \textit{Google Chrome}.
+    \item gratuit et \textit{open-source}.
+    \item modélisation événementielle, monothread et non-bloquante.
+    \item architecture modulaire.
+    \item gestionnaire de paquets \textbf{NPM} (\textit{Node Package Manager}) $\rightarrow$ facilité d'usage et d'extensibilité.
   \end{itemize}
 \end{frame}
 
 \begin{frame}{\textit{Node.js} (Raisons du choix)}{Back-end}
   \begin{itemize}
-    \item écrire du code \textbf{JavaScript} du côté serveur $\rightarrow$ un seul langage pour les côtés client et serveur
-    \item modélisation événementielle, monothread et non-bloquante $\rightarrow$ performance fluide et gestion efficace d'un ensemble important de données
-    \item ensemble important de modules utilitaires facilement téléchargeable via \textbf{NPM}
+    \item écrire du code \textbf{JavaScript} du côté serveur $\rightarrow$ un seul langage pour les côtés client et serveur.
+    \item modélisation événementielle, monothread et non-bloquante $\rightarrow$ performance fluide et gestion efficace d'un ensemble important de données.
+    \item ensemble important de modules utilitaires facilement téléchargeable via \textbf{NPM}.
   \end{itemize}
 \end{frame}
 
@@ -158,8 +158,28 @@ pros et cons d'une SPA
   \end{itemize}
 \end{frame}
 
-\begin{frame}{\textit{Express}}{Back-end}
+\begin{frame}{\textit{Express} (Introduction)}{Back-end}
+  \begin{figure}[!ht]
+    \centering
+    \includegraphics[scale=0.25]{images/express_icon.png}
+  \end{figure}
 
+  \begin{itemize}
+    \item framework web minimaliste pour \textbf{Node.js}.
+    \item gratuit et \textit{open-source}.
+    \item utilisation de \textit{middleware}.
+    \item gestion des routes \textbf{REST} (\textit{Representational State Transfer}) et des formulaires en s'appuyant sur des concepts du modèle \textbf{MVC}.
+    \item moteurs de templates (\textit{EJS (Embedded JavaScript), Pug, Handlebars, $\dots$}).
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{\textit{Express} (Raisons du choix et utilisation)}{Back-end}
+  \begin{itemize}
+    \item framework web \textit{de-facto} pour \textbf{Node.js}.
+    \item réduire la verbosité du code \textbf{Node.js} natif pour la création du serveur \textbf{HTTP}.
+    \item utilisation de \textit{middleware} pour le traitement des requêtes clients.
+    \item gestion des routes \textbf{REST} pour les opérations \textbf{CRUD}.
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{\textit{MariaDB}}{Back-end}
