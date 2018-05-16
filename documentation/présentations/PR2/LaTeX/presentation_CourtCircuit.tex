@@ -43,6 +43,9 @@
 %   RAPPELS
 %----------------------------------------------------------------------------------------
 \section{Rappels}
+%----------------------------------------------------------------------------------------
+%   PROBLÉMATIQUE
+%----------------------------------------------------------------------------------------
 \subsection{Problématique}
 \begin{frame}{Rappels}{Problématique}
 \begin{columns}[onlytextwidth, T]
@@ -59,7 +62,9 @@
     \end{block}
 \end{columns}
 \end{frame}
-
+%----------------------------------------------------------------------------------------
+%   SOLUTION PROPOSÉE : COURTCIRCUIT
+%----------------------------------------------------------------------------------------
 \subsection{Solution proposée : \texttt{CourtCircuit}}
 \begin{frame}{Rappels}{Solution proposée : \texttt{CourtCircuit}}
   \begin{block}{Site web \textit{e-commerce}}
@@ -77,7 +82,9 @@
   \end{itemize}
   \end{block}
 \end{frame}
-
+%----------------------------------------------------------------------------------------
+%   OUTILS DE CONCEPTION
+%----------------------------------------------------------------------------------------
 \subsection{Outils de conception}
 \begin{frame}{Rappels}{Outils de conception}
   \begin{enumerate}
@@ -92,6 +99,9 @@
 %   IMPLÉMENTATION
 %----------------------------------------------------------------------------------------
 \section{Implémentation}
+%----------------------------------------------------------------------------------------
+%   OUTILS D'IMPLÉMENTATION
+%----------------------------------------------------------------------------------------
 \subsection{Outils d'implémentation}
 \begin{frame}{Outils d'implémentation}{Implémentation}
   \begin{figure}[!ht]
@@ -105,7 +115,9 @@
     \item [Base de données :] MariaDB
   \end{description}
 \end{frame}
-
+%----------------------------------------------------------------------------------------
+%   APPLICATION WEB MONOPAGE (SPA)
+%----------------------------------------------------------------------------------------
 \subsection{Application web monopage (SPA)}
 \begin{frame}{Application web monopage (SPA)}{Implémentation}
 schéma d'une SPA
@@ -114,21 +126,35 @@ schéma d'une SPA
 \begin{frame}{Application web monopage (SPA)}{Implémentation}
 pros et cons d'une SPA
 \end{frame}
-
+%----------------------------------------------------------------------------------------
+%   FRONT-END
+%----------------------------------------------------------------------------------------
 \subsection{\protect\textit{Front-end}}
+%----------------------------------------------------------------------------------------
+%   REACT
+%----------------------------------------------------------------------------------------
 \begin{frame}{\textit{React}}{Front-end}
 
 \end{frame}
-
+%----------------------------------------------------------------------------------------
+%   BOOTSTRAP ET FONT-AWESOME
+%----------------------------------------------------------------------------------------
 \begin{frame}{\textit{Bootstrap et Font-Awesome}}{Front-end}
 
 \end{frame}
-
+%----------------------------------------------------------------------------------------
+%   CHARTE GRAPHIQUE
+%----------------------------------------------------------------------------------------
 \begin{frame}{\textit{Charte Graphique}}{Front-end}
 
 \end{frame}
-
+%----------------------------------------------------------------------------------------
+%   BACK-END
+%----------------------------------------------------------------------------------------
 \subsection{\protect\textit{Back-end}}
+%----------------------------------------------------------------------------------------
+%   NODE.JS
+%----------------------------------------------------------------------------------------
 \begin{frame}{\textit{Node.js} (Introduction)}{Back-end}
   \begin{figure}[!ht]
     \includegraphics[scale=0.03]{images/nodejs_icon.png}
@@ -157,11 +183,13 @@ pros et cons d'une SPA
     \item héberger \textbf{Express}.
   \end{itemize}
 \end{frame}
-
+%----------------------------------------------------------------------------------------
+%   EXPRESS
+%----------------------------------------------------------------------------------------
 \begin{frame}{\textit{Express} (Introduction)}{Back-end}
   \begin{figure}[!ht]
     \centering
-    \includegraphics[scale=0.25]{images/express_icon.png}
+    \includegraphics[scale=0.2]{images/express_icon.png}
   \end{figure}
 
   \begin{itemize}
@@ -181,48 +209,80 @@ pros et cons d'une SPA
     \item gestion des routes \textbf{REST} pour les opérations \textbf{CRUD}.
   \end{itemize}
 \end{frame}
+%----------------------------------------------------------------------------------------
+%   MARIADB
+%----------------------------------------------------------------------------------------
+\begin{frame}{\textit{MariaDB} (Introduction)}{Back-end}
+  \begin{figure}[!ht]
+    \centering
+    \includegraphics[scale=0.35]{images/mariadb_icon.png}
+  \end{figure}
 
-\begin{frame}{\textit{MariaDB}}{Back-end}
+  \begin{itemize}
+    \item \textbf{SGBD} relationnel.
+    \item gratuit et \textit{open-source}.
+    \item introduit par les créateurs de \textbf{MySQL} suite à l'achat de ce dernier par \textbf{Oracle}.
+    \item assure l'interopérabilité avec \textbf{MySQL}.
+  \end{itemize}
+\end{frame}
 
+\begin{frame}{\textit{MariaDB} (Raisons du choix et utilisation)}{Back-end}
+  \begin{itemize}
+    \item fork communautaire de \textbf{MySQL} mis à jour plus souvent que ce dernier.
+    \item \textbf{modèle EA} déjà traduit en \textbf{modèle relationnel} depuis la phase de conception du projet $\rightarrow$ mise en \oe{}uvre directe.
+    \item mise en place d'un système de validation des données dans le cadre d'une politique de sécurité en trois couches (\textit{client, serveur, base de données}) $\rightarrow$ assurer l'intégrité des données stockées.
+    \item le serveur de la faculté qui nous a été attribué pour le déploiement hébérge bien \textbf{MySQL} $\rightarrow$ possibilité d'utiliser \textbf{MariaDB}.
+  \end{itemize}
 \end{frame}
 %----------------------------------------------------------------------------------------
-%   RÉSULTATS ET DIFFICULTÉS SURVENUES
+%   RÉSULTATS
 %----------------------------------------------------------------------------------------
 \section{Résultats}
+%----------------------------------------------------------------------------------------
+%   CE QUI MARCHE ET CE QUI NE MARCHE PAS
+%----------------------------------------------------------------------------------------
 \subsection{Ce qui marche et ce qui ne marche pas}
 \begin{frame}{Ce qui marche et ce qui ne marche pas}{Résultats}
 
 \end{frame}
-
+%----------------------------------------------------------------------------------------
+%   DIFFICULTÉS SURVENUES
+%----------------------------------------------------------------------------------------
 \subsection{Difficultés survenues}
 \begin{frame}{Difficultés survenues}{Résultats}
   \begin{itemize}
-    \item Nouveaux concepts et outils d'implémentation nécessitant un temps d'apprentissage considérable
-    \item Temps dédié à l'implémentation insuffisant
-    \item Problèmes liés au serveur d'hébergement
+    \item nouveaux concepts et outils d'implémentation nécessitant un temps d'apprentissage considérable.
+    \item temps d'apprentissage considérable $\rightarrow$ adoption d'une méthodologie agile de développement de plus en plus compliqué.
+    \item temps dédié à l'implémentation insuffisant.
+    \item problèmes liés au serveur d'hébergement.
   \end{itemize}
 \end{frame}
 %----------------------------------------------------------------------------------------
 %   CONCLUSION
 %----------------------------------------------------------------------------------------
 \section{Conclusion}
+%----------------------------------------------------------------------------------------
+%   APPORTS PERSONNELS DU PROJET
+%----------------------------------------------------------------------------------------
 \subsection{Apports personnels du projet}
 \begin{frame}{Apports personnels du projet}{Conclusion}
   \begin{itemize}
-    \item Apports personnels = difficultés survenues
-    \item Apprentissage d'outils d'implémentation récents et en pleine évolution
-    \item Appréciation plus profonde du langage JavaScript
+    \item Apports personnels = difficultés survenues.
+    \item Apprentissage d'outils \textit{front-end} et \textit{back-end} récents et en pleine évolution.
+    \item Appréciation plus profonde du langage \textbf{JavaScript}.
   \end{itemize}
 \end{frame}
-
+%----------------------------------------------------------------------------------------
+%   PERSPECTIVES
+%----------------------------------------------------------------------------------------
 \subsection{Perspectives}
 \begin{frame}{Perspectives}{Conclusion}
   \begin{itemize}
-    \item Continuation du projet au niveau personnel
-    \item Récolte de \textit{feedback} des utilisateurs potentiels
-    \item Optimisation de la logistique
-    \item Implémentation de fonctionnalités supplémentaires (paiement en ligne, commandes retardées, portefeuille virtuel, $\dots$)
-    \item Internationalisation
+    \item Continuation du projet au niveau personnel.
+    \item Récolte de \textit{feedback} des utilisateurs potentiels.
+    \item Mise en place et optimisation de la logistique.
+    \item Implémentation de fonctionnalités supplémentaires (paiement en ligne, commandes retardées, portefeuille virtuel, $\dots$).
+    \item Internationalisation.
  \end{itemize}
 \end{frame}
 \end{document}
