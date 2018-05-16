@@ -1,0 +1,178 @@
+\documentclass[usenames,dvipsnames]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{xcolor}
+\usetheme{Singapore} %Boadilla | Bergen | Madrid | Antibes | Hannover | Singapore | Warsaw
+%----------------------------------------------------------------------------------------
+%   TITLE INFORMATION
+%----------------------------------------------------------------------------------------
+\title{CourtCircuit}
+\subtitle{HLSE602 -- Projet CMI Annuel}
+\author{B. Rima \and O. Farajallah \and W. Soussi}
+\institute[UM]{L3 CMI Informatique}
+\date{\today}
+
+\begin{document}
+%----------------------------------------------------------------------------------------
+%   TITLE FRAME
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\titlepage
+\end{frame}
+%----------------------------------------------------------------------------------------
+%   OUTLINE
+%----------------------------------------------------------------------------------------
+\begin{frame}{Sommaire}
+\tableofcontents
+\end{frame}
+%----------------------------------------------------------------------------------------
+%   INTRODUCTION
+%----------------------------------------------------------------------------------------
+\section{Introduction}
+\begin{frame}{Contexte du projet}{Introduction}
+  \begin{description}
+    \item [Projet CMI :] Module d'un projet annuel pour l'année 2017--2018 dans le cadre du \textbf{CMI Informatique}
+    \item [Responsable CMI Informatique :] Mme Anne-Elisabeth Baert
+    \item [Encadrant du projet :] M. Eric Bourreau
+    \item [Lieux de travail :] La \textbf{FDS} et le \textbf{LIRMM}
+  \end{description}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%   RAPPELS
+%----------------------------------------------------------------------------------------
+\section{Rappels}
+\subsection{Problématique}
+\begin{frame}{Rappels}{Problématique}
+\begin{columns}[onlytextwidth, T]
+  \column{50mm}
+    \includegraphics[scale=0.19]{images/chain_production.png}
+
+  \column{\dimexpr\linewidth-35mm-4mm}
+    \begin{block}{Consommateurs :}
+    Acheter des produits frais et minimiser \\les étapes de processing
+    \end{block}
+
+    \begin{block}{Producteurs :}
+    Maîtriser le prix de vente et \\les débouchés de leurs productions en \\se libérant des intermédiaires de distribution
+    \end{block}
+\end{columns}
+\end{frame}
+
+\subsection{Solution proposée : \texttt{CourtCircuit}}
+\begin{frame}{Rappels}{Solution proposée : \texttt{CourtCircuit}}
+  \begin{block}{Site web \textit{e-commerce}}
+  Une interface directe entre \textbf{consommateurs} et \textbf{fournisseurs}.
+  \end{block}
+
+  \begin{block}{Ruche}
+  Un regroupement de plusieurs \textbf{fournisseurs} d'une région, \textbf{sans guide explicite} préfixé par le site, associé à plusieurs points de collecte
+  \end{block}
+
+  \begin{block}{Vision Décentralisée et Autonome}
+  \begin{itemize}
+    \item l'ensemble des ruches ne répond à \textbf{aucune entité centrale}
+    \item chaque ruche s'occupe de ses propres besoins et de leur gestion sans besoin d'un intermédiaire et d'une hiérarchie à respecter
+  \end{itemize}
+  \end{block}
+\end{frame}
+
+\subsection{Outils de conception}
+\begin{frame}{Rappels}{Outils de conception}
+  \begin{enumerate}
+    \item \textit{User Stories} (outil de conception agile)
+    \item Diagrammes de cas d'usage
+    \item Modèle EA
+    \item Schéma de base de données
+    \item \textit{Storyboard}
+  \end{enumerate}
+\end{frame}
+%----------------------------------------------------------------------------------------
+%   IMPLÉMENTATION
+%----------------------------------------------------------------------------------------
+\section{Implémentation}
+\subsection{Outils d'implémentation}
+\begin{frame}{Outils d'implémentation}{Implémentation}
+  \begin{description}
+    \item [\textit{Front-end} :] React.js, JSX, Bootstrap
+    \item [\textit{Back-end} :] Node.js, Express.js
+    \item [Base de données :] MariaDB
+  \end{description}
+\end{frame}
+
+\subsection{Application web monopage (SPA)}
+\begin{frame}{Application web monopage (SPA)}{Implémentation}
+schéma d'une SPA
+\end{frame}
+
+\begin{frame}{Application web monopage (SPA)}{Implémentation}
+pros et cons d'une SPA
+\end{frame}
+
+\subsection{\protect\textit{Front-end}}
+\begin{frame}{\textit{React}}{Front-end}
+
+\end{frame}
+
+\begin{frame}{\textit{Bootstrap et Font-Awesome}}{Front-end}
+
+\end{frame}
+
+\begin{frame}{\textit{Charte Graphique}}{Front-end}
+
+\end{frame}
+
+\subsection{\protect\textit{Back-end}}
+\begin{frame}{\textit{Node.js}}{Back-end}
+
+\end{frame}
+
+\begin{frame}{\textit{Express}}{Back-end}
+
+\end{frame}
+
+\begin{frame}{\textit{MariaDB}}{Back-end}
+
+\end{frame}
+%----------------------------------------------------------------------------------------
+%   RÉSULTATS ET DIFFICULTÉS SURVENUES
+%----------------------------------------------------------------------------------------
+\section{Résultats}
+\subsection{Ce qui marche et ce qui ne marche pas}
+\begin{frame}{Ce qui marche et ce qui ne marche pas}{Résultats}
+
+\end{frame}
+
+\subsection{Difficultés survenues}
+\begin{frame}{Difficultés survenues}{Résultats}
+  \begin{itemize}
+    \item Nouveaux concepts et outils d'implémentation nécessitant un temps d'apprentissage considérable
+    \item Temps dédié à l'implémentation insuffisant
+    \item Problèmes liés au serveur d'hébergement
+  \end{itemize}
+\end{frame}
+%----------------------------------------------------------------------------------------
+%   CONCLUSION
+%----------------------------------------------------------------------------------------
+\section{Conclusion}
+\subsection{Apports personnels du projet}
+\begin{frame}{Apports personnels du projet}{Conclusion}
+  \begin{itemize}
+    \item Apports personnels = difficultés survenues
+    \item Apprentissage d'outils d'implémentation récents et en pleine évolution
+    \item Appréciation plus profonde du langage JavaScript
+  \end{itemize}
+\end{frame}
+
+\subsection{Perspectives}
+\begin{frame}{Perspectives}{Conclusion}
+  \begin{itemize}
+    \item Continuation du projet au niveau personnel
+    \item Récolte de \textit{feedback} des utilisateurs potentiels
+    \item Optimisation de la logistique
+    \item Implémentation de fonctionnalités supplémentaires (paiement en ligne, commandes retardées, portefeuille virtuel, $\dots$)
+    \item Internationalisation
+ \end{itemize}
+\end{frame}
+\end{document}
