@@ -34,19 +34,20 @@ connection.connect(err =>{
 });
 
 /*MIDDLEWARE*/
-app.use(express.static(path.join(__dirname, 'build')));
+// app.use(express.static(path.join(__dirname, 'build')));
 
--app.get('/', function (req, res) {
-+app.get('/*', function (req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
+router.use(bodyParser.urlencoded({extended: false}));
+router.use(bodyParser.json());
+router.use(logger("dev"));
 
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(bodyParser.json());
-app.use(logger("dev"));
+// app.get('/', function (req, res) {
+// app.get('/*', function (req, res) {
+//   res.sendFile(path.join(__dirname, 'build', 'index.html'));
+// });
 
 router.get("/nyehe", (req, res) => {
-  res.json({message: "Hello, world!"});
+  // res.json({message: "Hello, world!"});
+  res.send("Hello world!");
 });
 
 app.use("/api", router);

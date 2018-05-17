@@ -1,0 +1,3 @@
+Othmane : Introduction + Rappels + React + Perspectives
+Wissem : Application web monopage + Bootstrap Font-Awesome + Difficultés + Apports
+Bachar : Back-end + Bilan

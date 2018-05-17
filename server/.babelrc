@@ -1,0 +1,7 @@
+{
+  "env": {
+    "development": {
+      "plugins": ["env", "stage-0", "react"]
+    }
+  }
+}

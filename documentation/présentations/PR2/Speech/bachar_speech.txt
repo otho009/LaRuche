@@ -1,49 +1,82 @@
-Solutions + Côté fournisseur + prespectives
+Othmane : Introduction + Rappels + React + Perspectives
+Wissem : Application web monopage + Bootstrap Font-Awesome + Difficultés + Apports
+Bachar : Back-end + Bilan
 
-Solutions :
-===========
-Solution possible : La Ruche Qui Dit Oui
-Pour adresser cette problématique, La Ruche Qui Dit Oui a déjà proposé un site web désignant une interface directe entre les consommateurs et les fournisseurs.
-Ils définissent une structure de données intitulé Ruche, consistant d'un ensemble de fournisseurs et de consommateurs d'une région, guidé par un responsable de ruche.
-Cette modélisation tombe dans le cadre d'une vision centralisée des rôles des utilisateurs du site, où l'ensemble des ruches obéit à une Ruche centralisée dénotée Ruche-Mama s'occupant de la gestion des ruches et de leurs interactions, mais aussi de l'extension des services offerts.
+Speech:
+=======
 
-Solution proposée : LaRuche
-De notre part, nous souhaitons implémenter une interface web directe entre les consommateurs et les fournisseurs, mais en adoptant une structuration de rôles décentralisée. Pour ce faire, nous définissons une structure de données Ruche qui consiste uniquement d'un ensemble de fournisseurs d'une région sans responsable de ruche préfixé par le site.
-De plus, l'ensemble des ruches ne répond à aucune entité centrale, et chaque ruche s'occupe de ses propres besoins et de leur gestion sans être soumise à une hiérarchie de rôles à respecter.
+Node.js
+=======
+Commençons par la partie back-end maintenant et notamment par Node.js
+- Node.js est un environnement d'exécution JavaScript du côté serveur gratuit et open-source utilisant le moteur JavaScript V8 de Google Chrome.
+- Il est doté d'une fluidité de performance provenant de sa modélisation événementielle monothread et non-bloquante
+- De plus, il est facilement utilisable et extensible en raison de son architecture modulaire et de son gestionnaire de paquets NPM (Node Package Manager) qui est considéré aujourd'hui comme l'un des plus grand écosystèmes de paquets open-source
 
-Méthodologie de résolution : méthodes agiles
-============================================
-Pour procéder à concevoir et implémenter notre projet, nous avons opter pour une méthodologie de résolution basée sur les méthodes agiles.
-Les méthodes agiles constituent une approche de développement logiciel de plus en plus prépondérante basée sur un processus de travail itératif, dont chaque itération est complétée par une période de tests et de consultations de clients, d'où la désignation orientée-test et orientée-client.
-L'utilisation des méthodes agiles permet une meilleure gestion des ressources, une sortie plus fréquente de versions fonctionnelles et testées du produits, et une interaction plus fréquente avec les clients afin d'adapter le produit et d'étendre ses fonctionnalités constamment selon leurs besoins.
+Nous avons primairement choisi Node.js pour unifier le code du côté serveur et du côté client afin de faciliter le débogage du code de l'application entière sans restriction.
+D'autre part, ce choix est justifié de plus par le fait que notre application aura fort-probablement besoin de gérer et traiter un grand ensemble de données et que Node permet de le réaliser efficacement grâce à sa modélisation événementielle monothread et non-bloquante.
+Enfin, une raison qui nous a encouragé davantage à adopter Node est le grand nombre de paquets utilitaires facilement téléchargeables via NPM et instantanément intégrables n'importe quelle application, en particulier la nôtre. De cette manière, nous n'aurons plus besoin à réécrire des bouts de code déjà existants.
 
-Outils de conception utilisés :
-===============================
-Dans le cadre de la conception, nous nous sommes servis des outils de modélisation suivants :
-1. Diagrammes de cas d'usage : souvent utilisés en UML pour décrire en haut niveau des fonctionnalités d'un système.
-2. Modèle EA : un modèle conceptuel permettant d'identifier les entités du projet ainsi que l'ensemble des associations décrivant leurs interactions.
-3. Schéma de BD : un schéma en modèle relationnel composé des relations du projet et des contraintes d'intégrité, généralement traduit à partir du modèle EA, et servant de support lors de l'implémentation de la base de données.
-4. Mockup storyboard : un document de haut niveau schématisant l'utilisation d'un projet en haut niveau sans rentrer dans les détails de leur implémentation.
+Ainsi nous avons profité de ces caractéristiques pour la création d'une API modulaire factorisée, non redondante et lisible, incluant les différentes entités de notre application (Client, Fournisseur, Coopérative, Produit, etc..), mais aussi pour établir la connexion à notre base de données et l'hébergement du framework Express que je discuterai dans le diapo suivant
 
-User Stories : outil de conception agile :
-==========================================
-Outre les outils de conception classiques, nous nous sommes servis aussi des user stories, un outil fréquemment utilisé dans le cadre des méthodes agiles. Il s'agit de requis fournis par les clients, décrivant en langage naturel les fonctionnalités qu'ils souhaitent obtenir dans le produit développé.
-Et voici en l'occurrence sa syntaxe : (explication de la syntaxe). On verra dans la suite de la présentation un exemple de user story dans le cadre de la conception
+Express
+=======
+Express est un framework web minimaliste gratuit et open-source utilisé pour Node.js. Il est surtout connu pour ses middleware permettant de traiter les requêtes clients et pour sa gestion des routes REST et des formulaires en s'appuyant sur des concepts du modèle MVC.
+D'autre part, Express est aussi bien connu pour sa capacité de générer dynamiquement du contenu par le biais de moteurs de templates tels que EJS, Pug, Handlebars, Mustache, etc.
 
-Conception : côté fournisseur :
-===============================
-Rentrons maintenant dans le vif du sujet, notamment la conception. La conception doit répondre aux besoins suivants : des profils utilisateurs fournisseur et client décrits par un ensemble de propriétés et de fonctionnalités déduites à partir des user-stories et une structure de données décrivant le regroupement des fournisseurs et leurs interactions.
+Aujourd'hui Express est considéré comme le framework web de-facto à coupler à Node.js en raison de ses caractéristiques.
+En effet, nous l'avions utilisé pour créer un serveur HTTP, ce qui a permis de réduire la verbosité introduite par le code natif de Node pour réaliser la même tâche.
+D'autre part, nous l'avions utilisé pour ségmenter le traitement des requêtes via les middleware mais aussi pour la gestion des routes REST des opérations CRUD
 
-Commençons par la partie du profil. Pour ce faire, voici la liste (non exhaustive) des intitulés des user-stories lui concernant : On voit la définition et le stockage de produits, l'offre de paniers, la validation de commandes et l'attribution de factures, entre autres.
-En particulier, voici un exemple explicité de l'une des user-stories de la liste, en particulier celle concernant la définition et le stockage des produits (explication).
-En analysant le contenu de chacune de ces user stories, nous nous sommes arrivés à en tirer l'essence du profil fournisseur que l'on voit ici sous forme de phrases décrivant les actions et les propriétés d'un fournisseur (explication).
-Enfin voici un exemple de cas d'usage représentatant quelques fonctionnalités de base d'un fournisseur (explication).
-Maintenant, pour la partie structure de données, je vous laisse avec Wissem qui vous l'expliquera par la suite.
+MariaDB
+=======
+Nous arrivons maintenant à la partie concernant la base de données. Pour cette partie nous avons utilisé MariaDB, un SGBD relationnel gratuit et open-source assurant bien l'interopérabilité avec MySQL qui a été introduit par les créateurs de MySQL suite à l'achat de celui-ci par Oracle.
+Notre raisonnement pour ce choix est basé sur trois arguments principaux :
+  - le fait que MariaDB est un fork communautaire de MySQL qui est mis à jour plus souvent que ce dernier.
+  - le fait que nous avions déjà créé un schéma de base de données relationnel traduit à partir du modèle EA dans la phase de conception et un système de validation des données dans le cadre d'une politique de sécurité en trois couches (client serveur base de données) pour assurer l'intégrité des données stockées.
+  - le fait que le serveur de la faculté qui nous a été attribué pour le déploiment de notre site héberge bien MySQL et pourra par suite héberger le contenu de notre base de données créée sous MariaDB.
 
-Perspectives :
-==============
-Étant donné que le terme LaRuche ne reflète pas forcément la philosophie de décentralisation de rôles qu'on a opté pour notre modélisation, nous nous sommes toujours pas arrivé à trouver un nom significatif intitulant notre projet. Pour cette raison, nous avons décidé pour le moment de garder le nom qui a été proposé lors de l'affectation du projet dans ce module.
-En accord avec la philosophie des méthodes agiles, nous prévoyons la récolte de feedbacks de plusieurs utilisateurs potentiels pour implémenter des fonctionnalités supplémentaires et optimiser celles déjà existantes.
-Enfin, nous prévoyons lancer notre site à l'international en l'offrant en plusieurs langues pour que plusieurs communautés locales puissent en profiter.
+Bilan
+=====
+Concernant les résultats, voici le bilan suivant. Comme vous pouvez voir, nous avons bien réussi à :
+- créer et tester une base de données qui est actuellement fonctionnelle
+- créer les composants de base de l'interface graphique de notre site
+- établir une connexion entre le client et le serveur et entre ce dernier et la base de données sur laquelle nous avons pu faire des requêtes SQL LMD
 
-Merci beaucoup pour votre attention, et n'hésitez pas à nous poser vos questions.
+Quant à la gestion des routes, nous avons eu du mal à la réaliser et nous nous sommes toujours pas arrivé à débogé la raison sous-jacente.
+Ceci a eu des conséquences néfastes sur notre application, notamment le fait que nous n'avions pas pu testé le comportement dynamique des composants.
+D'autre part, bien que nous étions capable de se connecter à distance au espace dédié à notre projet, nous n'avons pas pu déployer notre site sur le serveur, faute d'absence d'une base de données dédiée à notre projet comme c'était prévu et comme c'était indiqué sur le site du SIF. N'ayant pas les droits d'accès nécessaires pour l'établissement de la base de données et sa mise en route, nous n'avons toujours pas réussi à pallier ce problème. Nous nous sommes ainsi contenté de tester notre site localement.
+
+Basic ideas:
+============
+1. Node :
+  - Introduction :
+    a. env d'exécution JS côté serveur basé sur V8 de Google Chrome gratuit et os
+    b. architecture modulaire
+    c. modélisation événementielle, monothread et non-bloquante
+    d. facilement utilisable et extensible à travers des modules téléchargeables via NPM
+  - Raisons d'utilisation :
+    a. unifier le code des côtés client et serveur => faciliter le débogage de l'application entière
+    b. nous aurons besoin de gérer et traiter un grand ensemble de données et Node permet de le faire efficacement à travers sa modélisation
+    c. un grand nombre de paquets utilitaires qui peuvent être intégrés à l'application pour des traitements spécifiques (au lieu de les réécrire nous-même)
+  - Utilisation :
+    a. création d'une API factorisée modulaire, non redondante et facilement lisible pour les entités de l'application.
+    b. établir la connexion avec la base de données
+    c. héberger Express
+2. Express :
+  - Introduction :
+    a. framework web minimaliste gratuit et os utilisable avec Node.js
+    b. utilisation de middleware, gestion de routes REST et formulaires en se basant sur des concepts du modèle MVC
+    c. générer du contenu dynamiquement grâce à l'intégration de moteurs de templates tels que EJS, Pug, Handlebars, Mustache, etc.
+  - Raisons et utilisation :
+    a. le framework web de-facto à utiliser avec Node.js en raison de ses caractéristiques
+    b. ségmenter le traitement des requêtes via les middleware
+    c. gérer les routes REST pour les opérations CRUD
+3. MariaDB :
+  - Introduction :
+    a. un SGBD relationnel gratuit et os
+    b. introduit par les créateurs de MySQL suite à l'achat de ce dernier par Oracle
+    c. assure l'interopérabilité avec MySQL
+  - Raisons du choix et utilisation
+    a. un fork communautaire de MySQL qui est mis à jour plus souvent que MySQL
+    b. nous avons déjà créé notre modèle relationnel traduit à partir du modèle EA pendant la phase de conception
+    c. le serveur de la fac héberge MySQL qui peut héberger notre BD

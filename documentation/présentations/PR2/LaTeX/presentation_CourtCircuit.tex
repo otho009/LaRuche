@@ -104,6 +104,23 @@
 %----------------------------------------------------------------------------------------
 \section{Implémentation}
 %----------------------------------------------------------------------------------------
+%   APPLICATION WEB MONOPAGE
+%----------------------------------------------------------------------------------------
+\subsection{Application web monopage}
+\begin{frame}{Application web monopage (Introduction)}{Implémentation}
+  \begin{figure}[!ht]
+    \includegraphics[scale=0.5]{images/SPAvsTRADITIONAL.jpg}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Application web monopage (Avantages)}{Implémentation}
+  \begin{itemize}
+    \item chargement plus rapide de la page.
+    \item séparation des tâches de contrôle et de vue $\rightarrow$ meilleure implémentation des contraintes du \textit{design pattern} \textbf{MVC}.
+    \item facilité de déploiement.
+  \end{itemize}
+\end{frame}
+%----------------------------------------------------------------------------------------
 %   OUTILS D'IMPLÉMENTATION
 %----------------------------------------------------------------------------------------
 \subsection{Outils d'implémentation}
@@ -120,17 +137,6 @@
   \end{description}
 \end{frame}
 %----------------------------------------------------------------------------------------
-%   APPLICATION WEB MONOPAGE (SPA)
-%----------------------------------------------------------------------------------------
-\subsection{Application web monopage (SPA)}
-\begin{frame}{Application web monopage (SPA)}{Implémentation}
-schéma d'une SPA
-\end{frame}
-
-\begin{frame}{Application web monopage (SPA)}{Implémentation}
-pros et cons d'une SPA
-\end{frame}
-%----------------------------------------------------------------------------------------
 %   FRONT-END
 %----------------------------------------------------------------------------------------
 \subsection{\protect\textit{Front-end}}
@@ -144,13 +150,22 @@ pros et cons d'une SPA
 %   BOOTSTRAP ET FONT-AWESOME
 %----------------------------------------------------------------------------------------
 \begin{frame}{\textit{Bootstrap et Font-Awesome}}{Front-end}
+  \begin{figure}[!ht]
+    \includegraphics[scale=0.065]{images/bootstrapLogo.jpg}
+    \hfill
+    \includegraphics[scale=0.15]{images/font_awesome.png}
+  \end{figure}
 
-\end{frame}
-%----------------------------------------------------------------------------------------
-%   CHARTE GRAPHIQUE
-%----------------------------------------------------------------------------------------
-\begin{frame}{\textit{Charte Graphique}}{Front-end}
+  \begin{itemize}
+    \item réalisation de pages \textbf{responsives}.
+    \item personnalisation de la mise en forme des pages à travers des \textbf{classes CSS} prédéfinies.
+    \item icônes modifiables dynamiquement.
+  \end{itemize}
 
+  \begin{figure}[!ht]
+    \includegraphics[scale=0.2]{images/header_navbar_component.png}
+    \caption{Entête du site faite avec la classe \textit{Navbar} de \textbf{Bootstrap} avec des icônes \textbf{Font-awesome}}
+  \end{figure}
 \end{frame}
 %----------------------------------------------------------------------------------------
 %   BACK-END
@@ -183,7 +198,7 @@ pros et cons d'une SPA
 
 \begin{frame}{\textit{Node.js} (Utilisation)}{Back-end}
   \begin{itemize}
-    \item création d'une \textbf{API} factorisée, non redondante et facilement lisible (\textit{Client, Utilisateur, Produit, $\dots$}) permettant d'interfacer avec la base de données.
+    \item création d'une \textbf{API} factorisée, non redondante et facilement lisible (\textit{Client, Fournisseur, Produit, $\dots$}) permettant d'interfacer avec la base de données.
     \item héberger \textbf{Express}.
   \end{itemize}
 \end{frame}
@@ -200,7 +215,7 @@ pros et cons d'une SPA
     \item framework web minimaliste pour \textbf{Node.js}.
     \item gratuit et \textit{open-source}.
     \item utilisation de \textit{middleware}.
-    \item gestion des routes \textbf{REST} (\textit{Representational State Transfer}) et des formulaires en s'appuyant sur des concepts du modèle \textbf{MVC}.
+    \item gestion des routes \textbf{REST} (\textit{Representational State Transfer}) et des formulaires en s'appuyant sur des concepts du \textit{design pattern} \textbf{MVC}.
     \item moteurs de templates (\textit{EJS (Embedded JavaScript), Pug, Handlebars, $\dots$}).
   \end{itemize}
 \end{frame}
@@ -225,8 +240,8 @@ pros et cons d'une SPA
   \begin{itemize}
     \item \textbf{SGBD} relationnel.
     \item gratuit et \textit{open-source}.
-    \item introduit par les créateurs de \textbf{MySQL} suite à l'achat de ce dernier par \textbf{Oracle}.
     \item assure l'interopérabilité avec \textbf{MySQL}.
+    \item introduit par les créateurs de \textbf{MySQL} suite à l'achat de ce dernier par \textbf{Oracle}.
   \end{itemize}
 \end{frame}
 

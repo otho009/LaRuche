@@ -1,0 +1,9 @@
+Corrections :
+=============
+Utilisateur -> Fournisseur (diapo 15)
+move "assure l'interopérabilité" before "introduit par" (diapo 18)
+
+
+Remarques :
+===========
+1. Should we add logos and whatnot to the first slide?
